@@ -2,7 +2,6 @@ import { styled, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import BaseButton from "../components/button/BaseButton";
 import LandingFooter from "../components/layout/LandingFooter";
-import HanulSec from "../assets/images/character/hanul-security.png";
 import CenteredDiv from "../components/box/CenteredDiv";
 
 const NotFound = () => {
@@ -16,7 +15,6 @@ const NotFound = () => {
 	return (
 		<>
 			<CenteredDiv>
-				<img src={HanulSec} alt="character" width={130} />
 				<Typography gutterBottom variant="h1">
 					404
 				</Typography>
