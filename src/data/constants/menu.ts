@@ -4,6 +4,7 @@
 
 import { ReactElement } from "react";
 import Main from "../../pages/Main";
+import PageComponents from "../../pages/mui/components";
 import PageIcon from "../../pages/mui/icons";
 import PageToastGrid from "../../pages/toast-ui/toast-grid";
 
@@ -31,8 +32,15 @@ export const menu: MenuProps[] = [
 				id: "icons",
 				name: "Material Icon",
 				type: "page",
-				parentUrl: "material-design",
+				parentUrl: "mui",
 				element: PageIcon
+			},
+			{
+				id: "components",
+				name: "Components",
+				type: "page",
+				parentUrl: "mui",
+				element: PageComponents
 			},
 		],
 	},
