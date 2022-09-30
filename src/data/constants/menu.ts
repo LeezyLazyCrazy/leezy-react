@@ -2,11 +2,17 @@
  * 화면 좌측의 개별 메뉴를 구성하는 인터페이스
  */
 
+import { ReactElement } from "react";
+import Main from "../../pages/Main";
+import PageIcon from "../../pages/mui/icons";
+import PageToastGrid from "../../pages/toast-ui/toast-grid";
+
 export interface MenuProps {
 	id: string;
 	name: string;
 	parentUrl: string;
 	type: "dir" | "page";
+	element?: any;
 	subMenu?: MenuProps[];
 }
 
@@ -17,36 +23,37 @@ export interface MenuProps {
 export const menu: MenuProps[] = [
 	{
 		name: "Material Design",
-		id: "Material Design",
+		id: "mui",
 		parentUrl: "",
 		type: "dir",
 		subMenu: [
 			{
-				id: "MUI",
-				name: "MUI",
+				id: "icons",
+				name: "Material Icon",
 				type: "page",
-				parentUrl: "bitcoin",
+				parentUrl: "material-design",
+				element: PageIcon
 			},
-			
 		],
 	},
 	{
 		name: "Toast UI",
-		id: "Toast UI",
+		id: "toast-ui",
 		type: "dir",
-		parentUrl: "UNUSSEDLEO",
+		parentUrl: "",
 		subMenu: [
 			{
-				id: "Toast UI",
-				name: "Toast UI",
+				id: "toast-grid",
+				name: "Toast Grid",
 				type: "page",
-				parentUrl: "UNUSSEDLEO",
+				parentUrl: "toast-ui",
+				element: PageToastGrid
 			},
 		],
 	},
 	{
 		name: "Framer animation",
-		id: "Framer animation",
+		id: "framer",
 		type: "dir",
 		parentUrl: "",
 		subMenu: [
@@ -55,34 +62,37 @@ export const menu: MenuProps[] = [
 				name: "Framer animation",
 				type: "page",
 				parentUrl: "FTXToken",
+				element: Main
 			},
 		],
 	},
 	{
 		name: "React-query",
-		id: "React-query",
+		id: "react-query",
 		type: "dir",
 		parentUrl: "",
 		subMenu: [
 			{
-				id: "React-query",
+				id: "react-query",
 				name: "React-query",
 				type: "page",
 				parentUrl: "Cosmos",
+				element: Main
 			},
 		],
 	},
 	{
 		name: "Zustand",
-		id: "Zustand",
+		id: "zustand",
 		type: "dir",
 		parentUrl: "",
 		subMenu: [
 			{
-				id: "Zustand",
+				id: "zustand",
 				name: "Zustand",
 				type: "page",
 				parentUrl: "VeChain",
+				element: Main
 			},
 		],
 	},

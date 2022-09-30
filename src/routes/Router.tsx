@@ -7,7 +7,6 @@ import Landing from "../pages/Landing";
 import Main from "../pages/Main";
 import NotFound from "../pages/NotFound";
 import Unauthroized from "../pages/Unauthorized";
-import Whatever from "../pages/Whatever";
 import RequireAuth from "./RequireAuth";
 
 const Router = () => {
@@ -25,11 +24,12 @@ const Router = () => {
 					<Route path="/index" element={<Main />} />
 					{menu.map((route) =>
 						route.subMenu?.map((subRoute) => {
+							console.log(subRoute);
 							return (
 								<Route
 									key={subRoute.id}
 									path={`/${route.id}/${subRoute.id}`}
-									element={route.id === "UNUSSEDLEO" ? <Whatever /> : <Main />}
+									element={<subRoute.element />}
 								/>
 							);
 						}),

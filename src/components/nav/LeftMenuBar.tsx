@@ -48,23 +48,23 @@ const LeftMenuBar = () => {
 
 	const menuIcons = [
 		{
-			title: "Material Design",
+			title: "mui",
 			icon: <AutoAwesomeOutlinedIcon/>,
 		},
 		{
-			title: "Toast UI",
+			title: "toast-ui",
 			icon: <SurfingOutlinedIcon />,
 		},
 		{
-			title: "Framer animation",
+			title: "framer",
 			icon: <AddReactionOutlinedIcon />,
 		},
 		{
-			title: "React-query",
+			title: "react-query",
 			icon: <AndroidOutlinedIcon />,
 		},
 		{
-			title: "Zustand",
+			title: "zustand",
 			icon: <DirectionsRunOutlinedIcon />,
 		},
 		// {
