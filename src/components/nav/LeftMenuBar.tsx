@@ -14,13 +14,12 @@ import TabPanel from "../tab/TabPanel";
 import FavoritePagesBar from "./FavoritePagesBar";
 
 //MENU ICON
-import PasswordOutlinedIcon from '@mui/icons-material/PasswordOutlined';
-import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
-import ApprovalOutlinedIcon from '@mui/icons-material/ApprovalOutlined';
-import PrecisionManufacturingOutlinedIcon from '@mui/icons-material/PrecisionManufacturingOutlined';
-import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
-import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
-import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
+import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
+import SurfingOutlinedIcon from '@mui/icons-material/SurfingOutlined';
+import AddReactionOutlinedIcon from '@mui/icons-material/AddReactionOutlined';
+import AndroidOutlinedIcon from '@mui/icons-material/AndroidOutlined';
+import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
+
 
 interface StyledTabProps {
 	label: string;
@@ -49,33 +48,33 @@ const LeftMenuBar = () => {
 
 	const menuIcons = [
 		{
-			title: "equipments",
-			icon: <PasswordOutlinedIcon/>,
+			title: "Material Design",
+			icon: <AutoAwesomeOutlinedIcon/>,
 		},
 		{
-			title: "documents",
-			icon: <DnsOutlinedIcon />,
+			title: "Toast UI",
+			icon: <SurfingOutlinedIcon />,
 		},
 		{
-			title: "permit",
-			icon: <ApprovalOutlinedIcon />,
+			title: "Framer animation",
+			icon: <AddReactionOutlinedIcon />,
 		},
 		{
-			title: "development",
-			icon: <PrecisionManufacturingOutlinedIcon />,
+			title: "React-query",
+			icon: <AndroidOutlinedIcon />,
 		},
 		{
-			title: "productions",
-			icon: <BusinessOutlinedIcon />,
+			title: "Zustand",
+			icon: <DirectionsRunOutlinedIcon />,
 		},
-		{
-			title: "organizations",
-			icon: <AccountTreeOutlinedIcon />,
-		},
-		{
-			title: "system",
-			icon: <SettingsSuggestOutlinedIcon />,
-		},
+		// {
+		// 	title: "organizations",
+		// 	icon: <AccountTreeOutlinedIcon />,
+		// },
+		// {
+		// 	title: "system",
+		// 	icon: <SettingsSuggestOutlinedIcon />,
+		// },
 	];
 
 	// handling tabs
