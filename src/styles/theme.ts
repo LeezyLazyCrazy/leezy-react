@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { blueGrey, lightBlue, lime, grey, red, yellow, green } from "@mui/material/colors";
+import { blueGrey, lightBlue, lime, grey, red, yellow, green, indigo } from "@mui/material/colors";
 
 // noto sans kr load
 import "@fontsource/noto-sans-kr/300.css";
@@ -146,17 +146,17 @@ const baseTheme = {
 
 const darkTheme = {
 	primary: {
-		main: "#00c8ff",
+		main: "#d3d9dc",
 	},
 	secondary: {
-		main: lime[200],
+		main: lime[500],
 	},
 	background: {
-		default: blueGrey[900],
-		paper: blueGrey[800],
+		default: "#505075" ,
+		paper:"#1a0548ff",
 	},
 	text: {
-		secondary: "rgba(255, 255, 255, 0.8)",
+		secondary: "rgba(247, 246, 246, 0.916)",
 	},
 	percentageRemarks: {
 		verylow: grey[900],
