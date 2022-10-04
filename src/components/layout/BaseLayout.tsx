@@ -48,7 +48,7 @@ const BaseLayout = () => {
 					/>
 				</div>
 				<LeftMenuBar />
-				<div style={{ width: "100%" }}>
+				<div style={{ display: "block", width: "100%", margin:"25px"}}>
 					<BreadCrumbBar />
 					<Outlet />
 				</div>

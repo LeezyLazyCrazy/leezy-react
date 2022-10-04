@@ -32,5 +32,6 @@ const Root = styled("div")(() => ({
 	borderRadius: 4,
 	fontWeight: 600,
 	padding: 5,
+	margin:10,
 	width: "fit-content",
 }));

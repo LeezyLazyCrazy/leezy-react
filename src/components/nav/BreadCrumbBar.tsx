@@ -62,6 +62,7 @@ export default BreadCrumbBar;
 
 const Root = styled("div")(({ theme }) => ({
 	padding: "8px 20px",
+	marginBottom: "20px",
 	background: theme.palette.background.paper,
 	display: "flex",
 	flexDirection: "row",

@@ -1,9 +1,12 @@
+import { Container } from "@mui/system";
 import BaseDataGrid from "../../components/dataGrid/BaseDataGrid";
 
 const PageToastGrid = () => {
 	return (
-		<>
-			<BaseDataGrid />
+		<>	
+			<Container >
+				<BaseDataGrid  />
+			</Container>				
 		</>
 	);
 };

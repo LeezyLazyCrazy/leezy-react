@@ -1,38 +1,56 @@
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import ShortAlert from "../../components/alert/ShortAlert";
 import { ToastMessage, toastShow } from "../../components/alert/ToastMessage";
 import BaseButton from "../../components/button/BaseButton";
 import TextButton from "../../components/button/TextButton";
 import RadarChartBox from "../../components/chart/RadarChartBox";
 import StatusChip from "../../components/chip/StatusChip";
+import BaseModal from "../../components/modal/BaseModal";
+import Loading from "../../components/loading/Loading";
 
  const PageComponents = () => {
 	return (
     <>
-  		<div>Toast Message</div>
-      <BaseButton 
-        title="toast Message"
-        onClick={() => {
-          toastShow({title:"title", message:"message", type: "info"})
-        }}
+      <Grid container
+        // direction="column"
+        // justifyContent="space-between"
+        // alignItems="center"
+        // rowGap={{ rowGap: 20 }}
+        spacing={2}
       >
-        Toast Message
-      </BaseButton>
-
-  		<div>Short Alert</div>
-      <ShortAlert title="Short Alert" severity="error"/>
-
-  		<div>Radar Chart</div>
-      <RadarChartBox />
-
-  		<div>Status Chip</div>
-      <StatusChip severity="danger"/>
-      <StatusChip severity="warn" />
-      <StatusChip severity="adhoc" />
-      <StatusChip severity="inProgress" />
-      <StatusChip severity="fail" />
-      <StatusChip severity="delayed" />
-      <StatusChip severity="done" />
+        <Grid item xs={6} md={6} spacing={1} >Toast Message
+          <BaseButton
+            title="toast Message"
+            onClick={() => {
+              toastShow({title:"title", message:"message", type: "info"})
+            }}
+          >
+          Toast Message
+          </BaseButton>
+        </Grid>
+        <Grid item xs={6} md={6} spacing={1} >Short Alert
+          <ShortAlert title="Short Alert" severity="error"/>
+        </Grid>
+        <Grid item xs={6} md={6} spacing={1} >Radar Chart
+          <RadarChartBox />
+        </Grid>
+        <Grid item xs={6} md={6} spacing={1} >Status Chip
+          <StatusChip severity="danger" />
+          <StatusChip severity="warn" />
+          <StatusChip severity="adhoc" />
+          <StatusChip severity="inProgress" />
+          <StatusChip severity="fail" />
+          <StatusChip severity="delayed" />
+          <StatusChip severity="done" />
+        </Grid>
+        {/* <Grid item xs={12}>Base Modal
+          <BaseModal/>
+        </Grid> */}
+        {/* <Grid item xs={12}>Loading
+          <Loading/>
+        </Grid> */}
+      </Grid>
+  		
     </>
 	);
 };
