@@ -67,14 +67,6 @@ const LeftMenuBar = () => {
 			title: "zustand",
 			icon: <DirectionsRunOutlinedIcon />,
 		},
-		// {
-		// 	title: "organizations",
-		// 	icon: <AccountTreeOutlinedIcon />,
-		// },
-		// {
-		// 	title: "system",
-		// 	icon: <SettingsSuggestOutlinedIcon />,
-		// },
 	];
 
 	// handling tabs
