@@ -7,6 +7,7 @@ import Main from "../../pages/Main";
 import PageComponents from "../../pages/mui/components";
 import PageIcon from "../../pages/mui/icons";
 import PageToastGrid from "../../pages/toast-ui/toast-grid";
+import AboutReactQuery from "../../pages/react-query/react-query";
 
 export interface MenuProps {
 	id: string;
@@ -60,21 +61,6 @@ export const menu: MenuProps[] = [
 		],
 	},
 	{
-		name: "Framer animation",
-		id: "framer",
-		type: "dir",
-		parentUrl: "",
-		subMenu: [
-			{
-				id: "Framer animation",
-				name: "Framer animation",
-				type: "page",
-				parentUrl: "FTXToken",
-				element: Main
-			},
-		],
-	},
-	{
 		name: "React-query",
 		id: "react-query",
 		type: "dir",
@@ -84,8 +70,8 @@ export const menu: MenuProps[] = [
 				id: "react-query",
 				name: "React-query",
 				type: "page",
-				parentUrl: "Cosmos",
-				element: Main
+				parentUrl: "react-query",
+				element: AboutReactQuery
 			},
 		],
 	},
@@ -100,6 +86,21 @@ export const menu: MenuProps[] = [
 				name: "Zustand",
 				type: "page",
 				parentUrl: "VeChain",
+				element: Main
+			},
+		],
+	},
+	{
+		name: "Framer animation",
+		id: "framer",
+		type: "dir",
+		parentUrl: "",
+		subMenu: [
+			{
+				id: "framer animation",
+				name: "Framer animation",
+				type: "page",
+				parentUrl: "framer animation",
 				element: Main
 			},
 		],
