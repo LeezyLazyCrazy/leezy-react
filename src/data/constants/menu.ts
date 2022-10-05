@@ -7,7 +7,9 @@ import Main from "../../pages/Main";
 import PageComponents from "../../pages/mui/components";
 import PageIcon from "../../pages/mui/icons";
 import PageToastGrid from "../../pages/toast-ui/toast-grid";
-import AboutReactQuery from "../../pages/react-query/react-query";
+import PageReactQuery from "../../pages/react-query/react-query";
+import PageZustand from "../../pages/zustand/zustand";
+import PageFramerAnimation from "../../pages/framer/framer-animation";
 
 export interface MenuProps {
 	id: string;
@@ -71,7 +73,7 @@ export const menu: MenuProps[] = [
 				name: "React-query",
 				type: "page",
 				parentUrl: "react-query",
-				element: AboutReactQuery
+				element: PageReactQuery
 			},
 		],
 	},
@@ -85,8 +87,8 @@ export const menu: MenuProps[] = [
 				id: "zustand",
 				name: "Zustand",
 				type: "page",
-				parentUrl: "VeChain",
-				element: Main
+				parentUrl: "zustand",
+				element: PageZustand
 			},
 		],
 	},
@@ -97,11 +99,11 @@ export const menu: MenuProps[] = [
 		parentUrl: "",
 		subMenu: [
 			{
-				id: "framer animation",
+				id: "framer-animation",
 				name: "Framer animation",
 				type: "page",
 				parentUrl: "framer animation",
-				element: Main
+				element: PageFramerAnimation
 			},
 		],
 	},
