@@ -4,25 +4,25 @@ import axios from "../../assets/images/2.axios.png";
 import useQuery from "../../assets/images/3.useReactQuery.png";
 
 
-const AboutReactQuery = () => {
+const PageReactQuery = () => {
     return (
         <>
             <Grid xs={12}>
                 <h1> About React Query </h1>
                 <div className="why" style={{ color: "#fffb00", fontSize: "20px" }}>
                     <h3>Why choose this</h3>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>1.클라이언트에서 서버 데이터의 캐시를 관리합니다. </p>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>2.loading, error state를 관리합니다.</p>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>3.pagination, infinite scroll도 쉽게 처리할 수 있도록 지원합니다.</p>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>4.prefetching을 쉽게 처리할 수 있도록 지원합니다.</p>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>5.error가 발생할 경우 자동으로 재시도합니다.</p>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>6.request가 성공하거나 실패했을 때 각각 callback을 정의할 수 있습니다.</p>                  
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>1.  클라이언트에서 서버 데이터의 캐시를 관리합니다. </p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>2.  loading, error state를 관리합니다.</p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>3.  pagination, infinite scroll도 쉽게 처리할 수 있도록 지원합니다.</p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>4.  prefetching을 쉽게 처리할 수 있도록 지원합니다.</p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>5.  error가 발생할 경우 자동으로 재시도합니다.</p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>6.  request가 성공하거나 실패했을 때 각각 callback을 정의할 수 있습니다.</p>                  
                 </div> 
 
                 <div className="How" style={{ color: "#fffb00", fontSize: "20px" }}>
                     <h3>How to use</h3>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>1.npm i @tanstack/react-query   </p>
-                    <p style={{color: "#ffffff", fontSize: "15px"}}>2.yarn add @tanstack/react-query</p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>1.  npm i @tanstack/react-query   </p>
+                    <p style={{color: "#ffffff", fontSize: "15px"}}>2.  yarn add @tanstack/react-query</p>
                 </div>
 
                 <div className="Queries" style={{ color: "#fffb00", fontSize: "20px" }}>
@@ -53,7 +53,7 @@ const AboutReactQuery = () => {
     )
 };
 
-export default AboutReactQuery;
+export default PageReactQuery;
 
 
 
