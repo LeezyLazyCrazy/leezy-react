@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import Exam from "./example/ex-framer"
+import Exam from "../../components/example/ex-framer"
 
 const PageFramerAnimation = () => {
 
@@ -15,7 +15,6 @@ const PageFramerAnimation = () => {
                     <p style={{color: "#ffffff", fontSize: "15px"}}>4.  개발자처럼 시스템 컴포넌트를 사용 가능함.</p>
                     <p style={{color: "#ffffff", fontSize: "15px"}}>5.  높은 수준의 프로토타입.</p>         
                 </div> 
-
                 <div className="How" style={{ color: "#00ffff", fontSize: "20px" }}>
                     <h3>How to use</h3>
                     <p style={{color: "#ffffff", fontSize: "15px"}}>1.  npm i framer-motion   </p>

@@ -1,22 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import "../example/style.css";
+import "../example/ex-style.css";
 
-/**
- * This is an example of animating shared layouts in Framer Motion 2.
- *
- * The open state of each panel is contained locally to that component. Wrapping
- * them all in the same AnimateSharedLayout component allows them all to animate
- * in response to state changes that affect each other's layout.
- *
- * Try removing AnimateSharedLayout to see how that affects the animation.
- */
 
 export default function App() {
   return (
     <AnimateSharedLayout>
-      <motion.table layout initial={{ borderRadius: 25 }}>
+      <motion.table layout initial={{ borderRadius: 25 }} className="motionTable">
         {items.map(item => (
           <Item key={item} />
         ))}
@@ -31,7 +22,7 @@ function Item() {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <motion.td layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
+    <motion.td layout onClick={toggleOpen} initial={{ borderRadius: 10 }} className="motionTd">
       <motion.div className="avatar" layout />
       <AnimatePresence>{isOpen && <Content />}</AnimatePresence>
     </motion.td>
