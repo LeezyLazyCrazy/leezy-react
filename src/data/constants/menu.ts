@@ -10,6 +10,7 @@ import PageToastGrid from "../../pages/toast-ui/toast-grid";
 import PageReactQuery from "../../pages/react-query/react-query";
 import PageZustand from "../../pages/zustand/zustand";
 import PageFramerAnimation from "../../pages/framer/framer-animation";
+import PageTab from "../../pages/mui/smart-tab";
 
 export interface MenuProps {
 	id: string;
@@ -44,6 +45,13 @@ export const menu: MenuProps[] = [
 				type: "page",
 				parentUrl: "mui",
 				element: PageComponents
+			},
+						{
+				id: "smart-tab",
+				name: "Tabs",
+				type: "page",
+				parentUrl: "smart-tab",
+				element: PageTab
 			},
 		],
 	},
