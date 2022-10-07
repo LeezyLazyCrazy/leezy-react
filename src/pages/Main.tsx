@@ -1,10 +1,22 @@
+import DonutChart from "../components/chart/DonutChart";
+import Accodion from "../components/accodion/Accodion"
+import { Grid } from "@mui/material";
 /**
  * 메인 페이지 (프로토타입 샘플)
  * @returns JSX.Element(Page)
  */
 const Main = () => {
 	return (
-		<div>Main</div>
+		<>
+			<Grid container rowSpacing={8} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+				<Grid item xs={12}>
+					<DonutChart />
+				</Grid>
+				<Grid item xs={12}>
+					<Accodion />
+				</Grid>
+			</Grid>
+		</>
 	);
 };
 
