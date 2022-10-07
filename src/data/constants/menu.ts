@@ -11,6 +11,9 @@ import PageReactQuery from "../../pages/react-query/react-query";
 import PageZustand from "../../pages/zustand/zustand";
 import PageFramerAnimation from "../../pages/framer/framer-animation";
 import PageTab from "../../pages/mui/smart-tab";
+import PageMuiGrid from "../../pages/toast-ui/mui-table";
+import PageMuiSimple from "../../pages/toast-ui/mui-simple";
+import PageMuiGrid2 from "../../pages/toast-ui/mui-grid2";
 
 export interface MenuProps {
 	id: string;
@@ -67,6 +70,27 @@ export const menu: MenuProps[] = [
 				type: "page",
 				parentUrl: "toast-ui",
 				element: PageToastGrid
+			},
+			{
+				id: "mui-grid",
+				name: "Mui Grid",
+				type: "page",
+				parentUrl: "toast-ui",
+				element: PageMuiGrid
+			},
+						{
+				id: "mui-grid2",
+				name: "Mui Grid2",
+				type: "page",
+				parentUrl: "toast-ui",
+				element: PageMuiGrid2
+			},
+			{
+				id: "mui-simple",
+				name: "Mui Simple",
+				type: "page",
+				parentUrl: "toast-ui",
+				element: PageMuiSimple
 			},
 		],
 	},
