@@ -5,19 +5,12 @@ import BaseButton from "../../components/button/BaseButton";
 import TextButton from "../../components/button/TextButton";
 import RadarChartBox from "../../components/chart/RadarChartBox";
 import StatusChip from "../../components/chip/StatusChip";
-import BaseModal from "../../components/modal/BaseModal";
-import Loading from "../../components/loading/Loading";
+
 
  const PageComponents = () => {
 	return (
     <>
-      <Grid container
-        // direction="column"
-        // justifyContent="space-between"
-        // alignItems="center"
-        // rowGap={{ rowGap: 20 }}
-        spacing={2}
-      >
+      <Grid container spacing={2}>
         <Grid item xs={6} md={6} spacing={1} >Toast Message
           <BaseButton
             title="toast Message"
@@ -43,12 +36,6 @@ import Loading from "../../components/loading/Loading";
           <StatusChip severity="delayed" />
           <StatusChip severity="done" />
         </Grid>
-        {/* <Grid item xs={12}>Base Modal
-          <BaseModal/>
-        </Grid> */}
-        {/* <Grid item xs={12}>Loading
-          <Loading/>
-        </Grid> */}
       </Grid>
   		
     </>
