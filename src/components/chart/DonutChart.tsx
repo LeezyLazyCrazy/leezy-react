@@ -15,10 +15,10 @@ export default class Example extends PureComponent {
   render() {
       return (
         <>
-            <Grid container spacing={2} style={{height: "50vh", padding:"0", marginTop:"0"}} >
+            <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}style={{height: "50vh", padding:"0", marginTop:"0", marginLeft:"50px"}} >
               
                 <Grid item md={3} style={{height: "40vh", padding:"0"}}>
-                    <PieChart width={250} height={350} style={{display:"flex",justifyContent:"space-around"}}>
+                    <PieChart  width={250} height={350} style={{ }}>
                         <Pie
                             data={data}
                             cx={120}
