@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PureComponent } from 'react';
+import { PieChart, Pie, Cell } from 'recharts';
 import { Grid, Box } from "@mui/material";
 
 const data = [
