@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { blueGrey, lightBlue, lime, grey, red, yellow, green, indigo } from "@mui/material/colors";
+import {  lightBlue, lime, grey, red, yellow, green, } from "@mui/material/colors";
 
 // noto sans kr load
 import "@fontsource/noto-sans-kr/300.css";

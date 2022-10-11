@@ -31,7 +31,7 @@ const BaseLayout = () => {
 	 * Context가 아닌 Router에서 처리하는 이유는 d2Map이 Window변수에 박제되도록 설계되어 있어, 중첩으로 Context를 만들 이유가 없기 때문임.
 	 */
 	const { pathname } = useLocation();
-	const match = matchPath("/random/*", pathname);
+	//const match = matchPath("/random/*", pathname);
 	const { isDark } = useThemeStore();
 
 	return (

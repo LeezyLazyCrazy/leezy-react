@@ -2,8 +2,8 @@
  * 화면 좌측의 개별 메뉴를 구성하는 인터페이스
  */
 
-import { ReactElement } from "react";
-import Main from "../../pages/Main";
+// import { ReactElement } from "react";
+// import Main from "../../pages/Main";
 import PageComponents from "../../pages/mui/components";
 import PageIcon from "../../pages/mui/icons";
 import PageToastGrid from "../../pages/toast-ui/toast-grid";

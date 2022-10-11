@@ -39,7 +39,7 @@ const Center = styled("div")(() => ({
 	width: "20%",
 }));
 
-const IconWrapper = styled("div")(() => ({
-	marginBottom: "10%",
-	textAlign: "center",
-}));
+// const IconWrapper = styled("div")(() => ({
+// 	marginBottom: "10%",
+// 	textAlign: "center",
+// }));
