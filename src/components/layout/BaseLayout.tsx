@@ -1,4 +1,5 @@
-import { Outlet, matchPath, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+// matchPath, useLocation
 import { ToastContainer } from "react-toastify";
 import useThemeStore from "../../stores/useThemeStore";
 import BreadCrumbBar from "../nav/BreadCrumbBar";
@@ -30,7 +31,7 @@ const BaseLayout = () => {
 	 * 지도 재로딩 시 (새로고침 등) 자원의 소모가 크므로 최대한 지도를 재로딩하지 않는 것이 바람직.
 	 * Context가 아닌 Router에서 처리하는 이유는 d2Map이 Window변수에 박제되도록 설계되어 있어, 중첩으로 Context를 만들 이유가 없기 때문임.
 	 */
-	const { pathname } = useLocation();
+	//const { pathname } = useLocation();
 	//const match = matchPath("/random/*", pathname);
 	const { isDark } = useThemeStore();
 
