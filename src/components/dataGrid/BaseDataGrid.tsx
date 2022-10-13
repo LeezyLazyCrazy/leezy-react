@@ -6,16 +6,16 @@ import useThemeStore from "../../stores/useThemeStore";
 import { theme } from "../../styles/theme";
 import DataGridToolbar from "./DataGridToolbar";
 import YesNoSelectionModal from "../../modules/modal/YesNoSelectionModal";
-import TableHelperText from "./TableHelperText";
 import TableSettingModal from "./TableSettingModal";
 import "../../styles/dataGrid/index.css";
 import HeaderSettingModal from "./HeaderSettingModal";
-import { DataGridKeyProps, dataGridKeys } from "../../data/constants/dataGridKeys";
+import { DataGridKeyProps /*, dataGridKeys */} from "../../data/constants/dataGridKeys";
 import { dummyAirplaneStatus } from "../../data/constants/dummyData";
 import { gridStyles } from "./dataGridStyle";
 
 interface BaseDataGridProps {
 	showToolbar?: boolean;
+	dataGridKeys: DataGridKeyProps[];
 }
 
 /**
@@ -28,7 +28,7 @@ interface BaseDataGridProps {
  * @returns {JSX.Element} React Component
  */
 
-const BaseDataGrid = ({ showToolbar = true }: BaseDataGridProps) => {
+const BaseDataGrid = ({ showToolbar = true, dataGridKeys }: BaseDataGridProps) => {
 	// grid styles
 	const { isDark } = useThemeStore();
 	const { palette } = theme(isDark);
@@ -75,7 +75,6 @@ const BaseDataGrid = ({ showToolbar = true }: BaseDataGridProps) => {
 		<div style={{ width: containerWidth }}>
 			{showToolbar && (
 				<>
-					<TableHelperText type="percentage" />
 					<DataGridToolbar
 						addNewRow={appendRow}
 						refresh={() => ref.current?.getInstance().resetData(initialData)}
