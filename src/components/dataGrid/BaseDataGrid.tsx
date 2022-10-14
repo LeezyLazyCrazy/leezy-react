@@ -103,7 +103,7 @@ const BaseDataGrid = ({ tableName, columns, showToolbar = true }: BaseDataGridPr
 			<Grid
 				ref={ref}
 				data={dataSource}
-				columns={filteredColumns()}
+				columns={columns}
 				columnOptions={{ resizable: true, frozenCount }}
 				rowHeight={30}
 				bodyHeight={400}
