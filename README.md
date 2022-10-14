@@ -101,6 +101,7 @@ VsCode 좌측 맨 위 문서모양 아이콘을 클릭하여 디렉토리가 제
 이제 VsCode의 상단 메뉴바에서 Terminal을 클릭하시고 New Terminal을 클릭하세요. IDE 하단에 Terminal 패널이 열립니다. Terminal 패널에 다음과 같이 입력하세요.
 
 ```sh
+yarn install (최초 설치시)
 yarn start
 ```
 

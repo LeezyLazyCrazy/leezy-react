@@ -9,6 +9,19 @@ import { ReactQueryDevtools } from "react-query/devtools";
 // toastify styles
 import "react-toastify/dist/ReactToastify.css";
 
+console.log("TEST");
+
+import { worker } from "./mocks/worker";
+if (process.env.NODE_ENV === "development") {
+	console.log("DEVELOPMENT");
+
+  worker.start();
+
+	fetch("/api/read")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+}
+
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {

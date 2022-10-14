@@ -24,7 +24,6 @@ const Router = () => {
 					<Route path="/index" element={<Main />} />
 					{menu.map((route) =>
 						route.subMenu?.map((subRoute) => {
-							console.log(subRoute);
 							return (
 								<Route
 									key={subRoute.id}
