@@ -79,7 +79,7 @@ const PageToastGrid = () => {
 	return (
 		<>	
 			<Container >
-				<BaseDataGrid dataGridKeys={dataGridKeys} />
+				<BaseDataGrid tableName="toast-grid" columns={dataGridKeys} />
 			</Container>				
 		</>
 	);

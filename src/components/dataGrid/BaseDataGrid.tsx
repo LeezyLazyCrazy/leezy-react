@@ -9,13 +9,14 @@ import YesNoSelectionModal from "../../modules/modal/YesNoSelectionModal";
 import TableSettingModal from "./TableSettingModal";
 import "../../styles/dataGrid/index.css";
 import HeaderSettingModal from "./HeaderSettingModal";
-import { DataGridKeyProps /*, dataGridKeys */} from "../../data/constants/dataGridKeys";
+import { DataGridKeyProps } from "../../data/constants/dataGridKeys";
 import { dummyAirplaneStatus } from "../../data/constants/dummyData";
 import { gridStyles } from "./dataGridStyle";
 
 interface BaseDataGridProps {
+	tableName: string;
+	columns: DataGridKeyProps[];
 	showToolbar?: boolean;
-	dataGridKeys: DataGridKeyProps[];
 }
 
 /**
@@ -28,7 +29,9 @@ interface BaseDataGridProps {
  * @returns {JSX.Element} React Component
  */
 
-const BaseDataGrid = ({ showToolbar = true, dataGridKeys }: BaseDataGridProps) => {
+const BaseDataGrid = ({ tableName, columns, showToolbar = true }: BaseDataGridProps) => {
+	const dataGridKeys = columns;
+
 	// grid styles
 	const { isDark } = useThemeStore();
 	const { palette } = theme(isDark);
@@ -71,6 +74,20 @@ const BaseDataGrid = ({ showToolbar = true, dataGridKeys }: BaseDataGridProps) =
 		ref.current?.getInstance().appendRow({});
 	};
 
+	const dataSource = {
+		withCredentials: false,  
+		initialRequest: true,
+		api: {
+				readData: 	{ url: `/api/${tableName}`, 				method: 'GET' },
+				createData: { url: `/api/${tableName}/create`,	method: 'POST' },
+				updateData: { url: `/api/${tableName}/update`,	method: 'PUT' },
+				deleteData: { url: `/api/${tableName}/delete`,	method: 'DELETE' },
+				modifyData: { url: `/api/${tableName}/modify`,	method: 'POST' }
+		}
+	}
+
+	console.log(dataSource);
+
 	return (
 		<div style={{ width: containerWidth }}>
 			{showToolbar && (
@@ -85,7 +102,7 @@ const BaseDataGrid = ({ showToolbar = true, dataGridKeys }: BaseDataGridProps) =
 			)}
 			<Grid
 				ref={ref}
-				data={initialData}
+				data={dataSource}
 				columns={filteredColumns()}
 				columnOptions={{ resizable: true, frozenCount }}
 				rowHeight={30}
