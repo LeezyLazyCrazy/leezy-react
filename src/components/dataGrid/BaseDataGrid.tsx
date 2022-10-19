@@ -12,10 +12,12 @@ import HeaderSettingModal from "./HeaderSettingModal";
 import { DataGridKeyProps } from "../../data/constants/dataGridKeys";
 import { dummyAirplaneStatus } from "../../data/constants/dummyData";
 import { gridStyles } from "./dataGridStyle";
+import { OptHeader } from "../../types/tui-grid/options";
 
 interface BaseDataGridProps {
 	tableName: string;
 	columns: DataGridKeyProps[];
+	header?: OptHeader;
 	showToolbar?: boolean;
 }
 
@@ -29,7 +31,7 @@ interface BaseDataGridProps {
  * @returns {JSX.Element} React Component
  */
 
-const BaseDataGrid = ({ tableName, columns, showToolbar = true }: BaseDataGridProps) => {
+const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDataGridProps) => {
 	const dataGridKeys = columns;
 
 	// grid styles
@@ -103,6 +105,7 @@ const BaseDataGrid = ({ tableName, columns, showToolbar = true }: BaseDataGridPr
 			<Grid
 				ref={ref}
 				data={dataSource}
+				header={header}
 				columns={columns}
 				columnOptions={{ resizable: true, frozenCount }}
 				rowHeight={30}
