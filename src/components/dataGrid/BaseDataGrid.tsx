@@ -80,15 +80,13 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 		withCredentials: false,  
 		initialRequest: true,
 		api: {
-				readData: 	{ url: `/api/${tableName}`, 				method: 'GET' },
-				createData: { url: `/api/${tableName}/create`,	method: 'POST' },
-				updateData: { url: `/api/${tableName}/update`,	method: 'PUT' },
-				deleteData: { url: `/api/${tableName}/delete`,	method: 'DELETE' },
-				modifyData: { url: `/api/${tableName}/modify`,	method: 'POST' }
+				readData: 	{ url: `/api/${tableName}`, method: 'GET' },
+				createData: { url: `/api/${tableName}`,	method: 'POST' },
+				updateData: { url: `/api/${tableName}`,	method: 'PUT' },
+				deleteData: { url: `/api/${tableName}`,	method: 'DELETE' },
+				modifyData: { url: `/api/${tableName}`,	method: 'POST' }
 		}
 	}
-
-	console.log(dataSource);
 
 	return (
 		<div style={{ width: containerWidth }}>
@@ -116,6 +114,7 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 				draggable={true}
 				scrollX={true}
 				scrollY={true}
+				oneTimeBindingProps={['data', 'columns']}
 			/>
 			<YesNoSelectionModal
 				open={checkToSaveOpen}
