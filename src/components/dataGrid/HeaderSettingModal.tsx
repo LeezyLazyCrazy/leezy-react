@@ -6,6 +6,7 @@ import TextInput from "../form/TextInput";
 import { Form, Formik } from "formik";
 import * as yup from "yup";
 import BaseButton from "../button/BaseButton";
+import { OptColumn } from "../../types/tui-grid/options";
 
 const HeaderSettingSchema = yup.object({
 	frozenCount: yup
@@ -27,7 +28,7 @@ interface ColumnProps {
 interface HeaderSettingModalProps {
 	open: boolean;
 	setOpen: (value: boolean) => void;
-	headerData: ColumnProps[];
+	headerData: OptColumn[];
 	tableRef: any;
 	frozenCount: number;
 	setFrozenCount: (value: number) => void;

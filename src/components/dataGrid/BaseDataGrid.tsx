@@ -9,14 +9,12 @@ import YesNoSelectionModal from "../../modules/modal/YesNoSelectionModal";
 import TableSettingModal from "./TableSettingModal";
 import "../../styles/dataGrid/index.css";
 import HeaderSettingModal from "./HeaderSettingModal";
-import { DataGridKeyProps } from "../../data/constants/dataGridKeys";
-import { dummyAirplaneStatus } from "../../data/constants/dummyData";
 import { gridStyles } from "./dataGridStyle";
-import { OptHeader } from "../../types/tui-grid/options";
+import { OptColumn, OptHeader } from "../../types/tui-grid/options";
 
 interface BaseDataGridProps {
 	tableName: string;
-	columns: DataGridKeyProps[];
+	columns: OptColumn[];
 	header?: OptHeader;
 	showToolbar?: boolean;
 }
@@ -30,9 +28,7 @@ interface BaseDataGridProps {
  * @param {BaseDataGridProps} BaseDataGridProps
  * @returns {JSX.Element} React Component
  */
-
 const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDataGridProps) => {
-	const dataGridKeys = columns;
 
 	// grid styles
 	const { isDark } = useThemeStore();
@@ -43,26 +39,6 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 	TuiGrid.setLanguage("ko");
 
 	const ref = createRef<Grid>();
-
-	// 처음에 띄울 데이터. 추후 API에서 받아올 것
-	const initialData = dummyAirplaneStatus;
-
-	// Column Setting
-	// API에서 받아온 값들의 키를 찾아서 한글화 해주고, 해당 설정에 따라 column값을 제작하는 모듈.
-	// TO_BE_CHECKED
-	// 1. 만약 새로운 열을 추가하거나 수정하는 것을 가능하게 하려면 최초에 받아온 값들의 키값이 required인지 무엇인지 등의 값들이 추가적으로 들어와야 함. 백엔드와 협의
-	const filteredColumns = () => {
-		const columns: DataGridKeyProps[] = [];
-		const dataKeys = Object.keys(initialData[0]);
-		// -7은 기본 값들에 추가적으로 붙는 ['rowKey', 'sortKey', 'uniqueKey', '_attributes', '_disabledPriority', 'rowSpanMap', '_relationListItemMap']값을 제외한 값임.
-		const filteredKeys = dataKeys.some((k) => k === "rowKey")
-			? dataKeys.slice(0, dataKeys.length - 7)
-			: dataKeys;
-		const matchedKeys = () =>
-			filteredKeys.map((fKey) => columns.push(dataGridKeys.find((gkey) => gkey.name === fKey)!));
-		matchedKeys();
-		return columns;
-	};
 
 	// width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
 	const [containerWidth, setContainerWidth] = useState(1100 + 10);
@@ -94,7 +70,7 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 				<>
 					<DataGridToolbar
 						addNewRow={appendRow}
-						refresh={() => ref.current?.getInstance().resetData(initialData)}
+						refresh={() => ref.current?.getInstance().readData(1)}
 						openTableSetting={() => setTableSettingOpen(true)}
 						openHeaderSetting={() => setHeaderSettingOpen(true)}
 					/>
@@ -121,7 +97,7 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 				setOpen={setCheckToSaveOpen}
 				title="바뀐 내용 저장"
 				onYes={() => console.log("저장")}
-				onNo={() => ref.current?.getInstance().resetData(initialData)}
+				onNo={() => ref.current?.getInstance().readData(1)}
 				question="바뀐 내용이 있네요. 저장하실?"
 			/>
 			<TableSettingModal
@@ -144,7 +120,7 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 			<HeaderSettingModal
 				open={headerSettingOpen}
 				setOpen={setHeaderSettingOpen}
-				headerData={filteredColumns()}
+				headerData={columns}
 				tableRef={ref}
 				frozenCount={frozenCount}
 				setFrozenCount={(value) => setFrozenCount(value)}
