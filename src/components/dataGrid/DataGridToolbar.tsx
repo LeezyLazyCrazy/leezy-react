@@ -15,6 +15,7 @@ interface DataGridToolBarProps {
 	onFilter?: () => void;
 	openTableSetting: () => void;
 	openHeaderSetting: () => void;
+	openSaveSetting: () => void;
 }
 
 /**
@@ -28,6 +29,7 @@ const DataGridToolbar = ({
 	onFilter,
 	openTableSetting,
 	openHeaderSetting,
+	openSaveSetting,
 }: DataGridToolBarProps) => {
 	const ToolBarOptions = [
 		{
@@ -90,7 +92,7 @@ const DataGridToolbar = ({
 					title: "저장",
 					key: "save",
 					icon: <SaveIcon fontSize="small" />,
-					onClick: () => null,
+					onClick: openSaveSetting,
 				},
 			],
 		},

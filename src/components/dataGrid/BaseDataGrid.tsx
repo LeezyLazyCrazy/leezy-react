@@ -73,6 +73,7 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 						refresh={() => ref.current?.getInstance().readData(1)}
 						openTableSetting={() => setTableSettingOpen(true)}
 						openHeaderSetting={() => setHeaderSettingOpen(true)}
+						openSaveSetting={() => setCheckToSaveOpen(true)}
 					/>
 				</>
 			)}
