@@ -83,7 +83,14 @@ yarn은 NPM 대신 사용할 node/자바스크립트 패키지 매니저입니�
 - ES7_React/Redux/React-native snippets: React 관련 신규 파일 생성 시 default로 사용해야 하는 코드를 자동으로 생성해주어 귀찮게 똑같은 코드를 입력하는 것을 방지해줌
 - Live Server: d2 Map Sample을 보시고자 하시는 분들에게 해당함.
 - Material Icon Theme: 디렉토리 트리에서 각 파일 확장명에 맞는 해당 언어/파일의 로고를 보여주어 보다 빨리 파일을 찾을 수 있음.
-
+- Auto Import: 파일명을 입력하면 자동으로 import가 된다.
+- path Intellisense: VScode를 사용중에 파일이나 이미지 등의 경로를 지정할때 자동으로 경로를 선택해서 지정할 수 있게 해주는 아주 편리한 익스텐션입니다.
+- Colorize:소스코드에서 코드가 아닌 실제 색상을 보여줌
+- Code Spell Checker: 코드 스펠링을 체크
+- Auto Rename Tag:HTML 이름을 바꾸어줄 때 클로징 태그 이름도 자동바꿈 해주는 간편한 툴
+- Stackoverflow Instant Search:선택한 문맥을 바로 VSC 상에서 Stackoverflow 검색할 수 있는 도구
+- vscode-styled-components:코드 하이라이트와 자동완성 기능을 지원
+- Mock Service Worker: 데이터 모킹 라이브러리
 <br>
 
 5. 소스코드 파일 실행
