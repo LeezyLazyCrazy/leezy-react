@@ -90,7 +90,7 @@ yarn은 NPM 대신 사용할 node/자바스크립트 패키지 매니저입니�
 - Auto Rename Tag:HTML 이름을 바꾸어줄 때 클로징 태그 이름도 자동바꿈 해주는 간편한 툴
 - Stackoverflow Instant Search:선택한 문맥을 바로 VSC 상에서 Stackoverflow 검색할 수 있는 도구
 - vscode-styled-components:코드 하이라이트와 자동완성 기능을 지원
-- Mock Service Worker: 데이터 모킹 라이브러리
+
 <br>
 
 5. 소스코드 파일 실행
