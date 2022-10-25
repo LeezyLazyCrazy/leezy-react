@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import BaseLayout from "../components/layout/BaseLayout";
 import LandingLayout from "../components/layout/LandingLayout";
-import { menu } from "../data/constants/menu";
+import { menu } from "../data/constants/menuFrame";
 import Login from "../pages/auth/Login";
 import Landing from "../pages/Landing";
 import Main from "../pages/Main";
