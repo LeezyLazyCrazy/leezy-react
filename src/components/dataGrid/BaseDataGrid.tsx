@@ -11,6 +11,7 @@ import "../../styles/dataGrid/index.css";
 import HeaderSettingModal from "./HeaderSettingModal";
 import { gridStyles } from "./dataGridStyle";
 import { OptColumn, OptHeader } from "../../types/tui-grid/options";
+import { API_URL } from "../../query";
 
 interface BaseDataGridProps {
 	tableName: string;
@@ -56,13 +57,15 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 		withCredentials: false,  
 		initialRequest: true,
 		api: {
-				readData: 	{ url: `/api/${tableName}`, method: 'GET' },
-				createData: { url: `/api/${tableName}`,	method: 'POST' },
-				updateData: { url: `/api/${tableName}`,	method: 'PUT' },
-				deleteData: { url: `/api/${tableName}`,	method: 'DELETE' },
-				modifyData: { url: `/api/${tableName}`,	method: 'POST' }
+				readData: 	{ url: `${API_URL}/api/${tableName}`, method: 'GET' },
+				createData: { url: `${API_URL}/api/${tableName}`,	method: 'POST' },
+				updateData: { url: `${API_URL}/api/${tableName}`,	method: 'PUT' },
+				deleteData: { url: `${API_URL}/api/${tableName}`,	method: 'DELETE' },
+				modifyData: { url: `${API_URL}/api/${tableName}`,	method: 'POST' }
 		}
 	}
+
+	console.log(dataSource);
 
 	return (
 		<div style={{ width: containerWidth }}>
