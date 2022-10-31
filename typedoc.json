@@ -1,7 +1,7 @@
 {
-    "name": "공군 상황도 시스템 Document",
+    "name": "Leezy React Document",
     "tsconfig": "tsconfig.json",
-    "entryPointStrategy": "Expand",
+    "entryPointStrategy": "expand",
     "plugin": [
         "typedoc-theme-hierarchy",
         "typedoc-plugin-mermaid"
@@ -10,9 +10,7 @@
     "emit": "both",
     "includeVersion": true,
     "entryPoints": [
-        [
-            "src"
-        ]
+        "src"
     ],
     "out": "docs"
 }

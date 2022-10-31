@@ -9,9 +9,17 @@
 
 <br>
 
+목차
+
+[1. 개발환경 세팅](#개발환경-세팅)
+
+[2. 디렉터리 구조](#디렉토리-구조)
+
+[3. 코딩 컨벤션](#코딩-컨벤션)
+
 ---
 
-## 개발환경세팅
+## 개발환경 세팅
 
 <br>
 
@@ -132,7 +140,7 @@ root 폴더에서 `package.json` 파일을 열어주세요. 그리고 다음과 
 
 ---
 
-## 디렉터리 구조
+## 디렉토리 구조
 
 React로 작성된 현 프로젝트는 일반적인 React 프로젝트의 디렉토리 구조와 유사합니다. 크게 보면 `public`, `src` 및 설정 파일들로 구성되어 있으며, 아래의 내용과 같이 정리됩니다.
 <br>
@@ -329,3 +337,12 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 - `coordConversion`의 경우 Database에서 받은 좌표 형식을 경위도 형식으로 뱉어줍니다.
 - `reorder`은 배열의 순서를 바꿀 때 사용합니다
 - `time`은 다양한 형식의 날짜시간관련 내용을 원하는 방식으로 바꿔 출력해주는 함수입니다.
+
+
+## 코딩 컨벤션
+
+1. 에어비앤비 스타일 가이드를 준수합니다.
+- [Airbnb JavaScript Style Guide](https://github.com/ParkSB/javascript-style-guide)
+- [Airbnb React/JSX Style Guide](https://github.com/apple77y/javascript/tree/master/react)
+2. 기존 소스에서 스타일 가이드를 위배한 것을 발견하면 말씀해 주세요.
+3. 스타일 가이드에서 예외를 둘 필요가 있으면 제안해 주세요.
