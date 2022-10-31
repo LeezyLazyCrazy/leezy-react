@@ -14,10 +14,12 @@ import { OptColumn, OptHeader } from "../../types/tui-grid/options";
 import { API_URL } from "../../query";
 import useMenuBarStore from "../../stores/useMenuBarStore";
 import useRightWidgetBarStore from "../../stores/useRightWidgetBarStore";
+import { ColumnOptions } from "../../types/tui-grid/store/column";
 
 interface BaseDataGridProps {
 	tableName: string;
 	columns: OptColumn[];
+	frozenColumn?: number;
 	header?: OptHeader;
 	showToolbar?: boolean;
 }
@@ -31,7 +33,7 @@ interface BaseDataGridProps {
  * @param {BaseDataGridProps} BaseDataGridProps
  * @returns {JSX.Element} React Component
  */
-const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDataGridProps) => {
+const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header, showToolbar = true }: BaseDataGridProps) => {
 
 	// grid styles
 	const { isDark } = useThemeStore();
@@ -48,7 +50,7 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 	const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
 	const [tableSettingOpen, setTableSettingOpen] = useState(false);
 	const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
-	const [frozenCount, setFrozenCount] = useState(1);
+	const [frozenCount, setFrozenCount] = useState(frozenColumn);
 
 	// 행 추가
 	const appendRow = () => {
@@ -101,7 +103,11 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 				data={dataSource}
 				header={header}
 				columns={columns}
+<<<<<<< HEAD
 				columnOptions={{ resizable: true, frozenCount }}
+=======
+				columnOptions={{resizable: true, frozenCount: frozenColumn, minWidth: 100}}
+>>>>>>> f93dbf5... Frozen Column 수정 기능
 				rowHeight={30}
 				bodyHeight={400}
 				heightResizable={true}
