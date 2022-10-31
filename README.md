@@ -78,11 +78,14 @@ yarn은 NPM 대신 사용할 node/자바스크립트 패키지 매니저입니�
 
 <br>
 
-4. VsCode Extension 설치
+4. VsCode Extension (오프라인) 설치
+- 오프라인 설치 방법
+  1. 좌측 하단 → 설정(톱니바퀴 아이콘) 클릭
+  2. Command Pallete... 클릭 (Ctrl + Shift + P)
+  3. 'Install from VSIX' 검색 후 클릭
+  4. 원하는 vsix 파일 (확장 프로그램 설치 파일) 선택 
 
-각종 VsCode Extension 파일을 다운받으신 후 **\*** 폴더에 붙여 넣으세요. 설치가 되었다면 Vscode를 켜시고 좌측 패널에서 큐빅 모양으로 생긴 아이콘(아마도 위에서부터 5번째에 위치)를 누르시면 INSTALLED에 해당 Extension이 설치되어 있을 것입니다.
-<br>
-본 외로 다음과 같은 Extension을 추가로 설치하실 수도 있습니다. 필요하시다면 폴더에 넣어주시면 됩니다.
+[ Extension 설명 ] 
 
 - colorize : 소스코드에서 CSS 등 색상을 선택하실 때 그 색상 자체를 소스코드 내에서 hex/rgba 코드가 아닌 실제 색상을 보여줌. 컬러피커가 열려 코드 내에서 색상을 자유롭게 변경할 수 있음.
 - atom one dark theme: vscode 테마 중 하나로, 기본 테마가 싫으시다면 실행
@@ -121,7 +124,7 @@ code .
 
 상기 명령어는 VsCode를 여는 명령어입니다.
 
-VsCode 좌측 맨 위 문서모양 아이콘을 클릭하여 디렉토리가 제대로 나타나는지 확인하세요. `AIRFORCE_MAP_FRONT`가 폴더 명이고 node_modules, public, src 등 폴더가 보여야 정상적으로 진입한 것입니다.
+VsCode 좌측 맨 위 문서모양 아이콘을 클릭하여 디렉토리가 제대로 나타나는지 확인하세요. node_modules, public, src 등 폴더가 보여야 정상적으로 진입한 것입니다.
 <br>
 이제 VsCode의 상단 메뉴바에서 Terminal을 클릭하시고 New Terminal을 클릭하세요. IDE 하단에 Terminal 패널이 열립니다. Terminal 패널에 다음과 같이 입력하세요.
 
