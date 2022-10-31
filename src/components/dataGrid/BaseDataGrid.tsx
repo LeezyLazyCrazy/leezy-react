@@ -1,7 +1,7 @@
 import Grid from "@toast-ui/react-grid";
 import TuiGrid from "tui-grid";
 import "tui-grid/dist/tui-grid.css";
-import { createRef, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 import useThemeStore from "../../stores/useThemeStore";
 import { theme } from "../../styles/theme";
 import DataGridToolbar from "./DataGridToolbar";
@@ -12,6 +12,8 @@ import HeaderSettingModal from "./HeaderSettingModal";
 import { gridStyles } from "./dataGridStyle";
 import { OptColumn, OptHeader } from "../../types/tui-grid/options";
 import { API_URL } from "../../query";
+import useMenuBarStore from "../../stores/useMenuBarStore";
+import useRightWidgetBarStore from "../../stores/useRightWidgetBarStore";
 
 interface BaseDataGridProps {
 	tableName: string;
@@ -53,6 +55,22 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 		ref.current?.getInstance().appendRow({});
 	};
 
+	// left Bar 가져오기
+	const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
+
+	// widget bar 가져오기
+	const { isBarOpen: isWidgetBarOpen } = useRightWidgetBarStore();
+
+	const innerWidth = window.innerWidth;
+
+	useEffect(() => {
+		const widgetWidth = isWidgetBarOpen ? 430 : 130;
+		const menubarWidth = isMenuBarOpen ? 210 : 100;
+
+		ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
+		
+	}, [isWidgetBarOpen, isMenuBarOpen]);
+
 	const dataSource = {
 		withCredentials: false,  
 		initialRequest: true,
@@ -64,8 +82,6 @@ const BaseDataGrid = ({ tableName, columns, header, showToolbar = true }: BaseDa
 				modifyData: { url: `${API_URL}/api/${tableName}`,	method: 'POST' }
 		}
 	}
-
-	console.log(dataSource);
 
 	return (
 		<div style={{ width: containerWidth }}>
