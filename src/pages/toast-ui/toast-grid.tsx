@@ -1,18 +1,14 @@
 import { Container } from "@mui/system";
-import { DataGridKeyProps } from "../../data/constants/dataGridKeys";
 import BaseDataGrid from "../../components/dataGrid/BaseDataGrid";
+import { OptColumn } from "../../types/tui-grid/options";
 
-const dataGridKeys: DataGridKeyProps[] = [
+const columns: OptColumn[] = [
 	{
 		name: "type",
 		header: "종류",
 		sortable: true,
 		editor: {
 			type: "text",
-		},
-		valditaion: {
-			required: true,
-			dataType: "string",
 		},
 	},
 	{
@@ -79,7 +75,7 @@ const PageToastGrid = () => {
 	return (
 		<>	
 			<Container >
-				<BaseDataGrid tableName="toast-grid" columns={dataGridKeys} />
+				<BaseDataGrid tableName="toast-grid" columns={columns} />
 			</Container>				
 		</>
 	);
