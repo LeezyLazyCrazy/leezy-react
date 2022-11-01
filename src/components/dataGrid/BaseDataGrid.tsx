@@ -14,7 +14,6 @@ import { OptColumn, OptHeader } from "../../types/tui-grid/options";
 import { API_URL } from "../../query";
 import useMenuBarStore from "../../stores/useMenuBarStore";
 import useRightWidgetBarStore from "../../stores/useRightWidgetBarStore";
-import { ColumnOptions } from "../../types/tui-grid/store/column";
 
 interface BaseDataGridProps {
 	tableName: string;
@@ -25,7 +24,7 @@ interface BaseDataGridProps {
 }
 
 /**
- * Naver Toast UI Tui Grid의 기본적인 구현체임.
+ * Toast UI Tui Grid의 기본적인 구현체임.
  *
  * 관련 라이브러리에 대해서는 다음을 참고 {@link https://ui.toast.com/tui-grid ToastUI Grid }
  *
@@ -33,8 +32,7 @@ interface BaseDataGridProps {
  * @param {BaseDataGridProps} BaseDataGridProps
  * @returns {JSX.Element} React Component
  */
-const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header, showToolbar = true }: BaseDataGridProps) => {
-
+const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header={ height: 60	}, showToolbar = true }: BaseDataGridProps) => {
 	// grid styles
 	const { isDark } = useThemeStore();
 	const { palette } = theme(isDark);
@@ -46,7 +44,7 @@ const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header, showToolbar 
 	const ref = createRef<Grid>();
 
 	// width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
-	const [containerWidth, setContainerWidth] = useState(1100 + 10);
+	//const [containerWidth, setContainerWidth] = useState(1100 + 10);
 	const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
 	const [tableSettingOpen, setTableSettingOpen] = useState(false);
 	const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
@@ -86,7 +84,7 @@ const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header, showToolbar 
 	}
 
 	return (
-		<div style={{ width: containerWidth }}>
+		<div style={{ width: "auto" }}>
 			{showToolbar && (
 				<>
 					<DataGridToolbar
@@ -103,19 +101,15 @@ const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header, showToolbar 
 				data={dataSource}
 				header={header}
 				columns={columns}
-<<<<<<< HEAD
-				columnOptions={{ resizable: true, frozenCount }}
-=======
-				columnOptions={{resizable: true, frozenCount: frozenColumn, minWidth: 100}}
->>>>>>> f93dbf5... Frozen Column 수정 기능
+				columnOptions={{ resizable: true, frozenCount: frozenColumn, minWidth: 100 }}
 				rowHeight={30}
-				bodyHeight={400}
+				bodyHeight={600}
 				heightResizable={true}
-				width={1100}
+				width={"auto"}
 				rowHeaders={["rowNum", "checkbox"]}
 				draggable={true}
 				scrollX={true}
-				scrollY={true}
+				scrollY={false}
 				oneTimeBindingProps={['data', 'columns']}
 			/>
 			<YesNoSelectionModal
@@ -130,7 +124,7 @@ const BaseDataGrid = ({ tableName, columns, frozenColumn=1, header, showToolbar 
 				open={tableSettingOpen}
 				setOpen={setTableSettingOpen}
 				setTableWidth={(value) => {
-					setContainerWidth(value + 10);
+					//setContainerWidth(value + 10);
 					ref.current?.getInstance().setWidth(value);
 				}}
 				setTableHeight={(value) => ref.current?.getInstance().setHeight(value)}
