@@ -15,7 +15,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@toast-ui/react-grid": "^4.21.2",
+    "@toast-ui/react-grid": "4.21.2",
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.8",
     "@types/ol": "6.5.3",

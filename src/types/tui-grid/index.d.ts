@@ -1,4 +1,4 @@
-// Type definitions for TOAST UI Grid v4.21.2
+// Type definitions for TOAST UI Grid v4.21.6
 // TypeScript Version: 3.9.5
 
 import { CellValue, RowKey, Row, SortState, RowSpan, InvalidRow } from './store/data';
@@ -284,6 +284,8 @@ declare namespace tui {
     public getColumnClassName(columnName: string): string[];
 
     public setRow(rowKey: RowKey, row: OptRow): void;
+
+    public setRows(rows: OptRow[]): void;
 
     public moveRow(rowKey: RowKey, targetIndex: number, options: OptMoveRow): void;
 
