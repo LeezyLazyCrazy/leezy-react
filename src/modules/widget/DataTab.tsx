@@ -1,6 +1,6 @@
 import { Divider, styled } from "@mui/material";
-import WidgetTitleBox from "../box/textBox/WidgetTitleBox";
-import { ProgressTable } from "../dataGrid/simpleTable/SimpleTableExamples";
+import WidgetTitleBox from "../../components/box/textBox/WidgetTitleBox";
+import { ProgressTable } from "../../components/dataGrid/simpleTable/SimpleTableExamples";
 
 /**
  * 화면 맨 오른쪽의 아이콘으로 구성된 Vertical Tab 내의 테이블을 쌀 Wrapper 형태의 Div

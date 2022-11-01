@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
 // matchPath, useLocation
 import { ToastContainer } from "react-toastify";
+import WidgetBar from "../../modules/widget/WidgetBar";
 import useThemeStore from "../../stores/useThemeStore";
 import BreadCrumbBar from "../nav/BreadCrumbBar";
 import LeftMenuBar from "../nav/LeftMenuBar";
 import TopNav from "../nav/TopNav";
-import WidgetBar from "../widget/WidgetBar";
 
 /**
  * 기본 전체 화면 레이아웃.

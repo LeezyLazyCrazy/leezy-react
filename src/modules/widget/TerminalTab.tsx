@@ -1,7 +1,7 @@
 import { Divider, styled } from "@mui/material";
-import StatusBox from "../../modules/widget/StatusBox";
-import DefaultBox from "../box/DefaultBox";
-import WidgetTitleBox from "../box/textBox/WidgetTitleBox";
+import DefaultBox from "../../components/box/DefaultBox";
+import WidgetTitleBox from "../../components/box/textBox/WidgetTitleBox";
+import StatusBox from "./StatusBox";
 
 // Widget에서 현재 전체 상황을 보여주는 블록
 /**
