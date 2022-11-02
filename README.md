@@ -31,7 +31,7 @@
 
 1. 필수
 
-- 소스코드(폴더명 Airforce-map-front)
+- 소스코드
 - node.js 설치파일
 - yarn 설치파일
 - VsCode(Visual Studio Code) 설치파일
