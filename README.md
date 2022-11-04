@@ -31,11 +31,12 @@
 
 1. 필수
 
+- git (v.2.38.1+)
 - 소스코드
-- node.js 설치파일
-- yarn 설치파일
+- node.js (v16.17.0+) 설치파일
+- yarn (v1.22.19+) 설치파일
 - VsCode(Visual Studio Code) 설치파일
-- VsCode Extensions (EsLint, Prettier)
+- VsCode Extensions (EsLint, Prettier 등)
 - Chrome 브라우저
 
 2. 옵션
@@ -44,7 +45,8 @@
 - Chrome 브라우저 확장 프로그램 (React Developer Tools)
 
 <br>
-<br>
+
+### 설치 방법
 
 1. node.js 설치
 
@@ -85,7 +87,9 @@ yarn은 NPM 대신 사용할 node/자바스크립트 패키지 매니저입니�
   3. 'Install from VSIX' 검색 후 클릭
   4. 원하는 vsix 파일 (확장 프로그램 설치 파일) 선택 
 
-[ Extension 설명 ] 
+<br>
+
+### Extension 설명
 
 - colorize : 소스코드에서 CSS 등 색상을 선택하실 때 그 색상 자체를 소스코드 내에서 hex/rgba 코드가 아닌 실제 색상을 보여줌. 컬러피커가 열려 코드 내에서 색상을 자유롭게 변경할 수 있음.
 - atom one dark theme: vscode 테마 중 하나로, 기본 테마가 싫으시다면 실행

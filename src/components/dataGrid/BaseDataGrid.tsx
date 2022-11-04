@@ -1,19 +1,20 @@
-import Grid from '@toast-ui/react-grid';
-import TuiGrid from 'tui-grid';
-import 'tui-grid/dist/tui-grid.css';
-import { OptColumn, OptHeader } from 'tui-grid/types/options';
-import { createRef, useEffect, useState } from 'react';
-import useThemeStore from '../../stores/useThemeStore';
-import { theme } from '../../styles/theme';
-import DataGridToolbar from './DataGridToolbar';
-import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
-import TableSettingModal from './TableSettingModal';
-import '../../styles/dataGrid/index.css';
-import HeaderSettingModal from './HeaderSettingModal';
-import { gridStyles } from './dataGridStyle';
-import { API_URL } from '../../query';
-import useMenuBarStore from '../../stores/useMenuBarStore';
-import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
+import Grid from "@toast-ui/react-grid";
+import TuiGrid from "tui-grid";
+import "tui-grid/dist/tui-grid.css";
+import { OptColumn, OptHeader } from "tui-grid/types/options";
+import "../../styles/dataGrid/index.css";
+import { createRef, useEffect, useState } from "react";
+import useThemeStore from "../../stores/useThemeStore";
+import { theme } from "../../styles/theme";
+import DataGridToolbar from "./DataGridToolbar";
+import YesNoSelectionModal from "../../modules/modal/YesNoSelectionModal";
+import TableSettingModal from "./TableSettingModal";
+import HeaderSettingModal from "./HeaderSettingModal";
+import { gridStyles } from "./dataGridStyle";
+import { API_URL } from "../../query";
+import useMenuBarStore from "../../stores/useMenuBarStore";
+import useRightWidgetBarStore from "../../stores/useRightWidgetBarStore";
+import { DataSource } from "../../types/tui-grid/dataSource";
 
 interface BaseDataGridProps {
   tableName: string;
@@ -76,81 +77,82 @@ const BaseDataGrid = ({
     ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
   }, [isWidgetBarOpen, isMenuBarOpen]);
 
-  const dataSource = {
-    withCredentials: false,
-    initialRequest: true,
-    api: {
-      readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
-      createData: { url: `${API_URL}/api/${tableName}`, method: 'POST' },
-      updateData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
-      deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
-      modifyData: { url: `${API_URL}/api/${tableName}`, method: 'POST' },
-    },
-  };
+	const dataSource : DataSource = {
+		withCredentials: false,  
+		initialRequest: true,
+		contentType: 'application/json',
+		api: {
+				readData: 	{ url: `${API_URL}/api/${tableName}`, method: 'GET' },
+				modifyData: { url: `${API_URL}/api/${tableName}`,	method: 'PUT' }
+		}
+	}
 
-  return (
-    <div style={{ width: 'auto' }}>
-      {showToolbar && (
-        <>
-          <DataGridToolbar
-            addNewRow={appendRow}
-            refresh={() => ref.current?.getInstance().readData(1)}
-            openTableSetting={() => setTableSettingOpen(true)}
-            openHeaderSetting={() => setHeaderSettingOpen(true)}
-            openSaveSetting={() => setCheckToSaveOpen(true)}
-          />
-        </>
-      )}
-      <Grid
-        ref={ref}
-        data={dataSource}
-        header={header}
-        columns={columns}
-        columnOptions={{ resizable: true, frozenCount: frozenColumn, minWidth: 100 }}
-        rowHeight={30}
-        bodyHeight={600}
-        width={'auto'}
-        rowHeaders={['rowNum', 'checkbox']}
-        draggable={true}
-        scrollX={true}
-        scrollY={false}
-        oneTimeBindingProps={['data', 'columns']}
-      />
-      <YesNoSelectionModal
-        open={checkToSaveOpen}
-        setOpen={setCheckToSaveOpen}
-        title="바뀐 내용 저장"
-        onYes={() => console.log('저장')}
-        onNo={() => ref.current?.getInstance().readData(1)}
-        question="바뀐 내용이 있네요. 저장하실?"
-      />
-      <TableSettingModal
-        open={tableSettingOpen}
-        setOpen={setTableSettingOpen}
-        setTableWidth={(value) => {
-          //setContainerWidth(value + 10);
-          ref.current?.getInstance().setWidth(value);
-        }}
-        setTableHeight={(value) => ref.current?.getInstance().setHeight(value)}
-        // setTableFontSize={(value) => {
-        // 	initialData.map((_, i) => {
-        // 		// fontSize를 className으로 밖에 접근할 수 밖에 없는데, 제시된 함수가 기존 className에 추가하는 형식이라 우선적으로 이렇게 조치함.
-        // 		ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value - 1}`);
-        // 		ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value + 1}`);
-        // 		ref.current?.getInstance().addRowClassName(i, `tui-grid-container-${value}`);
-        // 	});
-        // }}
-      />
-      <HeaderSettingModal
-        open={headerSettingOpen}
-        setOpen={setHeaderSettingOpen}
-        headerData={columns}
-        tableRef={ref}
-        frozenCount={frozenCount}
-        setFrozenCount={(value) => setFrozenCount(value)}
-      />
-    </div>
-  );
+	return (
+		<div style={{ width: "auto" }}>
+			{showToolbar && (
+				<>
+					<DataGridToolbar
+						addNewRow={appendRow}
+						refresh={() => ref.current?.getInstance().readData(1)}
+						openTableSetting={() => setTableSettingOpen(true)}
+						openHeaderSetting={() => setHeaderSettingOpen(true)}
+						openSaveSetting={() => setCheckToSaveOpen(true)}
+					/>
+				</>
+			)}
+			<Grid
+				ref={ref}
+				data={dataSource}
+				header={header}
+				columns={columns}
+				columnOptions={{ resizable: true, frozenCount: frozenColumn, minWidth: 100 }}
+				rowHeight={30}
+				bodyHeight={600}
+				heightResizable={true}
+				width={"auto"}
+				rowHeaders={["rowNum", "checkbox"]}
+				draggable={true}
+				scrollX={true}
+				scrollY={false}
+				oneTimeBindingProps={['data', 'columns']}
+			/>
+			<YesNoSelectionModal
+				open={checkToSaveOpen}
+				setOpen={setCheckToSaveOpen}
+				title="바뀐 내용 저장"
+				onYes={() => {
+					ref.current?.getInstance().request('modifyData');
+				}}
+				onNo={() => ref.current?.getInstance().readData(1)}
+				question="바뀐 내용이 있네요. 저장하실?"
+			/>
+			<TableSettingModal
+				open={tableSettingOpen}
+				setOpen={setTableSettingOpen}
+				setTableWidth={(value) => {
+					//setContainerWidth(value + 10);
+					ref.current?.getInstance().setWidth(value);
+				}}
+				setTableHeight={(value) => ref.current?.getInstance().setHeight(value)}
+				// setTableFontSize={(value) => {
+				// 	initialData.map((_, i) => {
+				// 		// fontSize를 className으로 밖에 접근할 수 밖에 없는데, 제시된 함수가 기존 className에 추가하는 형식이라 우선적으로 이렇게 조치함.
+				// 		ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value - 1}`);
+				// 		ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value + 1}`);
+				// 		ref.current?.getInstance().addRowClassName(i, `tui-grid-container-${value}`);
+				// 	});
+				// }}
+			/>
+			<HeaderSettingModal
+				open={headerSettingOpen}
+				setOpen={setHeaderSettingOpen}
+				headerData={columns}
+				tableRef={ref}
+				frozenCount={frozenCount}
+				setFrozenCount={(value) => setFrozenCount(value)}
+			/>
+		</div>
+	);
 };
 
 export default BaseDataGrid;
