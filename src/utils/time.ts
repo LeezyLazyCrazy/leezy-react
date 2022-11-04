@@ -1,5 +1,5 @@
-import dayjs, { ConfigType, ManipulateType } from "dayjs";
-import "dayjs/locale/ko";
+import dayjs, { ConfigType, ManipulateType } from 'dayjs';
+import 'dayjs/locale/ko';
 
 /**
  * 데이트 변환
@@ -7,7 +7,7 @@ import "dayjs/locale/ko";
  * @returns "YYYY년 MM월 DD일"
  */
 export const dateOnlyFormat = (date: ConfigType) => {
-	return dayjs(date).format("YYYY년 MM월 DD일");
+  return dayjs(date).format('YYYY년 MM월 DD일');
 };
 
 /**
@@ -16,7 +16,7 @@ export const dateOnlyFormat = (date: ConfigType) => {
  * @returns "YYYY-MM-DD"
  */
 export const dateOnlyDashFormat = (date: ConfigType) => {
-	return dayjs(date).format("YYYY-MM-DD");
+  return dayjs(date).format('YYYY-MM-DD');
 };
 
 /**
@@ -25,7 +25,7 @@ export const dateOnlyDashFormat = (date: ConfigType) => {
  * @returns "YYYY년 MM월 DD일 (ddd) A h시 mm분"
  */
 export const fullDateFormat = (date: ConfigType) => {
-	return dayjs(date).format("YYYY년 MM월 DD일 (ddd) A h시 mm분");
+  return dayjs(date).format('YYYY년 MM월 DD일 (ddd) A h시 mm분');
 };
 
 /**
@@ -34,7 +34,7 @@ export const fullDateFormat = (date: ConfigType) => {
  * @returns "YYYY-MM-DD A h:mm"
  */
 export const fullDateDashFormat = (date: ConfigType) => {
-	return dayjs(date).format("YYYY-MM-DD A h:mm");
+  return dayjs(date).format('YYYY-MM-DD A h:mm');
 };
 
 /**
@@ -43,7 +43,7 @@ export const fullDateDashFormat = (date: ConfigType) => {
  * @returns "YYYYMMDD"
  */
 export const apiDateFormat = (date: ConfigType) => {
-	return dayjs(date).format("YYYYMMDD");
+  return dayjs(date).format('YYYYMMDD');
 };
 
 /**
@@ -52,7 +52,7 @@ export const apiDateFormat = (date: ConfigType) => {
  * @returns {dayjsObject} dayjs 전용 날짜 오브젝트가 리턴됨
  */
 export const subtractDate = (date: ConfigType, number: number, dateType: ManipulateType) => {
-	return dayjs(date).subtract(number, dateType);
+  return dayjs(date).subtract(number, dateType);
 };
 
 /**
@@ -60,8 +60,8 @@ export const subtractDate = (date: ConfigType, number: number, dateType: Manipul
  * @param {ConfigType} ConfigType 각종 Data 표기 형식
  * @returns {dayjsObject} dayjs 전용 날짜 오브젝트가 리턴됨
  */
-export const addDate = (date: ConfigType, number: number, type: ManipulateType = "month") => {
-	return dayjs(date).add(number, type);
+export const addDate = (date: ConfigType, number: number, type: ManipulateType = 'month') => {
+  return dayjs(date).add(number, type);
 };
 
 /**
@@ -70,8 +70,8 @@ export const addDate = (date: ConfigType, number: number, type: ManipulateType =
  * @returns {boolean} 맞다면 오늘 이전이다
  */
 export const isBeforeToday = (date: ConfigType) => {
-	const today = new Date();
-	return dayjs(date).isBefore(today);
+  const today = new Date();
+  return dayjs(date).isBefore(today);
 };
 
 /**
@@ -80,7 +80,7 @@ export const isBeforeToday = (date: ConfigType) => {
  * @returns {number} 몇일 남았다고 숫자 알려줌
  */
 export const leftDateFromToday = (date: ConfigType) => {
-	const today = dayjs(new Date());
-	const targetDate = dayjs(date);
-	return targetDate.diff(today, "day");
+  const today = dayjs(new Date());
+  const targetDate = dayjs(date);
+  return targetDate.diff(today, 'day');
 };

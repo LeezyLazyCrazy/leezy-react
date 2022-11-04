@@ -4,24 +4,25 @@
 
 // import { ReactElement } from "react";
 // import Main from "../../pages/Main";
-import PageComponents from "../../pages/mui/components";
-import PageIcon from "../../pages/mui/icons";
-import PageToastGrid from "../../pages/toast-ui/toast-grid";
-import PageReactQuery from "../../pages/react-query/react-query";
-import PageZustand from "../../pages/zustand/zustand";
-import PageFramerAnimation from "../../pages/framer/framer-animation";
-import PageTab from "../../pages/mui/smart-tab";
-import PageMuiGrid from "../../pages/toast-ui/mui-table";
-import PageMuiSimple from "../../pages/toast-ui/mui-simple";
-import PageMuiGrid2 from "../../pages/toast-ui/mui-grid2";
+
+import PageComponents from '../../pages/mui/components';
+import PageIcon from '../../pages/mui/icons';
+import PageToastGrid from '../../pages/toast-ui/toast-grid';
+import PageReactQuery from '../../pages/react-query/react-query';
+import PageZustand from '../../pages/zustand/zustand';
+import PageFramerAnimation from '../../pages/framer/framer-animation';
+import PageTab from '../../pages/mui/smart-tab';
+import PageMuiGrid from '../../pages/toast-ui/mui-table';
+import PageMuiSimple from '../../pages/toast-ui/mui-simple';
+import PageMuiGrid2 from '../../pages/toast-ui/mui-grid2';
 
 export interface MenuProps {
-	id: string;
-	name: string;
-	parentUrl: string;
-	type: "dir" | "page";
-	element?: any;
-	subMenu?: MenuProps[];
+  id: string;
+  name: string;
+  parentUrl: string;
+  type: 'dir' | 'page';
+  element?: any;
+  subMenu?: MenuProps[];
 }
 
 /**
@@ -29,145 +30,146 @@ export interface MenuProps {
  */
 
 export const menu: MenuProps[] = [
-	{
-		name: "Material Design",
-		id: "mui",
-		parentUrl: "",
-		type: "dir",
-		subMenu: [
-			{
-				id: "icons",
-				name: "Material Icon",
-				type: "page",
-				parentUrl: "mui",
-				element: PageIcon
-			},
-			{
-				id: "components",
-				name: "Components",
-				type: "page",
-				parentUrl: "mui",
-				element: PageComponents
-			},
-						{
-				id: "smart-tab",
-				name: "Tabs",
-				type: "page",
-				parentUrl: "smart-tab",
-				element: PageTab
-			},
-		],
-	},
-	{
-		name: "Toast UI",
-		id: "toast-ui",
-		type: "dir",
-		parentUrl: "",
-		subMenu: [
-			{
-				id: "toast-grid",
-				name: "Toast Grid",
-				type: "page",
-				parentUrl: "toast-ui",
-				element: PageToastGrid
-			},
-			{
-				id: "mui-grid",
-				name: "Mui Grid",
-				type: "page",
-				parentUrl: "toast-ui",
-				element: PageMuiGrid
-			},
-						{
-				id: "mui-grid2",
-				name: "Mui Grid2",
-				type: "page",
-				parentUrl: "toast-ui",
-				element: PageMuiGrid2
-			},
-			{
-				id: "mui-simple",
-				name: "Mui Simple",
-				type: "page",
-				parentUrl: "toast-ui",
-				element: PageMuiSimple
-			},
-		],
-	},
-	{
-		name: "React-query",
-		id: "react-query",
-		type: "dir",
-		parentUrl: "",
-		subMenu: [
-			{
-				id: "react-query",
-				name: "React-query",
-				type: "page",
-				parentUrl: "react-query",
-				element: PageReactQuery
-			},
-		],
-	},
-	{
-		name: "Zustand",
-		id: "zustand",
-		type: "dir",
-		parentUrl: "",
-		subMenu: [
-			{
-				id: "zustand",
-				name: "Zustand",
-				type: "page",
-				parentUrl: "zustand",
-				element: PageZustand
-			},
-		],
-	},
-	{
-		name: "Framer animation",
-		id: "framer",
-		type: "dir",
-		parentUrl: "",
-		subMenu: [
-			{
-				id: "framer-animation",
-				name: "Framer animation",
-				type: "page",
-				parentUrl: "framer animation",
-				element: PageFramerAnimation
-			},
-		],
-	},
+  //Example Page
+  {
+    name: 'Material Design',
+    id: 'mui',
+    parentUrl: '',
+    type: 'dir',
+    subMenu: [
+      {
+        id: 'icons',
+        name: 'Material Icon',
+        type: 'page',
+        parentUrl: 'mui',
+        element: PageIcon,
+      },
+      {
+        id: 'components',
+        name: 'Components',
+        type: 'page',
+        parentUrl: 'mui',
+        element: PageComponents,
+      },
+      {
+        id: 'smart-tab',
+        name: 'Tabs',
+        type: 'page',
+        parentUrl: 'smart-tab',
+        element: PageTab,
+      },
+    ],
+  },
+  {
+    name: 'Toast UI',
+    id: 'toast-ui',
+    type: 'dir',
+    parentUrl: '',
+    subMenu: [
+      {
+        id: 'toast-grid',
+        name: 'Toast Grid',
+        type: 'page',
+        parentUrl: 'toast-ui',
+        element: PageToastGrid,
+      },
+      {
+        id: 'mui-grid',
+        name: 'Mui Grid',
+        type: 'page',
+        parentUrl: 'toast-ui',
+        element: PageMuiGrid,
+      },
+      {
+        id: 'mui-grid2',
+        name: 'Mui Grid2',
+        type: 'page',
+        parentUrl: 'toast-ui',
+        element: PageMuiGrid2,
+      },
+      {
+        id: 'mui-simple',
+        name: 'Mui Simple',
+        type: 'page',
+        parentUrl: 'toast-ui',
+        element: PageMuiSimple,
+      },
+    ],
+  },
+  {
+    name: 'React-query',
+    id: 'react-query',
+    type: 'dir',
+    parentUrl: '',
+    subMenu: [
+      {
+        id: 'react-query',
+        name: 'React-query',
+        type: 'page',
+        parentUrl: 'react-query',
+        element: PageReactQuery,
+      },
+    ],
+  },
+  {
+    name: 'Zustand',
+    id: 'zustand',
+    type: 'dir',
+    parentUrl: '',
+    subMenu: [
+      {
+        id: 'zustand',
+        name: 'Zustand',
+        type: 'page',
+        parentUrl: 'zustand',
+        element: PageZustand,
+      },
+    ],
+  },
+  {
+    name: 'Framer animation',
+    id: 'framer',
+    type: 'dir',
+    parentUrl: '',
+    subMenu: [
+      {
+        id: 'framer-animation',
+        name: 'Framer animation',
+        type: 'page',
+        parentUrl: 'framer animation',
+        element: PageFramerAnimation,
+      },
+    ],
+  },
 ];
 
 // 2depth 까지 이름 flatten시킴.
 // breadCrumb, 메뉴의 한국어명 찾기 등에 사용
 export const flattenedMenu = () => {
-	const result: { path: string; korean: string }[] = [];
+  const result: { path: string; korean: string }[] = [];
 
-	menu.map((m) => {
-		result.push({
-			path: m.id,
-			korean: m.name,
-		});
-		if (m.subMenu !== undefined) {
-			m.subMenu.map((sub) => {
-				result.push({
-					path: sub.id,
-					korean: sub.name,
-				});
-				if (sub.subMenu !== undefined) {
-					sub.subMenu.map((subsub) => {
-						result.push({
-							path: subsub.id,
-							korean: sub.name,
-						});
-					});
-				}
-			});
-		}
-	});
+  menu.map((m) => {
+    result.push({
+      path: m.id,
+      korean: m.name,
+    });
+    if (m.subMenu !== undefined) {
+      m.subMenu.map((sub) => {
+        result.push({
+          path: sub.id,
+          korean: sub.name,
+        });
+        if (sub.subMenu !== undefined) {
+          sub.subMenu.map((subSub) => {
+            result.push({
+              path: subSub.id,
+              korean: sub.name,
+            });
+          });
+        }
+      });
+    }
+  });
 
-	return result;
+  return result;
 };

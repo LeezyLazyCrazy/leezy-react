@@ -1,10 +1,10 @@
-import { Box } from "@mui/material";
-import { ReactNode } from "react";
+import { Box } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface TabPanelProps {
-	children?: ReactNode;
-	index: number;
-	value: number;
+  children?: ReactNode;
+  index: number;
+  value: number;
 }
 
 /**
@@ -14,19 +14,19 @@ interface TabPanelProps {
  */
 
 const TabPanel = (props: TabPanelProps) => {
-	const { children, value, index, ...other } = props;
+  const { children, value, index, ...other } = props;
 
-	return (
-		<div
-			role="tabpanel"
-			hidden={value !== index}
-			id={`tabpanel-${index}`}
-			aria-labelledby={`tab-${index}`}
-			{...other}
-		>
-			{value === index && <Box>{children}</Box>}
-		</div>
-	);
+  return (
+    <div
+      role='tabpanel'
+      hidden={value !== index}
+      id={`tabpanel-${index}`}
+      aria-labelledby={`tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box>{children}</Box>}
+    </div>
+  );
 };
 
 export default TabPanel;

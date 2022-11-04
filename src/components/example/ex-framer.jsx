@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import styles from "./ex-style.module.css";
+import { useState } from 'react';
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import styles from './ex-style.module.css';
 
 export default function App() {
   return (
     <AnimateSharedLayout>
       <motion.table layout initial={{ borderRadius: 25 }} className={styles.table}>
-        {items.map(item => (
+        {items.map((item) => (
           <Item key={item} />
         ))}
       </motion.table>
@@ -29,12 +29,7 @@ function Item() {
 
 function Content() {
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <motion.div layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <div className={styles.row} />
       <div className={styles.row} />
       <div className={styles.row} />

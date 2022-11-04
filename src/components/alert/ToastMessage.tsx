@@ -1,15 +1,15 @@
-import { Typography } from "@mui/material";
-import { toast } from "react-toastify";
+import { Typography } from '@mui/material';
+import { toast } from 'react-toastify';
 
 interface ToastMessageProps {
-	title: string;
-	message: string;
+  title: string;
+  message: string;
 }
 
 interface ToastShowProps {
-	title: string;
-	message: string;
-	type: "info" | "success" | "warning" | "error";
+  title: string;
+  message: string;
+  type: 'info' | 'success' | 'warning' | 'error';
 }
 /**
  * Toastify 메시지 커스텀 조작 블록. 스타일링을 위하여 사용함
@@ -17,16 +17,16 @@ interface ToastShowProps {
  * @returns JSX.Element(div)
  */
 export const ToastMessage = ({ title, message }: ToastMessageProps) => {
-	return (
-		<div>
-			<Typography variant="body1" sx={{ fontWeight: 600 }} gutterBottom>
-				{title}
-			</Typography>
-			<Typography variant="body2" sx={{ lineHeight: 1.5 }}>
-				{message}
-			</Typography>
-		</div>
-	);
+  return (
+    <div>
+      <Typography variant='body1' sx={{ fontWeight: 600 }} gutterBottom>
+        {title}
+      </Typography>
+      <Typography variant='body2' sx={{ lineHeight: 1.5 }}>
+        {message}
+      </Typography>
+    </div>
+  );
 };
 
 /**
@@ -35,7 +35,7 @@ export const ToastMessage = ({ title, message }: ToastMessageProps) => {
  * @returns toast
  */
 export const toastShow = ({ title, message, type }: ToastShowProps) => {
-	return toast(<ToastMessage title={title} message={message} />, {
-		type,
-	});
+  return toast(<ToastMessage title={title} message={message} />, {
+    type,
+  });
 };

@@ -1,11 +1,11 @@
-import { styled, Typography } from "@mui/material";
-import { ReactNode } from "react";
-import FiberManualRecordOutlinedIcon from "@mui/icons-material/FiberManualRecordOutlined";
+import { styled, Typography } from '@mui/material';
+import { ReactNode } from 'react';
+import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 
 interface ReportStyleTextBoxProps {
-	title: string;
-	children: ReactNode;
-	marginBottom?: number;
+  title: string;
+  children: ReactNode;
+  marginBottom?: number;
 }
 
 /**
@@ -16,29 +16,29 @@ interface ReportStyleTextBoxProps {
  * @returns {JSX.Element} React Component
  */
 const ReportStyleTextBox = ({ title, children, marginBottom = 0 }: ReportStyleTextBoxProps) => {
-	return (
-		<Root style={{ marginBottom }}>
-			<TitleWrapper>
-				<FiberManualRecordOutlinedIcon fontSize="small" sx={{ opacity: 0.5 }} />
-				<Typography sx={{ pl: 1, pr: 2, fontWeight: 600 }} variant="body1">
-					{title}
-				</Typography>
-			</TitleWrapper>
-			<div>{children}</div>
-		</Root>
-	);
+  return (
+    <Root style={{ marginBottom }}>
+      <TitleWrapper>
+        <FiberManualRecordOutlinedIcon fontSize='small' sx={{ opacity: 0.5 }} />
+        <Typography sx={{ pl: 1, pr: 2, fontWeight: 600 }} variant='body1'>
+          {title}
+        </Typography>
+      </TitleWrapper>
+      <div>{children}</div>
+    </Root>
+  );
 };
 
 export default ReportStyleTextBox;
 
-const Root = styled("div")(() => ({
-	display: "flex",
-	alignItems: "center",
-	width: "100%",
+const Root = styled('div')(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  width: '100%',
 }));
 
-const TitleWrapper = styled("div")(() => ({
-	display: "flex",
-	alignItems: "center",
-	minWidth: "15%",
+const TitleWrapper = styled('div')(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  minWidth: '15%',
 }));

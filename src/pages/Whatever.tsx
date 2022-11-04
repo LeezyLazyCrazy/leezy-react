@@ -1,9 +1,5 @@
 const Whatever = () => {
-	return (
-		<div>
-			Whatever
-		</div>
-	);
+  return <div>Whatever</div>;
 };
 
 export default Whatever;

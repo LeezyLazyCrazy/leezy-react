@@ -1,12 +1,12 @@
-import { Divider, styled, Typography } from "@mui/material";
+import { Divider, styled, Typography } from '@mui/material';
 
 /**
  * BaseBlockTitleBox 컴포넌트의 인터페이스
  */
 
 interface BaseBlockTitleBoxProps {
-	title: string;
-	subtitle?: string;
+  title: string;
+  subtitle?: string;
 }
 
 // 항목들의 소제목 및 부제 등을 적는 박스
@@ -17,22 +17,22 @@ interface BaseBlockTitleBoxProps {
  */
 
 const BaseBlockTitleBox = ({ title, subtitle }: BaseBlockTitleBoxProps) => {
-	return (
-		<Root>
-			<Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-				{title}
-			</Typography>
-			<Typography variant="body2" gutterBottom>
-				{subtitle}
-			</Typography>
-			<Divider />
-		</Root>
-	);
+  return (
+    <Root>
+      <Typography variant='h6' gutterBottom sx={{ fontWeight: 600 }}>
+        {title}
+      </Typography>
+      <Typography variant='body2' gutterBottom>
+        {subtitle}
+      </Typography>
+      <Divider />
+    </Root>
+  );
 };
 
 export default BaseBlockTitleBox;
 
-const Root = styled("div")(() => ({
-	marginTop: "3%",
-	marginBottom: "4%",
+const Root = styled('div')(() => ({
+  marginTop: '3%',
+  marginBottom: '4%',
 }));

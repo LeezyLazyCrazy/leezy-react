@@ -1,4 +1,32 @@
 {
-	"liveServer.settings.port": 5501,
-	"editor.tabSize": 2
+  "liveServer.settings.port": 5501,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "cSpell.words": [
+    "afcss",
+    "airforce",
+    "btns",
+    "datagrid",
+    "datepicker",
+    "fontsource",
+    "Formik",
+    "hahmlet",
+    "isshrinked",
+    "linebreak",
+    "lside",
+    "noto",
+    "Nulla",
+    "Parens",
+    "Rcode",
+    "Rowkey",
+    "rside",
+    "splited",
+    "toastify",
+    "verylow",
+    "webcomponents",
+    "zustand"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

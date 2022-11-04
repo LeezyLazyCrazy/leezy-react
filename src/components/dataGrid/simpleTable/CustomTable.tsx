@@ -1,8 +1,8 @@
-import { Paper, Table, TableContainer } from "@mui/material";
-import { ReactNode } from "react";
+import { Paper, Table, TableContainer } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface SimpleTableProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 
 /**
@@ -11,22 +11,22 @@ interface SimpleTableProps {
  */
 
 const CustomTable = ({ children }: SimpleTableProps) => {
-	return (
-		<TableContainer
-			component={Paper}
-			elevation={0}
-			sx={{
-				border: (theme) => `1px solid ${theme.palette.divider}`,
-				borderBottomWidth: 0,
-				background: (theme) => theme.palette.table,
-				marginBottom: 2,
-			}}
-		>
-			<Table size="small" aria-label="simple table">
-				{children}
-			</Table>
-		</TableContainer>
-	);
+  return (
+    <TableContainer
+      component={Paper}
+      elevation={0}
+      sx={{
+        border: (theme) => `1px solid ${theme.palette.divider}`,
+        borderBottomWidth: 0,
+        background: (theme) => theme.palette.table,
+        marginBottom: 2,
+      }}
+    >
+      <Table size='small' aria-label='simple table'>
+        {children}
+      </Table>
+    </TableContainer>
+  );
 };
 
 export default CustomTable;

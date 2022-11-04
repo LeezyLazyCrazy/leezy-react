@@ -1,13 +1,11 @@
-import TabPage from "../../components/tab/TabPage";
-
+import TabPage from '../../components/tab/TabPage';
 
 const PageTab = () => {
-    return (
-        <>
-        <TabPage />
-        </>
-
-    )
+  return (
+    <>
+      <TabPage />
+    </>
+  );
 };
 
 export default PageTab;

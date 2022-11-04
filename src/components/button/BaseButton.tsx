@@ -1,7 +1,7 @@
-import { Button, ButtonProps } from "@mui/material";
+import { Button, ButtonProps } from '@mui/material';
 
 export interface BaseButtonProps extends ButtonProps {
-	title: string;
+  title: string;
 }
 /**
  * 버튼 모양임. 기본적으로 MUI의 button 모양임.
@@ -9,12 +9,12 @@ export interface BaseButtonProps extends ButtonProps {
  * @param {BaseButtonProps} BaseButtonProps
  * @returns {JSX.Element} React Component
  */
-const BaseButton = ({ title, type = "submit", ...rest }: BaseButtonProps) => {
-	return (
-		<Button variant="contained" type={type} disableElevation {...rest}>
-			{title}
-		</Button>
-	);
+const BaseButton = ({ title, type = 'submit', ...rest }: BaseButtonProps) => {
+  return (
+    <Button variant="contained" type={type} disableElevation {...rest}>
+      {title}
+    </Button>
+  );
 };
 
 export default BaseButton;

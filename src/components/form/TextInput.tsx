@@ -1,4 +1,4 @@
-import { OutlinedTextFieldProps, TextField } from "@mui/material";
+import { OutlinedTextFieldProps, TextField } from '@mui/material';
 
 /**
  * input form 중 텍스트를 입력하는 Input의 구현채로,
@@ -11,7 +11,7 @@ import { OutlinedTextFieldProps, TextField } from "@mui/material";
  */
 
 const TextInput = ({ ...rest }: OutlinedTextFieldProps) => {
-	return <TextField {...rest} />;
+  return <TextField {...rest} />;
 };
 
 export default TextInput;

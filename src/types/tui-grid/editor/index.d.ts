@@ -57,6 +57,6 @@ export interface LayerPos {
   left: number;
 }
 
-export interface InstantlyAppliable {
+export interface InstantlyApplicable {
   instantApplyCallback: InstantApplyCallback | null;
 }

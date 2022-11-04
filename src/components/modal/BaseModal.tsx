@@ -1,10 +1,10 @@
-import { Dialog, styled } from "@mui/material";
-import { ReactNode } from "react";
+import { Dialog, styled } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface BaseModalProps {
-	open: boolean;
-	setOpen: (value: boolean) => void;
-	children: ReactNode;
+  open: boolean;
+  setOpen: (value: boolean) => void;
+  children: ReactNode;
 }
 
 /**
@@ -13,16 +13,16 @@ interface BaseModalProps {
  * @returns {JSX.Element} React Component
  */
 const BaseModal = ({ open, setOpen, children }: BaseModalProps) => {
-	return (
-		<Dialog maxWidth="lg" onClose={setOpen} open={open}>
-			<Root>{children}</Root>
-		</Dialog>
-	);
+  return (
+    <Dialog maxWidth='lg' onClose={setOpen} open={open}>
+      <Root>{children}</Root>
+    </Dialog>
+  );
 };
 
 export default BaseModal;
 
-const Root = styled("div")(() => ({
-	minWidth: 600,
-	padding: "4%",
+const Root = styled('div')(() => ({
+  minWidth: 600,
+  padding: '4%',
 }));

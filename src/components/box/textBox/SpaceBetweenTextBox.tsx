@@ -1,10 +1,10 @@
-import { styled, Typography } from "@mui/material";
-import { ReactNode } from "react";
+import { styled, Typography } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface SpaceBetweenTextBoxProps {
-	title: string;
-	children: ReactNode;
-	marginBottom?: number;
+  title: string;
+  children: ReactNode;
+  marginBottom?: number;
 }
 
 /**
@@ -15,19 +15,19 @@ interface SpaceBetweenTextBoxProps {
  * @returns {JSX.Element} React Component
  */
 const SpaceBetweenTextBox = ({ title, children, marginBottom = 0 }: SpaceBetweenTextBoxProps) => {
-	return (
-		<Root style={{ marginBottom }}>
-			<Typography variant="body1">{title}</Typography>
-			<div>{children}</div>
-		</Root>
-	);
+  return (
+    <Root style={{ marginBottom }}>
+      <Typography variant='body1'>{title}</Typography>
+      <div>{children}</div>
+    </Root>
+  );
 };
 
 export default SpaceBetweenTextBox;
 
-const Root = styled("div")(() => ({
-	display: "flex",
-	justifyContent: "space-between",
-	alignItems: "center",
-	width: "100%",
+const Root = styled('div')(() => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100%',
 }));

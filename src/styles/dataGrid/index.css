@@ -1,45 +1,111 @@
+/* tui DatePicker */
+
+caption {
+  display: none;
+}
+.tui-datepicker {
+  border: 2px dotted green;
+  background-color: #001450;
+  position: absolute;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 40px;
+}
+.tui-datepicker-body {
+  width: 274px;
+}
+.tui-calendar-container {
+  border: 0;
+  font-size: 12px;
+  width: 100%;
+  line-height: 34px;
+}
+.tui-calendar {
+  border: 0;
+  font-size: 12px;
+  width: 100%;
+  line-height: 34px;
+}
+.tui-calendar-header-inner {
+  font-size: 15px;
+  line-height: 34px;
+}
+.tui-calendar .tui-calendar-header {
+  position: relative;
+  border-bottom: 1px solid #efefef;
+}
+
+.tui-calendar-body .tui-calendar-body-inner {
+  width: 100%;
+}
+
+/* Table grid */
 .tui-grid-header-area .tui-grid-table {
-	border-top-style: hidden;
+  border-top-style: hidden;
 }
 
 .tui-grid-show-lside-area .tui-grid-lside-area .tui-grid-header-area .tui-grid-table {
-	border-top-style: hidden;
+  border-top-style: hidden;
 }
 
-.tui-grid-cell.blue {
-	background-color: blue;
+.tui-grid-header-area {
+  border: 1px solid green;
+  /* border: 1px solid #73b9e8df */
+  /* border: 1px solid #e27aff91 */
+  /* border: 1px solid #93973b */
+}
+
+.tui-grid-rside-area {
+  border: 2px solid green;
+  /* border: 1px solid #73b9e8df */
+  /* border: 1px solid #e27aff91 */
+  /* border: 1px solid #93973b */
+}
+
+.tui-grid-lside-area {
+  border: 2px solid green;
+  /* border: 1px solid #73b9e8df */
+  /* border: 1px solid #e27aff91 */
+  /* border: 1px solid #93973b */
+}
+
+.tui-grid-cell.green {
+  background-color: green;
+  /* border: 1px solid #73b9e8df */
+  /* border: 1px solid #e27aff91 */
+  /* border: 1px solid #93973b */
 }
 
 .tui-grid-container-13 {
-	font-size: 13px;
+  font-size: 13px;
 }
 
 .tui-grid-container-14 {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .tui-grid-container-15 {
-	font-size: 15px;
+  font-size: 15px;
 }
 
 .tui-grid-container-16 {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .tui-grid-container-17 {
-	font-size: 17px;
+  font-size: 17px;
 }
 
 .tui-grid-container-18 {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .tui-grid-container-19 {
-	font-size: 19px;
+  font-size: 19px;
 }
 
 .tui-grid-container-20 {
-	font-size: 20px;
+  font-size: 20px;
 }
 /* header가 안커지는 부분 추후 체크 */
 /* .tui-grid-cell-header-13 {

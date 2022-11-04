@@ -1,7 +1,7 @@
 interface LogoProp {
-	width?: number;
-	color?: string;
-	hasIcon?: boolean;
+  width?: number;
+  color?: string;
+  hasIcon?: boolean;
 }
 
 /**
@@ -10,10 +10,8 @@ interface LogoProp {
  * @returns React Component(SVG)
  */
 
-const Logo = ({ width = 280 }: LogoProp) => {
-	return (
-		<img src="/logo512.png" width={width} />
-	);
-};
+function Logo({ width = 280 }: LogoProp) {
+  return <img src="/logo512.png" width={width} />;
+}
 
 export default Logo;

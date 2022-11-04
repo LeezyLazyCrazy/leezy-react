@@ -1,5 +1,5 @@
 interface ContainerProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**
@@ -8,10 +8,8 @@ interface ContainerProps {
  * @returns {JSX.Element} React Component
  */
 
-
-
 const Container = ({ children }: ContainerProps) => {
-	return <div style={{ padding: "20px 8%" }}>{children}</div>;
+  return <div style={{ padding: '20px 8%' }}>{children}</div>;
 };
 
 export default Container;

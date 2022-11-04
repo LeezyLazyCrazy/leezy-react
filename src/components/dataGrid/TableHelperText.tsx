@@ -1,21 +1,21 @@
-import { styled, Typography } from "@mui/material";
-import CircleIcon from "@mui/icons-material/Circle";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import { BasicSymbolColorType, milColorHandler } from "../../utils/milColorHandler";
+import { styled, Typography } from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { BasicSymbolColorType, milColorHandler } from '../../utils/milColorHandler';
 
 interface TableHelperTextProps {
-	type: "percentage" | "text";
-	percentType?: PercentTypeElement[];
+  type: 'percentage' | 'text';
+  percentType?: PercentTypeElement[];
 }
 
 interface ColorPercentageProps {
-	percentType: PercentTypeElement[];
+  percentType: PercentTypeElement[];
 }
 
 export interface PercentTypeElement {
-	percent: string;
-	desc: string;
-	color: BasicSymbolColorType;
+  percent: string;
+  desc: string;
+  color: BasicSymbolColorType;
 }
 
 /**
@@ -23,37 +23,37 @@ export interface PercentTypeElement {
  * @returns {JSX.Element} React Component(div)
  */
 const ColorPercentage = ({ percentType }: ColorPercentageProps) => {
-	return (
-		<Root>
-			{percentType.map((p) => (
-				<ColorWrapper key={p.color}>
-					{p.color === "X" ? (
-						<HorizontalRuleIcon sx={{ color: milColorHandler(p.color) }} fontSize="small" />
-					) : (
-						<CircleIcon sx={{ color: milColorHandler(p.color) }} fontSize="small" />
-					)}
-					<div>
-						<Typography sx={{ pl: 1 }} variant="subtitle2">
-							{p.percent}
-						</Typography>
-						<Typography sx={{ pl: 1 }} variant="subtitle2">
-							{p.desc}
-						</Typography>
-					</div>
-				</ColorWrapper>
-			))}
-		</Root>
-	);
+  return (
+    <Root>
+      {percentType.map((p) => (
+        <ColorWrapper key={p.color}>
+          {p.color === 'X' ? (
+            <HorizontalRuleIcon sx={{ color: milColorHandler(p.color) }} fontSize='small' />
+          ) : (
+            <CircleIcon sx={{ color: milColorHandler(p.color) }} fontSize='small' />
+          )}
+          <div>
+            <Typography sx={{ pl: 1 }} variant='subtitle2'>
+              {p.percent}
+            </Typography>
+            <Typography sx={{ pl: 1 }} variant='subtitle2'>
+              {p.desc}
+            </Typography>
+          </div>
+        </ColorWrapper>
+      ))}
+    </Root>
+  );
 };
 
 /**
  * 디폴트 값. 가장 많이 쓰는 값으로 이것을 설정해두면 별도로 나중에 쓰지 않아도 이 값이 유지됨
  */
 const defaultPercentType: PercentTypeElement[] = [
-	{ percent: "100 - 75%", desc: "정상", color: "G" },
-	{ percent: "74 - 60%", desc: "경고", color: "Y" },
-	{ percent: "59 - 50%", desc: "위험", color: "R" },
-	{ percent: "49% 이하", desc: "낮음", color: "X" },
+  { percent: '100 - 75%', desc: '정상', color: 'G' },
+  { percent: '74 - 60%', desc: '경고', color: 'Y' },
+  { percent: '59 - 50%', desc: '위험', color: 'R' },
+  { percent: '49% 이하', desc: '낮음', color: 'X' },
 ];
 
 /**
@@ -64,35 +64,35 @@ const defaultPercentType: PercentTypeElement[] = [
  * @returns JSX.Element(div)
  */
 const TableHelperText = ({ type, percentType = defaultPercentType }: TableHelperTextProps) => {
-	const helperType = (value: string) => {
-		switch (value) {
-			case "percentage": {
-				return <ColorPercentage percentType={percentType} />;
-			}
-			default:
-				return;
-		}
-	};
+  const helperType = (value: string) => {
+    switch (value) {
+      case 'percentage': {
+        return <ColorPercentage percentType={percentType} />;
+      }
+      default:
+        return;
+    }
+  };
 
-	return <HelperWrapper sx={{ mb: 1 }}>{helperType(type)}</HelperWrapper>;
+  return <HelperWrapper sx={{ mb: 1 }}>{helperType(type)}</HelperWrapper>;
 };
 
 export default TableHelperText;
 
-const Root = styled("div")(() => ({
-	display: "flex",
-	justifyContent: "space-between",
+const Root = styled('div')(() => ({
+  display: 'flex',
+  justifyContent: 'space-between',
 }));
 
-const ColorWrapper = styled("div")(() => ({
-	display: "flex",
-	flexDirection: "row",
-	alignItems: "center",
-	paddingRight: 10,
+const ColorWrapper = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingRight: 10,
 }));
 
-const HelperWrapper = styled("div")(({ theme }) => ({
-	padding: 6,
-	borderRadius: 4,
-	border: `1px solid ${theme.palette.divider}`,
+const HelperWrapper = styled('div')(({ theme }) => ({
+  padding: 6,
+  borderRadius: 4,
+  border: `1px solid ${theme.palette.divider}`,
 }));

@@ -1,11 +1,11 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
 interface MenuIconWrapperProps {
-	open: boolean;
-	setOpen: () => void;
-	iconComponent: React.ReactNode;
-	title: string;
-	color: string | undefined;
+  open: boolean;
+  setOpen: () => void;
+  iconComponent: React.ReactNode;
+  title: string;
+  color: string | undefined;
 }
 
 /**
@@ -17,16 +17,16 @@ interface MenuIconWrapperProps {
  */
 
 const MenuIconWrapper = ({ open, setOpen, title, iconComponent, color }: MenuIconWrapperProps) => {
-	return (
-		<div style={{ textAlign: "center" }} onClick={setOpen}>
-			{iconComponent}
-			{!open && (
-				<Typography color={color} variant="subtitle2">
-					{title}
-				</Typography>
-			)}
-		</div>
-	);
+  return (
+    <div style={{ textAlign: 'center' }} onClick={setOpen}>
+      {iconComponent}
+      {!open && (
+        <Typography color={color} variant='subtitle2'>
+          {title}
+        </Typography>
+      )}
+    </div>
+  );
 };
 
 export default MenuIconWrapper;
