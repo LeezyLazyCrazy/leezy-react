@@ -34,7 +34,7 @@ const queryClient = new QueryClient({
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <QueryClientProvider client={queryClient}>
-    <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
+    <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     <App />
   </QueryClientProvider>
 );

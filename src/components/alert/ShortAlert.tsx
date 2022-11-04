@@ -7,9 +7,9 @@ import { Alert, AlertTitle, styled } from '@mui/material';
  * @interface
  */
 interface ShortAlertProps {
-	title: string;
-	severity: "error" | "warning" | "info" | "success";
-	text?: string;
+  title: string;
+  severity: 'error' | 'warning' | 'info' | 'success';
+  text?: string;
   title: string;
   severity: 'error' | 'warning' | 'info' | 'success';
   text?: string;

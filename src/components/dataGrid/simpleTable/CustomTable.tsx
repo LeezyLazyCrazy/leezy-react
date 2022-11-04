@@ -22,7 +22,7 @@ const CustomTable = ({ children }: SimpleTableProps) => {
         marginBottom: 2,
       }}
     >
-      <Table size='small' aria-label='simple table'>
+      <Table size="small" aria-label="simple table">
         {children}
       </Table>
     </TableContainer>

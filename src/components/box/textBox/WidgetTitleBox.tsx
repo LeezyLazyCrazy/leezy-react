@@ -21,12 +21,12 @@ interface WidgetTitleBoxProps {
 const WidgetTitleBox = ({ title, showMoreMenu = true, handleShowMore }: WidgetTitleBoxProps) => {
   return (
     <Root>
-      <Typography variant='h6' color='InactiveCaptionText'>
+      <Typography variant="h6" color="InactiveCaptionText">
         {title}
       </Typography>
       {showMoreMenu && (
-        <IconButton aria-label='showMore' onClick={handleShowMore}>
-          <MoreVertIcon color='action' />
+        <IconButton aria-label="showMore" onClick={handleShowMore}>
+          <MoreVertIcon color="action" />
         </IconButton>
       )}
     </Root>

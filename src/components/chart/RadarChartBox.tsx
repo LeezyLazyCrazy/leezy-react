@@ -52,15 +52,15 @@ const RadarChartBox = () => {
       <RadarChart outerRadius={90} width={250} height={250} data={dummyData}>
         <PolarGrid />
         <PolarAngleAxis
-          dataKey='subject'
-          stroke='#fff'
+          dataKey="subject"
+          stroke="#fff"
           strokeOpacity={0.2}
-          color='#fff'
+          color="#fff"
           fontSize={11}
         />
         <PolarRadiusAxis angle={30} domain={[0, 150]} />
-        <Radar name='재경단' dataKey='A' stroke='#8884d8' fill='#8884d8' fillOpacity={0.6} />
-        <Radar name='대구' dataKey='B' stroke='#82ca9d' fill='#82ca9d' fillOpacity={0.6} />
+        <Radar name="재경단" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        <Radar name="대구" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
         <Legend />
       </RadarChart>
     </div>

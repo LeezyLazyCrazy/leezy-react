@@ -35,7 +35,7 @@ const MaskedTextInput = ({
       <TextField
         name={name}
         label={label}
-        type='text'
+        type="text"
         sx={sx}
         error={error}
         helperText={helperText}

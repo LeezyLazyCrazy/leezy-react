@@ -21,7 +21,7 @@ const MenuIconWrapper = ({ open, setOpen, title, iconComponent, color }: MenuIco
     <div style={{ textAlign: 'center' }} onClick={setOpen}>
       {iconComponent}
       {!open && (
-        <Typography color={color} variant='subtitle2'>
+        <Typography color={color} variant="subtitle2">
           {title}
         </Typography>
       )}

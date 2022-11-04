@@ -12,10 +12,10 @@ const SelectBox = ({ value, onChange, data }: SelectBoxProps) => {
     <Root>
       <TextInput
         select
-        id='test'
-        label='선택'
-        size='small'
-        variant='outlined'
+        id="test"
+        label="선택"
+        size="small"
+        variant="outlined"
         value={value}
         onChange={onChange}
         sx={{ width: '40%' }}

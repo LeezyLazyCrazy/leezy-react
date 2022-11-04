@@ -19,10 +19,10 @@ interface BaseBlockTitleBoxProps {
 const BaseBlockTitleBox = ({ title, subtitle }: BaseBlockTitleBoxProps) => {
   return (
     <Root>
-      <Typography variant='h6' gutterBottom sx={{ fontWeight: 600 }}>
+      <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
         {title}
       </Typography>
-      <Typography variant='body2' gutterBottom>
+      <Typography variant="body2" gutterBottom>
         {subtitle}
       </Typography>
       <Divider />

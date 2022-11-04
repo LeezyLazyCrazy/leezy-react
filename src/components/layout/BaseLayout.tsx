@@ -39,7 +39,7 @@ const BaseLayout = () => {
       <div style={{ display: 'flex', width: '100%', height: '100%' }}>
         <div>
           <ToastContainer
-            position='top-right'
+            position="top-right"
             autoClose={6000}
             hideProgressBar
             closeOnClick

@@ -19,10 +19,10 @@ const TextButton = ({
   return (
     <BaseButton
       title={title}
-      variant='text'
+      variant="text"
       disableRipple
       disableFocusRipple
-      size='small'
+      size="small"
       sx={{
         minWidth: 10,
         padding: '10px 0',

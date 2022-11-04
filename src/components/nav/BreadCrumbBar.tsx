@@ -31,17 +31,17 @@ const BreadCrumbBar = () => {
 
   return (
     <Root>
-      <Typography variant='body1' sx={{ fontWeight: 600 }}>
+      <Typography variant="body1" sx={{ fontWeight: 600 }}>
         {finalRouteInKorean}
       </Typography>
       <RightWrapper>
-        <Breadcrumbs separator={<NavigateNextIcon fontSize='small' />} aria-label='breadcrumb'>
-          <LinkRouter underline='hover' color='inherit' to='/index'>
+        <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+          <LinkRouter underline="hover" color="inherit" to="/index">
             메인화면
           </LinkRouter>
           {isNotMainPage &&
             routeNameInKorean.map((route) => (
-              <Typography key={route} color='inherit'>
+              <Typography key={route} color="inherit">
                 {route}
               </Typography>
             ))}

@@ -24,16 +24,16 @@ const TopNav = () => {
           // background: '##18b809dc',
           background: `${authUser?.theme.background}`,
         }}
-        position='static'
+        position="static"
         // color="transparent"
       >
         <Toolbar>
-          <Link to='/index'>
+          <Link to="/index">
             <Logo hasIcon />
           </Link>
           <Typography
-            variant='h5'
-            component='div'
+            variant="h5"
+            component="div"
             sx={{
               flexGrow: 1,
               ml: 3,

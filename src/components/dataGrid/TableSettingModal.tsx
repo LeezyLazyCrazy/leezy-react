@@ -43,11 +43,11 @@ const TableSettingModal = ({
   return (
     <BaseModal open={open} setOpen={() => setOpen(!open)}>
       <div>
-        <BaseBlockTitleBox title='테이블 너비 설정' subtitle='테이블의 너비를 설정해주세요.' />
+        <BaseBlockTitleBox title="테이블 너비 설정" subtitle="테이블의 너비를 설정해주세요." />
         <Slider
-          aria-label='table-width-setting'
+          aria-label="table-width-setting"
           defaultValue={currentWidth}
-          valueLabelDisplay='auto'
+          valueLabelDisplay="auto"
           step={100}
           marks
           min={400}
@@ -56,12 +56,12 @@ const TableSettingModal = ({
         />
       </div>
       <div>
-        <BaseBlockTitleBox title='테이블 높이 설정' subtitle='테이블의 높이를 설정해주세요.' />
+        <BaseBlockTitleBox title="테이블 높이 설정" subtitle="테이블의 높이를 설정해주세요." />
         <Slider
-          color='secondary'
-          aria-label='table-height-setting'
+          color="secondary"
+          aria-label="table-height-setting"
           defaultValue={currentHeight}
-          valueLabelDisplay='auto'
+          valueLabelDisplay="auto"
           step={100}
           marks
           min={100}
@@ -70,12 +70,12 @@ const TableSettingModal = ({
         />
       </div>
       <div>
-        <BaseBlockTitleBox title='글씨 크기 설정' subtitle='테이블의 글씨크기를 설정해주세요' />
+        <BaseBlockTitleBox title="글씨 크기 설정" subtitle="테이블의 글씨크기를 설정해주세요" />
         <Slider
-          color='primary'
-          aria-label='table-fontSize-setting'
+          color="primary"
+          aria-label="table-fontSize-setting"
           defaultValue={currentFontSize}
-          valueLabelDisplay='auto'
+          valueLabelDisplay="auto"
           step={1}
           marks
           min={13}

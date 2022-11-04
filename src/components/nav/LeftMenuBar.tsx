@@ -1,17 +1,17 @@
-import { Divider, IconButton, List, styled, Tab, Tabs } from "@mui/material";
-import IconMenuItem from "../../modules/menu/IconMenuItem";
-import { menu } from "../../data/constants/menuFrame";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import BaseButton from "../button/BaseButton";
-import Logo from "../../assets/logos/Logo";
-import useMenuBarStore from "../../stores/useMenuBarStore";
-import { useLocation } from "react-router-dom";
-import { theme } from "../../styles/theme";
-import useThemeStore from "../../stores/useThemeStore";
-import { useState } from "react";
-import TabPanel from "../tab/TabPanel";
-import FavoritePagesBar from "./FavoritePagesBar";
+import { Divider, IconButton, List, styled, Tab, Tabs } from '@mui/material';
+import IconMenuItem from '../../modules/menu/IconMenuItem';
+import { menu } from '../../data/constants/menuFrame';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import BaseButton from '../button/BaseButton';
+import Logo from '../../assets/logos/Logo';
+import useMenuBarStore from '../../stores/useMenuBarStore';
+import { useLocation } from 'react-router-dom';
+import { theme } from '../../styles/theme';
+import useThemeStore from '../../stores/useThemeStore';
+import { useState } from 'react';
+import TabPanel from '../tab/TabPanel';
+import FavoritePagesBar from './FavoritePagesBar';
 
 //MENU ICON
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
@@ -19,7 +19,6 @@ import SurfingOutlinedIcon from '@mui/icons-material/SurfingOutlined';
 import AddReactionOutlinedIcon from '@mui/icons-material/AddReactionOutlined';
 import AndroidOutlinedIcon from '@mui/icons-material/AndroidOutlined';
 import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
-
 
 interface StyledTabProps {
   label: string;
@@ -46,28 +45,28 @@ const LeftMenuBar = () => {
   // menu list에서 대응되는 icon을 현재 파일에서 로드함.
   // 대 메뉴가 추가될 경우 icon 설정이 필요함.
 
-	const menuIcons = [
-		{
-			title: "mui",
-			icon: <AutoAwesomeOutlinedIcon/>,
-		},
-		{
-			title: "toast-ui",
-			icon: <SurfingOutlinedIcon />,
-		},
-		{
-			title: "framer",
-			icon: <AddReactionOutlinedIcon />,
-		},
-		{
-			title: "react-query",
-			icon: <AndroidOutlinedIcon />,
-		},
-		{
-			title: "zustand",
-			icon: <DirectionsRunOutlinedIcon />,
-		},
-	];
+  const menuIcons = [
+    {
+      title: 'mui',
+      icon: <AutoAwesomeOutlinedIcon />,
+    },
+    {
+      title: 'toast-ui',
+      icon: <SurfingOutlinedIcon />,
+    },
+    {
+      title: 'framer',
+      icon: <AddReactionOutlinedIcon />,
+    },
+    {
+      title: 'react-query',
+      icon: <AndroidOutlinedIcon />,
+    },
+    {
+      title: 'zustand',
+      icon: <DirectionsRunOutlinedIcon />,
+    },
+  ];
 
   // handling tabs
 
@@ -79,17 +78,17 @@ const LeftMenuBar = () => {
         <div style={{ marginTop: '2%', textAlign: 'right' }}>
           <ShrinkBtn
             isshrinked={String(isBarOpen)}
-            size='small'
-            aria-label='expand-menu'
+            size="small"
+            aria-label="expand-menu"
             onClick={() => {
               setIsBarOpen();
               setTabValue(0);
             }}
           >
             {isBarOpen ? (
-              <ArrowBackIosIcon fontSize='small' color='secondary' />
+              <ArrowBackIosIcon fontSize="small" color="secondary" />
             ) : (
-              <ArrowForwardIosIcon fontSize='small' color='secondary' />
+              <ArrowForwardIosIcon fontSize="small" color="secondary" />
             )}
           </ShrinkBtn>
         </div>
@@ -99,15 +98,15 @@ const LeftMenuBar = () => {
               sx={{ borderBottom: 1, borderColor: 'divider' }}
               value={tabValue}
               onChange={(e, v) => setTabValue(v)}
-              aria-label='menu-tabs'
+              aria-label="menu-tabs"
             >
-              <StyledTab label='메뉴' />
-              <StyledTab label='즐겨찾기' />
+              <StyledTab label="메뉴" />
+              <StyledTab label="즐겨찾기" />
             </Tabs>
           )}
 
           <TabPanel value={tabValue} index={0}>
-            <List component='nav' aria-labelledby='afcss-cop-main-menu'>
+            <List component="nav" aria-labelledby="afcss-cop-main-menu">
               {menu.map((m) => (
                 <IconMenuItem
                   key={m.id}
@@ -138,7 +137,7 @@ const LeftMenuBar = () => {
               alignItems: 'center',
             }}
           >
-            <BaseButton type='button' variant='text' title='기존 시스템 이동' />
+            <BaseButton type="button" variant="text" title="기존 시스템 이동" />
             <Logo width={70} />
           </div>
         )}

@@ -29,32 +29,32 @@ const StraightLineIcon = ({ width = 16, color, arrowNumber = 0 }: StraightLineIc
 
   return (
     <svg
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
-      viewBox='0 0 200 200'
-      enableBackground='new 0 0 200 200'
-      xmlSpace='preserve'
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      viewBox="0 0 200 200"
+      enableBackground="new 0 0 200 200"
+      xmlSpace="preserve"
       width={width}
     >
       <line
         style={{ ...style, strokeLinecap: 'round' }}
-        x1='20.2'
-        y1='179.8'
-        x2='179.8'
-        y2='20.2'
+        x1="20.2"
+        y1="179.8"
+        x2="179.8"
+        y2="20.2"
       />
       {arrowNumber > 0 && (
         <>
-          <line style={style} x1='179.8' y1='20.2' x2='84.4' y2='22.1' />
-          <line style={style} x1='179.8' y1='20.2' x2='179.4' y2='100' />
+          <line style={style} x1="179.8" y1="20.2" x2="84.4" y2="22.1" />
+          <line style={style} x1="179.8" y1="20.2" x2="179.4" y2="100" />
         </>
       )}
       {arrowNumber === 2 && (
         <>
-          <line style={style} x1='20.7' y1='179.5' x2='116.1' y2='177.7' />
-          <line style={style} x1='20.7' y1='179.5' x2='21.1' y2='99.8' />
+          <line style={style} x1="20.7" y1="179.5" x2="116.1" y2="177.7" />
+          <line style={style} x1="20.7" y1="179.5" x2="21.1" y2="99.8" />
         </>
       )}
     </svg>

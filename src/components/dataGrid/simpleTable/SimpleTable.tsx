@@ -31,11 +31,11 @@ const SimpleTable = ({ head, children }: SimpleTableProps) => {
       }}
       elevation={0}
     >
-      <Table size='small' aria-label='simple table'>
+      <Table size="small" aria-label="simple table">
         <TableHead>
           <TableRow>
             {head?.map((h) => (
-              <TableCell align='center' key={h}>
+              <TableCell align="center" key={h}>
                 {h}
               </TableCell>
             ))}

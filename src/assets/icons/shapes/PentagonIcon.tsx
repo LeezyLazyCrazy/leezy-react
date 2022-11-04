@@ -13,13 +13,13 @@ const PentagonIcon = ({ width = 18, color }: IconProps) => {
 
   return (
     <svg
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
-      viewBox='0 0 200 200'
-      enableBackground='new 0 0 200 200'
-      xmlSpace='preserve'
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      viewBox="0 0 200 200"
+      enableBackground="new 0 0 200 200"
+      xmlSpace="preserve"
       width={width}
     >
       <polygon
@@ -29,7 +29,7 @@ const PentagonIcon = ({ width = 18, color }: IconProps) => {
           strokeWidth: 14,
           strokeMiterlimit: 10,
         }}
-        points='100,25.3 21.5,82.4 51.5,174.7 148.5,174.7 178.5,82.4 '
+        points="100,25.3 21.5,82.4 51.5,174.7 148.5,174.7 178.5,82.4 "
       />
     </svg>
   );

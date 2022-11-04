@@ -14,18 +14,18 @@ const DotLineIcon = ({ width = 22, color }: IconProps) => {
 
   return (
     <svg
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
-      viewBox='0 0 50 50'
-      enableBackground='new 0 0 50 50'
-      xmlSpace='preserve'
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      viewBox="0 0 50 50"
+      enableBackground="new 0 0 50 50"
+      xmlSpace="preserve"
       width={width}
     >
-      <circle cx='7' cy='25' r='2.3' fill={chosenColor} />
-      <circle cx='25' cy='25' r='2.3' fill={chosenColor} />
-      <circle cx='43' cy='25' r='2.3' fill={chosenColor} />
+      <circle cx="7" cy="25" r="2.3" fill={chosenColor} />
+      <circle cx="25" cy="25" r="2.3" fill={chosenColor} />
+      <circle cx="43" cy="25" r="2.3" fill={chosenColor} />
     </svg>
   );
 };

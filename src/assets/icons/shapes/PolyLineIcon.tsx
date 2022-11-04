@@ -13,13 +13,13 @@ const PolyLineIcon = ({ width = 18, color }: IconProps) => {
 
   return (
     <svg
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
-      viewBox='0 0 200 200'
-      enableBackground='new 0 0 200 200'
-      xmlSpace='preserve'
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      viewBox="0 0 200 200"
+      enableBackground="new 0 0 200 200"
+      xmlSpace="preserve"
       width={width}
     >
       <path
@@ -29,12 +29,12 @@ const PolyLineIcon = ({ width = 18, color }: IconProps) => {
           strokeWidth: 14,
           strokeMiterlimit: 10,
         }}
-        d='M19.4,166.1h134c9.9-2.8,35.7-29.4,30-66.1
-	c-5-32-32-58.2-67-63.9'
+        d="M19.4,166.1h134c9.9-2.8,35.7-29.4,30-66.1
+	c-5-32-32-58.2-67-63.9"
       />
-      <rect x='89.4' y='17.1' width='38.7' height='38.7' />
-      <rect x='97' y='141.7' width='38.7' height='38.7' />
-      <rect x='15' y='141.7' width='38.7' height='38.7' />
+      <rect x="89.4" y="17.1" width="38.7" height="38.7" />
+      <rect x="97" y="141.7" width="38.7" height="38.7" />
+      <rect x="15" y="141.7" width="38.7" height="38.7" />
     </svg>
   );
 };

@@ -31,9 +31,9 @@ export const SimpleTableCircleCellByColor = ({
   pointer = false,
 }: CircleCellColorDisplayProps) => {
   return (
-    <TableCell align='center' onClick={onClick} sx={sx}>
+    <TableCell align="center" onClick={onClick} sx={sx}>
       {color === 'X' ? (
-        <HorizontalRuleIcon sx={{ color: 'black' }} fontSize='small' />
+        <HorizontalRuleIcon sx={{ color: 'black' }} fontSize="small" />
       ) : (
         <CircleIcon
           sx={{
@@ -44,7 +44,7 @@ export const SimpleTableCircleCellByColor = ({
               borderRadius: '50%',
             },
           }}
-          fontSize='small'
+          fontSize="small"
         />
       )}
     </TableCell>
@@ -71,9 +71,9 @@ export const SimpleTableCellText = ({
 }: SimpleTableCellTextProps) => {
   return (
     <TableCell
-      component='th'
-      scope='row'
-      align='center'
+      component="th"
+      scope="row"
+      align="center"
       sx={{
         cursor: pointer ? 'pointer' : 'default',
         color: pointer ? (theme) => theme.palette.primary.main : 'inherit',
@@ -97,10 +97,10 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
       <Box sx={{ width: '100%', mr: 1 }}>
-        <LinearProgress variant='determinate' {...props} />
+        <LinearProgress variant="determinate" {...props} />
       </Box>
       <Box sx={{ minWidth: 35 }}>
-        <Typography variant='body2' color='text.secondary'>{`${Math.round(
+        <Typography variant="body2" color="text.secondary">{`${Math.round(
           props.value
         )}%`}</Typography>
       </Box>
@@ -123,8 +123,8 @@ interface SimpleTableCellProgressProps {
 
 export const SimpleTableCellProgress = ({ percent, sx }: SimpleTableCellProgressProps) => {
   return (
-    <TableCell component='th' scope='row' align='center' sx={sx}>
-      <LinearProgressWithLabel variant='determinate' value={percent} />
+    <TableCell component="th" scope="row" align="center" sx={sx}>
+      <LinearProgressWithLabel variant="determinate" value={percent} />
     </TableCell>
   );
 };
@@ -151,9 +151,9 @@ export const SimpleTableBackgroundColorCell = ({
 }: SimpleTableBackgroundColorCellProps) => {
   return (
     <TableCell
-      component='th'
-      scope='row'
-      align='center'
+      component="th"
+      scope="row"
+      align="center"
       sx={{
         cursor: pointer ? 'pointer' : 'default',
         color: '#fff',

@@ -15,7 +15,7 @@ const ToggleDarkMode = () => {
   const { isDark } = useThemeStore();
 
   return (
-    <IconButton aria-label='dark-mode-handler' onClick={useThemeStore((state) => state.setIsDark)}>
+    <IconButton aria-label="dark-mode-handler" onClick={useThemeStore((state) => state.setIsDark)}>
       {isDark === 'dark' ? (
         <SunIcon color={theme(isDark).palette.text.secondary} />
       ) : (

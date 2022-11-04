@@ -19,10 +19,10 @@ interface ToastShowProps {
 export const ToastMessage = ({ title, message }: ToastMessageProps) => {
   return (
     <div>
-      <Typography variant='body1' sx={{ fontWeight: 600 }} gutterBottom>
+      <Typography variant="body1" sx={{ fontWeight: 600 }} gutterBottom>
         {title}
       </Typography>
-      <Typography variant='body2' sx={{ lineHeight: 1.5 }}>
+      <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
         {message}
       </Typography>
     </div>

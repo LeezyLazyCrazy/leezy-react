@@ -28,15 +28,15 @@ const ColorPercentage = ({ percentType }: ColorPercentageProps) => {
       {percentType.map((p) => (
         <ColorWrapper key={p.color}>
           {p.color === 'X' ? (
-            <HorizontalRuleIcon sx={{ color: milColorHandler(p.color) }} fontSize='small' />
+            <HorizontalRuleIcon sx={{ color: milColorHandler(p.color) }} fontSize="small" />
           ) : (
-            <CircleIcon sx={{ color: milColorHandler(p.color) }} fontSize='small' />
+            <CircleIcon sx={{ color: milColorHandler(p.color) }} fontSize="small" />
           )}
           <div>
-            <Typography sx={{ pl: 1 }} variant='subtitle2'>
+            <Typography sx={{ pl: 1 }} variant="subtitle2">
               {p.percent}
             </Typography>
-            <Typography sx={{ pl: 1 }} variant='subtitle2'>
+            <Typography sx={{ pl: 1 }} variant="subtitle2">
               {p.desc}
             </Typography>
           </div>

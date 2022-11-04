@@ -19,8 +19,8 @@ const ReportStyleTextBox = ({ title, children, marginBottom = 0 }: ReportStyleTe
   return (
     <Root style={{ marginBottom }}>
       <TitleWrapper>
-        <FiberManualRecordOutlinedIcon fontSize='small' sx={{ opacity: 0.5 }} />
-        <Typography sx={{ pl: 1, pr: 2, fontWeight: 600 }} variant='body1'>
+        <FiberManualRecordOutlinedIcon fontSize="small" sx={{ opacity: 0.5 }} />
+        <Typography sx={{ pl: 1, pr: 2, fontWeight: 600 }} variant="body1">
           {title}
         </Typography>
       </TitleWrapper>

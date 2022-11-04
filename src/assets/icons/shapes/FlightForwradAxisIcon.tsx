@@ -20,19 +20,19 @@ const FlightForwardAxisIcon = ({ width = 18, color }: IconProps) => {
 
   return (
     <svg
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
-      viewBox='0 0 200 200'
-      enableBackground='new 0 0 200 200'
-      xmlSpace='preserve'
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      viewBox="0 0 200 200"
+      enableBackground="new 0 0 200 200"
+      xmlSpace="preserve"
       width={width}
     >
-      <path style={style} d='M23.9,23.5' />
+      <path style={style} d="M23.9,23.5" />
       <g>
-        <polyline style={style} points='38.9,55.6 19.6,148.8 54.4,128.3 153.1,128.3 180.4,142.9 	' />
-        <polyline style={style} points='35.9,60.5 122.6,21 110.3,59.5 132.2,155.6 152.5,179 	' />
+        <polyline style={style} points="38.9,55.6 19.6,148.8 54.4,128.3 153.1,128.3 180.4,142.9 	" />
+        <polyline style={style} points="35.9,60.5 122.6,21 110.3,59.5 132.2,155.6 152.5,179 	" />
       </g>
     </svg>
   );

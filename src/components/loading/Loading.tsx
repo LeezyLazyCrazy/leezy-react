@@ -9,7 +9,7 @@ const Loading = () => {
   return (
     <Root>
       <Center>
-        <LinearProgress color='primary' />
+        <LinearProgress color="primary" />
       </Center>
     </Root>
   );

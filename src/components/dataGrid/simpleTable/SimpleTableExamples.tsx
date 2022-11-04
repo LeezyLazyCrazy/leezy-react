@@ -73,7 +73,7 @@ const CollapsibleBody = ({ data, subData, subDataHead }: CollapsibleBodyProps) =
     <>
       <TableRow hover key={data.area} sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
-          <IconButton aria-label='expand-row' size='small' onClick={() => setOpen(!open)}>
+          <IconButton aria-label="expand-row" size="small" onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
@@ -83,7 +83,7 @@ const CollapsibleBody = ({ data, subData, subDataHead }: CollapsibleBodyProps) =
 
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={4}>
-          <Collapse in={open} timeout='auto' unmountOnExit>
+          <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <CustomTable>
                 <TableHead>
