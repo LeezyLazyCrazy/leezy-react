@@ -14,10 +14,6 @@ import { worker } from './mocks/worker';
 if (process.env.REACT_APP_STATUS === 'development') {
   console.log('DEVELOPMENT');
   worker.start();
-
-  fetch('/api/equipment-information')
-    .then((response) => response.json())
-    .then((data) => console.log(data));
 }
 
 const queryClient = new QueryClient({
