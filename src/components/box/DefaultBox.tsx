@@ -20,19 +20,19 @@ interface DefaultBoxProps {
  * @param {DefaultBoxProps} DefaultBoxProps
  * @returns {JSX.Element} React Component
  */
-const DefaultBox = ({
+function DefaultBox({
   children,
   isBackgroundPaper = true,
   padding = '5%',
   marginBottom = 0,
   marginTop = 0,
-}: DefaultBoxProps) => {
+}: DefaultBoxProps) {
   return (
     <BoxWrapper style={{ marginBottom, marginTop, padding }} isBackgroundPaper={isBackgroundPaper}>
       {children}
     </BoxWrapper>
   );
-};
+}
 
 export default DefaultBox;
 

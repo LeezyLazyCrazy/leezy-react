@@ -10,7 +10,7 @@ interface SimpleTableProps {
  * @returns
  */
 
-const CustomTable = ({ children }: SimpleTableProps) => {
+function CustomTable({ children }: SimpleTableProps) {
   return (
     <TableContainer
       component={Paper}
@@ -27,6 +27,6 @@ const CustomTable = ({ children }: SimpleTableProps) => {
       </Table>
     </TableContainer>
   );
-};
+}
 
 export default CustomTable;

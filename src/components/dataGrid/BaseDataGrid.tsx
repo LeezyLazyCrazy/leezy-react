@@ -1,20 +1,20 @@
-import Grid from '@toast-ui/react-grid';
-import TuiGrid from 'tui-grid';
-import 'tui-grid/dist/tui-grid.css';
-import { OptColumn, OptHeader } from 'tui-grid/types/options';
-import '../../styles/dataGrid/index.css';
-import { createRef, useEffect, useState } from 'react';
-import useThemeStore from '../../stores/useThemeStore';
-import { theme } from '../../styles/theme';
-import DataGridToolbar from './DataGridToolbar';
-import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
-import TableSettingModal from './TableSettingModal';
-import HeaderSettingModal from './HeaderSettingModal';
-import { gridStyles } from './dataGridStyle';
-import { API_URL } from '../../query';
-import useMenuBarStore from '../../stores/useMenuBarStore';
-import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
-import { DataSource } from '../../types/tui-grid/dataSource';
+import Grid from "@toast-ui/react-grid";
+import TuiGrid from "tui-grid";
+import "tui-grid/dist/tui-grid.css";
+import { OptColumn, OptHeader } from "tui-grid/types/options";
+import "../../styles/dataGrid/index.css";
+import { createRef, useEffect, useState } from "react";
+import useThemeStore from "../../stores/useThemeStore";
+import { theme } from "../../styles/theme";
+import DataGridToolbar from "./DataGridToolbar";
+import YesNoSelectionModal from "../../modules/modal/YesNoSelectionModal";
+import TableSettingModal from "./TableSettingModal";
+import HeaderSettingModal from "./HeaderSettingModal";
+import { gridStyles } from "./dataGridStyle";
+import { API_URL } from "../../query";
+import useMenuBarStore from "../../stores/useMenuBarStore";
+import useRightWidgetBarStore from "../../stores/useRightWidgetBarStore";
+import { DataSource } from "tui-grid/types/dataSource";
 
 interface BaseDataGridProps {
   tableName: string;
@@ -33,25 +33,25 @@ interface BaseDataGridProps {
  * @param {BaseDataGridProps} BaseDataGridProps
  * @returns {JSX.Element} React Component
  */
-const BaseDataGrid = ({
+function BaseDataGrid({
   tableName,
   columns,
   frozenColumn = 1,
   header = { height: 60 },
   showToolbar = true,
-}: BaseDataGridProps) => {
+}: BaseDataGridProps) {
   // grid styles
   const { isDark } = useThemeStore();
   const { palette } = theme(isDark);
-  TuiGrid.applyTheme('default', gridStyles(palette));
+  TuiGrid.applyTheme("default", gridStyles(palette));
 
   // grid language
-  TuiGrid.setLanguage('ko');
+  TuiGrid.setLanguage("ko");
 
   const ref = createRef<Grid>();
 
   // width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
-  //const [containerWidth, setContainerWidth] = useState(1100 + 10);
+  // const [containerWidth, setContainerWidth] = useState(1100 + 10);
   const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
@@ -68,37 +68,36 @@ const BaseDataGrid = ({
   // widget bar 가져오기
   const { isBarOpen: isWidgetBarOpen } = useRightWidgetBarStore();
 
-  const innerWidth = window.innerWidth;
+  const { innerWidth } = window;
 
   useEffect(() => {
     const widgetWidth = isWidgetBarOpen ? 430 : 130;
     const menubarWidth = isMenuBarOpen ? 210 : 100;
 
     ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isWidgetBarOpen, isMenuBarOpen]);
 
   const dataSource: DataSource = {
     withCredentials: false,
     initialRequest: true,
-    contentType: 'application/json',
+    contentType: "application/json",
     api: {
-      readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
-      modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
+      readData: { url: `${API_URL}/api/${tableName}`, method: "GET" },
+      modifyData: { url: `${API_URL}/api/${tableName}`, method: "PUT" },
     },
   };
 
   return (
-    <div style={{ width: 'auto' }}>
+    <div style={{ width: "auto" }}>
       {showToolbar && (
-        <>
-          <DataGridToolbar
-            addNewRow={appendRow}
-            refresh={() => ref.current?.getInstance().readData(1)}
-            openTableSetting={() => setTableSettingOpen(true)}
-            openHeaderSetting={() => setHeaderSettingOpen(true)}
-            openSaveSetting={() => setCheckToSaveOpen(true)}
-          />
-        </>
+        <DataGridToolbar
+          addNewRow={appendRow}
+          refresh={() => ref.current?.getInstance().readData(1)}
+          openTableSetting={() => setTableSettingOpen(true)}
+          openHeaderSetting={() => setHeaderSettingOpen(true)}
+          openSaveSetting={() => setCheckToSaveOpen(true)}
+        />
       )}
       <Grid
         ref={ref}
@@ -108,20 +107,20 @@ const BaseDataGrid = ({
         columnOptions={{ resizable: true, frozenCount: frozenColumn, minWidth: 100 }}
         rowHeight={30}
         bodyHeight={600}
-        heightResizable={true}
-        width={'auto'}
-        rowHeaders={['rowNum', 'checkbox']}
-        draggable={true}
-        scrollX={true}
+        heightResizable
+        width="auto"
+        rowHeaders={["rowNum", "checkbox"]}
+        draggable
+        scrollX
         scrollY={false}
-        oneTimeBindingProps={['data', 'columns']}
+        oneTimeBindingProps={["data", "columns"]}
       />
       <YesNoSelectionModal
         open={checkToSaveOpen}
         setOpen={setCheckToSaveOpen}
         title="바뀐 내용 저장"
         onYes={() => {
-          ref.current?.getInstance().request('modifyData');
+          ref.current?.getInstance().request("modifyData");
         }}
         onNo={() => ref.current?.getInstance().readData(1)}
         question="바뀐 내용이 있네요. 저장하실?"
@@ -130,7 +129,7 @@ const BaseDataGrid = ({
         open={tableSettingOpen}
         setOpen={setTableSettingOpen}
         setTableWidth={(value) => {
-          //setContainerWidth(value + 10);
+          // setContainerWidth(value + 10);
           ref.current?.getInstance().setWidth(value);
         }}
         setTableHeight={(value) => ref.current?.getInstance().setHeight(value)}
@@ -153,6 +152,6 @@ const BaseDataGrid = ({
       />
     </div>
   );
-};
+}
 
 export default BaseDataGrid;

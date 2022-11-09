@@ -8,7 +8,7 @@ import { useState } from "react";
  * @returns {JSX.Element} React Component(button group)
  */
 
-const ModeCodeToggle = () => {
+function ModeCodeToggle() {
 	const [alignment, setAlignment] = useState("real");
 
 	const handleChange = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {
@@ -28,6 +28,6 @@ const ModeCodeToggle = () => {
 			<ToggleButton value="exercise">연습</ToggleButton>
 		</ToggleButtonGroup>
 	);
-};
+}
 
 export default ModeCodeToggle;

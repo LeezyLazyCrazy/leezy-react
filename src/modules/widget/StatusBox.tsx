@@ -15,7 +15,7 @@ interface StatusBoxProps {
  * @returns {JSX.Element} JSX Element(div)
  */
 
-const StatusBox = ({ title, desc, severity }: StatusBoxProps) => {
+function StatusBox({ title, desc, severity }: StatusBoxProps) {
 	return (
 		<Root>
 			<Header>
@@ -29,7 +29,7 @@ const StatusBox = ({ title, desc, severity }: StatusBoxProps) => {
 			<StatusChip severity={severity} />
 		</Root>
 	);
-};
+}
 
 export default StatusBox;
 

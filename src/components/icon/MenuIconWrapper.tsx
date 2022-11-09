@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Typography } from "@mui/material";
 
 interface MenuIconWrapperProps {
   open: boolean;
@@ -16,9 +16,10 @@ interface MenuIconWrapperProps {
  * @returns {JSX.Element} React Component
  */
 
-const MenuIconWrapper = ({ open, setOpen, title, iconComponent, color }: MenuIconWrapperProps) => {
+function MenuIconWrapper({ open, setOpen, title, iconComponent, color }: MenuIconWrapperProps) {
   return (
-    <div style={{ textAlign: 'center' }} onClick={setOpen}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div style={{ textAlign: "center" }} onClick={setOpen}>
       {iconComponent}
       {!open && (
         <Typography color={color} variant="subtitle2">
@@ -27,6 +28,6 @@ const MenuIconWrapper = ({ open, setOpen, title, iconComponent, color }: MenuIco
       )}
     </div>
   );
-};
+}
 
 export default MenuIconWrapper;

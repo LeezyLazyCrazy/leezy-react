@@ -11,7 +11,7 @@ import { theme } from '../../styles/theme';
  * @returns {JSX.Element} React Component
  */
 
-const ToggleDarkMode = () => {
+function ToggleDarkMode() {
   const { isDark } = useThemeStore();
 
   return (
@@ -23,6 +23,6 @@ const ToggleDarkMode = () => {
       )}
     </IconButton>
   );
-};
+}
 
 export default ToggleDarkMode;

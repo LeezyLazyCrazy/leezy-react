@@ -19,7 +19,7 @@ interface SimpleTableProps {
  * @returns
  */
 
-const SimpleTable = ({ head, children }: SimpleTableProps) => {
+function SimpleTable({ head, children }: SimpleTableProps) {
   return (
     <TableContainer
       component={Paper}
@@ -45,6 +45,6 @@ const SimpleTable = ({ head, children }: SimpleTableProps) => {
       </Table>
     </TableContainer>
   );
-};
+}
 
 export default SimpleTable;

@@ -9,7 +9,7 @@ import { ProgressTable } from "../../components/dataGrid/simpleTable/SimpleTable
  * @returns {JSX.Element} React Component
  */
 
-const DataTab = () => {
+function DataTab() {
 	return (
 		<Root>
 			<WidgetTitleBox title="퍼센트 표시 바 형태 예시" />
@@ -18,7 +18,7 @@ const DataTab = () => {
 			<WidgetTitleBox title="..." />
 		</Root>
 	);
-};
+}
 
 export default DataTab;
 

@@ -9,7 +9,7 @@ import StatusBox from "./StatusBox";
  * @returns {JSX.Element} React Component
  *
  */
-const WarningTab = () => {
+function WarningTab() {
 	return (
 		<Root>
 			<WidgetTitleBox title="현황" />
@@ -21,7 +21,7 @@ const WarningTab = () => {
 			<DefaultBox isBackgroundPaper={false}>암거나 넣고싶은거</DefaultBox>
 		</Root>
 	);
-};
+}
 
 export default WarningTab;
 

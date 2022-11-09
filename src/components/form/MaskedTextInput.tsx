@@ -20,7 +20,7 @@ export const maskType = {
   lon: [digit, digit, digit, '°', digit, digit, '′', digit, digit, '″', directionMask],
 };
 
-const MaskedTextInput = ({
+function MaskedTextInput({
   mask,
   value,
   onChange,
@@ -29,7 +29,7 @@ const MaskedTextInput = ({
   sx,
   error,
   helperText,
-}: MaskedTextInputProps) => {
+}: MaskedTextInputProps) {
   return (
     <InputMask mask={mask} value={value} onChange={onChange}>
       <TextField
@@ -42,7 +42,7 @@ const MaskedTextInput = ({
       />
     </InputMask>
   );
-};
+}
 
 export default MaskedTextInput;
 

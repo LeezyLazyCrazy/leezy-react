@@ -26,12 +26,12 @@ interface BaseColorPickerProps {
  * @param {BaseColorPickerShowDotProps}  BaseColorPickerShowDotProps
  * @returns {JSX.Element} React Component
  */
-export const BaseColorPickerShowDot = ({
+export function BaseColorPickerShowDot({
   color,
   clickable = true,
   onClick,
   circleSize = 'small',
-}: BaseColorPickerShowDotProps) => {
+}: BaseColorPickerShowDotProps) {
   const { isDark } = useThemeStore();
 
   return (
@@ -46,7 +46,7 @@ export const BaseColorPickerShowDot = ({
       onClick={onClick}
     />
   );
-};
+}
 
 /**
  * react-color-palette 라이브러리의 컬러피커 구현체임. 여기서는 사용성을 위해 모달 안에 집어넣었음.
@@ -55,12 +55,12 @@ export const BaseColorPickerShowDot = ({
  * @param {BaseColorPickerProps } BaseColorPickerProps
  * @return {JSX.Element} React Component
  */
-export const BaseColorPicker = ({
+export function BaseColorPicker({
   color,
   onColorChange,
   openColorPicker,
   setOpenColorPicker,
-}: BaseColorPickerProps) => {
+}: BaseColorPickerProps) {
   const { isDark } = useThemeStore();
 
   return (
@@ -75,4 +75,4 @@ export const BaseColorPicker = ({
       />
     </Dialog>
   );
-};
+}

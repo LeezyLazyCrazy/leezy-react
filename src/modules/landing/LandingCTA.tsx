@@ -9,7 +9,7 @@ import BaseButton from "../../components/button/BaseButton";
  * 랜딩 페이지 내 Call To Action 모듈
  * @returns {JSX.Element} React Component
  */
-const MainHeader = () => {
+function MainHeader() {
 	const navigate = useNavigate();
 
 	const navigateToLogin = () => {
@@ -40,7 +40,7 @@ const MainHeader = () => {
 			</div>
 		</Root>
 	);
-};
+}
 
 export default MainHeader;
 

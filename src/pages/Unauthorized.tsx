@@ -15,4 +15,4 @@ function Unauthorized() {
   );
 }
 
-export default Unauthroized;
+export default Unauthorized;

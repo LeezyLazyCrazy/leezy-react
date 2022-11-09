@@ -18,7 +18,7 @@ interface WidgetTitleBoxProps {
  * @returns {JSX.Element} React Component
  */
 
-const WidgetTitleBox = ({ title, showMoreMenu = true, handleShowMore }: WidgetTitleBoxProps) => {
+function WidgetTitleBox({ title, showMoreMenu = true, handleShowMore }: WidgetTitleBoxProps) {
   return (
     <Root>
       <Typography variant="h6" color="InactiveCaptionText">
@@ -31,7 +31,7 @@ const WidgetTitleBox = ({ title, showMoreMenu = true, handleShowMore }: WidgetTi
       )}
     </Root>
   );
-};
+}
 
 export default WidgetTitleBox;
 

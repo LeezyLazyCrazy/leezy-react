@@ -10,8 +10,8 @@ import { OutlinedTextFieldProps, TextField } from '@mui/material';
  * @returns {JSX.Element} React Component
  */
 
-const TextInput = ({ ...rest }: OutlinedTextFieldProps) => {
+function TextInput({ ...rest }: OutlinedTextFieldProps) {
   return <TextField {...rest} />;
-};
+}
 
 export default TextInput;

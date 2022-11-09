@@ -1,6 +1,7 @@
-import { Slider } from '@mui/material';
-import BaseBlockTitleBox from '../box/textBox/BaseBlockTitleBox';
-import BaseModal from '../modal/BaseModal';
+/* eslint-disable no-unused-vars */
+import { Slider } from "@mui/material";
+import BaseBlockTitleBox from "../box/textBox/BaseBlockTitleBox";
+import BaseModal from "../modal/BaseModal";
 
 interface TableSettingModalProps {
   open: boolean;
@@ -15,7 +16,7 @@ interface TableSettingModalProps {
 
 // 테이블(그리드) 너비, 높이 등 설정
 
-const TableSettingModal = ({
+function TableSettingModal({
   open,
   setOpen,
   currentWidth = 1200,
@@ -24,7 +25,7 @@ const TableSettingModal = ({
   setTableHeight,
   currentFontSize,
   setTableFontSize,
-}: TableSettingModalProps) => {
+}: TableSettingModalProps) {
   // 너비 바꾸기
   const changeWidth = (event: Event, value: number | number[]) => {
     setTableWidth!(value as number);
@@ -85,6 +86,6 @@ const TableSettingModal = ({
       </div>
     </BaseModal>
   );
-};
+}
 
 export default TableSettingModal;

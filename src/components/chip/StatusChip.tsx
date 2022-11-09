@@ -13,7 +13,7 @@ interface StatusChipProps {
  * @returns {JSX.Element} React Component
  */
 
-const StatusChip = ({ severity }: StatusChipProps) => {
+function StatusChip({ severity }: StatusChipProps) {
   return (
     <Root
       sx={{
@@ -24,7 +24,7 @@ const StatusChip = ({ severity }: StatusChipProps) => {
       {statusColorHandler(severity)?.title}
     </Root>
   );
-};
+}
 
 export default StatusChip;
 

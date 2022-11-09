@@ -5,7 +5,7 @@ import { LinearProgress, styled } from '@mui/material';
  * @returns {JSX.Element} React Component
  */
 
-const Loading = () => {
+function Loading() {
   return (
     <Root>
       <Center>
@@ -13,7 +13,7 @@ const Loading = () => {
       </Center>
     </Root>
   );
-};
+}
 
 export default Loading;
 

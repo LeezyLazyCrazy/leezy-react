@@ -13,7 +13,7 @@ interface TabPanelProps {
  * @returns {JSX.Element} React Component
  */
 
-const TabPanel = (props: TabPanelProps) => {
+function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -27,6 +27,6 @@ const TabPanel = (props: TabPanelProps) => {
       {value === index && <Box>{children}</Box>}
     </div>
   );
-};
+}
 
 export default TabPanel;

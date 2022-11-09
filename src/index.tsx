@@ -10,6 +10,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import "react-toastify/dist/ReactToastify.css";
 
 import { worker } from './mocks/worker';
+
 if (process.env.REACT_APP_STATUS === 'development') {
   console.log('DEVELOPMENT');
   worker.start();

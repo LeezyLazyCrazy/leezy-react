@@ -23,7 +23,7 @@ interface IconMenuItemProps {
  * @param { IconMenuItemProps}  IconMenuItemProps
  * @returns {JSX.Element} React Component(div)
  */
-const IconMenuItem = ({
+function IconMenuItem({
 	open,
 	iconComponent,
 	closeOpenedMenu,
@@ -31,7 +31,7 @@ const IconMenuItem = ({
 	subMenu,
 	name,
 	color,
-}: IconMenuItemProps) => {
+}: IconMenuItemProps) {
 	const [subMenuOpen, setSubMenuOpen] = useState(false);
 	const { setIsBarOpen } = useMenuBarStore();
 
@@ -84,6 +84,6 @@ const IconMenuItem = ({
 			</Collapse>
 		</>
 	);
-};
+}
 
 export default IconMenuItem;

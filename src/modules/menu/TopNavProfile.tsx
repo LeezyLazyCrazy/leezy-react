@@ -14,7 +14,7 @@ interface TapNavProfileProps {
  * @returns {JSX.Element} React Component(div)
  */
 
-const TopNavProfile = ({ title }: TapNavProfileProps) => {
+function TopNavProfile({ title }: TapNavProfileProps) {
 	const [anchorOpen, setAnchorOpen] = useState<null | HTMLElement>(null);
 	const open = Boolean(anchorOpen);
 	const handleClose = () => setAnchorOpen(null);
@@ -56,7 +56,7 @@ const TopNavProfile = ({ title }: TapNavProfileProps) => {
 			</Menu>
 		</div>
 	);
-};
+}
 
 export default TopNavProfile;
 

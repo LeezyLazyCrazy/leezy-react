@@ -14,14 +14,14 @@ interface SpaceBetweenTextBoxProps {
  * @param {SpaceBetweenTextBoxProps} SpaceBetweenTextBoxProps
  * @returns {JSX.Element} React Component
  */
-const SpaceBetweenTextBox = ({ title, children, marginBottom = 0 }: SpaceBetweenTextBoxProps) => {
+function SpaceBetweenTextBox({ title, children, marginBottom = 0 }: SpaceBetweenTextBoxProps) {
   return (
     <Root style={{ marginBottom }}>
       <Typography variant="body1">{title}</Typography>
       <div>{children}</div>
     </Root>
   );
-};
+}
 
 export default SpaceBetweenTextBox;
 

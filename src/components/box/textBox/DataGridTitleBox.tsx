@@ -10,7 +10,7 @@ interface DataGridTitleBoxProps {
  * @param {DataGridTitleBoxProps} DataGridTitleBoxProps
  * @returns {JSX.Element} React Component
  */
-const DataGridTitleBox = ({ title = '현황목록' }: DataGridTitleBoxProps) => {
+function DataGridTitleBox({ title = '현황목록' }: DataGridTitleBoxProps) {
   return (
     <Root>
       <CircleOutlinedIcon fontSize="small" color="info" />
@@ -19,7 +19,7 @@ const DataGridTitleBox = ({ title = '현황목록' }: DataGridTitleBoxProps) => 
       </Typography>
     </Root>
   );
-};
+}
 
 export default DataGridTitleBox;
 

@@ -21,7 +21,7 @@ import { BasicSymbolColorType } from '../../../utils/milColorHandler';
  * @returns
  */
 
-export const ProgressTable = () => {
+export function ProgressTable() {
   const data = [
     {
       name: '항목1',
@@ -47,7 +47,7 @@ export const ProgressTable = () => {
       ))}
     </SimpleTable>
   );
-};
+}
 
 interface CollapsibleBodyDataType {
   area: string;
@@ -66,7 +66,7 @@ interface CollapsibleBodyProps {
   subDataHead: string[];
 }
 
-const CollapsibleBody = ({ data, subData, subDataHead }: CollapsibleBodyProps) => {
+function CollapsibleBody({ data, subData, subDataHead }: CollapsibleBodyProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -109,7 +109,7 @@ const CollapsibleBody = ({ data, subData, subDataHead }: CollapsibleBodyProps) =
       </TableRow>
     </>
   );
-};
+}
 
 const exampleData: CollapsibleBodyDataType[] = [
   {
@@ -144,7 +144,7 @@ const exampleSubData: CollpasedSampleDataType[] = [
  * Collapsible Table 예시임
  * @returns JSX.Element(Table)
  */
-export const CollapsibleTableExample = () => {
+export function CollapsibleTableExample() {
   const head = ['', '지역', '상태'];
 
   return (
@@ -168,4 +168,4 @@ export const CollapsibleTableExample = () => {
       </TableBody>
     </CustomTable>
   );
-};
+}

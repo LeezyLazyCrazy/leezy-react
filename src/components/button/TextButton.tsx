@@ -10,12 +10,12 @@ interface TextButtonProps extends BaseButtonProps {
  * @returns {JSX.Element} React Component
  */
 
-const TextButton = ({
+function TextButton({
   title,
   type = 'submit',
   textPosition = 'left',
   ...rest
-}: TextButtonProps) => {
+}: TextButtonProps) {
   return (
     <BaseButton
       title={title}
@@ -34,6 +34,6 @@ const TextButton = ({
       {...rest}
     />
   );
-};
+}
 
 export default TextButton;

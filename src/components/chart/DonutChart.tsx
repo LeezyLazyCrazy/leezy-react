@@ -13,8 +13,7 @@ const COLORS = ['#0087feb6', '#1ac40094', '#ffe6289e', '#fc00fc95'];
 export default class Example extends PureComponent {
   render() {
     return (
-      <>
-        <Grid
+      <Grid
           container
           rowSpacing={2}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
@@ -160,7 +159,6 @@ export default class Example extends PureComponent {
             </Box>
           </Grid>
         </Grid>
-      </>
     );
   }
 }

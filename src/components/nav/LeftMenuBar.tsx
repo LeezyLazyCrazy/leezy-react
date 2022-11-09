@@ -13,7 +13,7 @@ import { useState } from 'react';
 import TabPanel from '../tab/TabPanel';
 import FavoritePagesBar from './FavoritePagesBar';
 
-//MENU ICON
+// MENU ICON
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import SurfingOutlinedIcon from '@mui/icons-material/SurfingOutlined';
 import AddReactionOutlinedIcon from '@mui/icons-material/AddReactionOutlined';
@@ -29,17 +29,17 @@ interface StyledTabProps {
  * @returns {JSX.Element} React Component
  */
 
-const LeftMenuBar = () => {
+function LeftMenuBar() {
   const { isBarOpen, setIsBarOpen } = useMenuBarStore();
   const { isDark } = useThemeStore();
   const location = useLocation();
   const rootRoute = location.pathname.split('/')[1];
   const mainColor = theme(isDark).palette.primary.main;
 
-  const highlightIcon = (routeName: string): string => {
+  const highlightIcon = (routeName: string): string => 
     // 현재 route의 부모 path가 매칭하는 경우 아이콘 색을 primary색으로 바꿈
-    return rootRoute === routeName ? mainColor : '';
-  };
+     rootRoute === routeName ? mainColor : ''
+  ;
 
   // Icon matching을 위해선 tsx 타입이 필요한 바,
   // menu list에서 대응되는 icon을 현재 파일에서 로드함.
@@ -144,11 +144,11 @@ const LeftMenuBar = () => {
       </Paper>
     </Root>
   );
-};
+}
 
 export default LeftMenuBar;
 
-//styles
+// styles
 
 const Root = styled('div')(({ theme }) => ({
   borderRight: `1px solid ${theme.palette.divider}`,

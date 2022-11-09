@@ -19,7 +19,7 @@ interface DraggablePageItemProps {
  * @returns {JSX.Element} JSX.Element(div)
  */
 
-const DraggablePageItem = ({ id, name, deleteItem, index }: DraggablePageItemProps) => {
+function DraggablePageItem({ id, name, deleteItem, index }: DraggablePageItemProps) {
 	return (
 		<Draggable draggableId={id} index={index}>
 			{(provided) => (
@@ -37,7 +37,7 @@ const DraggablePageItem = ({ id, name, deleteItem, index }: DraggablePageItemPro
 			)}
 		</Draggable>
 	);
-};
+}
 
 export default DraggablePageItem;
 

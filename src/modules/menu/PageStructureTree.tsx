@@ -7,7 +7,7 @@ import WebAssetIcon from "@mui/icons-material/WebAsset";
 import useFavoritePageStore from "../../stores/useFavoritePageStore";
 
 interface PageStructureTreeProps {
-	menu: MenuProps;
+  menu: MenuProps;
 }
 
 /**
@@ -17,81 +17,82 @@ interface PageStructureTreeProps {
  * @returns {JSX.Element} JSX.Element(div)
  */
 
-const PageStructureTree = ({ menu }: PageStructureTreeProps) => {
-	const { favoritePages, addToFavoritePages } = useFavoritePageStore();
-	const [isExpanded, toggleExpanded] = useState(false);
-	const fullPath = `/${menu.parentUrl}/${menu.id}`;
-	const isAlreadyChecked = favoritePages.some((f) => f.fullPath === fullPath);
+function PageStructureTree({ menu }: PageStructureTreeProps) {
+  const { favoritePages, addToFavoritePages } = useFavoritePageStore();
+  const [isExpanded, toggleExpanded] = useState(false);
+  const fullPath = `/${menu.parentUrl}/${menu.id}`;
+  const isAlreadyChecked = favoritePages.some((f) => f.fullPath === fullPath);
 
-	if (menu.type === "dir") {
-		return (
-			<>
-				<Root
-					onClick={() => {
-						toggleExpanded(!isExpanded);
-					}}
-				>
-					{isExpanded ? (
-						<IndeterminateCheckBoxIcon fontSize="small" color="secondary" />
-					) : (
-						<AddBoxIcon fontSize="small" color="secondary" />
-					)}
-					<DirName>{menu.name}</DirName>
-				</Root>
-				{isExpanded &&
-					menu.subMenu?.map((sub) => (
-						<div key={sub.id} style={{ paddingLeft: 15 }}>
-							<PageStructureTree menu={sub} />
-						</div>
-					))}
-			</>
-		);
-	}
+  if (menu.type === "dir") {
+    return (
+      <>
+        <Root
+          onClick={() => {
+            toggleExpanded(!isExpanded);
+          }}
+        >
+          {isExpanded ? (
+            <IndeterminateCheckBoxIcon fontSize="small" color="secondary" />
+          ) : (
+            <AddBoxIcon fontSize="small" color="secondary" />
+          )}
+          <DirName>{menu.name}</DirName>
+        </Root>
+        {isExpanded &&
+          menu.subMenu?.map((sub) => (
+            <div key={sub.id} style={{ paddingLeft: 15 }}>
+              <PageStructureTree menu={sub} />
+            </div>
+          ))}
+      </>
+    );
+  }
 
-	return (
-		<PageItem>
-			<WebAssetIcon fontSize="small" color="disabled" />
-			<Typography
-				variant="subtitle1"
-				style={{
-					paddingLeft: 4,
-					cursor: isAlreadyChecked ? "not-allowed" : "pointer",
-					color: isAlreadyChecked ? "#8e9091" : "",
-				}}
-				onClick={() => {
-					isAlreadyChecked ? null : addToFavoritePages({ fullPath, koreanName: menu.name });
-				}}
-			>
-				{menu.name}
-			</Typography>
-		</PageItem>
-	);
-};
+  return (
+    <PageItem>
+      <WebAssetIcon fontSize="small" color="disabled" />
+      <Typography
+        variant="subtitle1"
+        style={{
+          paddingLeft: 4,
+          cursor: isAlreadyChecked ? "not-allowed" : "pointer",
+          color: isAlreadyChecked ? "#8e9091" : "",
+        }}
+        onClick={() => {
+          // eslint-disable-next-line no-unused-expressions
+          isAlreadyChecked ? null : addToFavoritePages({ fullPath, koreanName: menu.name });
+        }}
+      >
+        {menu.name}
+      </Typography>
+    </PageItem>
+  );
+}
 
 export default PageStructureTree;
 
 const Root = styled("div")(() => ({
-	display: "flex",
-	flexDirection: "row",
-	alignItems: "center",
-	cursor: "pointer",
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  cursor: "pointer",
 }));
 
 const DirName = styled("div")(({ theme }) => ({
-	fontWeight: 600,
-	paddingLeft: 5,
-	"&:hover": {
-		color: theme.palette.secondary.main,
-	},
+  fontWeight: 600,
+  paddingLeft: 5,
+  "&:hover": {
+    color: theme.palette.secondary.main,
+  },
 }));
 
 const PageItem = styled("div")(({ theme }) => ({
-	display: "flex",
-	flexDirection: "row",
-	alignItems: "center",
-	paddingLeft: 20,
-	"&:hover": {
-		color: theme.palette.secondary.main,
-		fontWeight: 600,
-	},
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  paddingLeft: 20,
+  "&:hover": {
+    color: theme.palette.secondary.main,
+    fontWeight: 600,
+  },
 }));

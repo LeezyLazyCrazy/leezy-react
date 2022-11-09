@@ -9,12 +9,12 @@ export interface BaseButtonProps extends ButtonProps {
  * @param {BaseButtonProps} BaseButtonProps
  * @returns {JSX.Element} React Component
  */
-const BaseButton = ({ title, type = 'submit', ...rest }: BaseButtonProps) => {
+function BaseButton({ title, type = 'submit', ...rest }: BaseButtonProps) {
   return (
     <Button variant="contained" type={type} disableElevation {...rest}>
       {title}
     </Button>
   );
-};
+}
 
 export default BaseButton;

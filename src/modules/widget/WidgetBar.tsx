@@ -20,7 +20,7 @@ function a11yProps(index: number) {
  * @returns {JSX.Element} React Component
  *
  */
-const WidgetBar = () => {
+function WidgetBar() {
 	const { isBarOpen, setIsBarOpen, setSelectedTab, selectedTab } = useRightWidgetBarStore();
 
 	return (
@@ -72,7 +72,7 @@ const WidgetBar = () => {
 			</Paper>
 		</Root>
 	);
-};
+}
 
 export default WidgetBar;
 

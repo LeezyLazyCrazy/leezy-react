@@ -7,7 +7,7 @@ interface SelectBoxProps {
   data: string[];
 }
 
-const SelectBox = ({ value, onChange, data }: SelectBoxProps) => {
+function SelectBox({ value, onChange, data }: SelectBoxProps) {
   return (
     <Root>
       <TextInput
@@ -28,7 +28,7 @@ const SelectBox = ({ value, onChange, data }: SelectBoxProps) => {
       </TextInput>
     </Root>
   );
-};
+}
 
 export default SelectBox;
 

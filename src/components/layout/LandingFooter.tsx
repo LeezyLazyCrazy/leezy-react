@@ -6,13 +6,13 @@ import Logo from '../../assets/logos/Logo';
  * @returns {JSX.Element } React Component
  */
 
-const LandingFooter = () => {
+function LandingFooter() {
   return (
     <Root>
       <Logo />
     </Root>
   );
-};
+}
 
 export default LandingFooter;
 

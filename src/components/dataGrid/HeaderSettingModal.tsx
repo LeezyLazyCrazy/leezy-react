@@ -1,18 +1,19 @@
-import BaseModal from '../modal/BaseModal';
-import ShortAlert from '../alert/ShortAlert';
-import BaseBlockTitleBox from '../box/textBox/BaseBlockTitleBox';
-import TextInput from '../form/TextInput';
-import { Form, Formik } from 'formik';
-import * as yup from 'yup';
-import BaseButton from '../button/BaseButton';
-import { OptColumn } from '../../types/tui-grid/options';
+/* eslint-disable no-unused-vars */
+import BaseModal from "../modal/BaseModal";
+import ShortAlert from "../alert/ShortAlert";
+import BaseBlockTitleBox from "../box/textBox/BaseBlockTitleBox";
+import TextInput from "../form/TextInput";
+import { Form, Formik } from "formik";
+import * as yup from "yup";
+import BaseButton from "../button/BaseButton";
+import { OptColumn } from "tui-grid/types/options";
 
 const HeaderSettingSchema = yup.object({
   frozenCount: yup
     .number()
-    .defined('틀고정을 취소하시려면 0을 입력해주세요')
+    .defined("틀고정을 취소하시려면 0을 입력해주세요")
     .min(0)
-    .max(3, '틀고정 수는 최대 3개를 넘을 수 없습니다'),
+    .max(3, "틀고정 수는 최대 3개를 넘을 수 없습니다"),
 });
 
 type HeaderSettingValues = yup.InferType<typeof HeaderSettingSchema>;
@@ -31,14 +32,14 @@ interface HeaderSettingModalProps {
  * @param HeaderSettingModalProps HeaderSettingModalProps
  * @returns {JSX.Element} React Component(Modal)
  */
-const HeaderSettingModal = ({
+function HeaderSettingModal({
   open,
   setOpen,
   // headerData,
   tableRef,
   frozenCount,
   setFrozenCount,
-}: HeaderSettingModalProps) => {
+}: HeaderSettingModalProps) {
   const initialValues: HeaderSettingValues = {
     frozenCount,
   };
@@ -78,6 +79,6 @@ const HeaderSettingModal = ({
       </Formik>
     </BaseModal>
   );
-};
+}
 
 export default HeaderSettingModal;

@@ -15,7 +15,7 @@ interface AddToFavoritePageProps {
  * @returns {JSX.Element} React Component(button)
  */
 
-const AddToFavoritePage = ({ location, koreanName, isNotMainPage }: AddToFavoritePageProps) => {
+function AddToFavoritePage({ location, koreanName, isNotMainPage }: AddToFavoritePageProps) {
 	const { favoritePages, addToFavoritePages, removeFavoritePage } = useFavoritePageStore();
 	const isFavoritePage = favoritePages.some((p) => p.fullPath === location);
 
@@ -43,7 +43,7 @@ const AddToFavoritePage = ({ location, koreanName, isNotMainPage }: AddToFavorit
 			)}
 		</Root>
 	);
-};
+}
 
 export default AddToFavoritePage;
 

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
  * @returns {JSX.Element} React Component
  */
 
-const TopNav = () => {
+function TopNav() {
   const { authUser } = useAuth();
 
   return (
@@ -20,7 +20,7 @@ const TopNav = () => {
         sx={{
           boxShadow: 0,
           borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
-          //background: (theme) => theme.palette.background.paper,
+          // background: (theme) => theme.palette.background.paper,
           // background: '##18b809dc',
           background: `${authUser?.theme.background}`,
         }}
@@ -42,7 +42,7 @@ const TopNav = () => {
               fontWeight: 700,
               letterSpacing: '.2rem',
               color: 'inherit',
-              //textDecoration: 'none',
+              // textDecoration: 'none',
             }}
           >
             NCE-MS SYSTEM
@@ -55,6 +55,6 @@ const TopNav = () => {
       </AppBar>
     </Box>
   );
-};
+}
 
 export default TopNav;

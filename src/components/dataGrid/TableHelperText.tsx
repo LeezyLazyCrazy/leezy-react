@@ -22,7 +22,7 @@ export interface PercentTypeElement {
  * 범례(도움말) 중 퍼센티지에 따른 색상을 안내하기 위한 컴포넌트
  * @returns {JSX.Element} React Component(div)
  */
-const ColorPercentage = ({ percentType }: ColorPercentageProps) => {
+function ColorPercentage({ percentType }: ColorPercentageProps) {
   return (
     <Root>
       {percentType.map((p) => (
@@ -44,7 +44,7 @@ const ColorPercentage = ({ percentType }: ColorPercentageProps) => {
       ))}
     </Root>
   );
-};
+}
 
 /**
  * 디폴트 값. 가장 많이 쓰는 값으로 이것을 설정해두면 별도로 나중에 쓰지 않아도 이 값이 유지됨
@@ -63,19 +63,19 @@ const defaultPercentType: PercentTypeElement[] = [
  * @param TableHelperTextProps TableHelperTextProps
  * @returns JSX.Element(div)
  */
-const TableHelperText = ({ type, percentType = defaultPercentType }: TableHelperTextProps) => {
+function TableHelperText({ type, percentType = defaultPercentType }: TableHelperTextProps) {
   const helperType = (value: string) => {
     switch (value) {
       case 'percentage': {
         return <ColorPercentage percentType={percentType} />;
       }
       default:
-        return;
+        
     }
   };
 
   return <HelperWrapper sx={{ mb: 1 }}>{helperType(type)}</HelperWrapper>;
-};
+}
 
 export default TableHelperText;
 

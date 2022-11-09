@@ -24,12 +24,12 @@ interface CircleCellColorDisplayProps {
  * @returns JSX.Element(TableCell)
  */
 
-export const SimpleTableCircleCellByColor = ({
+export function SimpleTableCircleCellByColor({
   color,
   onClick,
   sx,
   pointer = false,
-}: CircleCellColorDisplayProps) => {
+}: CircleCellColorDisplayProps) {
   return (
     <TableCell align="center" onClick={onClick} sx={sx}>
       {color === 'X' ? (
@@ -49,7 +49,7 @@ export const SimpleTableCircleCellByColor = ({
       )}
     </TableCell>
   );
-};
+}
 
 interface SimpleTableCellTextProps {
   text: string;
@@ -63,12 +63,12 @@ interface SimpleTableCellTextProps {
  * @param SimpleTableTextProps SimpleTableTextProps
  * @returns JSX.Element(TableCell)
  */
-export const SimpleTableCellText = ({
+export function SimpleTableCellText({
   text,
   onClick,
   pointer = false,
   sx,
-}: SimpleTableCellTextProps) => {
+}: SimpleTableCellTextProps) {
   return (
     <TableCell
       component="th"
@@ -85,7 +85,7 @@ export const SimpleTableCellText = ({
       {text}
     </TableCell>
   );
-};
+}
 
 /**
  * Linear Progress 형태에 라벨이 더해진 것의 원형
@@ -121,13 +121,13 @@ interface SimpleTableCellProgressProps {
  * @returns JSX.Element(TableCell)
  */
 
-export const SimpleTableCellProgress = ({ percent, sx }: SimpleTableCellProgressProps) => {
+export function SimpleTableCellProgress({ percent, sx }: SimpleTableCellProgressProps) {
   return (
     <TableCell component="th" scope="row" align="center" sx={sx}>
       <LinearProgressWithLabel variant="determinate" value={percent} />
     </TableCell>
   );
-};
+}
 
 interface SimpleTableBackgroundColorCellProps {
   text: string;
@@ -142,13 +142,13 @@ interface SimpleTableBackgroundColorCellProps {
  * @param SimpleTableTextProps SimpleTableTextProps
  * @returns JSX.Element(TableCell)
  */
-export const SimpleTableBackgroundColorCell = ({
+export function SimpleTableBackgroundColorCell({
   text,
   onClick,
   color,
   pointer = false,
   sx,
-}: SimpleTableBackgroundColorCellProps) => {
+}: SimpleTableBackgroundColorCellProps) {
   return (
     <TableCell
       component="th"
@@ -166,4 +166,4 @@ export const SimpleTableBackgroundColorCell = ({
       {text}
     </TableCell>
   );
-};
+}

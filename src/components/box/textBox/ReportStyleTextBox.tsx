@@ -15,7 +15,7 @@ interface ReportStyleTextBoxProps {
  * @param {ReportStyleTextBoxProps} ReportStyleTextBoxProps
  * @returns {JSX.Element} React Component
  */
-const ReportStyleTextBox = ({ title, children, marginBottom = 0 }: ReportStyleTextBoxProps) => {
+function ReportStyleTextBox({ title, children, marginBottom = 0 }: ReportStyleTextBoxProps) {
   return (
     <Root style={{ marginBottom }}>
       <TitleWrapper>
@@ -27,7 +27,7 @@ const ReportStyleTextBox = ({ title, children, marginBottom = 0 }: ReportStyleTe
       <div>{children}</div>
     </Root>
   );
-};
+}
 
 export default ReportStyleTextBox;
 

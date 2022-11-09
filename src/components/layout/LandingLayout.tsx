@@ -6,13 +6,13 @@ import LandingFooter from './LandingFooter';
  * @returns {JSX.Element} React Component
  */
 
-const LandingLayout = () => {
+function LandingLayout() {
   return (
     <>
       <Outlet />
       <LandingFooter />
     </>
   );
-};
+}
 
 export default LandingLayout;

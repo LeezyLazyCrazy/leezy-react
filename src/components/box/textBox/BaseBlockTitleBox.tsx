@@ -16,7 +16,7 @@ interface BaseBlockTitleBoxProps {
  * @returns {JSX.Element} React Component
  */
 
-const BaseBlockTitleBox = ({ title, subtitle }: BaseBlockTitleBoxProps) => {
+function BaseBlockTitleBox({ title, subtitle }: BaseBlockTitleBoxProps) {
   return (
     <Root>
       <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
@@ -28,7 +28,7 @@ const BaseBlockTitleBox = ({ title, subtitle }: BaseBlockTitleBoxProps) => {
       <Divider />
     </Root>
   );
-};
+}
 
 export default BaseBlockTitleBox;
 

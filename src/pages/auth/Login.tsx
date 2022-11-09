@@ -21,7 +21,7 @@ type LoginValues = yup.InferType<typeof loginSchema>;
 // TO_BE_CHECKED
 // server side에서 여러 번 로그인 시 리밋 주는 것 코드 생성해서 받아올 것
 
-const Login = () => {
+function Login() {
 	const initialValues: LoginValues = {
 		id: "",
 		password: "",
@@ -107,7 +107,7 @@ const Login = () => {
 			{loading && <Loading />}
 		</>
 	);
-};
+}
 
 export default Login;
 

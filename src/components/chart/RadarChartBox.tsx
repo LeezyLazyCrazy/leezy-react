@@ -7,7 +7,7 @@ import { Legend, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart }
  * @returns {JSX.Element} React Component
  */
 
-const RadarChartBox = () => {
+function RadarChartBox() {
   const dummyData = [
     {
       subject: '환경',
@@ -65,6 +65,6 @@ const RadarChartBox = () => {
       </RadarChart>
     </div>
   );
-};
+}
 
 export default RadarChartBox;

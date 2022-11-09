@@ -49,7 +49,5 @@ const result = {
 
 export const handlers = [
   // toast-grid page
-  rest.get("/api/toast-grid", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(result));
-  }),
+  rest.get("/api/toast-grid", (req, res, ctx) => res(ctx.status(200), ctx.json(result))),
 ];

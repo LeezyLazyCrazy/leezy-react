@@ -14,7 +14,7 @@ interface DragFavoritePagesListProps {
  * @returns {JSX.Element} JSX.Element(div)
  */
 
-const DragFavoritePagesList = ({ favoritePages, onDragEnd }: DragFavoritePagesListProps) => {
+function DragFavoritePagesList({ favoritePages, onDragEnd }: DragFavoritePagesListProps) {
 	const { removeFavoritePage } = useFavoritePageStore();
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
@@ -36,6 +36,6 @@ const DragFavoritePagesList = ({ favoritePages, onDragEnd }: DragFavoritePagesLi
 			</Droppable>
 		</DragDropContext>
 	);
-};
+}
 
 export default DragFavoritePagesList;
