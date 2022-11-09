@@ -133,13 +133,12 @@ function BaseDataGrid({
           ref.current?.getInstance().setWidth(value);
         }}
         setTableHeight={(value) => ref.current?.getInstance().setHeight(value)}
-        // setTableFontSize={(value) => {
-        // 	initialData.map((_, i) => {
-        // 		// fontSize를 className으로 밖에 접근할 수 밖에 없는데, 제시된 함수가 기존 className에 추가하는 형식이라 우선적으로 이렇게 조치함.
-        // 		ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value - 1}`);
-        // 		ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value + 1}`);
-        // 		ref.current?.getInstance().addRowClassName(i, `tui-grid-container-${value}`);
-        // 	});
+        // initialData.map((_, i) => {
+        // fontSize를 className으로 밖에 접근할 수 밖에 없는데, 제시된 함수가 기존 className에 추가하는 형식이라 우선적으로 이렇게 조치함.
+        // ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value - 1}`);
+        // ref.current?.getInstance().removeRowClassName(i, `tui-grid-container-${value + 1}`);
+        // ref.current?.getInstance().addRowClassName(i, `tui-grid-container-${value}`);
+        // });
         // }}
       />
       <HeaderSettingModal

@@ -10,10 +10,7 @@ interface ShortAlertProps {
   title: string;
   severity: 'error' | 'warning' | 'info' | 'success';
   text?: string;
-  title: string;
-  severity: 'error' | 'warning' | 'info' | 'success';
-  text?: string;
-  // variant?: string;
+  variant?: string;
 }
 
 const defaultSecurityAccessWarning = '본 시스템은 비인가자 접근을 금지합니다.';
@@ -26,7 +23,6 @@ const defaultSecurityAccessWarning = '본 시스템은 비인가자 접근을 �
  */
 function ShortAlert({ title, severity, text = defaultSecurityAccessWarning }: ShortAlertProps) {
   return (
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
     <Root>
       <Alert severity={severity} variant="outlined">
         <AlertTitle>{title}</AlertTitle>
