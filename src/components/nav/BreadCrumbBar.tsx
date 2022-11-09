@@ -1,8 +1,8 @@
 import { Breadcrumbs, Link, LinkProps, styled, Typography } from '@mui/material';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { flattenedMenu } from '../../data/constants/menuFrame';
 import AddToFavoritePage from '../../modules/menu/AddToFavoritePage';
+import { flattenedMenu } from './FlattenedMenu';
 
 interface LinkRouterProps extends LinkProps {
   to: string;

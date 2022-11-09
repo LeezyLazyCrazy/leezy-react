@@ -1,6 +1,5 @@
 import { Divider, IconButton, List, styled, Tab, Tabs } from '@mui/material';
 import IconMenuItem from '../../modules/menu/IconMenuItem';
-import { menu } from '../../data/constants/menuFrame';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import BaseButton from '../button/BaseButton';
@@ -12,13 +11,8 @@ import useThemeStore from '../../stores/useThemeStore';
 import { useState } from 'react';
 import TabPanel from '../tab/TabPanel';
 import FavoritePagesBar from './FavoritePagesBar';
-
-// MENU ICON
-import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
-import SurfingOutlinedIcon from '@mui/icons-material/SurfingOutlined';
-import AddReactionOutlinedIcon from '@mui/icons-material/AddReactionOutlined';
-import AndroidOutlinedIcon from '@mui/icons-material/AndroidOutlined';
-import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
+import { menuIcons } from '../../data/constants/menuIcons';
+import { menu } from '../../data/constants/menuFrame';
 
 interface StyledTabProps {
   label: string;
@@ -39,35 +33,8 @@ function LeftMenuBar() {
   const highlightIcon = (routeName: string): string =>
     // 현재 route의 부모 path가 매칭하는 경우 아이콘 색을 primary색으로 바꿈
     rootRoute === routeName ? mainColor : '';
-  // Icon matching을 위해선 tsx 타입이 필요한 바,
-  // menu list에서 대응되는 icon을 현재 파일에서 로드함.
-  // 대 메뉴가 추가될 경우 icon 설정이 필요함.
-
-  const menuIcons = [
-    {
-      title: 'mui',
-      icon: <AutoAwesomeOutlinedIcon />,
-    },
-    {
-      title: 'toast-ui',
-      icon: <SurfingOutlinedIcon />,
-    },
-    {
-      title: 'framer',
-      icon: <AddReactionOutlinedIcon />,
-    },
-    {
-      title: 'react-query',
-      icon: <AndroidOutlinedIcon />,
-    },
-    {
-      title: 'zustand',
-      icon: <DirectionsRunOutlinedIcon />,
-    },
-  ];
 
   // handling tabs
-
   const [tabValue, setTabValue] = useState(0);
 
   return (
