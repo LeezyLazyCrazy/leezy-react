@@ -1,6 +1,6 @@
-import useThemeStore from "../../stores/useThemeStore";
-import { theme } from "../../styles/theme";
-import { IconProps } from "./IconProp";
+import useThemeStore from '../../stores/useThemeStore';
+import { theme } from '../../styles/theme';
+import { IconProps } from './IconProp';
 
 /**
  * 인터넷(지구 모양에 동그라미에 격차 있는거 - 🌐 이거) 공군 아이콘 (공군이 만든 디자인 참고)

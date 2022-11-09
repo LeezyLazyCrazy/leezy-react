@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  삼각형 아이콘
@@ -24,7 +24,7 @@ function TriangleIcon({ width = 18, color }: IconProps) {
     >
       <polygon
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,

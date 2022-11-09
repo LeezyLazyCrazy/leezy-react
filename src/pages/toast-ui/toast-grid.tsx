@@ -1,71 +1,71 @@
-import { Container } from "@mui/system";
-import BaseDataGrid from "../../components/dataGrid/BaseDataGrid";
-import { OptColumn } from "tui-grid/types/options";
+import { Container } from '@mui/system';
+import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
+import { OptColumn } from 'tui-grid/types/options';
 
 const columns: OptColumn[] = [
   {
-    name: "type",
-    header: "종류",
+    name: 'type',
+    header: '종류',
     sortable: true,
     editor: {
-      type: "text",
+      type: 'text',
     },
   },
   {
-    name: "loss",
-    header: "손실률",
+    name: 'loss',
+    header: '손실률',
     sortable: true,
     editor: {
-      type: "text",
+      type: 'text',
     },
   },
   {
-    name: "hold",
-    header: "보유량",
+    name: 'hold',
+    header: '보유량',
     sortable: true,
     editor: {
-      type: "text",
+      type: 'text',
     },
   },
   {
-    name: "second",
-    header: "초당거래량",
+    name: 'second',
+    header: '초당거래량',
     sortable: true,
     editor: {
-      type: "text",
+      type: 'text',
     },
   },
   {
-    name: "notWorking",
-    header: "활동여부",
+    name: 'notWorking',
+    header: '활동여부',
     sortable: true,
     editor: {
-      type: "text",
+      type: 'text',
     },
   },
   {
-    name: "working",
-    header: "거래여부",
+    name: 'working',
+    header: '거래여부',
     sortable: true,
     editor: {
-      type: "text",
+      type: 'text',
     },
   },
   {
-    name: "workingRate",
-    header: "가동률",
+    name: 'workingRate',
+    header: '가동률',
     sortable: true,
     // formatter: "listItemText",
     // renderer: {},
   },
   {
-    name: "editedDate",
-    header: "수정일시",
+    name: 'editedDate',
+    header: '수정일시',
     sortable: true,
   },
   {
-    name: "editedBy",
-    header: "거래아이디",
+    name: 'editedBy',
+    header: '거래아이디',
     sortable: true,
   },
 ];

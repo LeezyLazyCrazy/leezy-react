@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  다각형(폴리곤) 아이콘
@@ -29,7 +29,7 @@ function PolygonIcon({ width = 18, color }: IconProps) {
       <rect x="142.5" y="146.7" style={{ fill: chosenColor }} width="38.7" height="38.7" />
       <polygon
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,

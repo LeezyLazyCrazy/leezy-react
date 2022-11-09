@@ -34,6 +34,7 @@ export function ToastMessage({ title, message }: ToastMessageProps) {
  * @param ToastShowProps ToastShowProps
  * @returns toast
  */
-export const toastShow = ({ title, message, type }: ToastShowProps) => toast(<ToastMessage title={title} message={message} />, {
+export const toastShow = ({ title, message, type }: ToastShowProps) =>
+  toast(<ToastMessage title={title} message={message} />, {
     type,
   });

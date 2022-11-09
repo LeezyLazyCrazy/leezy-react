@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import create from "zustand";
-import { persist } from "zustand/middleware";
-import { SSOUserInfoType } from "../types/auth/sso";
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
+import { SSOUserInfoType } from '../types/auth/sso';
 
 type UserActions = {
   authUser: SSOUserInfoType | null;
@@ -56,6 +56,6 @@ export const useAuth = create<UserActions>()(
     {
       name: 'auth-user',
       getStorage: () => sessionStorage,
-    }
-  )
+    },
+  ),
 );

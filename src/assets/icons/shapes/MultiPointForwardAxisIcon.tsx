@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  다점전진축 - 화살표 모양의 전진 Line 모양 아이콘으로 꺾인 포인트가 더 있는듯?
@@ -24,7 +24,7 @@ function MultiPointForwardAxisIcon({ width = 18, color }: IconProps) {
     >
       <path
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
@@ -33,7 +33,7 @@ function MultiPointForwardAxisIcon({ width = 18, color }: IconProps) {
       />
       <polyline
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,

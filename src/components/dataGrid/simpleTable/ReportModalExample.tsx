@@ -1,8 +1,8 @@
-import { Dialog, Divider, styled, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import ReportStyleTextBox from "../../box/textBox/ReportStyleTextBox";
-import StatusChip from "../../chip/StatusChip";
-import AttachmentOutlinedIcon from "@mui/icons-material/AttachmentOutlined";
+import { Dialog, Divider, styled, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+import ReportStyleTextBox from '../../box/textBox/ReportStyleTextBox';
+import StatusChip from '../../chip/StatusChip';
+import AttachmentOutlinedIcon from '@mui/icons-material/AttachmentOutlined';
 
 interface ReportModalExmapleProps {
   open: boolean;
@@ -14,7 +14,7 @@ function ReportModalExample({ open, setOpen }: ReportModalExmapleProps) {
   return (
     <Dialog maxWidth="md" open={open} fullWidth onClose={setOpen}>
       <Root>
-        <Typography variant="h6" sx={{ textAlign: "center" }}>
+        <Typography variant="h6" sx={{ textAlign: 'center' }}>
           정보통신 장애 보고
         </Typography>
         <Divider sx={{ mb: 4, mt: 4 }} />
@@ -80,7 +80,7 @@ function ReportModalExample({ open, setOpen }: ReportModalExmapleProps) {
                 <AttachmentOutlinedIcon fontSize="small" sx={{ mr: 1 }} />
                 정보통신현황.hwp
               </FlexBox>
-            </Link>{" "}
+            </Link>{' '}
           </ReportStyleTextBox>
         </FlexBox>
       </Root>
@@ -90,17 +90,17 @@ function ReportModalExample({ open, setOpen }: ReportModalExmapleProps) {
 
 export default ReportModalExample;
 
-const Root = styled("div")(({ theme }) => ({
-  margin: "3%",
+const Root = styled('div')(({ theme }) => ({
+  margin: '3%',
   padding: 16,
   border: `1px solid ${theme.palette.divider}`,
   borderRadius: 6,
   background: theme.palette.table,
 }));
 
-const FlexBox = styled("div")(() => ({
-  display: "flex",
-  justifyContent: "space-between",
+const FlexBox = styled('div')(() => ({
+  display: 'flex',
+  justifyContent: 'space-between',
   marginTop: 6,
   marginBottom: 12,
 }));

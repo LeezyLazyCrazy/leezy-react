@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { Slider } from "@mui/material";
-import BaseBlockTitleBox from "../box/textBox/BaseBlockTitleBox";
-import BaseModal from "../modal/BaseModal";
+import { Slider } from '@mui/material';
+import BaseBlockTitleBox from '../box/textBox/BaseBlockTitleBox';
+import BaseModal from '../modal/BaseModal';
 
 interface TableSettingModalProps {
   open: boolean;

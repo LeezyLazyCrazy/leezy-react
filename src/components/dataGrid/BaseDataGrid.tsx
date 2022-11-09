@@ -1,20 +1,20 @@
-import Grid from "@toast-ui/react-grid";
-import TuiGrid from "tui-grid";
-import "tui-grid/dist/tui-grid.css";
-import { OptColumn, OptHeader } from "tui-grid/types/options";
-import "../../styles/dataGrid/index.css";
-import { createRef, useEffect, useState } from "react";
-import useThemeStore from "../../stores/useThemeStore";
-import { theme } from "../../styles/theme";
-import DataGridToolbar from "./DataGridToolbar";
-import YesNoSelectionModal from "../../modules/modal/YesNoSelectionModal";
-import TableSettingModal from "./TableSettingModal";
-import HeaderSettingModal from "./HeaderSettingModal";
-import { gridStyles } from "./dataGridStyle";
-import { API_URL } from "../../query";
-import useMenuBarStore from "../../stores/useMenuBarStore";
-import useRightWidgetBarStore from "../../stores/useRightWidgetBarStore";
-import { DataSource } from "tui-grid/types/dataSource";
+import Grid from '@toast-ui/react-grid';
+import TuiGrid from 'tui-grid';
+import 'tui-grid/dist/tui-grid.css';
+import { OptColumn, OptHeader } from 'tui-grid/types/options';
+import '../../styles/dataGrid/index.css';
+import { createRef, useEffect, useState } from 'react';
+import useThemeStore from '../../stores/useThemeStore';
+import { theme } from '../../styles/theme';
+import DataGridToolbar from './DataGridToolbar';
+import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
+import TableSettingModal from './TableSettingModal';
+import HeaderSettingModal from './HeaderSettingModal';
+import { gridStyles } from './dataGridStyle';
+import { API_URL } from '../../query';
+import useMenuBarStore from '../../stores/useMenuBarStore';
+import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
+import { DataSource } from 'tui-grid/types/dataSource';
 
 interface BaseDataGridProps {
   tableName: string;
@@ -43,10 +43,10 @@ function BaseDataGrid({
   // grid styles
   const { isDark } = useThemeStore();
   const { palette } = theme(isDark);
-  TuiGrid.applyTheme("default", gridStyles(palette));
+  TuiGrid.applyTheme('default', gridStyles(palette));
 
   // grid language
-  TuiGrid.setLanguage("ko");
+  TuiGrid.setLanguage('ko');
 
   const ref = createRef<Grid>();
 
@@ -81,15 +81,15 @@ function BaseDataGrid({
   const dataSource: DataSource = {
     withCredentials: false,
     initialRequest: true,
-    contentType: "application/json",
+    contentType: 'application/json',
     api: {
-      readData: { url: `${API_URL}/api/${tableName}`, method: "GET" },
-      modifyData: { url: `${API_URL}/api/${tableName}`, method: "PUT" },
+      readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
+      modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
     },
   };
 
   return (
-    <div style={{ width: "auto" }}>
+    <div style={{ width: 'auto' }}>
       {showToolbar && (
         <DataGridToolbar
           addNewRow={appendRow}
@@ -109,18 +109,18 @@ function BaseDataGrid({
         bodyHeight={600}
         heightResizable
         width="auto"
-        rowHeaders={["rowNum", "checkbox"]}
+        rowHeaders={['rowNum', 'checkbox']}
         draggable
         scrollX
         scrollY={false}
-        oneTimeBindingProps={["data", "columns"]}
+        oneTimeBindingProps={['data', 'columns']}
       />
       <YesNoSelectionModal
         open={checkToSaveOpen}
         setOpen={setCheckToSaveOpen}
         title="바뀐 내용 저장"
         onYes={() => {
-          ref.current?.getInstance().request("modifyData");
+          ref.current?.getInstance().request('modifyData');
         }}
         onNo={() => ref.current?.getInstance().readData(1)}
         question="바뀐 내용이 있네요. 저장하실?"

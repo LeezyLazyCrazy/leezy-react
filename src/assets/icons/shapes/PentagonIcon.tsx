@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  오각형(5각형) 펜타곤 아이콘
@@ -24,7 +24,7 @@ function PentagonIcon({ width = 18, color }: IconProps) {
     >
       <polygon
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,

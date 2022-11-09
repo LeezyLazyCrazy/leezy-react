@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 interface SquareIconProps extends IconProps {
   rotate?: number;
@@ -33,7 +33,7 @@ function SquareIcon({ width = 18, color, rotate = 0 }: SquareIconProps) {
         x="24.8"
         y="24.8"
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,

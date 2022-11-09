@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography } from '@mui/material';
 
 interface MenuIconWrapperProps {
   open: boolean;
@@ -19,7 +19,7 @@ interface MenuIconWrapperProps {
 function MenuIconWrapper({ open, setOpen, title, iconComponent, color }: MenuIconWrapperProps) {
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div style={{ textAlign: "center" }} onClick={setOpen}>
+    <div style={{ textAlign: 'center' }} onClick={setOpen}>
       {iconComponent}
       {!open && (
         <Typography color={color} variant="subtitle2">

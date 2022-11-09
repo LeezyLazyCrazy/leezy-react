@@ -1,6 +1,6 @@
-import useThemeStore from "../../stores/useThemeStore";
-import { theme } from "../../styles/theme";
-import { IconProps } from "./IconProp";
+import useThemeStore from '../../stores/useThemeStore';
+import { theme } from '../../styles/theme';
+import { IconProps } from './IconProp';
 
 /**
  * (!) 이런 식으로 생긴 뭔가 경고를 하는 듯한 모양의 공군 아이콘 (공군이 만든 디자인 참고)

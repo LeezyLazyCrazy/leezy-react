@@ -70,7 +70,6 @@ function TableHelperText({ type, percentType = defaultPercentType }: TableHelper
         return <ColorPercentage percentType={percentType} />;
       }
       default:
-        
     }
   };
 

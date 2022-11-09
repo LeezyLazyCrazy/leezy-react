@@ -36,11 +36,9 @@ function LeftMenuBar() {
   const rootRoute = location.pathname.split('/')[1];
   const mainColor = theme(isDark).palette.primary.main;
 
-  const highlightIcon = (routeName: string): string => 
+  const highlightIcon = (routeName: string): string =>
     // 현재 route의 부모 path가 매칭하는 경우 아이콘 색을 primary색으로 바꿈
-     rootRoute === routeName ? mainColor : ''
-  ;
-
+    rootRoute === routeName ? mainColor : '';
   // Icon matching을 위해선 tsx 타입이 필요한 바,
   // menu list에서 대응되는 icon을 현재 파일에서 로드함.
   // 대 메뉴가 추가될 경우 icon 설정이 필요함.
@@ -179,5 +177,5 @@ const StyledTab = styled((props: StyledTabProps) => <Tab disableRipple {...props
     color: theme.palette.text.secondary,
     borderBottom: '1px solid white',
     variant: 'body1',
-  })
+  }),
 );

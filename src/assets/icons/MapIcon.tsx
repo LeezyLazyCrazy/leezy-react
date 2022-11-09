@@ -1,6 +1,6 @@
-import useThemeStore from "../../stores/useThemeStore";
-import { theme } from "../../styles/theme";
-import { IconProps } from "./IconProp";
+import useThemeStore from '../../stores/useThemeStore';
+import { theme } from '../../styles/theme';
+import { IconProps } from './IconProp';
 
 /**
  * 지도 아이콘으로 세번 접을 수 있는 종이 위에 위치를 나타내는 대표적인 아이콘 모양이 있는 공군 아이콘 (공군이 만든 디자인 참고)

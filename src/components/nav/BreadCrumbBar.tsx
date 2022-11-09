@@ -1,8 +1,8 @@
-import { Breadcrumbs, Link, LinkProps, styled, Typography } from "@mui/material";
-import { useLocation, Link as RouterLink } from "react-router-dom";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { flattenedMenu } from "../../data/constants/menuFrame";
-import AddToFavoritePage from "../../modules/menu/AddToFavoritePage";
+import { Breadcrumbs, Link, LinkProps, styled, Typography } from '@mui/material';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { flattenedMenu } from '../../data/constants/menuFrame';
+import AddToFavoritePage from '../../modules/menu/AddToFavoritePage';
 
 interface LinkRouterProps extends LinkProps {
   to: string;
@@ -22,12 +22,12 @@ function LinkRouter(props: LinkRouterProps) {
 
 function BreadCrumbBar() {
   const location = useLocation();
-  const splitedRoute = location.pathname.split("/").slice(1);
+  const splitedRoute = location.pathname.split('/').slice(1);
   const routeNameInKorean = splitedRoute.map(
     (route) => flattenedMenu().find((menu) => menu.path === route)?.korean,
   );
-  const finalRouteInKorean = routeNameInKorean[routeNameInKorean.length - 1] || "";
-  const isNotMainPage = splitedRoute[0] !== "index";
+  const finalRouteInKorean = routeNameInKorean[routeNameInKorean.length - 1] || '';
+  const isNotMainPage = splitedRoute[0] !== 'index';
 
   return (
     <Root>
@@ -60,19 +60,19 @@ export default BreadCrumbBar;
 
 // styles
 
-const Root = styled("div")(() => ({
-  padding: "8px 20px",
-  marginBottom: "20px",
+const Root = styled('div')(() => ({
+  padding: '8px 20px',
+  marginBottom: '20px',
   // background: theme.palette.background.paper,
   // background: "#19950e9e",
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-between",
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
   borderBottom: `2px solid #18c9089e`,
 }));
 
-const RightWrapper = styled("div")(() => ({
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
+const RightWrapper = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
 }));

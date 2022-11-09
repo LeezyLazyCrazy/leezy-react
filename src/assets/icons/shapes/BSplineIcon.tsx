@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  곡선으로 만든 도형(퍼거슨 스플라인, B-Spline) 형태의 아이콘
@@ -24,7 +24,7 @@ function BSplineIcon({ width = 18, color }: IconProps) {
     >
       <path
         style={{
-          fill: "none",
+          fill: 'none',
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,

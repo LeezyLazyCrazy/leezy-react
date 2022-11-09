@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  전투지경선 - 라인이 이리저리 꼬인 모양
@@ -12,7 +12,7 @@ function CombatBoundaryIcon({ width = 18, color }: IconProps) {
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: "none",
+    fill: 'none',
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,

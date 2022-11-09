@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import BaseLayout from "../components/layout/BaseLayout";
-import LandingLayout from "../components/layout/LandingLayout";
-import { menu } from "../data/constants/menuFrame";
-import Login from "../pages/auth/Login";
-import Landing from "../pages/Landing";
-import Main from "../pages/Main";
-import NotFound from "../pages/NotFound";
-import Unauthorized from "../pages/Unauthorized";
-import RequireAuth from "./RequireAuth";
+import { Route, Routes } from 'react-router-dom';
+import BaseLayout from '../components/layout/BaseLayout';
+import LandingLayout from '../components/layout/LandingLayout';
+import { menu } from '../data/constants/menuFrame';
+import Login from '../pages/auth/Login';
+import Landing from '../pages/Landing';
+import Main from '../pages/Main';
+import NotFound from '../pages/NotFound';
+import Unauthorized from '../pages/Unauthorized';
+import RequireAuth from './RequireAuth';
 
 function Router() {
   return (
@@ -19,7 +19,7 @@ function Router() {
         <Route path="/auth/login" element={<Login />} />
       </Route>
       {/* protected route - require auth and specific pageIds */}
-      <Route element={<RequireAuth allowedGroups={["test1"]} />}>
+      <Route element={<RequireAuth allowedGroups={['test1']} />}>
         <Route element={<BaseLayout />}>
           <Route path="/index" element={<Main />} />
           {menu.map((route) =>

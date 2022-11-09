@@ -1,5 +1,5 @@
-import Container from "../components/layout/Container";
-import LandingCTA from "../modules/landing/LandingCTA";
+import Container from '../components/layout/Container';
+import LandingCTA from '../modules/landing/LandingCTA';
 
 function Landing() {
   return (

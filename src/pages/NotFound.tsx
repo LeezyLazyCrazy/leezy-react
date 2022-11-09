@@ -1,14 +1,14 @@
-import { styled, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import BaseButton from "../components/button/BaseButton";
-import LandingFooter from "../components/layout/LandingFooter";
-import CenteredDiv from "../components/box/CenteredDiv";
+import { styled, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import BaseButton from '../components/button/BaseButton';
+import LandingFooter from '../components/layout/LandingFooter';
+import CenteredDiv from '../components/box/CenteredDiv';
 
 function NotFound() {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
-  const BtnWrapper = styled("div")(() => ({
+  const BtnWrapper = styled('div')(() => ({
     marginTop: 30,
   }));
 

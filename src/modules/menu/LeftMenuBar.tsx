@@ -1,26 +1,26 @@
-import { Divider, IconButton, List, styled, Tab, Tabs } from "@mui/material";
-import IconMenuItem from "./IconMenuItem";
-import { menu } from "../../data/constants/menuFrame";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import BaseButton from "../../components/button/BaseButton";
-import Logo from "../../assets/logos/Logo";
-import useMenuBarStore from "../../stores/useMenuBarStore";
-import { useLocation } from "react-router-dom";
-import { theme } from "../../styles/theme";
-import useThemeStore from "../../stores/useThemeStore";
-import { useState } from "react";
-import TabPanel from "../../components/tab/TabPanel";
-import FavoritePagesBar from "../../components/nav/FavoritePagesBar";
+import { Divider, IconButton, List, styled, Tab, Tabs } from '@mui/material';
+import IconMenuItem from './IconMenuItem';
+import { menu } from '../../data/constants/menuFrame';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import BaseButton from '../../components/button/BaseButton';
+import Logo from '../../assets/logos/Logo';
+import useMenuBarStore from '../../stores/useMenuBarStore';
+import { useLocation } from 'react-router-dom';
+import { theme } from '../../styles/theme';
+import useThemeStore from '../../stores/useThemeStore';
+import { useState } from 'react';
+import TabPanel from '../../components/tab/TabPanel';
+import FavoritePagesBar from '../../components/nav/FavoritePagesBar';
 
-import DevicesOutlinedIcon from "@mui/icons-material/DevicesOutlined";
-import AppRegistrationOutlinedIcon from "@mui/icons-material/AppRegistrationOutlined";
-import DeviceHubOutlinedIcon from "@mui/icons-material/DeviceHubOutlined";
-import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
-import ViewInArOutlinedIcon from "@mui/icons-material/ViewInArOutlined";
-import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
-import TopicOutlinedIcon from "@mui/icons-material/TopicOutlined";
-import QrCodeOutlinedIcon from "@mui/icons-material/QrCodeOutlined";
+import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
+import AppRegistrationOutlinedIcon from '@mui/icons-material/AppRegistrationOutlined';
+import DeviceHubOutlinedIcon from '@mui/icons-material/DeviceHubOutlined';
+import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
+import ViewInArOutlinedIcon from '@mui/icons-material/ViewInArOutlined';
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
+import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
+import QrCodeOutlinedIcon from '@mui/icons-material/QrCodeOutlined';
 
 interface StyledTabProps {
   label: string;
@@ -35,47 +35,47 @@ function LeftMenuBar() {
   const { isBarOpen, setIsBarOpen } = useMenuBarStore();
   const { isDark } = useThemeStore();
   const location = useLocation();
-  const rootRoute = location.pathname.split("/")[1];
+  const rootRoute = location.pathname.split('/')[1];
   const mainColor = theme(isDark).palette.primary.main;
 
   const highlightIcon = (routeName: string): string =>
     // 현재 route의 부모 path가 매칭하는 경우 아이콘 색을 primary색으로 바꿈
-    rootRoute === routeName ? mainColor : "";
+    rootRoute === routeName ? mainColor : '';
   // Icon matching을 위해선 tsx 타입이 필요한 바,
   // menu list에서 대응되는 icon을 현재 파일에서 로드함.
   // 대 메뉴가 추가될 경우 icon 설정이 필요함.
 
   const menuIcons = [
     {
-      title: "equipments",
+      title: 'equipments',
       icon: <DevicesOutlinedIcon />,
     },
     {
-      title: "terminal",
+      title: 'terminal',
       icon: <AppRegistrationOutlinedIcon />,
     },
     {
-      title: "materials",
+      title: 'materials',
       icon: <DeviceHubOutlinedIcon />,
     },
     {
-      title: "approval",
+      title: 'approval',
       icon: <HowToRegOutlinedIcon />,
     },
     {
-      title: "development",
+      title: 'development',
       icon: <ViewInArOutlinedIcon />,
     },
     {
-      title: "manufactory",
+      title: 'manufactory',
       icon: <ApartmentOutlinedIcon />,
     },
     {
-      title: "agency",
+      title: 'agency',
       icon: <TopicOutlinedIcon />,
     },
     {
-      title: "system",
+      title: 'system',
       icon: <QrCodeOutlinedIcon />,
     },
   ];
@@ -87,7 +87,7 @@ function LeftMenuBar() {
   return (
     <Root>
       <Paper width={isBarOpen ? 210 : 90}>
-        <div style={{ marginTop: "2%", textAlign: "right" }}>
+        <div style={{ marginTop: '2%', textAlign: 'right' }}>
           <ShrinkBtn
             isshrinked={String(isBarOpen)}
             size="small"
@@ -107,7 +107,7 @@ function LeftMenuBar() {
         <div>
           {isBarOpen && (
             <Tabs
-              sx={{ borderBottom: 1, borderColor: "divider" }}
+              sx={{ borderBottom: 1, borderColor: 'divider' }}
               value={tabValue}
               onChange={(e, v) => setTabValue(v)}
               aria-label="menu-tabs"
@@ -143,10 +143,10 @@ function LeftMenuBar() {
             style={{
               marginTop: 30,
               height: 60,
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              alignItems: "center",
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}
           >
             <BaseButton type="button" variant="text" title="기존 시스템 이동" />
@@ -162,34 +162,34 @@ export default LeftMenuBar;
 
 // styles
 
-const Root = styled("div")(({ theme }) => ({
+const Root = styled('div')(({ theme }) => ({
   borderRight: `1px solid ${theme.palette.divider}`,
-  height: "99%",
+  height: '99%',
   background: theme.palette.background.paper,
-  "*::-webkit-scrollbar": {
-    display: "none",
+  '*::-webkit-scrollbar': {
+    display: 'none',
   },
 }));
 
-const Paper = styled("div")(({ width }: { width: number }) => ({
+const Paper = styled('div')(({ width }: { width: number }) => ({
   width,
-  height: "97vh",
-  overflowY: "scroll",
-  transition: "width ease-out 0.1s",
-  paddingBottom: "80px",
+  height: '97vh',
+  overflowY: 'scroll',
+  transition: 'width ease-out 0.1s',
+  paddingBottom: '80px',
 }));
 
 const ShrinkBtn = styled(IconButton)(({ isshrinked }: { isshrinked: string }) => ({
-  "&:hover": {
-    transform: isshrinked === "false" ? "translateX(+.3rem)" : "translateX(-.3rem)",
-    transition: "all .2s ease-in-out",
+  '&:hover': {
+    transform: isshrinked === 'false' ? 'translateX(+.3rem)' : 'translateX(-.3rem)',
+    transition: 'all .2s ease-in-out',
   },
 }));
 
 const StyledTab = styled((props: StyledTabProps) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
     color: theme.palette.text.secondary,
-    borderBottom: "1px solid white",
-    variant: "body1",
+    borderBottom: '1px solid white',
+    variant: 'body1',
   }),
 );

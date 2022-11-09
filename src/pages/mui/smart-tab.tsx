@@ -1,4 +1,4 @@
-import TabPage from "../../components/tab/TabPage";
+import TabPage from '../../components/tab/TabPage';
 
 function PageTab() {
   return <TabPage />;

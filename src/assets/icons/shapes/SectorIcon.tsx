@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 /**
  *  섹터(부채꼴) 모양의 아이콘으로 inner 부분도 휘어있음
@@ -25,7 +25,7 @@ function SectorIcon({ width = 18, color }: IconProps) {
       <g>
         <path
           style={{
-            fill: "none",
+            fill: 'none',
             stroke: chosenColor,
             strokeWidth: 14,
             strokeMiterlimit: 10,

@@ -19,7 +19,7 @@ function createData(
   fat: string,
   carbs: string,
   protein: string,
-  price: string
+  price: string,
 ) {
   return {
     name,

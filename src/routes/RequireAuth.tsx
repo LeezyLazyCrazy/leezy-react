@@ -1,5 +1,5 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { useAuth } from "../stores/useAuth";
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useAuth } from '../stores/useAuth';
 
 interface UserGroupsProp {
   allowedGroups: string[];

@@ -1,4 +1,4 @@
-import { IconProps } from "./IconProp";
+import { IconProps } from './IconProp';
 
 /**
  * 초승달 모양의 공군 아이콘 (공군이 만든 디자인 참고)

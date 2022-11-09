@@ -1,5 +1,5 @@
-import { Dialog, styled } from "@mui/material";
-import { ReactNode } from "react";
+import { Dialog, styled } from '@mui/material';
+import { ReactNode } from 'react';
 
 interface BaseModalProps {
   open: boolean;
@@ -23,7 +23,7 @@ function BaseModal({ open, setOpen, children }: BaseModalProps) {
 
 export default BaseModal;
 
-const Root = styled("div")(() => ({
+const Root = styled('div')(() => ({
   minWidth: 600,
-  padding: "4%",
+  padding: '4%',
 }));

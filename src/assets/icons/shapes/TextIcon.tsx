@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 interface TextIconProps extends IconProps {
   small?: boolean;
@@ -16,7 +16,7 @@ function TextIcon({ width = 18, color, small = false }: TextIconProps) {
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: "none",
+    fill: 'none',
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,
@@ -66,7 +66,7 @@ function TextIcon({ width = 18, color, small = false }: TextIconProps) {
               />
 
               <line
-                style={{ ...style, strokeDasharray: "12.1538, 12.1538" }}
+                style={{ ...style, strokeDasharray: '12.1538, 12.1538' }}
                 x1="163.3"
                 y1="162.2"
                 x2="23.6"
@@ -75,7 +75,7 @@ function TextIcon({ width = 18, color, small = false }: TextIconProps) {
               <polyline style={style} points="17.5,162.2 11.5,162.2 11.5,156.2 		" />
 
               <line
-                style={{ ...style, strokeDasharray: "11.8889,11.8889" }}
+                style={{ ...style, strokeDasharray: '11.8889,11.8889' }}
                 x1="11.5"
                 y1="144.3"
                 x2="11.5"
@@ -84,7 +84,7 @@ function TextIcon({ width = 18, color, small = false }: TextIconProps) {
               <polyline style={style} points="11.5,49.2 11.5,43.2 17.5,43.2 		" />
 
               <line
-                style={{ ...style, strokeDasharray: "12.1538, 12.1538" }}
+                style={{ ...style, strokeDasharray: '12.1538, 12.1538' }}
                 x1="29.6"
                 y1="43.2"
                 x2="169.4"
@@ -93,7 +93,7 @@ function TextIcon({ width = 18, color, small = false }: TextIconProps) {
               <polyline style={style} points="175.5,43.2 181.5,43.2 181.5,49.2 		" />
 
               <line
-                style={{ ...style, strokeDasharray: "11.8889,11.8889" }}
+                style={{ ...style, strokeDasharray: '11.8889,11.8889' }}
                 x1="181.5"
                 y1="61.1"
                 x2="181.5"

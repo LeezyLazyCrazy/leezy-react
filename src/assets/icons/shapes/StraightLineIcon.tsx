@@ -1,6 +1,6 @@
-import useThemeStore from "../../../stores/useThemeStore";
-import { theme } from "../../../styles/theme";
-import { IconProps } from "../IconProp";
+import useThemeStore from '../../../stores/useThemeStore';
+import { theme } from '../../../styles/theme';
+import { IconProps } from '../IconProp';
 
 interface StraightLineIconProps extends IconProps {
   arrowNumber?: number;
@@ -21,7 +21,7 @@ function StraightLineIcon({ width = 16, color, arrowNumber = 0 }: StraightLineIc
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: "none",
+    fill: 'none',
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,
@@ -39,7 +39,7 @@ function StraightLineIcon({ width = 16, color, arrowNumber = 0 }: StraightLineIc
       width={width}
     >
       <line
-        style={{ ...style, strokeLinecap: "round" }}
+        style={{ ...style, strokeLinecap: 'round' }}
         x1="20.2"
         y1="179.8"
         x2="179.8"

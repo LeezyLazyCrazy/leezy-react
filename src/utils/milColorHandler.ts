@@ -9,27 +9,27 @@
  * - G for Green
  * - R for Red
  */
-export type BasicSymbolColorType = "Y" | "B" | "G" | "R" | "X";
+export type BasicSymbolColorType = 'Y' | 'B' | 'G' | 'R' | 'X';
 
 /**
  * 부대 데이터베이스에서 받아 온 대문자 1글자 짜리 색상 정보를 받아서  색상의 HEX 정보를 뽑아주는 함수
  */
 export const milColorHandler = (color: BasicSymbolColorType) => {
   switch (color) {
-    case "G": {
-      return "#43a047";
+    case 'G': {
+      return '#43a047';
     }
-    case "Y": {
-      return "#ffeb3b";
+    case 'Y': {
+      return '#ffeb3b';
     }
-    case "R": {
-      return "#f44336";
+    case 'R': {
+      return '#f44336';
     }
-    case "B": {
-      return "#212121";
+    case 'B': {
+      return '#212121';
     }
-    case "X": {
-      return "#212121";
+    case 'X': {
+      return '#212121';
     }
   }
 };

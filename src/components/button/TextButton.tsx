@@ -10,12 +10,7 @@ interface TextButtonProps extends BaseButtonProps {
  * @returns {JSX.Element} React Component
  */
 
-function TextButton({
-  title,
-  type = 'submit',
-  textPosition = 'left',
-  ...rest
-}: TextButtonProps) {
+function TextButton({ title, type = 'submit', textPosition = 'left', ...rest }: TextButtonProps) {
   return (
     <BaseButton
       title={title}

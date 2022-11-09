@@ -1,6 +1,6 @@
-import { Link, LinkProps, useMatch, useResolvedPath } from "react-router-dom";
-import useThemeStore from "../stores/useThemeStore";
-import { theme } from "../styles/theme";
+import { Link, LinkProps, useMatch, useResolvedPath } from 'react-router-dom';
+import useThemeStore from '../stores/useThemeStore';
+import { theme } from '../styles/theme';
 
 function RouteStyleHandler({ children, to, ...props }: LinkProps) {
   const { isDark } = useThemeStore();
@@ -13,7 +13,7 @@ function RouteStyleHandler({ children, to, ...props }: LinkProps) {
         style={{
           color: match ? theme(isDark).palette.primary.main : theme(isDark).palette.text.secondary,
           fontWeight: match ? 700 : 400,
-          textDecoration: "none",
+          textDecoration: 'none',
         }}
         to={to}
         {...props}

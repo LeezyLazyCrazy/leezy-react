@@ -1,7 +1,7 @@
-import { Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import CenteredDiv from "../components/box/CenteredDiv";
-import BaseButton from "../components/button/BaseButton";
+import { Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import CenteredDiv from '../components/box/CenteredDiv';
+import BaseButton from '../components/button/BaseButton';
 
 function Unauthorized() {
   const navigate = useNavigate();

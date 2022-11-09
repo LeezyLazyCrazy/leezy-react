@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
-import BaseButton from "../../components/button/BaseButton";
-import BaseModal from "../../components/modal/BaseModal";
+import { Typography } from '@mui/material';
+import BaseButton from '../../components/button/BaseButton';
+import BaseModal from '../../components/modal/BaseModal';
 
 interface YesNoSelectionModalProps {
   open: boolean;
@@ -32,7 +32,7 @@ function YesNoSelectionModal({
         {title}
       </Typography>
       <Typography variant="body1">{question}</Typography>
-      <div style={{ marginTop: 20, textAlign: "right" }}>
+      <div style={{ marginTop: 20, textAlign: 'right' }}>
         <BaseButton title="네" onClick={onYes} />
         <BaseButton
           title="아니요"

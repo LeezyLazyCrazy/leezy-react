@@ -1,9 +1,9 @@
-import { Grid } from "@mui/material";
-import ShortAlert from "../../components/alert/ShortAlert";
-import { toastShow } from "../../components/alert/ToastMessage";
-import BaseButton from "../../components/button/BaseButton";
-import RadarChartBox from "../../components/chart/RadarChartBox";
-import StatusChip from "../../components/chip/StatusChip";
+import { Grid } from '@mui/material';
+import ShortAlert from '../../components/alert/ShortAlert';
+import { toastShow } from '../../components/alert/ToastMessage';
+import BaseButton from '../../components/button/BaseButton';
+import RadarChartBox from '../../components/chart/RadarChartBox';
+import StatusChip from '../../components/chip/StatusChip';
 
 function PageComponents() {
   return (
@@ -13,7 +13,7 @@ function PageComponents() {
         <BaseButton
           title="toast Message"
           onClick={() => {
-            toastShow({ title: "title", message: "message", type: "info" });
+            toastShow({ title: 'title', message: 'message', type: 'info' });
           }}
         >
           Toast Message
