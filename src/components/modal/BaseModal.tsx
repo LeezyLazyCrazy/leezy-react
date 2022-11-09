@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Dialog, styled } from '@mui/material';
 import { ReactNode } from 'react';
 

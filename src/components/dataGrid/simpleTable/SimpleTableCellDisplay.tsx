@@ -7,9 +7,9 @@ import {
   Theme,
   Typography,
 } from '@mui/material';
-import { BasicSymbolColorType, milColorHandler } from '../../../utils/milColorHandler';
 import CircleIcon from '@mui/icons-material/Circle';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import { BasicSymbolColorType, milColorHandler } from '../../../utils/milColorHandler';
 
 interface CircleCellColorDisplayProps {
   color: BasicSymbolColorType;

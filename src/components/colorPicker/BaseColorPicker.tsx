@@ -39,7 +39,7 @@ export function BaseColorPickerShowDot({
       sx={{
         color,
         cursor: clickable ? 'pointer' : 'default',
-        border: isDark === 'light' ? `0.5px solid #e7e5e5` : 'none',
+        border: isDark === 'light' ? '0.5px solid #e7e5e5' : 'none',
         borderRadius: '50%',
       }}
       fontSize={circleSize}

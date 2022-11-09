@@ -48,7 +48,9 @@ function HeaderSettingModal({
     <BaseModal open={open} setOpen={() => setOpen(!open)}>
       <ShortAlert
         title="도움말"
-        text={`움직이고자 하는 컬럼명에 마우스 왼쪽을 누른채로 약간 아래로 당기면 컬럼의 위치를 움직일 수 있습니다\n 컬럼을 맨 왼쪽으로 옮기면 그 행을 기준으로 틀고정이 됩니다`}
+        text={
+          '움직이고자 하는 컬럼명에 마우스 왼쪽을 누른채로 약간 아래로 당기면 컬럼의 위치를 움직일 수 있습니다\n 컬럼을 맨 왼쪽으로 옮기면 그 행을 기준으로 틀고정이 됩니다'
+        }
         severity="info"
       />
       <BaseBlockTitleBox title="틀 고정 설정" subtitle="왼쪽에 고정시킬 행의 갯수를 적어주세요" />

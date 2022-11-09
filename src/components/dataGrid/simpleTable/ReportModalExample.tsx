@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { Dialog, Divider, styled, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import AttachmentOutlinedIcon from '@mui/icons-material/AttachmentOutlined';
 import ReportStyleTextBox from '../../box/textBox/ReportStyleTextBox';
 import StatusChip from '../../chip/StatusChip';
-import AttachmentOutlinedIcon from '@mui/icons-material/AttachmentOutlined';
 
-interface ReportModalExmapleProps {
+interface ReportModalExampleProps {
   open: boolean;
   // eslint-disable-next-line no-unused-vars
   setOpen: (value: boolean) => void;
 }
 
-function ReportModalExample({ open, setOpen }: ReportModalExmapleProps) {
+function ReportModalExample({ open, setOpen }: ReportModalExampleProps) {
   return (
     <Dialog maxWidth="md" open={open} fullWidth onClose={setOpen}>
       <Root>
@@ -41,21 +42,11 @@ function ReportModalExample({ open, setOpen }: ReportModalExmapleProps) {
           <ReportStyleTextBox title="피해구간">피해구간</ReportStyleTextBox>
         </FlexBox>
         <FlexBox>
-          <ReportStyleTextBox title="피해내용">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus dicta quidem quo facilis
-            sit? Enim, impedit obcaecati? Officiis quae corporis a, sed magnam dolores ex quisquam
-            dolor facere minima incidunt?
-          </ReportStyleTextBox>
+          <ReportStyleTextBox title="피해내용">dummy text</ReportStyleTextBox>
         </FlexBox>
         <Divider sx={{ mb: 2, mt: 6, borderWidth: 1.2 }} />
         <FlexBox>
-          <ReportStyleTextBox title="조치사항">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus dicta quidem quo facilis
-            sit? Enim, impedit obcaecati? Officiis quae corporis a, sed magnam dolores ex quisquam
-            dolor facere minima incidunt? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Minus dicta quidem quo facilis sit? Enim, impedit obcaecati? Officiis quae corporis a,
-            sed magnam dolores ex quisquam dolor facere minima incidunt?
-          </ReportStyleTextBox>
+          <ReportStyleTextBox title="조치사항">dummy text</ReportStyleTextBox>
         </FlexBox>
         <FlexBox>
           <ReportStyleTextBox title="복구예정일시">2019-09-04 12:00:00</ReportStyleTextBox>
