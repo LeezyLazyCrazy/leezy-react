@@ -1,11 +1,11 @@
-import { IconProps } from './IconProp';
+import { IconProps } from "./IconProp";
 
 /**
  * 태양 모양 공군 아이콘 (공군이 만든 디자인 참고)
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const SunIcon = ({ width = 20, color }: IconProps) => {
+function SunIcon({ width = 20, color }: IconProps) {
   return (
     <svg
       enableBackground="new 0 0 33.4 29.9"
@@ -21,6 +21,6 @@ const SunIcon = ({ width = 20, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default SunIcon;

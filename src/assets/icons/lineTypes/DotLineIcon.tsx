@@ -1,6 +1,6 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  * dot 형태의 점선 아이콘 "****" 모양
@@ -8,7 +8,7 @@ import { IconProps } from '../IconProp';
  * @returns {JSX.Element} React Component(SVG)
  */
 
-const DotLineIcon = ({ width = 22, color }: IconProps) => {
+function DotLineIcon({ width = 22, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -28,6 +28,6 @@ const DotLineIcon = ({ width = 22, color }: IconProps) => {
       <circle cx="43" cy="25" r="2.3" fill={chosenColor} />
     </svg>
   );
-};
+}
 
 export default DotLineIcon;

@@ -1,14 +1,12 @@
-import { Container } from '@mui/system';
-import ResponsiveGrid from '../../components/dataGrid/RespnsiveGrid';
+import { Container } from "@mui/system";
+import ResponsiveGrid from "../../components/dataGrid/RespnsiveGrid";
 
-const PageMuiGrid2 = () => {
+function PageMuiGrid2() {
   return (
-    <>
-      <Container>
-        <ResponsiveGrid />
-      </Container>
-    </>
+    <Container>
+      <ResponsiveGrid />
+    </Container>
   );
-};
+}
 
 export default PageMuiGrid2;

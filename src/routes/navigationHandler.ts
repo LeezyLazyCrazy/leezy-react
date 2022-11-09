@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const useDetectLocation = () => {
   const navigate = useNavigate();

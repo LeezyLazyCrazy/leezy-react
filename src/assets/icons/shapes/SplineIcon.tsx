@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  스플라인(곡선의 여러 개의 점) 아이콘
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const SplineIcon = ({ width = 18, color }: IconProps) => {
+function SplineIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -26,7 +26,7 @@ const SplineIcon = ({ width = 18, color }: IconProps) => {
       <rect x="9.3" y="142.9" width="38.7" height="38.7" style={{ fill: chosenColor }} />
       <path
         style={{
-          fill: 'none',
+          fill: "none",
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
@@ -36,6 +36,6 @@ const SplineIcon = ({ width = 18, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default SplineIcon;

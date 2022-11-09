@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  곡선으로 만든 도형(퍼거슨 스플라인, B-Spline) 형태의 아이콘
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const BSplineIcon = ({ width = 18, color }: IconProps) => {
+function BSplineIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -24,7 +24,7 @@ const BSplineIcon = ({ width = 18, color }: IconProps) => {
     >
       <path
         style={{
-          fill: 'none',
+          fill: "none",
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
@@ -34,6 +34,6 @@ const BSplineIcon = ({ width = 18, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default BSplineIcon;

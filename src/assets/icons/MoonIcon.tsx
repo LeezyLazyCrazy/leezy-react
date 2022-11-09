@@ -1,4 +1,4 @@
-import { IconProps } from './IconProp';
+import { IconProps } from "./IconProp";
 
 /**
  * 초승달 모양의 공군 아이콘 (공군이 만든 디자인 참고)
@@ -6,7 +6,7 @@ import { IconProps } from './IconProp';
  * @returns {JSX.Element} React Component(SVG)
  */
 
-const MoonIcon = ({ width = 20, color }: IconProps) => {
+function MoonIcon({ width = 20, color }: IconProps) {
   return (
     <svg
       enableBackground="new 0 0 33.4 29.9"
@@ -31,6 +31,6 @@ const MoonIcon = ({ width = 20, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default MoonIcon;

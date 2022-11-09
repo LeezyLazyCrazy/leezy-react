@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  섹터(부채꼴) 모양의 아이콘으로 inner 부분도 휘어있음
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const SectorIcon = ({ width = 18, color }: IconProps) => {
+function SectorIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -25,7 +25,7 @@ const SectorIcon = ({ width = 18, color }: IconProps) => {
       <g>
         <path
           style={{
-            fill: 'none',
+            fill: "none",
             stroke: chosenColor,
             strokeWidth: 14,
             strokeMiterlimit: 10,
@@ -36,6 +36,6 @@ const SectorIcon = ({ width = 18, color }: IconProps) => {
       </g>
     </svg>
   );
-};
+}
 
 export default SectorIcon;

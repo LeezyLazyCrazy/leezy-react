@@ -1,14 +1,13 @@
-import { Container } from '@mui/system';
-import CollapsibleTable from '../../components/dataGrid/CollapsibleTable';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Container } from "@mui/system";
+import CollapsibleTable from "../../components/dataGrid/CollapsibleTable";
 
-const PageMuiGrid = () => {
+function PageMuiGrid() {
   return (
-    <>
-      <Container>
-        <CollapsibleTable />
-      </Container>
-    </>
+    <Container>
+      <CollapsibleTable />
+    </Container>
   );
-};
+}
 
 export default PageMuiGrid;

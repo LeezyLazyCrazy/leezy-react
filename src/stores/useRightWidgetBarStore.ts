@@ -1,4 +1,5 @@
-import create from 'zustand';
+/* eslint-disable no-unused-vars */
+import create from "zustand";
 
 interface RightWidgetBarState {
   isBarOpen: boolean;
@@ -14,14 +15,9 @@ interface RightWidgetBarState {
 const useRightWidgetBarStore = create<RightWidgetBarState>((set) => ({
   isBarOpen: false,
   selectedTab: 0,
-  setIsBarOpen: (status) =>
-    set(() => {
-      return { isBarOpen: status };
-    }),
+  setIsBarOpen: (status) => set(() => ({ isBarOpen: status })),
   setSelectedTab(tabNumber) {
-    set(() => {
-      return { selectedTab: tabNumber };
-    });
+    set(() => ({ selectedTab: tabNumber }));
   },
 }));
 

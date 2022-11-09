@@ -1,6 +1,6 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 interface StraightLineIconProps extends IconProps {
   arrowNumber?: number;
@@ -16,12 +16,12 @@ interface StraightLineIconProps extends IconProps {
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const StraightLineIcon = ({ width = 16, color, arrowNumber = 0 }: StraightLineIconProps) => {
+function StraightLineIcon({ width = 16, color, arrowNumber = 0 }: StraightLineIconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: 'none',
+    fill: "none",
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,
@@ -39,7 +39,7 @@ const StraightLineIcon = ({ width = 16, color, arrowNumber = 0 }: StraightLineIc
       width={width}
     >
       <line
-        style={{ ...style, strokeLinecap: 'round' }}
+        style={{ ...style, strokeLinecap: "round" }}
         x1="20.2"
         y1="179.8"
         x2="179.8"
@@ -59,6 +59,6 @@ const StraightLineIcon = ({ width = 16, color, arrowNumber = 0 }: StraightLineIc
       )}
     </svg>
   );
-};
+}
 
 export default StraightLineIcon;

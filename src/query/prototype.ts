@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { useQuery } from 'react-query';
-import { API_URL } from '.';
-import { toastShow } from '../components/alert/ToastMessage';
-import { BasicSymbolColorType } from '../utils/milColorHandler';
+import axios from "axios";
+import { useQuery } from "react-query";
+import { API_URL } from ".";
+import { toastShow } from "../components/alert/ToastMessage";
+import { BasicSymbolColorType } from "../utils/milColorHandler";
 
 export interface PrototypeAllType {
   testCd: number;
@@ -37,14 +37,14 @@ export const usePrototypeById = (id?: string | undefined) => {
     } catch (error: any) {
       if (id !== undefined) {
         toastShow({
-          title: '네트워크 에러',
+          title: "네트워크 에러",
           message: `id를 찾을 수 없어 서버에 연결할 수 없습니다. ${error.message}`,
-          type: 'error',
+          type: "error",
         });
       }
     }
   };
-  return useQuery(['prototypeById', id], () => getPrototypeById(id!), {
+  return useQuery(["prototypeById", id], () => getPrototypeById(id!), {
     enabled: id !== undefined,
   });
 };

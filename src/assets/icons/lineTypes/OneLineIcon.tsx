@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  * Solid 형태의 선 아이콘 "-" 모양
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const OneLineIcon = ({ width = 22, color }: IconProps) => {
+function OneLineIcon({ width = 22, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -25,6 +25,6 @@ const OneLineIcon = ({ width = 22, color }: IconProps) => {
       <rect x="4.8" y="23" width="40.5" height="4" fill={chosenColor} />
     </svg>
   );
-};
+}
 
 export default OneLineIcon;

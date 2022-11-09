@@ -1,6 +1,7 @@
-import create from 'zustand';
-import { SSOUserInfoType } from '../types/auth/sso';
-import { persist } from 'zustand/middleware';
+/* eslint-disable no-unused-vars */
+import create from "zustand";
+import { persist } from "zustand/middleware";
+import { SSOUserInfoType } from "../types/auth/sso";
 
 type UserActions = {
   authUser: SSOUserInfoType | null;

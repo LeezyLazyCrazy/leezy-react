@@ -1,13 +1,13 @@
 export interface OpenLayersStandardDataTypes {
-  type: 'FeatureCollection';
+  type: "FeatureCollection";
   features: OpenLayersStandardFeatureTypes[] | undefined | null;
 }
 
 export interface OpenLayersStandardFeatureTypes {
-  type: 'Feature';
+  type: "Feature";
   properties: any;
   geometry: {
-    type: 'Point';
+    type: "Point";
     coordinates: string[];
   };
 }

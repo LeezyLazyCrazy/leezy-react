@@ -1,13 +1,12 @@
-import DataTable from '../../components/dataGrid/DataTable';
-import { Container } from '@mui/system';
-const PageMuiSimple = () => {
+import { Container } from "@mui/system";
+import DataTable from "../../components/dataGrid/DataTable";
+
+function PageMuiSimple() {
   return (
-    <>
-      <Container>
-        <DataTable />
-      </Container>
-    </>
+    <Container>
+      <DataTable />
+    </Container>
   );
-};
+}
 
 export default PageMuiSimple;

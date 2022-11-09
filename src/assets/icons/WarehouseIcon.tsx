@@ -1,13 +1,13 @@
-import useThemeStore from '../../stores/useThemeStore';
-import { theme } from '../../styles/theme';
-import { IconProps } from './IconProp';
+import useThemeStore from "../../stores/useThemeStore";
+import { theme } from "../../styles/theme";
+import { IconProps } from "./IconProp";
 
 /**
  * 창고/격납고 모양 공군 아이콘 (공군이 만든 디자인 참고)
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const WarehouseIcon = ({ width = 20, color }: IconProps) => {
+function WarehouseIcon({ width = 20, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -26,6 +26,6 @@ const WarehouseIcon = ({ width = 20, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default WarehouseIcon;

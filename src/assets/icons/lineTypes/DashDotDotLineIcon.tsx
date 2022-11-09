@@ -1,6 +1,6 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  * Dash dot dot 연속 형태의 선 아이콘 "- * * " 모양
@@ -8,7 +8,7 @@ import { IconProps } from '../IconProp';
  * @returns {JSX.Element} React Component(SVG)
  */
 
-const DashDotDotLineIcon = ({ width = 22, color }: IconProps) => {
+function DashDotDotLineIcon({ width = 22, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -30,6 +30,6 @@ const DashDotDotLineIcon = ({ width = 22, color }: IconProps) => {
       </g>
     </svg>
   );
-};
+}
 
 export default DashDotDotLineIcon;

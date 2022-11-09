@@ -1,4 +1,4 @@
-import create from 'zustand';
+import create from "zustand";
 
 interface MenuBarState {
   isBarOpen: boolean;
@@ -12,10 +12,7 @@ interface MenuBarState {
  */
 const useMenuBarStore = create<MenuBarState>((set) => ({
   isBarOpen: true,
-  setIsBarOpen: () =>
-    set((state) => {
-      return { isBarOpen: !state.isBarOpen };
-    }),
+  setIsBarOpen: () => set((state) => ({ isBarOpen: !state.isBarOpen })),
 }));
 
 export default useMenuBarStore;

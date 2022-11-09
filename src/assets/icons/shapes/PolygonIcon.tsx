@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  다각형(폴리곤) 아이콘
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const PolygonIcon = ({ width = 18, color }: IconProps) => {
+function PolygonIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -29,16 +29,16 @@ const PolygonIcon = ({ width = 18, color }: IconProps) => {
       <rect x="142.5" y="146.7" style={{ fill: chosenColor }} width="38.7" height="38.7" />
       <polygon
         style={{
-          fill: 'none',
+          fill: "none",
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
         }}
-        points="34.4,171.5 160.3,171.5 170.4,110.4 
+        points="34.4,171.5 160.3,171.5 170.4,110.4
 	75.7,28.5 16.5,53.5 "
       />
     </svg>
   );
-};
+}
 
 export default PolygonIcon;

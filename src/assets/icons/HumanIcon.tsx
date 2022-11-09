@@ -1,6 +1,6 @@
-import useThemeStore from '../../stores/useThemeStore';
-import { theme } from '../../styles/theme';
-import { IconProps } from './IconProp';
+import useThemeStore from "../../stores/useThemeStore";
+import { theme } from "../../styles/theme";
+import { IconProps } from "./IconProp";
 
 /**
  * 간단한 휴먼 모양 공군 아이콘 (공군이 만든 디자인 참고)
@@ -8,7 +8,7 @@ import { IconProps } from './IconProp';
  * @returns {JSX.Element} React Component(SVG)
  */
 
-const HumanIcon = ({ width = 20, color }: IconProps) => {
+function HumanIcon({ width = 20, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
   return (
@@ -26,6 +26,6 @@ const HumanIcon = ({ width = 20, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default HumanIcon;

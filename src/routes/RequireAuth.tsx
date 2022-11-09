@@ -1,11 +1,11 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useAuth } from '../stores/useAuth';
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { useAuth } from "../stores/useAuth";
 
 interface UserGroupsProp {
   allowedGroups: string[];
 }
 
-const RequireAuth = ({ allowedGroups }: UserGroupsProp) => {
+function RequireAuth({ allowedGroups }: UserGroupsProp) {
   const { authUser, isAuthenticated } = useAuth();
   const location = useLocation();
 
@@ -21,6 +21,6 @@ const RequireAuth = ({ allowedGroups }: UserGroupsProp) => {
   }
 
   return <Navigate to="/auth/login" state={{ from: location }} replace />;
-};
+}
 
 export default RequireAuth;

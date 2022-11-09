@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  폴리라인 아이콘
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const PolyLineIcon = ({ width = 18, color }: IconProps) => {
+function PolyLineIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -24,7 +24,7 @@ const PolyLineIcon = ({ width = 18, color }: IconProps) => {
     >
       <path
         style={{
-          fill: 'none',
+          fill: "none",
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
@@ -37,6 +37,6 @@ const PolyLineIcon = ({ width = 18, color }: IconProps) => {
       <rect x="15" y="141.7" width="38.7" height="38.7" />
     </svg>
   );
-};
+}
 
 export default PolyLineIcon;

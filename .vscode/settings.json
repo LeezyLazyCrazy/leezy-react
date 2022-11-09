@@ -6,6 +6,7 @@
     "afcss",
     "airforce",
     "btns",
+    "Certi",
     "datagrid",
     "datepicker",
     "fontsource",
@@ -26,7 +27,9 @@
     "webcomponents",
     "zustand"
   ],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  // "editor.codeActionsOnSave": {
+  // 	"source.fixAll.eslint": true
+  // },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

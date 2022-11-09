@@ -1,13 +1,13 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  모서리가 둥근 사각형 아이콘
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const RoundedSquareIcon = ({ width = 18, color }: IconProps) => {
+function RoundedSquareIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -24,7 +24,7 @@ const RoundedSquareIcon = ({ width = 18, color }: IconProps) => {
     >
       <path
         style={{
-          fill: 'none',
+          fill: "none",
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
@@ -34,6 +34,6 @@ const RoundedSquareIcon = ({ width = 18, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default RoundedSquareIcon;

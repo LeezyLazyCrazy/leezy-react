@@ -1,11 +1,11 @@
-import DataGridTitleBox from '../components/box/textBox/DataGridTitleBox';
+import DataGridTitleBox from "../components/box/textBox/DataGridTitleBox";
 
-const SampleTable = () => {
+function SampleTable() {
   return (
-    <div style={{ padding: '3%', height: 'auto' }}>
+    <div style={{ padding: "3%", height: "auto" }}>
       <DataGridTitleBox />
     </div>
   );
-};
+}
 
 export default SampleTable;

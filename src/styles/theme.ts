@@ -1,19 +1,20 @@
-import { createTheme } from '@mui/material';
-import { lightBlue, lime, grey, red, yellow, green } from '@mui/material/colors';
+/* eslint-disable no-unused-vars */
+import { createTheme } from "@mui/material";
+import { lightBlue, lime, grey, red, yellow, green } from "@mui/material/colors";
 
 // noto sans kr load
-import '@fontsource/noto-sans-kr/300.css';
-import '@fontsource/noto-sans-kr/400.css';
-import '@fontsource/noto-sans-kr/500.css';
-import '@fontsource/noto-sans-kr/700.css';
+import "@fontsource/noto-sans-kr/300.css";
+import "@fontsource/noto-sans-kr/400.css";
+import "@fontsource/noto-sans-kr/500.css";
+import "@fontsource/noto-sans-kr/700.css";
 
 // noto serif kr load
-import '@fontsource/noto-serif-kr/300.css';
-import '@fontsource/noto-serif-kr/400.css';
-import '@fontsource/noto-serif-kr/500.css';
-import '@fontsource/noto-serif-kr/700.css';
+import "@fontsource/noto-serif-kr/300.css";
+import "@fontsource/noto-serif-kr/400.css";
+import "@fontsource/noto-serif-kr/500.css";
+import "@fontsource/noto-serif-kr/700.css";
 
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface Palette {
     /**
      * 범례 시 숫자
@@ -71,39 +72,39 @@ declare module '@mui/material/styles' {
   }
 }
 
-export type PaletteMode = 'light' | 'dark';
+export type PaletteMode = "light" | "dark";
 
 const baseTheme = {
   typography: {
     fontSize: 11,
-    fontFamily: 'Noto Sans KR',
+    fontFamily: "Noto Sans KR",
     h1: {
-      fontSize: '3rem',
+      fontSize: "3rem",
       lineHeight: 1.167,
       fontWeight: 600,
     },
     h2: {
-      fontSize: '2.4rem',
+      fontSize: "2.4rem",
       lineHeight: 1.167,
       fontWeight: 600,
     },
     h3: {
-      fontSize: '2rem',
+      fontSize: "2rem",
       lineHeight: 1.167,
       fontWeight: 600,
     },
     h4: {
-      fontSize: '1.7rem',
+      fontSize: "1.7rem",
       lineHeight: 1.167,
       fontWeight: 600,
     },
     h5: {
-      fontSize: '1.2rem',
+      fontSize: "1.2rem",
       lineHeight: 1.167,
       fontWeight: 600,
     },
     h6: {
-      fontSize: '0.92rem',
+      fontSize: "0.92rem",
       lineHeight: 1,
       fontWeight: 600,
     },
@@ -111,7 +112,7 @@ const baseTheme = {
       lineHeight: 1,
     },
     subtitle2: {
-      fontSize: '.5rem',
+      fontSize: ".5rem",
       fontWeight: 400,
     },
   },
@@ -119,18 +120,18 @@ const baseTheme = {
     MuiButton: {
       styleOverrides: {
         root: {
-          padding: '8px 22px',
+          padding: "8px 22px",
         },
         sizeLarge: {
-          fontSize: '.9rem',
+          fontSize: ".9rem",
         },
       },
     },
     MuiTextField: {
       styleOverrides: {
         root: {
-          width: '100%',
-          paddingBottom: '2%',
+          width: "100%",
+          paddingBottom: "2%",
         },
       },
     },
@@ -180,13 +181,13 @@ const lightTheme = {
     main: lightBlue[800],
   },
   secondary: {
-    main: '#19857b',
+    main: "#19857b",
   },
   background: {
-    default: '#eef6fa',
+    default: "#eef6fa",
   },
   text: {
-    secondary: 'rgba(0, 0, 0, 0.8)',
+    secondary: "rgba(0, 0, 0, 0.8)",
   },
   percentageRemarks: {
     verylow: grey[900],
@@ -195,18 +196,18 @@ const lightTheme = {
     high: green[600],
   },
   armyColor: {
-    land: '#3d5114',
-    navy: '#001B69',
-    airforce: '#3399FF',
+    land: "#3d5114",
+    navy: "#001B69",
+    airforce: "#3399FF",
   },
-  table: '#fafafa',
+  table: "#fafafa",
 };
 
 const getDesignTokens = (mode: PaletteMode) => ({
   ...baseTheme,
   palette: {
     mode,
-    ...(mode === 'light' ? lightTheme : darkTheme),
+    ...(mode === "light" ? lightTheme : darkTheme),
   },
 });
 

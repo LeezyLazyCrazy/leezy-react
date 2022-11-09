@@ -1,4 +1,5 @@
-import create from 'zustand';
+/* eslint-disable no-unused-vars */
+import create from "zustand";
 
 interface FavoritePagesState {
   favoritePages: FavoritePageState[];
@@ -17,7 +18,7 @@ export interface FavoritePageState {
   koreanName: string;
 }
 
-const mode = window.localStorage.getItem('favPages');
+const mode = window.localStorage.getItem("favPages");
 
 /**
  * 즐겨찾기 페이지 관리 전역 Context로 다음의 기능을 가짐
@@ -27,18 +28,18 @@ const mode = window.localStorage.getItem('favPages');
  * - changePageOrder: 즐찾 배열의 순서 변경
  */
 const useFavoritePageStore = create<FavoritePagesState>((set) => ({
-  favoritePages: typeof mode === 'string' ? JSON.parse(mode) : [],
+  favoritePages: typeof mode === "string" ? JSON.parse(mode) : [],
   addToFavoritePages: (page: FavoritePageState) => {
     set((state) => {
       const newPages = [...state.favoritePages, page];
-      localStorage.setItem('favPages', JSON.stringify(newPages));
+      localStorage.setItem("favPages", JSON.stringify(newPages));
       return { favoritePages: newPages };
     });
   },
   removeFavoritePage: (fullPath) => {
     set((state) => {
       const filteredPages = state.favoritePages.filter((path) => path.fullPath !== fullPath);
-      localStorage.setItem('favPages', JSON.stringify(filteredPages));
+      localStorage.setItem("favPages", JSON.stringify(filteredPages));
 
       return {
         favoritePages: filteredPages,
@@ -47,7 +48,7 @@ const useFavoritePageStore = create<FavoritePagesState>((set) => ({
   },
   changePageOrder: (pages: FavoritePageState[]) => {
     set(() => {
-      localStorage.setItem('favePages', JSON.stringify(pages));
+      localStorage.setItem("favePages", JSON.stringify(pages));
 
       return {
         favoritePages: pages,

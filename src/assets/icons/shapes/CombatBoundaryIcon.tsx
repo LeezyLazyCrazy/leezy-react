@@ -1,18 +1,18 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  전투지경선 - 라인이 이리저리 꼬인 모양
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const CombatBoundaryIcon = ({ width = 18, color }: IconProps) => {
+function CombatBoundaryIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: 'none',
+    fill: "none",
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,
@@ -40,6 +40,6 @@ const CombatBoundaryIcon = ({ width = 18, color }: IconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default CombatBoundaryIcon;

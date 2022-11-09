@@ -1,6 +1,6 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 interface SquareIconProps extends IconProps {
   rotate?: number;
@@ -13,7 +13,7 @@ interface SquareIconProps extends IconProps {
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const SquareIcon = ({ width = 18, color, rotate = 0 }: SquareIconProps) => {
+function SquareIcon({ width = 18, color, rotate = 0 }: SquareIconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
@@ -33,7 +33,7 @@ const SquareIcon = ({ width = 18, color, rotate = 0 }: SquareIconProps) => {
         x="24.8"
         y="24.8"
         style={{
-          fill: 'none',
+          fill: "none",
           stroke: chosenColor,
           strokeWidth: 14,
           strokeMiterlimit: 10,
@@ -43,6 +43,6 @@ const SquareIcon = ({ width = 18, color, rotate = 0 }: SquareIconProps) => {
       />
     </svg>
   );
-};
+}
 
 export default SquareIcon;

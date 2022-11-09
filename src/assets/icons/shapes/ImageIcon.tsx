@@ -1,18 +1,18 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  다점전진축 - 화살표 모양의 전진 Line 모양 아이콘으로 꺾인 포인트가 더 있는듯?
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const ImageIcon = ({ width = 18, color }: IconProps) => {
+function ImageIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: 'none',
+    fill: "none",
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,
@@ -35,6 +35,6 @@ const ImageIcon = ({ width = 18, color }: IconProps) => {
       </g>
     </svg>
   );
-};
+}
 
 export default ImageIcon;

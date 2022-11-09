@@ -1,18 +1,18 @@
-import useThemeStore from '../../../stores/useThemeStore';
-import { theme } from '../../../styles/theme';
-import { IconProps } from '../IconProp';
+import useThemeStore from "../../../stores/useThemeStore";
+import { theme } from "../../../styles/theme";
+import { IconProps } from "../IconProp";
 
 /**
  *  비행전진축 - 화살표 모양의 전진 Line 모양 아이콘
  * @param {IconProps} IconProps
  * @returns {JSX.Element} React Component(SVG)
  */
-const FlightForwardAxisIcon = ({ width = 18, color }: IconProps) => {
+function FlightForwardAxisIcon({ width = 18, color }: IconProps) {
   const { isDark } = useThemeStore();
   const chosenColor = color || theme(isDark).palette.text.secondary;
 
   const style = {
-    fill: 'none',
+    fill: "none",
     stroke: chosenColor,
     strokeWidth: 14,
     strokeMiterlimit: 10,
@@ -36,6 +36,6 @@ const FlightForwardAxisIcon = ({ width = 18, color }: IconProps) => {
       </g>
     </svg>
   );
-};
+}
 
 export default FlightForwardAxisIcon;
