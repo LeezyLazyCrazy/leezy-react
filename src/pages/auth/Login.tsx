@@ -36,13 +36,31 @@ function Login() {
       <Container>
         <Root>
           <DefaultBox>
-            <div style={{ marginBottom: '5%' }}>
-              <Typography gutterBottom variant="subtitle1">
-                크크루삥뽕 알잘딱깔센
+            <div style={{ margin: '5% 0px' }}>
+              <Typography
+                gutterBottom
+                variant="h3"
+                sx={{
+                  // fontFamily: 'BlinkMacSystemFont',
+                  // marginBottom: "2.5rem",
+                  fontFamily: 'Hahmlet',
+                  color: '#ffff',
+                }}
+              >
+                NCE-MS
               </Typography>
-              <Typography gutterBottom variant="h4">
-                SYSTEM LOGIN
+              <Typography
+                gutterBottom
+                variant="h1"
+                sx={{
+                  fontFamily: 'Hahmlet',
+                  marginBottom: '2rem',
+                  color: '#ffff',
+                }}
+              >
+                SYSTEM
               </Typography>
+              {/* <Typography gutterBottom variant="h4"> 로그인 </Typography> */}
             </div>
             <Formik
               initialValues={initialValues}
@@ -97,7 +115,21 @@ function Login() {
                       text="아이디 또는 비밀번호가 맞지 않습니다"
                     />
                   )}
-                  <BaseButton size="large" disabled={!isValid} title="로그인" sx={{ mt: '2%' }} />
+                  <BaseButton
+                    size="large"
+                    disabled={!isValid}
+                    title="로그인"
+                    sx={{
+                      position: 'relative',
+                      marginBottom: '1.5em',
+                      width: '100%',
+                      height: '2.5em',
+                      backgroundColor: '#fffffffa',
+                    }}
+                  />
+                  <ShortAlert title="" severity="error" />
+
+                  {/* <AlertTitle>본 시스템은 비인가자 접근을 금지합니다.</AlertTitle> */}
                 </Form>
               )}
             </Formik>
@@ -112,5 +144,5 @@ function Login() {
 export default Login;
 
 const Root = styled('div')(() => ({
-  margin: '15% 20%',
+  margin: '10% 35%',
 }));

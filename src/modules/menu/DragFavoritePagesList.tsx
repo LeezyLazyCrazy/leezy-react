@@ -1,6 +1,6 @@
+import { DragDropContext, Droppable, OnDragEndResponder } from 'react-beautiful-dnd';
 import useFavoritePageStore, { FavoritePageState } from '../../stores/useFavoritePageStore';
 import DraggablePageItem from './DraggablePageItem';
-import { DragDropContext, Droppable, OnDragEndResponder } from 'react-beautiful-dnd';
 
 interface DragFavoritePagesListProps {
   onDragEnd: OnDragEndResponder;

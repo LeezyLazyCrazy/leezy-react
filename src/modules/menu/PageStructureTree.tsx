@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { useState } from 'react';
 import { MenuProps } from '../../data/constants/menu';
 import { styled, Typography } from '@mui/material';
@@ -11,7 +12,7 @@ interface PageStructureTreeProps {
 }
 
 /**
- * 측 메뉴에서 즐겨찾기 Tab을 누르면 나오는 "즐겨찾기 설정"을 눌렀을 때 나오는 모달인 FaveoritePagesModal을 누르면 좌측에 뜨는 트리임.
+ * 측 메뉴에서 즐겨찾기 Tab을 누르면 나오는 "즐겨찾기 설정"을 눌렀을 때 나오는 모달인 FavoritePagesModal을 누르면 좌측에 뜨는 트리임.
  * 해당 구조는 Recursive하게 되어 있으며, data/constants/menu 의 배열 구조를 그대로 구현함
  * @param {PageStructureTreeProps } PageStructureTreeProps
  * @returns {JSX.Element} JSX.Element(div)

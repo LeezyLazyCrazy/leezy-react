@@ -20,12 +20,11 @@ function MainHeader() {
     <Root>
       <DefaultBox>
         <TitleWrapper>
-          <Typography variant="h6" color="primary">
-            오이시쿠나레 오이시쿠나레 모에모에뀽
-          </Typography>
-          <Typography variant="h1">SYSTEM____🤍 </Typography>
-        </TitleWrapper>
+          {/* <Typography variant="h6" color="primary">
 
+					</Typography> */}
+          <Typography variant="h1">NCE-MS SYSTEM</Typography>
+        </TitleWrapper>
         <BaseButton
           title="로그인"
           color="primary"
@@ -33,7 +32,7 @@ function MainHeader() {
           onClick={navigateToLogin}
           sx={{ margin: '10% 0px' }}
         />
-        <ShortAlert title="✋" severity="error" />
+        <ShortAlert title="Warning" severity="error" />
       </DefaultBox>
       <div>
         <Logo512 width={280} />

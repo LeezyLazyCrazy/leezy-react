@@ -1,12 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { styled, Typography } from '@mui/material';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { DropResult } from 'react-beautiful-dnd';
 import BaseModal from '../../components/modal/BaseModal';
 import { menu } from '../../data/constants/menu';
 import PageStructureTree from './PageStructureTree';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import DragFavoritePagesList from './DragFavoritePagesList';
 import useFavoritePageStore from '../../stores/useFavoritePageStore';
 import { reorder } from '../../utils/reorder';
-import { DropResult } from 'react-beautiful-dnd';
 
 interface FavoritePagesModalProps {
   // eslint-disable-next-line no-unused-vars

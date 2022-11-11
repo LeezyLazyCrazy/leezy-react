@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import { Typography } from '@mui/material';
 import BaseButton from '../../components/button/BaseButton';
 import BaseModal from '../../components/modal/BaseModal';

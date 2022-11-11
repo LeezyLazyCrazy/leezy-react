@@ -1,0 +1,21 @@
+stages:
+  - build
+  - deploy
+
+build-code-job:
+  stage: build
+  script: 
+    - echo "build15"
+    - cd /home/d2inno/frontend
+    - git config --global http.sslVerify false
+    - git config --global --add safe.directory /home/d2inno/frontend
+    - git checkout .
+    - git fetch origin develop && git reset --hard origin/develop
+    - sleep 10
+    - yarn start
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Test"
+ 

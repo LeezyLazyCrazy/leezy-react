@@ -12,13 +12,21 @@ import StatusBox from './StatusBox';
 function WarningTab() {
   return (
     <Root>
-      <WidgetTitleBox title="현황" />
-      <StatusBox severity="danger" title="위험" desc="왕왕 50%" />
-      <StatusBox severity="normal" title="정상" desc="crystal clear" />
-      <StatusBox severity="warn" title="경고" desc="35% Operation Rate " />
+      <WidgetTitleBox title="단말기정보관리" />
+      {/* <StatusBox severity="danger" title="위험" desc="왕왕 50%" /> */}
+      <StatusBox severity="normal" title="정상" desc="단말기ID" />
+      {/* <StatusBox severity="warn" title="경고" desc="35% Operation Rate " /> */}
       <Divider sx={{ marginBottom: 1 }} />
-      <WidgetTitleBox title="Total Balance" />
-      <DefaultBox isBackgroundPaper={false}>암거나 넣고싶은거</DefaultBox>
+      <WidgetTitleBox title="단말기설명" />
+      <DefaultBox isBackgroundPaper={false}>단말기 형태</DefaultBox>
+      <Divider sx={{ marginBottom: 1 }} />
+      <DefaultBox isBackgroundPaper={false}>단말기 모델명</DefaultBox>
+      <Divider sx={{ marginBottom: 1 }} />
+      <DefaultBox isBackgroundPaper={false}>단말기 일련번호</DefaultBox>
+      <Divider sx={{ marginBottom: 1 }} />
+      <DefaultBox isBackgroundPaper={false}>단말기 제조사명</DefaultBox>
+      <Divider sx={{ marginBottom: 1 }} />
+      <DefaultBox isBackgroundPaper={false}>단말기 제조일자</DefaultBox>
     </Root>
   );
 }

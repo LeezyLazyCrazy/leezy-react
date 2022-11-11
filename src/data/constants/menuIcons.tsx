@@ -1,33 +1,43 @@
-// MENU ICON
-import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
-import SurfingOutlinedIcon from '@mui/icons-material/SurfingOutlined';
-import AddReactionOutlinedIcon from '@mui/icons-material/AddReactionOutlined';
-import AndroidOutlinedIcon from '@mui/icons-material/AndroidOutlined';
-import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
-
-// Icon matching을 위해선 tsx 타입이 필요한 바,
-// menu list에서 대응되는 icon을 현재 파일에서 로드함.
-// 대 메뉴가 추가될 경우 icon 설정이 필요함.
+import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
+import AppRegistrationOutlinedIcon from '@mui/icons-material/AppRegistrationOutlined';
+import DeviceHubOutlinedIcon from '@mui/icons-material/DeviceHubOutlined';
+import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
+import ViewInArOutlinedIcon from '@mui/icons-material/ViewInArOutlined';
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
+import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
+import QrCodeOutlinedIcon from '@mui/icons-material/QrCodeOutlined';
 
 export const menuIcons = [
   {
-    title: 'mui',
-    icon: <AutoAwesomeOutlinedIcon />,
+    title: 'equipments',
+    icon: <DevicesOutlinedIcon />,
   },
   {
-    title: 'toast-ui',
-    icon: <SurfingOutlinedIcon />,
+    title: 'terminal',
+    icon: <AppRegistrationOutlinedIcon />,
   },
   {
-    title: 'framer',
-    icon: <AddReactionOutlinedIcon />,
+    title: 'materials',
+    icon: <DeviceHubOutlinedIcon />,
   },
   {
-    title: 'react-query',
-    icon: <AndroidOutlinedIcon />,
+    title: 'approval',
+    icon: <HowToRegOutlinedIcon />,
   },
   {
-    title: 'zustand',
-    icon: <DirectionsRunOutlinedIcon />,
+    title: 'development',
+    icon: <ViewInArOutlinedIcon />,
+  },
+  {
+    title: 'manufactory',
+    icon: <ApartmentOutlinedIcon />,
+  },
+  {
+    title: 'agency',
+    icon: <TopicOutlinedIcon />,
+  },
+  {
+    title: 'system',
+    icon: <QrCodeOutlinedIcon />,
   },
 ];

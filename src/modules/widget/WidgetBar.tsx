@@ -2,12 +2,14 @@ import { IconButton, styled, Tab, Tabs } from '@mui/material';
 import WarningIcon from '@mui/icons-material/Warning';
 import TableRowsIcon from '@mui/icons-material/TableRows';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
-import WarningTab from './TerminalTab';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import DataTab from './DataTab';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import TabPanel from '../../components/tab/TabPanel';
+import DataTab from './DataTab';
+// eslint-disable-next-line no-unused-vars
+import TerminalTab from './TerminalTab';
+import WarningTab from './WarningTab';
 
 function a11yProps(index: number) {
   return {
@@ -66,7 +68,7 @@ function WidgetBar() {
             <DataTab />
           </TabPanel>
           <TabPanel value={selectedTab} index={2}>
-            sdfdsg
+            <DataTab />
           </TabPanel>
         </TabContentArea>
       </Paper>
