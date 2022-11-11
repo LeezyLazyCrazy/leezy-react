@@ -7,7 +7,7 @@ import { createRef, useEffect, useState } from 'react';
 import useThemeStore from '../../stores/useThemeStore';
 import { theme } from '../../styles/theme';
 import DataGridToolbar from './DataGridToolbar';
-import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
+// import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 import TableSettingModal from './TableSettingModal';
 import HeaderSettingModal from './HeaderSettingModal';
 import { gridStyles } from './dataGridStyle';
@@ -52,7 +52,7 @@ function BaseDataGrid({
 
   // width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
   // const [containerWidth, setContainerWidth] = useState(1100 + 10);
-  const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
+  // const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
@@ -96,7 +96,7 @@ function BaseDataGrid({
           refresh={() => ref.current?.getInstance().readData(1)}
           openTableSetting={() => setTableSettingOpen(true)}
           openHeaderSetting={() => setHeaderSettingOpen(true)}
-          openSaveSetting={() => setCheckToSaveOpen(true)}
+          openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
         />
       )}
       <Grid
@@ -115,7 +115,7 @@ function BaseDataGrid({
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
       />
-      <YesNoSelectionModal
+      {/* <YesNoSelectionModal
         open={checkToSaveOpen}
         setOpen={setCheckToSaveOpen}
         title="바뀐 내용 저장"
@@ -124,7 +124,7 @@ function BaseDataGrid({
         }}
         onNo={() => ref.current?.getInstance().readData(1)}
         question="바뀐 내용이 있네요. 저장하실?"
-      />
+      /> */}
       <TableSettingModal
         open={tableSettingOpen}
         setOpen={setTableSettingOpen}
