@@ -1,4 +1,4 @@
-import { menu } from '../../data/constants/menuFrame';
+import { menu } from '../../data/constants/menu';
 
 // 2depth 까지 이름 flatten시킴.
 // breadCrumb, 메뉴의 한국어명 찾기 등에 사용

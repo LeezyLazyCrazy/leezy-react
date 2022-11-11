@@ -1,6 +1,6 @@
 import { styled, Typography } from '@mui/material';
 import BaseModal from '../../components/modal/BaseModal';
-import { menu } from '../../data/constants/menuFrame';
+import { menu } from '../../data/constants/menu';
 import PageStructureTree from './PageStructureTree';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import DragFavoritePagesList from './DragFavoritePagesList';

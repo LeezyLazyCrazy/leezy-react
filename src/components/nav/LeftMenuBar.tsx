@@ -12,7 +12,7 @@ import { useState } from 'react';
 import TabPanel from '../tab/TabPanel';
 import FavoritePagesBar from './FavoritePagesBar';
 import { menuIcons } from '../../data/constants/menuIcons';
-import { menu } from '../../data/constants/menuFrame';
+import { menu } from '../../data/constants/menu';
 
 interface StyledTabProps {
   label: string;

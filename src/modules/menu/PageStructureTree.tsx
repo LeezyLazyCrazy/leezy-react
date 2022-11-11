@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MenuProps } from '../../data/constants/menuFrame';
+import { MenuProps } from '../../data/constants/menu';
 import { styled, Typography } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';

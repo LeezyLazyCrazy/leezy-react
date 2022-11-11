@@ -1,6 +1,6 @@
 import { Divider, IconButton, List, styled, Tab, Tabs } from '@mui/material';
 import IconMenuItem from './IconMenuItem';
-import { menu } from '../../data/constants/menuFrame';
+import { menu } from '../../data/constants/menu';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import BaseButton from '../../components/button/BaseButton';
