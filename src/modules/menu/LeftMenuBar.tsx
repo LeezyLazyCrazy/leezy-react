@@ -1,26 +1,18 @@
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Divider, IconButton, List, styled, Tab, Tabs } from '@mui/material';
-import IconMenuItem from './IconMenuItem';
-import { menu } from '../../data/constants/menu';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import BaseButton from '../../components/button/BaseButton';
-import Logo from '../../assets/logos/Logo';
+import { menu } from '../../data/constants/menu';
+import { menuIcons } from '../../data/constants/menuIcons';
 import useMenuBarStore from '../../stores/useMenuBarStore';
-import { useLocation } from 'react-router-dom';
-import { theme } from '../../styles/theme';
 import useThemeStore from '../../stores/useThemeStore';
-import { useState } from 'react';
+import IconMenuItem from './IconMenuItem';
+import Logo from '../../assets/logos/Logo';
+import { theme } from '../../styles/theme';
 import TabPanel from '../../components/tab/TabPanel';
 import FavoritePagesBar from '../../components/nav/FavoritePagesBar';
-
-import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
-import AppRegistrationOutlinedIcon from '@mui/icons-material/AppRegistrationOutlined';
-import DeviceHubOutlinedIcon from '@mui/icons-material/DeviceHubOutlined';
-import HowToRegOutlinedIcon from '@mui/icons-material/HowToRegOutlined';
-import ViewInArOutlinedIcon from '@mui/icons-material/ViewInArOutlined';
-import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined';
-import TopicOutlinedIcon from '@mui/icons-material/TopicOutlined';
-import QrCodeOutlinedIcon from '@mui/icons-material/QrCodeOutlined';
+import BaseButton from '../../components/button/BaseButton';
 
 interface StyledTabProps {
   label: string;
@@ -44,41 +36,6 @@ function LeftMenuBar() {
   // Icon matching을 위해선 tsx 타입이 필요한 바,
   // menu list에서 대응되는 icon을 현재 파일에서 로드함.
   // 대 메뉴가 추가될 경우 icon 설정이 필요함.
-
-  const menuIcons = [
-    {
-      title: 'equipments',
-      icon: <DevicesOutlinedIcon />,
-    },
-    {
-      title: 'terminal',
-      icon: <AppRegistrationOutlinedIcon />,
-    },
-    {
-      title: 'materials',
-      icon: <DeviceHubOutlinedIcon />,
-    },
-    {
-      title: 'approval',
-      icon: <HowToRegOutlinedIcon />,
-    },
-    {
-      title: 'development',
-      icon: <ViewInArOutlinedIcon />,
-    },
-    {
-      title: 'manufactory',
-      icon: <ApartmentOutlinedIcon />,
-    },
-    {
-      title: 'agency',
-      icon: <TopicOutlinedIcon />,
-    },
-    {
-      title: 'system',
-      icon: <QrCodeOutlinedIcon />,
-    },
-  ];
 
   // handling tabs
 
