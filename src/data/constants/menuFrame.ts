@@ -7,6 +7,7 @@
 
 import PageComponents from '../../pages/mui/components';
 import PageIcon from '../../pages/mui/icons';
+import PageMuiMasterDetailGrid from '../../pages/mui/detailView';
 import PageToastGrid from '../../pages/toast-ui/toast-grid';
 import PageReactQuery from '../../pages/react-query/react-query';
 import PageZustand from '../../pages/zustand/zustand';
@@ -57,6 +58,13 @@ export const menu: MenuProps[] = [
         type: 'page',
         parentUrl: 'smart-tab',
         element: PageTab,
+      },
+      {
+        id: 'detailView',
+        name: 'MasterDetail',
+        type: 'page',
+        parentUrl: 'mui',
+        element: PageMuiMasterDetailGrid,
       },
     ],
   },
