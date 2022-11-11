@@ -21,9 +21,9 @@ function MainHeader() {
       <DefaultBox>
         <TitleWrapper>
           <Typography variant="h6" color="primary">
-            이무거나 골라잡아
+            오이시쿠나레 오이시쿠나레 모에모에뀽
           </Typography>
-          <Typography variant="h1">포켓몬 고 시스템</Typography>
+          <Typography variant="h1">SYSTEM____🤍 </Typography>
         </TitleWrapper>
 
         <BaseButton
@@ -33,7 +33,7 @@ function MainHeader() {
           onClick={navigateToLogin}
           sx={{ margin: '10% 0px' }}
         />
-        <ShortAlert title="비밀임" severity="error" />
+        <ShortAlert title="✋" severity="error" />
       </DefaultBox>
       <div>
         <Logo512 width={280} />

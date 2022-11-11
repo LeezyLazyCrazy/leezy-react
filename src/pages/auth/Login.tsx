@@ -38,10 +38,10 @@ function Login() {
           <DefaultBox>
             <div style={{ marginBottom: '5%' }}>
               <Typography gutterBottom variant="subtitle1">
-                크립토커런시의 세계에 오신 것을 환영함
+                크크루삥뽕 알잘딱깔센
               </Typography>
               <Typography gutterBottom variant="h4">
-                시스템 로그인
+                SYSTEM LOGIN
               </Typography>
             </div>
             <Formik

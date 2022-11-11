@@ -45,7 +45,7 @@ function TopNav() {
               // textDecoration: 'none',
             }}
           >
-            NCE-MS SYSTEM
+            🤍SYSTEM
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <TopNavProfile title={`${authUser?.name} ${authUser?.position}님`} />
