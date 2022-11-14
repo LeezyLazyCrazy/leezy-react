@@ -8,7 +8,7 @@ const data = [
   { name: 'Group C', value: 300 },
   { name: 'Group D', value: 200 },
 ];
-const COLORS = ['#0087feb6', '#1ac40094', '#ffe6289e', '#fc00fc95'];
+const COLORS = ['#3b3b3b', '#6d6d6d', '#d3e4f9', '#00eaff'];
 
 export default class Example extends PureComponent {
   render() {
@@ -38,11 +38,14 @@ export default class Example extends PureComponent {
           </PieChart>
           <Box
             sx={{
-              width: 150,
-              height: 50,
-              backgroundColor: '#0087fe33',
+              width: 120,
+              height: 40,
+              backgroundColor: '#72727271',
               border: '1px solid #ffff',
               marginLeft: 6,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -50,7 +53,6 @@ export default class Example extends PureComponent {
             </h2>
           </Box>
         </Grid>
-
         <Grid item md={3} style={{ height: '40vh', padding: '0' }}>
           <PieChart
             width={250}
@@ -86,7 +88,6 @@ export default class Example extends PureComponent {
             </h2>
           </Box>
         </Grid>
-
         <Grid item md={3} style={{ height: '40vh', padding: '0' }}>
           <PieChart
             width={250}
@@ -122,7 +123,6 @@ export default class Example extends PureComponent {
             </h2>
           </Box>
         </Grid>
-
         <Grid item md={3} style={{ height: '40vh', padding: '0' }}>
           <PieChart
             width={250}
