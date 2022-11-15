@@ -36,7 +36,7 @@ import PageManufactoryManagement from '../../pages/manufactory/manufactory-manag
 import PageSecurityMeasureHistory from '../../pages/manufactory/security-measure-history';
 import PageSecurityAccidentHistory from '../../pages/manufactory/security-accident-history';
 import PageMaintenanceHistory from '../../pages/manufactory/maintenance-history';
-// 유사기관관리
+// 유관기관관리
 import PageAgencyManagement from '../../pages/agency/agency-management';
 // 시스템관리
 import PageTerminalManagement from '../../pages/system/terminal-management';
@@ -288,7 +288,7 @@ export const menu: MenuProps[] = [
     ],
   },
   {
-    name: '유사기관관리',
+    name: '유관기관관리',
     id: 'agency',
     parentUrl: '',
     type: 'dir',
