@@ -26,7 +26,11 @@ const dataGridKeys: OptColumn[] = [
     minWidth: 140,
     sortable: true,
     editor: {
-      type: 'text',
+      type: 'datePicker',
+      options: {
+        language: 'ko',
+        format: 'yyyy-MM-dd',
+      },
     },
   },
   {
@@ -151,6 +155,13 @@ const dataGridKeys: OptColumn[] = [
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'button',
+      options: {
+        language: 'ko',
+        format: 'yyyy-MM-dd',
+      },
+    },
   },
 ];
 

@@ -68,66 +68,99 @@ const columns: OptColumn[] = [
     header: '파기승인일련번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'overseaApprovalId',
     header: '국외반출승인일련번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentCertiAgency',
     header: '장비증명서발행기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentCertiId',
     header: '장비증명서번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'materialId',
     header: '자재일련번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'materialCertiAgency',
     header: '자재증명서발행기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'materialCertiId',
     header: '자재증명서번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'manageAgency',
     header: '장비관리기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'operateAgency',
     header: '장비운용기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'operateDepartment',
     header: '장비운용부서',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'operatePosition',
     header: '장비운용위치',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'operateDate',
@@ -147,48 +180,72 @@ const columns: OptColumn[] = [
     header: '최신상태그룹',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'lastStatusDetail',
     header: '최신장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'manageLevel',
     header: '관리등급',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'communicateLevel',
     header: '소통등급',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'encryptKey',
     header: '암호키 관리방법',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'programKey',
     header: '프로그램 관리방법',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'managePersonalIdMain',
     header: '관리책임자ID(정)',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'managePersonalIdSub',
     header: '관리책임자ID(부)',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'recordDataTime',
@@ -208,12 +265,18 @@ const columns: OptColumn[] = [
     header: '기록담당자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
 ];
 const header: OptHeader = {

@@ -61,138 +61,207 @@ const dataGridKeys: OptColumn[] = [
     header: '단말기제조사명',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'Date',
     header: '단말기제조일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'macAddress',
     header: '단말기맥주소',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'network',
     header: '단말기네트워크',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'os',
     header: '단말기OS',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'cpu',
     header: '단말기CPU',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'memory',
     header: '단말기Memory',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'storage',
     header: '단말기저장장치',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'monitorEquipID',
     header: '모니터정보',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'printerEquipId',
     header: '프린터정보',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'qrPrinterEquipId',
     header: 'QR프린터장비ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'qrReaderEquipId',
     header: 'QR리더장비ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentID',
     header: '장비ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'installDate',
     header: '설치일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'terminalInstallAgency',
     header: '설치기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'installDepartment',
     header: '설치부서',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'position',
     header: '보관위치',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'status',
     header: '단말기상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'managePersonalIdMain',
     header: '관리책임자ID(정)',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'managePersonalIdSub',
     header: '관리책임자ID(부)',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'datetime',
     header: '최근확인일시',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'handoverDatetime',
     header: '최근인계일수일시',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
 ];
 

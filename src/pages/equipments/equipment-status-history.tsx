@@ -62,108 +62,162 @@ const dataGridKeys: OptColumn[] = [
     header: '최신상태그룹',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'lastStatusDetail',
     header: '최신장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'beforeStatusGroup',
     header: '갱신이전상태그룹',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'beforeStatusDetail',
     header: '갱신이전장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'a',
     header: '개발단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'b',
     header: '사용승인단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'c',
     header: '제작단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'd',
     header: '사용승인단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'e',
     header: '운용대기단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'f',
     header: '정비단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'g',
     header: '파기단계 장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'updateMenu',
     header: '상태개인발생메뉴기능',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'updateContents',
     header: '상태갱신내용',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'updateReason',
     header: '상태갱신이유',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'updateAgency',
     header: '상태갱신기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'updatePosition',
     header: '장비위치',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'updatePersonalId',
     header: '갱신자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
 ];
 

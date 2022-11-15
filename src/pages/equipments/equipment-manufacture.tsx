@@ -84,48 +84,72 @@ const columns: OptColumn[] = [
     header: '장비형태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'serviceType',
     header: '장비용도',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'spec',
     header: '장비규격',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentPicture',
     header: '장비사진',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'useApprovalId',
     header: '사용승인일련번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'manufactoryApprovalId',
     header: '제작승인일련번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentCertiAgency',
     header: '장비증명서발행기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentCertiId',
     header: '장비증명서번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'deliveryDate',
@@ -145,6 +169,9 @@ const columns: OptColumn[] = [
     header: '장비납품자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'receiveDate',
@@ -164,24 +191,36 @@ const columns: OptColumn[] = [
     header: '장비수령자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'recordDatetime',
     header: '기록일시',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'recordPersonalId',
     header: '기록담당자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
 ];
 

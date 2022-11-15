@@ -61,96 +61,144 @@ const dataGridKeys: OptColumn[] = [
     header: '자재증명서복사본',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingDate',
     header: '인계일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingAgency',
     header: '인계자소속',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingPersonalID',
     header: '인계자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingConfirmation',
     header: '인계자확인서명',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingTotal',
     header: '인계총수량',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingProcessResult',
     header: '인계처리결과',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'outgoingRemarks',
     header: '인계특이사항',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingDate',
     header: '인수일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingAgency',
     header: '인수자소속',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingPersonalId',
     header: '인수자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingConfirmation',
     header: '인수자확인서명',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingTotal',
     header: '인수총수량',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingProcessResult',
     header: '인수처리결과',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'incomingRemarks',
     header: '인수특이사항',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
 ];
 

@@ -68,156 +68,234 @@ const dataGridKeys: OptColumn[] = [
     header: '자재등록번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'materialCertifyId',
     header: '자재증명서번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'receiveGiveDate',
     minWidth: 140,
     header: '수령배부일자',
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'receiveGiveCount',
     minWidth: 140,
     header: '수령배부수량',
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'receiveGiveCertifyId',
     minWidth: 140,
     header: '장비증명서번호',
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'receiveGiveAgency',
     header: '수령배부대상기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'callbackDate',
     header: '반납회수일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'callbackCount',
     header: '반납회수수량',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'returnCallbackCertifyId',
     header: '장비증명서번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'returnCallbackAgency',
     header: '반납회수대상기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'changeDate',
     header: '장비변동일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'changeCount',
     header: '장비변동수량',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentChangeCertifyId',
     header: '장비증명서번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'changeCheck',
     header: '장비변동확인',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'statusGroup',
     header: '최신상태그룹',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'statusDetail',
     header: '최신장비세부상태',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'installDate',
     header: '장비설치일자',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'position',
     header: '장비설치장소',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'department',
     header: '장비설치부서',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'main',
     header: '관리책임자ID(정)',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'sub',
     header: '관리책임자ID(부)',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'checkDatetime',
     header: '최근확인일시',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'handoverDatetime',
     header: '최근인계인수일시',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'recordDatetime',
     header: '자료관리일시',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'recordPersonalID',
     header: '자료관리자ID',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
     header: '비고',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
 ];
 
