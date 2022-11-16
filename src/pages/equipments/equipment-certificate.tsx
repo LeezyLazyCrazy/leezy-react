@@ -196,8 +196,8 @@ const dataGridKeys: OptColumn[] = [
 // 	},
 // ];
 
-function PageEquipmentCertification() {
+function PageEquipmentCertificate() {
   return <BaseDataGrid tableName="equipment/certificate" columns={dataGridKeys} />;
 }
 
-export default PageEquipmentCertification;
+export default PageEquipmentCertificate;
