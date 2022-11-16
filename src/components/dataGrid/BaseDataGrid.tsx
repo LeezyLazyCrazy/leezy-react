@@ -56,17 +56,23 @@ function BaseDataGrid({
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
+  // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
 
   // 행 추가
   const appendRow = () => {
     ref.current?.getInstance().appendRow({});
   };
-
   // left Bar 가져오기
   const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
   // widget bar 가져오기
-  const { isBarOpen: isWidgetBarOpen } = useRightWidgetBarStore();
+  // const { isBarOpen: isWidgetBarOpen } = useRightWidgetBarStore();
+  const {
+    isBarOpen: isWidgetBarOpen,
+    setIsBarOpen,
+    // setSelectedTab,
+    // selectedTab,
+  } = useRightWidgetBarStore();
 
   const { innerWidth } = window;
 
@@ -96,6 +102,8 @@ function BaseDataGrid({
           refresh={() => ref.current?.getInstance().readData(1)}
           openTableSetting={() => setTableSettingOpen(true)}
           openHeaderSetting={() => setHeaderSettingOpen(true)}
+          openDetailSetting={() => setIsBarOpen(true)}
+          openDeleteSetting={() => ref.current?.getInstance().request('modifyData')}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
         />
       )}
