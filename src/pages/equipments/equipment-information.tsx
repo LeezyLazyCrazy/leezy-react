@@ -44,6 +44,9 @@ const columns: OptColumn[] = [
     header: '형식승인일련번호',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'useApprovalId',

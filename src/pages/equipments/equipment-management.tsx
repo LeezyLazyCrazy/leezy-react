@@ -8,6 +8,9 @@ const dataGridKeys: OptColumn[] = [
     header: '장비관리기관',
     minWidth: 140,
     sortable: true,
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'id',
