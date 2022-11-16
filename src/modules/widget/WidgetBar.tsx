@@ -7,8 +7,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import TabPanel from '../../components/tab/TabPanel';
 import DataTab from './DataTab';
+import EquipmentCertiList from './EquipmentCertiList';
 // eslint-disable-next-line no-unused-vars
-import TerminalTab from './TerminalTab';
 import WarningTab from './WarningTab';
 
 function a11yProps(index: number) {
@@ -65,7 +65,7 @@ function WidgetBar() {
             <WarningTab />
           </TabPanel>
           <TabPanel value={selectedTab} index={1}>
-            <DataTab />
+            <EquipmentCertiList />
           </TabPanel>
           <TabPanel value={selectedTab} index={2}>
             <DataTab />
