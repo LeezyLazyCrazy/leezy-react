@@ -95,12 +95,11 @@ function WarningTab() {
   return (
     <Root>
       <WidgetTitleBox title="단말기정보관리" />
-      <BaseDataGrid tableName="equipment/certificate" columns={dataGridKeys} />;
+      <BaseDataGrid tableName="equipment/certificate-certi-list" columns={dataGridKeys} />;
       {/* <StatusBox severity="danger" title="위험" desc="왕왕 50%" /> */}
       {/* <StatusBox severity="normal" title="정상" desc="단말기ID" /> */}
       {/* <StatusBox severity="warn" title="경고" desc="35% Operation Rate " /> */}
       {/* <Divider sx={{ marginBottom: 1 }} /> */}
-      {/* <WidgetTitleBox title="단말기설명" /> */}
       {/* <DefaultBox isBackgroundPaper={false}>단말기 형태</DefaultBox> */}
       {/* <Divider sx={{ marginBottom: 1 }} /> */}
       {/* <DefaultBox isBackgroundPaper={false}>단말기 모델명</DefaultBox> */}
