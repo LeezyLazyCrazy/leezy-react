@@ -5,6 +5,9 @@ import TopicIcon from '@mui/icons-material/Topic';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+// import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import SearchIcon from '@mui/icons-material/Search';
+import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
@@ -14,7 +17,9 @@ interface DataGridToolBarProps {
   onFilter?: () => void;
   openTableSetting: () => void;
   openHeaderSetting: () => void;
+  openDetailSetting: () => void;
   openSaveSetting: () => void;
+  openDeleteSetting: () => void;
 }
 
 /**
@@ -28,6 +33,8 @@ function DataGridToolbar({
   onFilter,
   openTableSetting,
   openHeaderSetting,
+  openDetailSetting,
+  openDeleteSetting,
   openSaveSetting,
 }: DataGridToolBarProps) {
   const ToolBarOptions = [
@@ -81,6 +88,13 @@ function DataGridToolbar({
           icon: <FileDownloadIcon fontSize="small" />,
           onClick: () => null,
         },
+        {
+          id: 3,
+          title: '세부사항 보기',
+          key: 'details-file',
+          icon: <SearchIcon fontSize="small" />,
+          onClick: openDetailSetting,
+        },
       ],
     },
     {
@@ -88,6 +102,13 @@ function DataGridToolbar({
       btns: [
         {
           id: 0,
+          title: '삭제',
+          key: 'delete',
+          icon: <DeleteIcon fontSize="small" />,
+          onClick: openDeleteSetting,
+        },
+        {
+          id: 1,
           title: '저장',
           key: 'save',
           icon: <SaveIcon fontSize="small" />,
