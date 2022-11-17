@@ -94,7 +94,7 @@ export const menu: MenuProps[] = [
       },
       {
         id: 'equipment-certificate',
-        name: '장비수발관리',
+        name: '장비증명서',
         type: 'page',
         parentUrl: 'equipment',
         element: PageEquipmentCertificate,
