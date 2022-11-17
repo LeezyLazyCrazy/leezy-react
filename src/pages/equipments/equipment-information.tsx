@@ -251,7 +251,7 @@ const columns: OptColumn[] = [
     },
   },
   {
-    name: 'recordDataTime',
+    name: 'recordDateTime',
     header: '기록일시',
     minWidth: 140,
     sortable: true,
@@ -340,7 +340,7 @@ const header: OptHeader = {
     {
       header: '관리책임자',
       name: 'mergeColumn9',
-      childNames: ['managePersonalIdMain', 'managePersonalIdSub', 'programType'],
+      childNames: ['managePersonalIdMain', 'managePersonalIdSub'],
     },
     {
       header: '기록자 정보',
