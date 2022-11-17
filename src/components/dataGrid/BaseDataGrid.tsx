@@ -24,6 +24,10 @@ interface BaseDataGridProps {
   showToolbar?: boolean;
 }
 
+function onClick() {
+  console.log('test');
+}
+
 /**
  * Toast UI Tui Grid의 기본적인 구현체임.
  *
@@ -70,7 +74,7 @@ function BaseDataGrid({
   const {
     isBarOpen: isWidgetBarOpen,
     setIsBarOpen,
-    // setSelectedTab,
+    setSelectedTab,
     // selectedTab,
   } = useRightWidgetBarStore();
 
@@ -102,7 +106,10 @@ function BaseDataGrid({
           refresh={() => ref.current?.getInstance().readData(1)}
           openTableSetting={() => setTableSettingOpen(true)}
           openHeaderSetting={() => setHeaderSettingOpen(true)}
-          openDetailSetting={() => setIsBarOpen(true)}
+          openDetailSetting={() => {
+            setIsBarOpen(true);
+            setSelectedTab(1);
+          }}
           openDeleteSetting={() => ref.current?.getInstance().request('modifyData')}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
         />
@@ -122,6 +129,7 @@ function BaseDataGrid({
         scrollX
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
+        onClick={onClick}
       />
       {/* <YesNoSelectionModal
         open={checkToSaveOpen}
