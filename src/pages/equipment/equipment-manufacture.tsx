@@ -4,7 +4,7 @@ import { OptHeader, OptColumn } from 'tui-grid/types/options';
 
 const columns: OptColumn[] = [
   {
-    name: 'modeApprovalName',
+    name: 'approvalName',
     header: '형식승인명',
     minWidth: 140,
     sortable: true,

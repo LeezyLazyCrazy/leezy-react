@@ -52,7 +52,7 @@ const columns: OptColumn[] = [
     },
   },
   {
-    name: 'modeApprovalName',
+    name: 'approvalName',
     header: '형식승인명',
     minWidth: 140,
     sortable: true,
@@ -61,7 +61,7 @@ const columns: OptColumn[] = [
     },
   },
   {
-    name: 'equipmentId',
+    name: 'equipmentSerial',
     header: '장비일련번호',
     minWidth: 140,
     sortable: true,
@@ -217,7 +217,7 @@ const header: OptHeader = {
     {
       header: '수발장비 정보',
       name: 'mergeColumn2',
-      childNames: ['modeApprovalName', 'equipmentId'],
+      childNames: ['approvalName', 'equipmentSerial'],
     },
     {
       header: '수발결과 정보',

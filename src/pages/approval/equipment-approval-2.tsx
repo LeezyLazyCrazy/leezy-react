@@ -12,7 +12,7 @@ const columns: OptColumn[] = [
     },
   },
   {
-    name: 'equipmentId',
+    name: 'equipmentSerial',
     header: '장비일련번호',
     minWidth: 140,
     sortable: true,

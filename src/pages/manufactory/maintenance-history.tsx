@@ -3,7 +3,7 @@ import { OptColumn } from 'tui-grid/types/options';
 
 const dataGridKeys: OptColumn[] = [
   {
-    name: 'modeApprovalName',
+    name: 'approvalName',
     header: '형식승인명',
     minWidth: 140,
     sortable: true,
@@ -12,7 +12,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'equipmentId',
+    name: 'equipmentSerial',
     header: '장비일련번호',
     minWidth: 140,
     sortable: true,
@@ -39,7 +39,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'accidentEquipmentId',
+    name: 'accidentequipmentSerial',
     header: '장비일련번호',
     minWidth: 140,
     sortable: true,

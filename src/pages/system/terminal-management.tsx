@@ -165,7 +165,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'equipmentID',
+    name: 'equipmentSerial',
     header: '장비ID',
     minWidth: 140,
     sortable: true,
