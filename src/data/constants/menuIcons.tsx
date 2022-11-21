@@ -9,7 +9,7 @@ import QrCodeOutlinedIcon from '@mui/icons-material/QrCodeOutlined';
 
 export const menuIcons = [
   {
-    title: 'equipments',
+    title: 'equipment',
     icon: <DevicesOutlinedIcon />,
   },
   {
@@ -17,7 +17,7 @@ export const menuIcons = [
     icon: <AppRegistrationOutlinedIcon />,
   },
   {
-    title: 'materials',
+    title: 'material',
     icon: <DeviceHubOutlinedIcon />,
   },
   {
