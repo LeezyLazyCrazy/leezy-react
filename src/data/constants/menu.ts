@@ -5,16 +5,16 @@
 // import Main from "../../pages/Main";
 
 // 장비관리
-import PageEquipmentInformation from '../../pages/equipments/equipment-information';
-import PageEquipmentManufacture from '../../pages/equipments/equipment-manufacture';
-import PageEquipmentStatusHistory from '../../pages/equipments/equipment-status-history';
-import PageEquipmentManagement from '../../pages/equipments/equipment-management';
-import PageEquipmentCertificate from '../../pages/equipments/equipment-certificate';
-import PageEquipmentStatus from '../../pages/equipments/equipment-status';
+import PageEquipmentInformation from '../../pages/equipment/equipment-information';
+import PageEquipmentManufacture from '../../pages/equipment/equipment-manufacture';
+import PageEquipmentStatusHistory from '../../pages/equipment/equipment-status-history';
+import PageEquipmentManagement from '../../pages/equipment/equipment-management';
+import PageEquipmentCertificate from '../../pages/equipment/equipment-certificate';
+import PageEquipmentStatus from '../../pages/equipment/equipment-status';
 // 자재관리
-import PageMaterialCertificate from '../../pages/materials/material-certificate';
-import PageMaterialCertifyList from '../../pages/materials/material-certify-list';
-import PageMaterialManagement from '../../pages/materials/material-management';
+import PageMaterialCertificate from '../../pages/material/material-certificate';
+import PageMaterialCertifyList from '../../pages/material/material-certify-list';
+import PageMaterialManagement from '../../pages/material/material-management';
 // 승인관리
 import PageEquipmentApprovalHistory from '../../pages/approval/equipment-approval-history';
 import PageEquipmentApproval1 from '../../pages/approval/equipment-approval-1';
@@ -60,7 +60,7 @@ export interface MenuProps {
 export const menu: MenuProps[] = [
   {
     name: '장비관리',
-    id: 'equipments',
+    id: 'equipment',
     parentUrl: '',
     type: 'dir',
     subMenu: [
@@ -110,7 +110,7 @@ export const menu: MenuProps[] = [
   },
   {
     name: '자재관리',
-    id: 'materials',
+    id: 'material',
     parentUrl: '',
     type: 'dir',
     subMenu: [
@@ -118,21 +118,21 @@ export const menu: MenuProps[] = [
         id: 'material-certificate',
         name: '자재수발관리',
         type: 'page',
-        parentUrl: 'material-Certificate',
+        parentUrl: 'material',
         element: PageMaterialCertificate,
       },
       {
         id: 'material-certify-list',
         name: '자재관리',
         type: 'page',
-        parentUrl: 'material-certify-list',
+        parentUrl: 'material',
         element: PageMaterialCertifyList,
       },
       {
         id: 'material-management',
         name: '자재관리기록부',
         type: 'page',
-        parentUrl: 'material-management',
+        parentUrl: 'material',
         element: PageMaterialManagement,
       },
     ],
@@ -147,35 +147,35 @@ export const menu: MenuProps[] = [
         id: 'equipment-approval-history',
         name: '형식승인업무',
         type: 'page',
-        parentUrl: 'equipment-approval-history',
+        parentUrl: 'approval',
         element: PageEquipmentApprovalHistory,
       },
       {
         id: 'equipment-approval-1',
         name: '사용승인업무',
         type: 'page',
-        parentUrl: 'equipment-approval-1',
+        parentUrl: 'approval',
         element: PageEquipmentApproval1,
       },
       {
         id: 'equipment-approval-2',
         name: '제작승인업무',
         type: 'page',
-        parentUrl: 'equipment-approval-2',
+        parentUrl: 'approval',
         element: PageEquipmentApproval2,
       },
       {
         id: 'equipment-approval-3',
         name: '파기승인업무',
         type: 'page',
-        parentUrl: 'equipment-approval-3',
+        parentUrl: 'approval',
         element: PageEquipmentApproval3,
       },
       {
         id: 'equipment-approval-4',
         name: '국외반출승인업무',
         type: 'page',
-        parentUrl: 'equipment-approval-4',
+        parentUrl: 'approval',
         element: PageEquipmentApproval4,
       },
     ],
@@ -297,7 +297,7 @@ export const menu: MenuProps[] = [
         id: 'agency-management',
         name: '유관기관협의체관리',
         type: 'page',
-        parentUrl: 'agency-management',
+        parentUrl: 'agency',
         element: PageAgencyManagement,
       },
     ],
@@ -312,7 +312,7 @@ export const menu: MenuProps[] = [
         id: 'terminal-management',
         name: '단말기정보관리',
         type: 'page',
-        parentUrl: 'terminal-management',
+        parentUrl: 'system',
         element: PageTerminalManagement,
       },
       {
