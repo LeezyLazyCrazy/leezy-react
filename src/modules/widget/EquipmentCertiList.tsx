@@ -2,7 +2,7 @@ import { styled, TableRow, TableCell, TableBody, Divider } from '@mui/material';
 // import DefaultBox from '../../components/box/DefaultBox';
 import WidgetTitleBox from '../../components/box/textBox/WidgetTitleBox';
 // import StatusBox from './StatusBox';
-import DefaultBox from '../../components/box/DefaultBox';
+// import DefaultBox from '../../components/box/DefaultBox';
 
 import SimpleTable from '../../components/dataGrid/simpleTable/SimpleTable';
 import { SimpleTableCellText } from '../../components/dataGrid/simpleTable/SimpleTableCellDisplay';
@@ -124,10 +124,30 @@ function WarningTab() {
       name: 'NEU-14',
       equipmentID: '012',
     },
+    {
+      name: 'NEU-14',
+      equipmentID: '013',
+    },
+    {
+      name: 'NEU-14',
+      equipmentID: '014',
+    },
+    {
+      name: 'NEU-14',
+      equipmentID: '015',
+    },
+    {
+      name: 'USE-20',
+      equipmentID: '001',
+    },
+    {
+      name: 'USE-20',
+      equipmentID: '002',
+    },
   ];
   return (
     <Root>
-      <WidgetTitleBox title="암호 장비 증명서 목록" />
+      <WidgetTitleBox title="암호 장비 증명서" />
       <TableBody>
         <TableRow>
           <TableCell>장비 증명서 발행 기관</TableCell>
@@ -137,14 +157,10 @@ function WarningTab() {
           <TableCell>암호 장비 증명서 번호</TableCell>
           <TableCell>14-275</TableCell>
         </TableRow>
-        <TableRow>
-          <TableCell>암호 장비 등급</TableCell>
-          <TableCell>2급</TableCell>
-        </TableRow>
       </TableBody>
       <Divider sx={{ marginBottom: 1 }} />
-      <DefaultBox isBackgroundPaper={false}>List</DefaultBox>
-      <SimpleTable head={['형식승인명칭', '장비일련번호']}>
+      {/* <DefaultBox isBackgroundPaper={false}>List</DefaultBox> */}
+      <SimpleTable head={['형식승인명', '장비일련번호']}>
         {data.map((d) => (
           <TableRow key={d.name}>
             <SimpleTableCellText text={d.name} />

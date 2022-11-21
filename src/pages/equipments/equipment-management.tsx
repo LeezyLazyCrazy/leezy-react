@@ -13,8 +13,8 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'id',
-    header: '장비등록번호',
+    name: 'modeApprovalName',
+    header: '형식승인명',
     minWidth: 140,
     sortable: true,
     editor: {
@@ -22,8 +22,8 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'name',
-    header: '장비명칭',
+    name: 'equipmentId',
+    header: '장비일련번호',
     minWidth: 140,
     sortable: true,
     editor: {

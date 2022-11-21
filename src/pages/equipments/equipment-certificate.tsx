@@ -53,7 +53,7 @@ const columns: OptColumn[] = [
   },
   {
     name: 'modeApprovalName',
-    header: '형식승인명칭',
+    header: '형식승인명',
     minWidth: 140,
     sortable: true,
     editor: {

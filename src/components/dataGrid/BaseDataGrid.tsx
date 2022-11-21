@@ -24,10 +24,6 @@ interface BaseDataGridProps {
   showToolbar?: boolean;
 }
 
-function onClick() {
-  console.log('test');
-}
-
 /**
  * Toast UI Tui Grid의 기본적인 구현체임.
  *
@@ -37,6 +33,10 @@ function onClick() {
  * @param {BaseDataGridProps} BaseDataGridProps
  * @returns {JSX.Element} React Component
  */
+function onClick() {
+  console.log('test');
+}
+
 function BaseDataGrid({
   tableName,
   columns,
@@ -70,7 +70,6 @@ function BaseDataGrid({
   const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
   // widget bar 가져오기
-  // const { isBarOpen: isWidgetBarOpen } = useRightWidgetBarStore();
   const {
     isBarOpen: isWidgetBarOpen,
     setIsBarOpen,
@@ -95,6 +94,7 @@ function BaseDataGrid({
     api: {
       readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
       modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
+      deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
     },
   };
 
@@ -110,7 +110,10 @@ function BaseDataGrid({
             setIsBarOpen(true);
             setSelectedTab(1);
           }}
-          openDeleteSetting={() => ref.current?.getInstance().request('modifyData')}
+          openDeleteSetting={() => {
+            ref.current?.getInstance().removeCheckedRows();
+            ref.current?.getInstance().request('deleteData');
+          }}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
         />
       )}

@@ -58,6 +58,15 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
+    name: 'modeApprovalName',
+    header: '형식승인명',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: 'text',
+    },
+  },
+  {
     name: 'manufactoryId',
     header: '제작업체ID',
     minWidth: 140,

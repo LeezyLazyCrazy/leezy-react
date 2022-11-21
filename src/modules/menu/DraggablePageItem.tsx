@@ -11,7 +11,7 @@ interface DraggablePageItemProps {
 }
 
 /**
- * 측 메뉴에서 즐겨찾기 Tab을 누르면 나오는 "즐겨찾기 설정"을 눌렀을 때 나오는 모달인 FaveoritePagesModal을 누르면 우측에 뜨는
+ * 측 메뉴에서 즐겨찾기 Tab을 누르면 나오는 "즐겨찾기 설정"을 눌렀을 때 나오는 모달인 FavoritePagesModal을 누르면 우측에 뜨는
  * DragFavoritePagesList의 개별 항목 Div
  * - 즐겨찾기 항목의 드래그
  * - 즐겨찾기 항목의 삭제
