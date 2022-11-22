@@ -65,6 +65,13 @@ export const menu: MenuProps[] = [
     type: 'dir',
     subMenu: [
       {
+        id: 'equipment-status',
+        name: '장비보유현황',
+        type: 'page',
+        parentUrl: 'equipment',
+        element: PageEquipmentStatus,
+      },
+      {
         id: 'equipment-information',
         name: '장비정보관리',
         type: 'page',
@@ -98,13 +105,6 @@ export const menu: MenuProps[] = [
         type: 'page',
         parentUrl: 'equipment',
         element: PageEquipmentCertificate,
-      },
-      {
-        id: 'equipment-status',
-        name: '장비보유현황',
-        type: 'page',
-        parentUrl: 'equipment',
-        element: PageEquipmentStatus,
       },
     ],
   },
