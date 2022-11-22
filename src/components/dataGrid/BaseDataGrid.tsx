@@ -7,7 +7,6 @@ import { createRef, useEffect, useState } from 'react';
 import useThemeStore from '../../stores/useThemeStore';
 import { theme } from '../../styles/theme';
 import DataGridToolbar from './DataGridToolbar';
-// import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 import TableSettingModal from './TableSettingModal';
 import HeaderSettingModal from './HeaderSettingModal';
 import { gridStyles } from './dataGridStyle';
@@ -15,6 +14,9 @@ import { API_URL } from '../../query';
 import useMenuBarStore from '../../stores/useMenuBarStore';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import { DataSource } from 'tui-grid/types/dataSource';
+// import SearchDrawer from '../../modules/widget/SearchDrawer';
+
+// import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 
 interface BaseDataGridProps {
   tableName: string;
@@ -22,6 +24,7 @@ interface BaseDataGridProps {
   frozenColumn?: number;
   header?: OptHeader;
   showToolbar?: boolean;
+  onSearchClick?: any;
 }
 
 /**
@@ -43,6 +46,7 @@ function BaseDataGrid({
   frozenColumn = 1,
   header = { height: 60 },
   showToolbar = true,
+  onSearchClick,
 }: BaseDataGridProps) {
   // grid styles
   const { isDark } = useThemeStore();
@@ -60,6 +64,7 @@ function BaseDataGrid({
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
+
   // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
 
   // 행 추가
@@ -100,6 +105,7 @@ function BaseDataGrid({
 
   return (
     <div style={{ width: 'auto' }}>
+      {/* <SearchDrawer /> */}
       {showToolbar && (
         <DataGridToolbar
           addNewRow={appendRow}
@@ -110,6 +116,7 @@ function BaseDataGrid({
             setIsBarOpen(true);
             setSelectedTab(1);
           }}
+          openSearchSetting={onSearchClick}
           openDeleteSetting={() => {
             ref.current?.getInstance().removeCheckedRows();
             ref.current?.getInstance().request('deleteData');
