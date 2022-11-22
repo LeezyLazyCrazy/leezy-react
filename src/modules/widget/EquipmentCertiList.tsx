@@ -164,7 +164,7 @@ function WarningTab() {
         {data.map((d) => (
           <TableRow key={d.name}>
             <SimpleTableCellText text={d.name} />
-            <SimpleTableCellText text={d.equipmentID} />
+            <SimpleTableCellText text={d.equipmentSerial} />
           </TableRow>
         ))}
       </SimpleTable>
