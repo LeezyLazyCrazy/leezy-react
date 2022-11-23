@@ -67,7 +67,7 @@ const summary: OptSummaryData = {
   height: 40,
   position: 'bottom', // or 'top'
   columnContent: {
-    modeApprovalName: {
+    modemodeApprovalName: {
       template() {
         return `sum`;
       },

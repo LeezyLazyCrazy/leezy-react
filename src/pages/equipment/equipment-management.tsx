@@ -15,7 +15,7 @@ const columns: OptColumn[] = [
     },
   },
   {
-    name: 'approvalName',
+    name: 'modeApprovalName',
     header: '형식승인명',
     minWidth: 140,
     sortable: true,
