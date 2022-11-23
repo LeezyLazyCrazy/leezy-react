@@ -125,7 +125,12 @@ function PageEquipmentStatus() {
         <Box sx={{ width: 480, padding: '10% 5%' }} role="combobox" />
         <TextField id="outlined-basic" label="Outlined" variant="outlined" />
       </Drawer>
-      <SummaryDataGrid tableName="equipment/status" columns={columns} summary={summary} />;
+      <SummaryDataGrid
+        tableName="equipment/status"
+        columns={columns}
+        summary={summary}
+        onSearchClick={() => setIsDrawerOpen(true)}
+      />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { OptColumn, OptHeader } from 'tui-grid/types/options';
 import { Box, Drawer, TextField } from '@mui/material';
 import { useState } from 'react';
 
-const dataGridKeys: OptColumn[] = [
+const columns: OptColumn[] = [
   {
     name: 'agency',
     header: '장비관리기관',
@@ -386,11 +386,10 @@ function PageEquipmentManagement() {
       </Drawer>
       <BaseDataGrid
         tableName="equipment/management"
-        columns={dataGridKeys}
+        columns={columns}
         header={header}
         onSearchClick={() => setIsDrawerOpen(true)}
       />
-      ;
     </>
   );
 }
