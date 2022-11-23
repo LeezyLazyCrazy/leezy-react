@@ -46,7 +46,7 @@ function DataGridToolbar({
       btns: [
         {
           id: 0,
-          title: '리프레시?',
+          title: '새로고침',
           key: 'refresh',
           icon: <RefreshIcon fontSize="small" />,
           onClick: refresh,
