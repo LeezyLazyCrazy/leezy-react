@@ -13,7 +13,7 @@ const dataGridKeys: OptColumn[] = [
   },
   {
     name: 'equipmentSerial',
-    header: '장비일련번호',
+    header: '장비등록번호',
     minWidth: 140,
     sortable: true,
     editor: {

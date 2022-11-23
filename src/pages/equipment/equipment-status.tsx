@@ -1,6 +1,7 @@
 import SummaryDataGrid from '../../components/dataGrid/SummaryDataGrid';
 import { OptColumn, OptSummaryData } from 'tui-grid/types/options';
-import { Box, Drawer, TextField } from '@mui/material';
+import { Box, Drawer } from '@mui/material';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useState } from 'react';
 
 const columns: OptColumn[] = [
@@ -109,6 +110,24 @@ const summary: OptSummaryData = {
   },
 };
 
+const DetailColumns: GridColDef[] = [
+  { field: 'department', headerName: '부서명', width: 70 },
+  { field: 'equipmentId', headerName: '장비등록번호', width: 70 },
+  { field: 'status', headerName: '상태', width: 40 },
+];
+
+const rows = [
+  { department: 1, equipmentId: 'Snow', status: 'Jon' },
+  { department: 2, equipmentId: 'Lannister', status: 'Cersei' },
+  { department: 3, equipmentId: 'Lannister', status: 'Jaime' },
+  { department: 4, equipmentId: 'Stark', status: 'Arya' },
+  { department: 5, equipmentId: 'Targaryen', status: 'Daenerys' },
+  { department: 6, equipmentId: 'Melisandre', status: null },
+  { department: 7, equipmentId: 'Clifford', status: 'Ferrara' },
+  { department: 8, equipmentId: 'Frances', status: 'Rossini' },
+  { department: 9, equipmentId: 'Roxie', status: 'Harvey' },
+];
+
 function PageEquipmentStatus() {
   // eslint-disable-next-line no-unused-vars
   function setOpen(set: boolean): void {}
@@ -123,7 +142,13 @@ function PageEquipmentStatus() {
         onClose={() => setIsDrawerOpen(false)}
       >
         <Box sx={{ width: 480, padding: '10% 5%' }} role="combobox" />
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+        <div style={{ height: 400, width: '100%' }}>
+          <DataGrid rows={rows} columns={DetailColumns} />
+        </div>
+        {/* <Stack direction="row" spacing={1}>
+          <Chip label="예비" color="primary" />
+          <Chip label="배부" color="success" />
+        </Stack> */}
       </Drawer>
       <SummaryDataGrid
         tableName="equipment/status"

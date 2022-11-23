@@ -160,7 +160,7 @@ function WarningTab() {
       </TableBody>
       <Divider sx={{ marginBottom: 1 }} />
       {/* <DefaultBox isBackgroundPaper={false}>List</DefaultBox> */}
-      <SimpleTable head={['형식승인명', '장비일련번호']}>
+      <SimpleTable head={['형식승인명', '장비등록번호']}>
         {data.map((d) => (
           <TableRow key={d.name}>
             <SimpleTableCellText text={d.name} />
