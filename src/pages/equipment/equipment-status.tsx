@@ -1,234 +1,133 @@
-import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
-import { OptColumn } from 'tui-grid/types/options';
+import SummaryDataGrid from '../../components/dataGrid/SummaryDataGrid';
+import { OptColumn, OptSummaryData } from 'tui-grid/types/options';
+import { Box, Drawer, TextField } from '@mui/material';
+import { useState } from 'react';
 
-const dataGridKeys: OptColumn[] = [
+const columns: OptColumn[] = [
   {
-    name: 'id',
-    header: '장비증명서번호',
-    minWidth: 140,
+    name: 'modeApprovalName',
+    header: '형식승인명',
+    minWidth: 100,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
   {
-    name: 'type',
-    header: '장비증명서종류',
-    minWidth: 140,
+    name: 'nis',
+    header: '국정원',
+    minWidth: 40,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
   {
-    name: 'request',
-    header: '증명서승인요청일자',
-    minWidth: 140,
+    name: 'moef',
+    header: '기획재정부',
+    minWidth: 40,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
   {
-    name: 'date',
-    header: '증명서발행일자',
-    minWidth: 140,
+    name: 'mofa',
+    header: '외교부',
+    minWidth: 40,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
   {
-    name: 'personalID',
-    header: '증명서발행자ID',
-    minWidth: 140,
+    name: 'mnd',
+    header: '국방부',
+    minWidth: 40,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
   {
-    name: 'accord',
-    header: '증명서내일치여부',
-    minWidth: 140,
+    name: 'mois',
+    header: '행정안전부',
+    minWidth: 40,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
   {
-    name: 'copy',
-    header: '장비증명서복사본',
-    minWidth: 140,
+    name: 'mohw',
+    header: '보건복지부',
+    minWidth: 40,
     sortable: true,
+    align: 'center',
   },
   {
-    name: 'outgoingDate',
-    header: '인계일자',
-    minWidth: 140,
+    name: 'mof',
+    header: '해양수산부',
+    minWidth: 40,
     sortable: true,
-  },
-  {
-    name: 'outgoingAgency',
-    header: '인계자소속',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'outgoingPersonalID',
-    header: '인계자ID',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'outgoingConfirmation',
-    header: '인계자확인서명',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'outgoingTotal',
-    header: '인계총수량',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'outgoingProcessResult',
-    header: '인계처리결과',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'outgoingRemarks',
-    header: '인계특이사항',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'incomingDate',
-    header: '인수일자',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'incomingAgency',
-    header: '인수자소속',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'incomingPersonalId',
-    header: '인수자ID',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'incomingConfirmation',
-    header: '인수자확인서명',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'incomingTotal',
-    header: '인수총수량',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'ProcessResult',
-    header: '인수처리결과',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'incomingRemarks',
-    header: '인수특이사항',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'remarks',
-    header: '비고',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
+    align: 'center',
   },
 ];
 
-// export const dummyAirplaneStatus = [
-// eslint-disable-next-line no-tabs
-// 	{
-//    eslint-disable-next-line no-tabs
-// 		id: "달러",
-// 		updateNo: 100,
-// 		updateDatetime: 4,
-// 		approvalID: 10,
-// 		equipmentCertifyId: 5,
-// 		manufactureId: 10,
-// 		lastStatusGroup: "2",
-// 		lastStatusDetail: "2020-01-03",
-// 		beforeStatusGroup: "19-000223",
-// 				beforeStatusDetail: "달러",
-// 		a: 100,
-// 		b: 4,
-// 		c: 10,
-// 		d: 5,
-// 		e: 10,
-// 		f: "2",
-// 		g: "2020-01-03",
-// 		updateMenu: "19-000223",
-// 				updateContents: "달러",
-// 		updateReason: 100,
-// 		updateAgency: 4,
-// 		updatePosition: 10,
-// 		updatePersonalId: 5,
-// 		remarks: 10,
-// 	},
-// ];
+const summary: OptSummaryData = {
+  height: 40,
+  position: 'bottom', // or 'top'
+  columnContent: {
+    modeApprovalName: {
+      template() {
+        return `sum`;
+      },
+    },
+    nis: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+    moef: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+    mofa: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+    mnd: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+    mois: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+    mohw: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+    mof: {
+      template(valueMap) {
+        return `${valueMap.sum}`;
+      },
+    },
+  },
+};
 
 function PageEquipmentStatus() {
-  return <BaseDataGrid tableName="equipment/information" columns={dataGridKeys} />;
+  // eslint-disable-next-line no-unused-vars
+  function setOpen(set: boolean): void {}
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  return (
+    <>
+      <Drawer
+        sx={{ opacity: 0.98 }}
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      >
+        <Box sx={{ width: 480, padding: '10% 5%' }} role="combobox" />
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      </Drawer>
+      <SummaryDataGrid tableName="equipment/status" columns={columns} summary={summary} />;
+    </>
+  );
 }
 
 export default PageEquipmentStatus;
