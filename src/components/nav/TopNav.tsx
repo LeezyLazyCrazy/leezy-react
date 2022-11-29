@@ -4,6 +4,7 @@ import Logo from '../../assets/logos/Logo';
 import ToggleDarkMode from '../mode/ToggleDarkMode';
 import { useAuth } from '../../stores/useAuth';
 import TopNavProfile from '../../modules/menu/TopNavProfile';
+import SearchFiled from '../search/SearchFiled';
 // import ModeCodeToggle from '../../modules/menu/ModeCodeToggle';
 
 /**
@@ -15,7 +16,7 @@ function TopNav() {
   const { authUser } = useAuth();
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', flexGrow: 1 }}>
       <AppBar
         sx={{
           boxShadow: 0,
@@ -45,9 +46,11 @@ function TopNav() {
               // textDecoration: 'none',
             }}
           >
-            🤍SYSTEM
+            SYSTEM
           </Typography>
-          <Box sx={{ flexGrow: 1 }} />
+          {/* <Box sx={{ flexGrow: 1 }} /> */}
+          <SearchFiled />
+          <Box sx={{ flexGrow: 10 }} />
           <TopNavProfile title={`${authUser?.name} ${authUser?.position}님`} />
           {/*  <ModeCodeToggle /> */}
           <ToggleDarkMode />
