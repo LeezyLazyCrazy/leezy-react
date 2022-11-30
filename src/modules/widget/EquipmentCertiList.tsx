@@ -39,7 +39,7 @@ import { SimpleTableCellText } from '../../components/dataGrid/simpleTable/Simpl
 //     },
 //   },
 //   {
-//     name: 'equipmentId',
+//     name: 'equipmentSerial',
 //     header: '일련번호',
 //     minWidth: 5,
 //     sortable: true,
@@ -78,71 +78,71 @@ function WarningTab() {
   const data = [
     {
       name: 'NEU-14',
-      equipmentID: '001',
+      equipmentSerial: '001',
     },
     {
       name: 'NEU-14',
-      equipmentID: '002',
+      equipmentSerial: '002',
     },
     {
       name: 'NEU-14',
-      equipmentID: '003',
+      equipmentSerial: '003',
     },
     {
       name: 'NEU-14',
-      equipmentID: '004',
+      equipmentSerial: '004',
     },
     {
       name: 'NEU-14',
-      equipmentID: '005',
+      equipmentSerial: '005',
     },
     {
       name: 'NEU-14',
-      equipmentID: '006',
+      equipmentSerial: '006',
     },
     {
       name: 'NEU-14',
-      equipmentID: '007',
+      equipmentSerial: '007',
     },
     {
       name: 'NEU-14',
-      equipmentID: '008',
+      equipmentSerial: '008',
     },
     {
       name: 'NEU-14',
-      equipmentID: '009',
+      equipmentSerial: '009',
     },
     {
       name: 'NEU-14',
-      equipmentID: '010',
+      equipmentSerial: '010',
     },
     {
       name: 'NEU-14',
-      equipmentID: '011',
+      equipmentSerial: '011',
     },
     {
       name: 'NEU-14',
-      equipmentID: '012',
+      equipmentSerial: '012',
     },
     {
       name: 'NEU-14',
-      equipmentID: '013',
+      equipmentSerial: '013',
     },
     {
       name: 'NEU-14',
-      equipmentID: '014',
+      equipmentSerial: '014',
     },
     {
       name: 'NEU-14',
-      equipmentID: '015',
+      equipmentSerial: '015',
     },
     {
       name: 'USE-20',
-      equipmentID: '001',
+      equipmentSerial: '001',
     },
     {
       name: 'USE-20',
-      equipmentID: '002',
+      equipmentSerial: '002',
     },
   ];
   return (
@@ -160,11 +160,11 @@ function WarningTab() {
       </TableBody>
       <Divider sx={{ marginBottom: 1 }} />
       {/* <DefaultBox isBackgroundPaper={false}>List</DefaultBox> */}
-      <SimpleTable head={['형식승인명', '장비일련번호']}>
+      <SimpleTable head={['형식승인명', '장비등록번호']}>
         {data.map((d) => (
           <TableRow key={d.name}>
             <SimpleTableCellText text={d.name} />
-            <SimpleTableCellText text={d.equipmentID} />
+            <SimpleTableCellText text={d.equipmentSerial} />
           </TableRow>
         ))}
       </SimpleTable>

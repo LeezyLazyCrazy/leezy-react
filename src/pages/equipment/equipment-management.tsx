@@ -1,8 +1,10 @@
 // import { DataGridKeyProps } from "../../data/constants/dataGridKeys";
 import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 import { OptColumn, OptHeader } from 'tui-grid/types/options';
+import { Box, Drawer, TextField } from '@mui/material';
+import { useState } from 'react';
 
-const dataGridKeys: OptColumn[] = [
+const columns: OptColumn[] = [
   {
     name: 'agency',
     header: '장비관리기관',
@@ -22,8 +24,8 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'equipmentId',
-    header: '장비일련번호',
+    name: 'equipmentSerial',
+    header: '장비등록번호',
     minWidth: 140,
     sortable: true,
     editor: {
@@ -364,7 +366,32 @@ const header: OptHeader = {
 };
 
 function PageEquipmentManagement() {
-  return <BaseDataGrid tableName="equipment/management" columns={dataGridKeys} header={header} />;
+  // eslint-disable-next-line no-unused-vars
+  function setOpen(set: boolean): void {}
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  return (
+    <>
+      {/* <IconButton size="large" edge="start" aria-label="logo" onClick={() => setIsDrawerOpen(true)}>
+        <MenuIcon />
+      </IconButton> */}
+      <Drawer
+        sx={{ opacity: 0.98 }}
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      >
+        <Box sx={{ width: 480, padding: '10% 5%' }} role="combobox" />
+        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      </Drawer>
+      <BaseDataGrid
+        tableName="equipment/management"
+        columns={columns}
+        header={header}
+        onSearchClick={() => setIsDrawerOpen(true)}
+      />
+    </>
+  );
 }
 
 export default PageEquipmentManagement;

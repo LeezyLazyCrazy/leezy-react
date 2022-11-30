@@ -116,7 +116,7 @@ export default function CollapsibleTable() {
           <TableRow>
             <TableCell />
             <TableCell>장비명</TableCell>
-            <TableCell align="right">장비일련번호</TableCell>
+            <TableCell align="right">장비등록번호</TableCell>
             <TableCell align="right">승인상태</TableCell>
             <TableCell align="right">사용상태</TableCell>
             <TableCell align="right">수발상태</TableCell>

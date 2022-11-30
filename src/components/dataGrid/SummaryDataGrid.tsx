@@ -1,12 +1,12 @@
 import Grid from '@toast-ui/react-grid';
 import TuiGrid from 'tui-grid';
 import 'tui-grid/dist/tui-grid.css';
-import { OptColumn, OptHeader } from 'tui-grid/types/options';
+import { OptColumn, OptHeader, OptSummaryData } from 'tui-grid/types/options';
 import '../../styles/dataGrid/index.css';
 import { createRef, useEffect, useState } from 'react';
 import useThemeStore from '../../stores/useThemeStore';
 import { theme } from '../../styles/theme';
-import DataGridToolbar from './DataGridToolbar';
+import SummaryDataGridToolbar from './SummaryDataGridToolbar';
 import TableSettingModal from './TableSettingModal';
 import HeaderSettingModal from './HeaderSettingModal';
 import { gridStyles } from './dataGridStyle';
@@ -18,13 +18,14 @@ import { DataSource } from 'tui-grid/types/dataSource';
 
 // import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 
-interface BaseDataGridProps {
+interface SummaryDataGridProps {
   tableName: string;
   columns: OptColumn[];
   frozenColumn?: number;
   header?: OptHeader;
   showToolbar?: boolean;
   onSearchClick?: any;
+  summary: OptSummaryData;
 }
 
 /**
@@ -33,21 +34,22 @@ interface BaseDataGridProps {
  * 관련 라이브러리에 대해서는 다음을 참고 {@link https://ui.toast.com/tui-grid ToastUI Grid }
  *
  * 해당 컴포넌트는 아직 어떻게 쓸지 잡힌 것이 없으므로 추후 설명을 보충할 예정
- * @param {BaseDataGridProps} BaseDataGridProps
+ * @param {SummaryDataGridProps} SummaryDataGridProps
  * @returns {JSX.Element} React Component
  */
 function onClick() {
   console.log('test');
 }
 
-function BaseDataGrid({
+function SummaryDataGrid({
   tableName,
   columns,
   frozenColumn = 1,
   header = { height: 60 },
   showToolbar = true,
   onSearchClick,
-}: BaseDataGridProps) {
+  summary,
+}: SummaryDataGridProps) {
   // grid styles
   const { isDark } = useThemeStore();
   const { palette } = theme(isDark);
@@ -61,16 +63,16 @@ function BaseDataGrid({
   // width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
   // const [containerWidth, setContainerWidth] = useState(1100 + 10);
   // const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
+  // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
-
-  // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
 
   // 행 추가
   const appendRow = () => {
     ref.current?.getInstance().appendRow({});
   };
+
   // left Bar 가져오기
   const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
@@ -107,7 +109,7 @@ function BaseDataGrid({
     <div style={{ width: 'auto' }}>
       {/* <SearchDrawer /> */}
       {showToolbar && (
-        <DataGridToolbar
+        <SummaryDataGridToolbar
           addNewRow={appendRow}
           refresh={() => ref.current?.getInstance().readData(1)}
           openTableSetting={() => setTableSettingOpen(true)}
@@ -134,12 +136,12 @@ function BaseDataGrid({
         bodyHeight={600}
         heightResizable
         width="auto"
-        rowHeaders={['rowNum', 'checkbox']}
         draggable
         scrollX
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
         onClick={onClick}
+        summary={summary}
       />
       {/* <YesNoSelectionModal
         open={checkToSaveOpen}
@@ -179,4 +181,4 @@ function BaseDataGrid({
   );
 }
 
-export default BaseDataGrid;
+export default SummaryDataGrid;

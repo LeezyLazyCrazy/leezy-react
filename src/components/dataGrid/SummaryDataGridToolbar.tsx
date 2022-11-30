@@ -2,17 +2,17 @@ import { Box, Button, ButtonGroup, styled, Tooltip } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
 import TopicIcon from '@mui/icons-material/Topic';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
-// import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import SearchIcon from '@mui/icons-material/Search';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SaveIcon from '@mui/icons-material/Save';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+// import AddBoxIcon from '@mui/icons-material/AddBox';
+// import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+// import FileDownloadIcon from '@mui/icons-material/FileDownload';
+// import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+// import DeleteIcon from '@mui/icons-material/Delete';
+// import SaveIcon from '@mui/icons-material/Save';
 
-interface DataGridToolBarProps {
+interface SummaryDataGridToolBarProps {
   addNewRow: () => void;
   refresh: () => void;
   onFilter?: () => void;
@@ -26,20 +26,20 @@ interface DataGridToolBarProps {
 
 /**
  * Toast UI 사용 시, 테이블 상단에 뜨는 툴바 설정
- * @param DataGridToolBarProps DataGridToolBarProps
+ * @param SummaryDataGridToolBarProps DataGridToolBarProps
  * @returns {JSX.Element} React Component(div)
  */
-function DataGridToolbar({
-  addNewRow,
+function SummaryDataGridToolbar({
+  // addNewRow,
   refresh,
   onFilter,
   openTableSetting,
   openHeaderSetting,
   openDetailSetting,
-  openDeleteSetting,
-  openSaveSetting,
+  // openDeleteSetting,
+  // openSaveSetting,
   openSearchSetting,
-}: DataGridToolBarProps) {
+}: SummaryDataGridToolBarProps) {
   const ToolBarOptions = [
     {
       id: 0,
@@ -67,32 +67,32 @@ function DataGridToolbar({
         },
       ],
     },
-    {
-      id: 1,
-      btns: [
-        {
-          id: 0,
-          title: '새로운 행 추가',
-          key: 'new-row',
-          icon: <AddBoxIcon fontSize="small" />,
-          onClick: addNewRow,
-        },
-        {
-          id: 1,
-          title: '행 복사',
-          key: 'copy-row',
-          icon: <ContentCopyIcon fontSize="small" />,
-          onClick: () => null,
-        },
-        {
-          id: 2,
-          title: '파일로 내보내기',
-          key: 'export-as-file',
-          icon: <FileDownloadIcon fontSize="small" />,
-          onClick: () => null,
-        },
-      ],
-    },
+    // {
+    //   id: 1,
+    //   btns: [
+    //     {
+    //       id: 0,
+    //       title: '새로운 행 추가',
+    //       key: 'new-row',
+    //       icon: <AddBoxIcon fontSize="small" />,
+    //       onClick: addNewRow,
+    //     },
+    //     {
+    //       id: 1,
+    //       title: '행 복사',
+    //       key: 'copy-row',
+    //       icon: <ContentCopyIcon fontSize="small" />,
+    //       onClick: () => null,
+    //     },
+    //     {
+    //       id: 2,
+    //       title: '파일로 내보내기',
+    //       key: 'export-as-file',
+    //       icon: <FileDownloadIcon fontSize="small" />,
+    //       onClick: () => null,
+    //     },
+    //   ],
+    // },
     {
       id: 1,
       btns: [
@@ -112,25 +112,25 @@ function DataGridToolbar({
         },
       ],
     },
-    {
-      id: 3,
-      btns: [
-        {
-          id: 0,
-          title: '삭제',
-          key: 'delete',
-          icon: <DeleteIcon fontSize="small" />,
-          onClick: openDeleteSetting,
-        },
-        {
-          id: 1,
-          title: '저장',
-          key: 'save',
-          icon: <SaveIcon fontSize="small" />,
-          onClick: openSaveSetting,
-        },
-      ],
-    },
+    // {
+    //   id: 3,
+    //   btns: [
+    //     {
+    //       id: 0,
+    //       title: '삭제',
+    //       key: 'delete',
+    //       icon: <DeleteIcon fontSize="small" />,
+    //       onClick: openDeleteSetting,
+    //     },
+    //     {
+    //       id: 1,
+    //       title: '저장',
+    //       key: 'save',
+    //       icon: <SaveIcon fontSize="small" />,
+    //       onClick: openSaveSetting,
+    //     },
+    //   ],
+    // },
   ];
 
   return (
@@ -163,7 +163,7 @@ function DataGridToolbar({
   );
 }
 
-export default DataGridToolbar;
+export default SummaryDataGridToolbar;
 
 const Root = styled('div')(() => ({
   display: 'flex',
