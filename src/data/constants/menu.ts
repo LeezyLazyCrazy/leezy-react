@@ -43,6 +43,7 @@ import PageTerminalManagement from '../../pages/system/terminal-management';
 import PageQREquipManagement from '../../pages/system/QR-equip-management';
 import PageQRcodeInOutHistory from '../../pages/system/QRcode-inout-history';
 import PagePersonalManagement from '../../pages/system/personal-management';
+import testBoard from '../../pages/system/testBoard';
 
 export interface MenuProps {
   id: string;
@@ -308,6 +309,13 @@ export const menu: MenuProps[] = [
     parentUrl: '',
     type: 'dir',
     subMenu: [
+      {
+        id: 'Editor',
+        name: '게시판',
+        type: 'page',
+        parentUrl: 'system',
+        element: testBoard,
+      },
       {
         id: 'terminal-management',
         name: '단말기정보관리',
