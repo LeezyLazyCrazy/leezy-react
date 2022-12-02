@@ -15,7 +15,6 @@ import useMenuBarStore from '../../stores/useMenuBarStore';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import { DataSource } from 'tui-grid/types/dataSource';
 // import SearchDrawer from '../../modules/widget/SearchDrawer';
-
 // import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 
 interface BaseDataGridProps {
@@ -36,8 +35,9 @@ interface BaseDataGridProps {
  * @param {BaseDataGridProps} BaseDataGridProps
  * @returns {JSX.Element} React Component
  */
-function onClick() {
+function onClick(e: any) {
   console.log('test');
+  console.log(e.rowKey, e.columnName);
 }
 
 function BaseDataGrid({
@@ -122,6 +122,9 @@ function BaseDataGrid({
             ref.current?.getInstance().request('deleteData');
           }}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
+          removeRows={() => ref.current?.getInstance().removeCheckedRows()}
+          exportFile={() => ref.current?.getInstance().export('csv')}
+          copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
         />
       )}
       <Grid

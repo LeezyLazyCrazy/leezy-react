@@ -6,7 +6,7 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
-// import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+
 import SearchIcon from '@mui/icons-material/Search';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
@@ -16,6 +16,9 @@ interface DataGridToolBarProps {
   addNewRow: () => void;
   refresh: () => void;
   onFilter?: () => void;
+  removeRows: () => void;
+  exportFile: () => void;
+  copyToClipboard: () => void;
   openTableSetting: () => void;
   openHeaderSetting: () => void;
   openDetailSetting: () => void;
@@ -33,6 +36,8 @@ function DataGridToolbar({
   addNewRow,
   refresh,
   onFilter,
+  exportFile,
+  copyToClipboard,
   openTableSetting,
   openHeaderSetting,
   openDetailSetting,
@@ -82,14 +87,14 @@ function DataGridToolbar({
           title: '행 복사',
           key: 'copy-row',
           icon: <ContentCopyIcon fontSize="small" />,
-          onClick: () => null,
+          onClick: copyToClipboard,
         },
         {
           id: 2,
           title: '파일로 내보내기',
           key: 'export-as-file',
           icon: <FileDownloadIcon fontSize="small" />,
-          onClick: () => null,
+          onClick: exportFile,
         },
       ],
     },
@@ -106,7 +111,7 @@ function DataGridToolbar({
         {
           id: 1,
           title: '상세조회',
-          key: 'details-file',
+          key: 'search',
           icon: <SearchIcon fontSize="small" />,
           onClick: openSearchSetting,
         },
