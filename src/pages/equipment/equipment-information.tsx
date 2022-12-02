@@ -4,7 +4,7 @@ import { OptHeader, OptColumn } from 'tui-grid/types/options';
 
 const columns: OptColumn[] = [
   {
-    name: 'approvalName',
+    name: 'modeApprovalName',
     header: '형식승인명',
     minWidth: 140,
     sortable: true,
@@ -13,12 +13,72 @@ const columns: OptColumn[] = [
     },
   },
   {
-    name: 'equipmentSerial',
+    name: 'equipmentId',
     header: '장비등록번호',
     minWidth: 140,
     sortable: true,
     editor: {
       type: 'text',
+    },
+  },
+  {
+    name: 'manageAgency',
+    header: '장비관리기관',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: 'select',
+      options: {
+        listItems: [
+          { text: '국정원', value: '국정원' },
+          { text: '기획재정부', value: '기획재정부' },
+          { text: '외교부', value: '외교부' },
+          { text: '국방부', value: '국방부' },
+          { text: '행정안전부', value: '행정안전부' },
+          { text: '보건복지부', value: '보건복지부' },
+          { text: '해양수산부', value: '해양수산부' },
+        ],
+      },
+    },
+  },
+  {
+    name: 'operateAgency',
+    header: '장비운용기관',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: 'text',
+    },
+  },
+  {
+    name: 'operateDepartment',
+    header: '장비운용부서',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: 'text',
+    },
+  },
+  {
+    name: 'operatePosition',
+    header: '장비운용위치',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: 'text',
+    },
+  },
+  {
+    name: 'operateDate',
+    header: '장비운용일자',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: 'datePicker',
+      options: {
+        language: 'ko',
+        format: 'yyyy-MM-dd',
+      },
     },
   },
   {
@@ -129,55 +189,7 @@ const columns: OptColumn[] = [
       type: 'text',
     },
   },
-  {
-    name: 'manageAgency',
-    header: '장비관리기관',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'operateAgency',
-    header: '장비운용기관',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'operateDepartment',
-    header: '장비운용부서',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'operatePosition',
-    header: '장비운용위치',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'operateDate',
-    header: '장비운용일자',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'datePicker',
-      options: {
-        language: 'ko',
-        format: 'yyyy-MM-dd',
-      },
-    },
-  },
+
   {
     name: 'lastStatusGroup',
     header: '최신상태그룹',
@@ -291,8 +303,19 @@ const header: OptHeader = {
       childNames: ['developTaskId'],
     },
     {
-      header: '승인업무 연계',
+      header: '설치 운영 정보',
       name: 'mergeColumn2',
+      childNames: [
+        'manageAgency',
+        'operateAgency',
+        'operateDepartment',
+        'operatePosition',
+        'operateDate',
+      ],
+    },
+    {
+      header: '승인업무 연계',
+      name: 'mergeColumn3',
       childNames: [
         'modeApprovalId',
         'useApprovalId',
@@ -303,30 +326,20 @@ const header: OptHeader = {
     },
     {
       header: '장비증명서 연계',
-      name: 'mergeColumn3',
+      name: 'mergeColumn4',
       childNames: ['equipmentCertiAgency', 'equipmentCertiId'],
     },
     {
       header: '암호자재 연계',
-      name: 'mergeColumn4',
+      name: 'mergeColumn5',
       childNames: ['materialId'],
     },
     {
       header: '자재증명서 연계',
-      name: 'mergeColumn5',
+      name: 'mergeColumn6',
       childNames: ['materialCertiAgency', 'materialCertiId'],
     },
-    {
-      header: '설치 운영 정보',
-      name: 'mergeColumn6',
-      childNames: [
-        'manageAgency',
-        'operateAgency',
-        'operateDepartment',
-        'operatePosition',
-        'operateDate',
-      ],
-    },
+
     {
       header: '최신 상태 정보',
       name: 'mergeColumn7',
