@@ -13,7 +13,8 @@ interface IconMenuItemProps {
   closeOpenedMenu: boolean;
   id: string; // 영어아이디
   name: string; // 한글이름
-  subMenu: { id: string; name: string; subMenu?: { id: string; name: string }[] }[];
+  // 서브메뉴 중 왼쪽 사이드바에 표출되지 않는 페이지 설정
+  subMenu: { id: string; name: string; show: boolean; subMenu?: { id: string; name: string }[] }[];
   color: string;
 }
 
@@ -62,24 +63,26 @@ function IconMenuItem({
       </ListItemButton>
       <Collapse in={subMenuOpen} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {subMenu.map((menu) => (
-            <div key={menu.id}>
-              <RouteStyleHandler to={`/${id}/${menu.id}`}>
-                <ListItemButton dense>
-                  <CircleIcon sx={{ fontSize: '.5rem', margin: '0px 6px', opacity: 0.4 }} />
-                  <ListItemText primary={menu.name} />
-                </ListItemButton>
-              </RouteStyleHandler>
-              {menu.subMenu?.map((submenu) => (
-                <RouteStyleHandler key={submenu.id} to={`${id}/${menu.id}/${submenu.id}`}>
+          {subMenu
+            .filter((menu) => menu.show === true)
+            .map((menu) => (
+              <div key={menu.id}>
+                <RouteStyleHandler to={`/${id}/${menu.id}`}>
                   <ListItemButton dense>
-                    <CircleIcon sx={{ fontSize: '.5rem', margin: '0px 16px', opacity: 0.2 }} />
-                    <ListItemText primary={submenu.name} />
+                    <CircleIcon sx={{ fontSize: '.5rem', margin: '0px 6px', opacity: 0.4 }} />
+                    <ListItemText primary={menu.name} />
                   </ListItemButton>
                 </RouteStyleHandler>
-              ))}
-            </div>
-          ))}
+                {menu.subMenu?.map((submenu) => (
+                  <RouteStyleHandler key={submenu.id} to={`${id}/${menu.id}/${submenu.id}`}>
+                    <ListItemButton dense>
+                      <CircleIcon sx={{ fontSize: '.5rem', margin: '0px 16px', opacity: 0.2 }} />
+                      <ListItemText primary={submenu.name} />
+                    </ListItemButton>
+                  </RouteStyleHandler>
+                ))}
+              </div>
+            ))}
         </List>
       </Collapse>
     </>
