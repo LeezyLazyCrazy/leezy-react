@@ -3,6 +3,7 @@ import { ListItemIcon, Menu, MenuItem, styled, Typography } from '@mui/material'
 import React, { useState } from 'react';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { Link } from 'react-router-dom';
 
 interface TapNavProfileProps {
   title: string;
@@ -46,6 +47,12 @@ function TopNavProfile({ title }: TapNavProfileProps) {
             <Settings fontSize="small" />
           </ListItemIcon>
           세팅
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <Logout fontSize="small" />
+          </ListItemIcon>
+          <Link to="/mypage">마이페이지</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>

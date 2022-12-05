@@ -44,6 +44,12 @@ import PageQREquipManagement from '../../pages/system/QR-equip-management';
 import PageQRcodeInOutHistory from '../../pages/system/QRcode-inout-history';
 import PagePersonalManagement from '../../pages/system/personal-management';
 import testBoard from '../../pages/system/testBoard';
+// 포럼
+import notice from '../../pages/forum/notice';
+import reference from '../../pages/forum/reference';
+import Free from '../../pages/forum/free';
+import questions from '../../pages/forum/Questions';
+import Detail from '../../pages/forum/detail';
 
 export interface MenuProps {
   id: string;
@@ -51,6 +57,8 @@ export interface MenuProps {
   parentUrl: string;
   type: 'dir' | 'page';
   element?: any;
+  // 왼쪽 사이드바에서 표출될 페이지 설정하기 위해 추가
+  show: boolean;
   subMenu?: MenuProps[];
 }
 
@@ -64,12 +72,14 @@ export const menu: MenuProps[] = [
     id: 'equipment',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'equipment-status',
         name: '장비보유현황',
         type: 'page',
         parentUrl: 'equipment',
+        show: true,
         element: PageEquipmentStatus,
       },
       {
@@ -77,6 +87,7 @@ export const menu: MenuProps[] = [
         name: '장비정보관리',
         type: 'page',
         parentUrl: 'equipment',
+        show: true,
         element: PageEquipmentInformation,
       },
       {
@@ -84,6 +95,7 @@ export const menu: MenuProps[] = [
         name: '장비제작정보',
         type: 'page',
         parentUrl: 'equipment',
+        show: true,
         element: PageEquipmentManufacture,
       },
       {
@@ -91,6 +103,7 @@ export const menu: MenuProps[] = [
         name: '장비상태변경',
         type: 'page',
         parentUrl: 'equipment',
+        show: true,
         element: PageEquipmentStatusHistory,
       },
       {
@@ -98,6 +111,7 @@ export const menu: MenuProps[] = [
         name: '장비관리기록부',
         type: 'page',
         parentUrl: 'equipment',
+        show: true,
         element: PageEquipmentManagement,
       },
       {
@@ -105,6 +119,7 @@ export const menu: MenuProps[] = [
         name: '장비증명서',
         type: 'page',
         parentUrl: 'equipment',
+        show: true,
         element: PageEquipmentCertificate,
       },
     ],
@@ -114,12 +129,14 @@ export const menu: MenuProps[] = [
     id: 'material',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'material-certificate',
         name: '자재수발관리',
         type: 'page',
         parentUrl: 'material',
+        show: true,
         element: PageMaterialCertificate,
       },
       {
@@ -127,6 +144,7 @@ export const menu: MenuProps[] = [
         name: '자재관리',
         type: 'page',
         parentUrl: 'material',
+        show: true,
         element: PageMaterialCertifyList,
       },
       {
@@ -134,6 +152,7 @@ export const menu: MenuProps[] = [
         name: '자재관리기록부',
         type: 'page',
         parentUrl: 'material',
+        show: true,
         element: PageMaterialManagement,
       },
     ],
@@ -143,12 +162,14 @@ export const menu: MenuProps[] = [
     id: 'approval',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'equipment-approval-history',
         name: '형식승인업무',
         type: 'page',
         parentUrl: 'approval',
+        show: true,
         element: PageEquipmentApprovalHistory,
       },
       {
@@ -156,6 +177,7 @@ export const menu: MenuProps[] = [
         name: '사용승인업무',
         type: 'page',
         parentUrl: 'approval',
+        show: true,
         element: PageEquipmentApproval1,
       },
       {
@@ -163,6 +185,7 @@ export const menu: MenuProps[] = [
         name: '제작승인업무',
         type: 'page',
         parentUrl: 'approval',
+        show: true,
         element: PageEquipmentApproval2,
       },
       {
@@ -170,6 +193,7 @@ export const menu: MenuProps[] = [
         name: '파기승인업무',
         type: 'page',
         parentUrl: 'approval',
+        show: true,
         element: PageEquipmentApproval3,
       },
       {
@@ -177,6 +201,7 @@ export const menu: MenuProps[] = [
         name: '국외반출승인업무',
         type: 'page',
         parentUrl: 'approval',
+        show: true,
         element: PageEquipmentApproval4,
       },
     ],
@@ -186,12 +211,14 @@ export const menu: MenuProps[] = [
     id: 'development',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'development-history',
         name: '개발이력관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentHistory,
       },
       {
@@ -199,6 +226,7 @@ export const menu: MenuProps[] = [
         name: '개발과제정보관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentManagement,
       },
       {
@@ -206,6 +234,7 @@ export const menu: MenuProps[] = [
         name: '소요제기정보관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentNeeds,
       },
       {
@@ -213,6 +242,7 @@ export const menu: MenuProps[] = [
         name: '개발이슈정보관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentIssue,
       },
       {
@@ -220,6 +250,7 @@ export const menu: MenuProps[] = [
         name: '요구사항정보관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentRequirement,
       },
       {
@@ -227,6 +258,7 @@ export const menu: MenuProps[] = [
         name: '개발담당자관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentPersonal,
       },
       {
@@ -234,6 +266,7 @@ export const menu: MenuProps[] = [
         name: '개발시험정보관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentTest,
       },
       {
@@ -241,6 +274,7 @@ export const menu: MenuProps[] = [
         name: '개발평가정보관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentEvaluate,
       },
       {
@@ -248,6 +282,7 @@ export const menu: MenuProps[] = [
         name: '안정성검증관리',
         type: 'page',
         parentUrl: 'development',
+        show: true,
         element: PageDevelopmentInspect,
       },
     ],
@@ -257,12 +292,14 @@ export const menu: MenuProps[] = [
     id: 'manufactory',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'manufactory-management',
         name: '제작업체관리',
         type: 'page',
         parentUrl: 'manufactory',
+        show: true,
         element: PageManufactoryManagement,
       },
       {
@@ -270,6 +307,7 @@ export const menu: MenuProps[] = [
         name: '제작업체보안측정',
         type: 'page',
         parentUrl: 'manufactory',
+        show: true,
         element: PageSecurityMeasureHistory,
       },
       {
@@ -277,6 +315,7 @@ export const menu: MenuProps[] = [
         name: '장비정비이력',
         type: 'page',
         parentUrl: 'manufactory',
+        show: true,
         element: PageSecurityAccidentHistory,
       },
       {
@@ -284,6 +323,7 @@ export const menu: MenuProps[] = [
         name: '보안사고이력관리',
         type: 'page',
         parentUrl: 'manufactory',
+        show: true,
         element: PageMaintenanceHistory,
       },
     ],
@@ -293,12 +333,14 @@ export const menu: MenuProps[] = [
     id: 'agency',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'agency-management',
         name: '유관기관협의체관리',
         type: 'page',
         parentUrl: 'agency',
+        show: true,
         element: PageAgencyManagement,
       },
     ],
@@ -308,12 +350,14 @@ export const menu: MenuProps[] = [
     id: 'system',
     parentUrl: '',
     type: 'dir',
+    show: true,
     subMenu: [
       {
         id: 'Editor',
         name: '게시판',
         type: 'page',
         parentUrl: 'system',
+        show: true,
         element: testBoard,
       },
       {
@@ -321,6 +365,7 @@ export const menu: MenuProps[] = [
         name: '단말기정보관리',
         type: 'page',
         parentUrl: 'system',
+        show: true,
         element: PageTerminalManagement,
       },
       {
@@ -328,6 +373,7 @@ export const menu: MenuProps[] = [
         name: 'QR코드 정보 관리',
         type: 'page',
         parentUrl: 'system',
+        show: true,
         element: PageQREquipManagement,
       },
       {
@@ -335,6 +381,7 @@ export const menu: MenuProps[] = [
         name: 'QR코드 사용이력',
         type: 'page',
         parentUrl: 'system',
+        show: true,
         element: PageQRcodeInOutHistory,
       },
       {
@@ -342,7 +389,57 @@ export const menu: MenuProps[] = [
         name: '사용자 정보 관리',
         type: 'page',
         parentUrl: 'system',
+        show: true,
         element: PagePersonalManagement,
+      },
+    ],
+  },
+  {
+    name: '포럼',
+    id: 'forum',
+    parentUrl: '',
+    type: 'dir',
+    show: true,
+    subMenu: [
+      {
+        id: 'notice',
+        name: '공지사항',
+        type: 'page',
+        parentUrl: 'forum',
+        show: true,
+        element: notice,
+      },
+      {
+        id: 'reference',
+        name: '자료실',
+        type: 'page',
+        parentUrl: 'forum',
+        show: true,
+        element: reference,
+      },
+      {
+        id: 'questions',
+        name: '자주묻는 질문',
+        type: 'page',
+        parentUrl: 'forum',
+        show: true,
+        element: questions,
+      },
+      {
+        id: 'free',
+        name: '자유 게시판',
+        type: 'page',
+        parentUrl: 'forum',
+        show: true,
+        element: Free,
+      },
+      {
+        id: 'detail',
+        name: '상세 페이지',
+        type: 'page',
+        parentUrl: 'forum',
+        show: false,
+        element: Detail,
       },
     ],
   },

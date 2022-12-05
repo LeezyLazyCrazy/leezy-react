@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import BaseLayout from '../components/layout/BaseLayout';
 import LandingLayout from '../components/layout/LandingLayout';
 import { menu } from '../data/constants/menu';
+import MyPage from '../pages/myPage/myPage';
 import Login from '../pages/auth/Login';
 import Landing from '../pages/Landing';
 import Main from '../pages/Main';
@@ -31,6 +32,7 @@ function Router() {
               />
             )),
           )}
+          <Route path="/mypage" element={<MyPage />} />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
