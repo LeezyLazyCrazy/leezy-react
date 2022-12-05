@@ -48,8 +48,8 @@ function onClick(e: any) {
 function DrawerDataGrid({
   tableName,
   columns,
-  frozenColumn = 1,
-  header = { height: 60 },
+  frozenColumn = 0,
+  header = { height: 40 },
 }: // showToolbar = true,
 // onSearchClick,
 DrawerDataGridProps) {
@@ -150,7 +150,6 @@ DrawerDataGridProps) {
         bodyHeight={600}
         heightResizable
         width="auto"
-        draggable
         scrollX
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
