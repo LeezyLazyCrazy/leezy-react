@@ -5,6 +5,19 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
+export default function PrimarySearchAppBar() {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <Search>
+        <SearchIconWrapper>
+          <SearchIcon />
+        </SearchIconWrapper>
+        <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
+      </Search>
+    </Box>
+  );
+}
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -46,16 +59,3 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-
-export default function PrimarySearchAppBar() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Search>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} />
-      </Search>
-    </Box>
-  );
-}

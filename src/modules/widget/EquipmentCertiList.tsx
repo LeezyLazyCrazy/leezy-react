@@ -1,11 +1,10 @@
 import { styled, TableRow, TableCell, TableBody, Divider } from '@mui/material';
-// import DefaultBox from '../../components/box/DefaultBox';
 import WidgetTitleBox from '../../components/box/textBox/WidgetTitleBox';
-// import StatusBox from './StatusBox';
-// import DefaultBox from '../../components/box/DefaultBox';
-
 import SimpleTable from '../../components/dataGrid/simpleTable/SimpleTable';
 import { SimpleTableCellText } from '../../components/dataGrid/simpleTable/SimpleTableCellDisplay';
+// import DefaultBox from '../../components/box/DefaultBox';
+// import StatusBox from './StatusBox';
+// import DefaultBox from '../../components/box/DefaultBox';
 
 // import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 // import { OptColumn } from 'tui-grid/types/options';
@@ -39,7 +38,7 @@ import { SimpleTableCellText } from '../../components/dataGrid/simpleTable/Simpl
 //     },
 //   },
 //   {
-//     name: 'equipmentSerial',
+//     name: 'equipmentId',
 //     header: '일련번호',
 //     minWidth: 5,
 //     sortable: true,
@@ -74,75 +73,76 @@ import { SimpleTableCellText } from '../../components/dataGrid/simpleTable/Simpl
  * @returns {JSX.Element} React Component
  *
  */
+
 function WarningTab() {
   const data = [
     {
       name: 'NEU-14',
-      equipmentSerial: '001',
+      equipmentId: '001',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '002',
+      equipmentId: '002',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '003',
+      equipmentId: '003',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '004',
+      equipmentId: '004',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '005',
+      equipmentId: '005',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '006',
+      equipmentId: '006',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '007',
+      equipmentId: '007',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '008',
+      equipmentId: '008',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '009',
+      equipmentId: '009',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '010',
+      equipmentId: '010',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '011',
+      equipmentId: '011',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '012',
+      equipmentId: '012',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '013',
+      equipmentId: '013',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '014',
+      equipmentId: '014',
     },
     {
       name: 'NEU-14',
-      equipmentSerial: '015',
+      equipmentId: '015',
     },
     {
       name: 'USE-20',
-      equipmentSerial: '001',
+      equipmentId: '001',
     },
     {
       name: 'USE-20',
-      equipmentSerial: '002',
+      equipmentId: '002',
     },
   ];
   return (
@@ -164,7 +164,7 @@ function WarningTab() {
         {data.map((d) => (
           <TableRow key={d.name}>
             <SimpleTableCellText text={d.name} />
-            <SimpleTableCellText text={d.equipmentSerial} />
+            <SimpleTableCellText text={d.equipmentId} />
           </TableRow>
         ))}
       </SimpleTable>

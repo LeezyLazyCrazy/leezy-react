@@ -1,30 +1,34 @@
 import Grid from '@toast-ui/react-grid';
 import TuiGrid from 'tui-grid';
 import 'tui-grid/dist/tui-grid.css';
-import { OptColumn, OptHeader, OptSummaryData } from 'tui-grid/types/options';
+import { OptColumn, OptHeader } from 'tui-grid/types/options';
+import { DataSource } from 'tui-grid/types/dataSource';
 import '../../styles/dataGrid/index.css';
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useState } from 'react';
 import useThemeStore from '../../stores/useThemeStore';
 import { theme } from '../../styles/theme';
-import SummaryDataGridToolbar from './SummaryDataGridToolbar';
 import TableSettingModal from './TableSettingModal';
 import HeaderSettingModal from './HeaderSettingModal';
 import { gridStyles } from './dataGridStyle';
 import { API_URL } from '../../query';
-import useMenuBarStore from '../../stores/useMenuBarStore';
-import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
-import { DataSource } from 'tui-grid/types/dataSource';
 import useCellStore from '../../stores/useCellStore';
+// import DataGridToolbar from './DataGridToolbar';
+// import useMenuBarStore from '../../stores/useMenuBarStore';
+// import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
+// import SearchDrawer from '../../modules/widget/SearchDrawer';
+// import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 
-interface SummaryDataGridProps {
+interface DrawerDataGridProps {
   tableName: string;
   columns: OptColumn[];
   frozenColumn?: number;
   header?: OptHeader;
-  showToolbar?: boolean;
-  onSearchClick?: any;
+  operateDepartment?: string;
+  modeApprovalName?: string;
+  manageAgency?: string;
   onClick?: () => void;
-  summary: OptSummaryData;
+  // showToolbar?: boolean;
+  // onSearchClick?: any;
 }
 
 /**
@@ -33,19 +37,24 @@ interface SummaryDataGridProps {
  * 관련 라이브러리에 대해서는 다음을 참고 {@link https://ui.toast.com/tui-grid ToastUI Grid }
  *
  * 해당 컴포넌트는 아직 어떻게 쓸지 잡힌 것이 없으므로 추후 설명을 보충할 예정
- * @param {SummaryDataGridProps} SummaryDataGridProps
+ * @param {DrawerDataGridProps} DrawerDataGridProps
  * @returns {JSX.Element} React Component
  */
+function onClick(e: any) {
+  console.log('test');
+  console.log(e.rowKey, e.columnName);
+}
 
-function SummaryDataGrid({
+function DrawerDataGrid({
   tableName,
   columns,
   frozenColumn = 1,
   header = { height: 60 },
-  showToolbar = true,
-  onSearchClick,
-  summary,
-}: SummaryDataGridProps) {
+}: // showToolbar = true,
+// onSearchClick,
+DrawerDataGridProps) {
+  const { manageAgency, modeApprovalName } = useCellStore();
+
   // grid styles
   const { isDark } = useThemeStore();
   const { palette } = theme(isDark);
@@ -56,37 +65,53 @@ function SummaryDataGrid({
 
   const ref = createRef<Grid>();
 
+  // width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
+  // const [containerWidth, setContainerWidth] = useState(1100 + 10);
+  // const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
 
-  // 행 추가
-  const appendRow = () => {
-    ref.current?.getInstance().appendRow({});
-  };
+  // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
 
+  // 행 추가
+  // const appendRow = () => {
+  //   ref.current?.getInstance().appendRow({});
+  // };
   // left Bar 가져오기
-  const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
+  // const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
   // widget bar 가져오기
-  const { isBarOpen: isWidgetBarOpen, setIsBarOpen, setSelectedTab } = useRightWidgetBarStore();
-  const { setManegeAgency, setModeApprovalName } = useCellStore();
-  const { innerWidth } = window;
+  // const {
+  //   isBarOpen: isWidgetBarOpen,
+  //   setIsBarOpen,
+  //   setSelectedTab,
+  //   // selectedTab,
+  // } = useRightWidgetBarStore();
 
-  useEffect(() => {
-    const widgetWidth = isWidgetBarOpen ? 430 : 130;
-    const menubarWidth = isMenuBarOpen ? 210 : 100;
+  // const { innerWidth } = window;
 
-    ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isWidgetBarOpen, isMenuBarOpen]);
+  // useEffect(() => {
+  //   const widgetWidth = isWidgetBarOpen ? 430 : 130;
+  //   const menubarWidth = isMenuBarOpen ? 210 : 100;
+
+  //   ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isWidgetBarOpen, isMenuBarOpen]);
 
   const dataSource: DataSource = {
     withCredentials: false,
     initialRequest: true,
     contentType: 'application/json',
     api: {
-      readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
+      readData: {
+        url: `${API_URL}/api/${tableName}`,
+        initParams: {
+          manageAgency,
+          modeApprovalName,
+        },
+        method: 'GET',
+      },
       modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
       deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
     },
@@ -94,8 +119,8 @@ function SummaryDataGrid({
 
   return (
     <div style={{ width: 'auto' }}>
-      {showToolbar && (
-        <SummaryDataGridToolbar
+      {/* {showToolbar && (
+        <DataGridToolbar
           addNewRow={appendRow}
           refresh={() => ref.current?.getInstance().readData(1)}
           openTableSetting={() => setTableSettingOpen(true)}
@@ -110,8 +135,11 @@ function SummaryDataGrid({
             ref.current?.getInstance().request('deleteData');
           }}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
+          removeRows={() => ref.current?.getInstance().removeCheckedRows()}
+          exportFile={() => ref.current?.getInstance().export('csv')}
+          copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
         />
-      )}
+      )} */}
       <Grid
         ref={ref}
         data={dataSource}
@@ -126,32 +154,7 @@ function SummaryDataGrid({
         scrollX
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
-        onClick={(e: any) => {
-          console.log(e);
-          const grid: any = e.instance;
-          console.log(grid);
-          const data: any = grid.getData()[e.rowKey];
-          if (e.columName === 'nis') {
-            e.columName = '국정원';
-          } else if (e.columName === 'moef') {
-            e.columName = '기획재정부';
-          } else if (e.columName === 'mofa') {
-            e.columName = '외교부';
-          } else if (e.columName === 'mnd') {
-            e.columName = '국방부';
-          } else if (e.columName === 'mois') {
-            e.columName = '행정안전부';
-          } else if (e.columName === 'mohw') {
-            e.columName = '보건복지부';
-          } else if (e.columName === 'mof') {
-            e.columName = '해양수산부';
-          } else {
-            alert('기관별 집계 데이터를 클릭해 주세요.');
-          }
-          setManageAgency(e.columnName);
-          setModeApprovalName(data.modeApprovalName);
-        }}
-        summary={summary}
+        onClick={onClick}
       />
       <TableSettingModal
         open={tableSettingOpen}
@@ -173,4 +176,4 @@ function SummaryDataGrid({
   );
 }
 
-export default SummaryDataGrid;
+export default DrawerDataGrid;
