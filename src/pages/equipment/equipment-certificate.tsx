@@ -1,5 +1,9 @@
 import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 import { OptColumn, OptHeader } from 'tui-grid/types/options';
+import { Box, Drawer } from '@mui/material';
+import { useState } from 'react';
+import CertificateInput from '../../components/form/CertificateInput';
+import DrawerDataGrid from '../../components/dataGrid/DrawerDataGrid';
 
 const columns: OptColumn[] = [
   {
@@ -254,14 +258,63 @@ const header: OptHeader = {
   ],
 };
 
+const DrawerColumns: OptColumn[] = [
+  {
+    name: 'equipmentLevel',
+    header: '등급',
+    minWidth: 70,
+    sortable: true,
+    align: 'center',
+  },
+  {
+    name: 'equipmentMode',
+    header: '자제명칭',
+    minWidth: 70,
+    sortable: true,
+    align: 'center',
+  },
+  {
+    name: 'equipmentId',
+    header: '등록번호',
+    minWidth: 20,
+    sortable: true,
+    align: 'center',
+  },
+  {
+    name: 'remarks',
+    header: '비고',
+    minWidth: 20,
+    sortable: true,
+    align: 'center',
+  },
+];
+
 function PageEquipmentCertification() {
+  // eslint-disable-next-line no-unused-vars
+  function setOpen(set: boolean): void {}
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
-    <BaseDataGrid
-      tableName="equipment/certificate"
-      columns={columns}
-      frozenColumn={2}
-      header={header}
-    />
+    <>
+      <Drawer
+        sx={{ opacity: 0.98 }}
+        anchor="right"
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      >
+        <Box sx={{ width: 500, padding: '5% 5%' }} role="combobox">
+          <CertificateInput />
+          <DrawerDataGrid tableName="equipment/information" columns={DrawerColumns} />
+        </Box>
+      </Drawer>
+      <BaseDataGrid
+        tableName="equipment/certificate"
+        columns={columns}
+        frozenColumn={2}
+        header={header}
+        onSearchClick={() => setIsDrawerOpen(true)}
+      />
+    </>
   );
 }
 
