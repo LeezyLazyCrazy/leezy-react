@@ -2,28 +2,26 @@ import Grid from '@toast-ui/react-grid';
 import TuiGrid from 'tui-grid';
 import 'tui-grid/dist/tui-grid.css';
 import { OptColumn, OptHeader } from 'tui-grid/types/options';
-import { DataSource } from 'tui-grid/types/dataSource';
 import '../../styles/dataGrid/index.css';
-import { createRef, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 import useThemeStore from '../../stores/useThemeStore';
 import { theme } from '../../styles/theme';
+import EditToolbar from './EditToolbar';
 import TableSettingModal from './TableSettingModal';
 import HeaderSettingModal from './HeaderSettingModal';
 import { gridStyles } from './dataGridStyle';
 import { API_URL } from '../../query';
-import useCellStore from '../../stores/useCellStore';
-import Toolbar from './Toolbar';
+import useMenuBarStore from '../../stores/useMenuBarStore';
+import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
+import { DataSource } from 'tui-grid/types/dataSource';
 
-interface DrawerDataGridProps {
+interface EditDataGridProps {
   tableName: string;
   columns: OptColumn[];
   frozenColumn?: number;
   header?: OptHeader;
-  operateDepartment?: string;
-  modeApprovalName?: string;
-  manageAgency?: string;
-  onClick?: () => void;
   showToolbar?: boolean;
+  onSearchClick?: any;
 }
 
 /**
@@ -32,7 +30,7 @@ interface DrawerDataGridProps {
  * 관련 라이브러리에 대해서는 다음을 참고 {@link https://ui.toast.com/tui-grid ToastUI Grid }
  *
  * 해당 컴포넌트는 아직 어떻게 쓸지 잡힌 것이 없으므로 추후 설명을 보충할 예정
- * @param {DrawerDataGridProps} DrawerDataGridProps
+ * @param {EditDataGridProps} EditDataGridProps
  * @returns {JSX.Element} React Component
  */
 function onClick(e: any) {
@@ -40,16 +38,14 @@ function onClick(e: any) {
   console.log(e.rowKey, e.columnName);
 }
 
-function DrawerDataGrid({
+function EditDataGrid({
   tableName,
   columns,
+  frozenColumn = 1,
+  header = { height: 60 },
   showToolbar = true,
-  frozenColumn = 0,
-  header = { height: 40 },
-}: // onSearchClick,
-DrawerDataGridProps) {
-  const { manageAgency, modeApprovalName } = useCellStore();
-
+  onSearchClick,
+}: EditDataGridProps) {
   // grid styles
   const { isDark } = useThemeStore();
   const { palette } = theme(isDark);
@@ -74,39 +70,32 @@ DrawerDataGridProps) {
     ref.current?.getInstance().appendRow({});
   };
   // left Bar 가져오기
-  // const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
+  const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
   // widget bar 가져오기
-  // const {
-  //   isBarOpen: isWidgetBarOpen,
-  //   setIsBarOpen,
-  //   setSelectedTab,
-  //   // selectedTab,
-  // } = useRightWidgetBarStore();
+  const {
+    isBarOpen: isWidgetBarOpen,
+    setIsBarOpen,
+    setSelectedTab,
+    // selectedTab,
+  } = useRightWidgetBarStore();
 
-  // const { innerWidth } = window;
+  const { innerWidth } = window;
 
-  // useEffect(() => {
-  //   const widgetWidth = isWidgetBarOpen ? 430 : 130;
-  //   const menubarWidth = isMenuBarOpen ? 210 : 100;
+  useEffect(() => {
+    const widgetWidth = isWidgetBarOpen ? 430 : 130;
+    const menubarWidth = isMenuBarOpen ? 210 : 100;
 
-  //   ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isWidgetBarOpen, isMenuBarOpen]);
+    ref.current?.getInstance().setWidth(innerWidth - widgetWidth - menubarWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isWidgetBarOpen, isMenuBarOpen]);
 
   const dataSource: DataSource = {
     withCredentials: false,
     initialRequest: true,
     contentType: 'application/json',
     api: {
-      readData: {
-        url: `${API_URL}/api/${tableName}`,
-        initParams: {
-          manageAgency,
-          modeApprovalName,
-        },
-        method: 'GET',
-      },
+      readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
       modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
       deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
     },
@@ -114,17 +103,26 @@ DrawerDataGridProps) {
 
   return (
     <div style={{ width: 'auto' }}>
+      {/* <SearchDrawer /> */}
       {showToolbar && (
-        <Toolbar
+        <EditToolbar
           addNewRow={appendRow}
+          refresh={() => ref.current?.getInstance().readData(1)}
+          exportFile={() => ref.current?.getInstance().export('csv')}
           openTableSetting={() => setTableSettingOpen(true)}
+          openHeaderSetting={() => setHeaderSettingOpen(true)}
+          openDetailSetting={() => {
+            setIsBarOpen(true);
+            setSelectedTab(1);
+          }}
+          openSearchSetting={onSearchClick}
           openDeleteSetting={() => {
             ref.current?.getInstance().removeCheckedRows();
             ref.current?.getInstance().request('deleteData');
           }}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
           removeRows={() => ref.current?.getInstance().removeCheckedRows()}
-          exportFile={() => ref.current?.getInstance().export('csv')}
+          copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
         />
       )}
       <Grid
@@ -137,15 +135,28 @@ DrawerDataGridProps) {
         bodyHeight={600}
         heightResizable
         width="auto"
+        rowHeaders={['rowNum', 'checkbox']}
+        draggable
         scrollX
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
         onClick={onClick}
       />
+      {/* <YesNoSelectionModal
+        open={checkToSaveOpen}
+        setOpen={setCheckToSaveOpen}
+        title="바뀐 내용 저장"
+        onYes={() => {
+          ref.current?.getInstance().request('modifyData');
+        }}
+        onNo={() => ref.current?.getInstance().readData(1)}
+        question="바뀐 내용이 있네요. 저장하실?"
+      /> */}
       <TableSettingModal
         open={tableSettingOpen}
         setOpen={setTableSettingOpen}
         setTableWidth={(value) => {
+          // setContainerWidth(value + 10);
           ref.current?.getInstance().setWidth(value);
         }}
         setTableHeight={(value) => ref.current?.getInstance().setHeight(value)}
@@ -162,4 +173,4 @@ DrawerDataGridProps) {
   );
 }
 
-export default DrawerDataGrid;
+export default EditDataGrid;

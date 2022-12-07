@@ -1,4 +1,4 @@
-import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
+import EditDataGrid from '../../components/dataGrid/EditDataGrid';
 import { OptColumn, OptHeader } from 'tui-grid/types/options';
 import { Box, Drawer } from '@mui/material';
 import { useState } from 'react';
@@ -265,6 +265,9 @@ const DrawerColumns: OptColumn[] = [
     minWidth: 70,
     sortable: true,
     align: 'center',
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentMode',
@@ -272,6 +275,9 @@ const DrawerColumns: OptColumn[] = [
     minWidth: 70,
     sortable: true,
     align: 'center',
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'equipmentId',
@@ -279,6 +285,9 @@ const DrawerColumns: OptColumn[] = [
     minWidth: 20,
     sortable: true,
     align: 'center',
+    editor: {
+      type: 'text',
+    },
   },
   {
     name: 'remarks',
@@ -286,6 +295,9 @@ const DrawerColumns: OptColumn[] = [
     minWidth: 20,
     sortable: true,
     align: 'center',
+    editor: {
+      type: 'text',
+    },
   },
 ];
 
@@ -304,10 +316,14 @@ function PageEquipmentCertification() {
       >
         <Box sx={{ width: 500, padding: '5% 5%' }} role="combobox">
           <CertificateInput />
-          <DrawerDataGrid tableName="equipment/information" columns={DrawerColumns} />
+          <DrawerDataGrid
+            tableName="equipment/information"
+            columns={DrawerColumns}
+            header={header}
+          />
         </Box>
       </Drawer>
-      <BaseDataGrid
+      <EditDataGrid
         tableName="equipment/certificate"
         columns={columns}
         frozenColumn={2}
