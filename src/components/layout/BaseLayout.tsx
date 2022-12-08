@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import WidgetBar from '../../modules/widget/WidgetBar';
 import useThemeStore from '../../stores/useThemeStore';
+import { styled } from '@mui/material';
 import BreadCrumbBar from '../nav/BreadCrumbBar';
 import LeftMenuBar from '../nav/LeftMenuBar';
 import TopNav from '../nav/TopNav';
@@ -34,9 +35,9 @@ function BaseLayout() {
   const { isDark } = useThemeStore();
 
   return (
-    <>
+    <Root>
       <TopNav />
-      <div style={{ display: 'flex', width: '100%', height: '100%' }}>
+      <div style={{ display: 'flex', width: '100%', flex: 1, overflow: 'hidden' }}>
         <div>
           <ToastContainer
             position="top-right"
@@ -47,14 +48,27 @@ function BaseLayout() {
           />
         </div>
         <LeftMenuBar />
-        <div style={{ display: 'block', width: '100%', margin: '10px 25px' }}>
+        <Contents>
           <BreadCrumbBar />
           <Outlet />
-        </div>
+        </Contents>
         <WidgetBar />
       </div>
-    </>
+    </Root>
   );
 }
 
 export default BaseLayout;
+
+const Root = styled('div')(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100vh',
+}));
+
+const Contents = styled('div')(() => ({
+  display: 'block',
+  width: '100%',
+  padding: '10px 25px',
+  overflowY: 'auto',
+}));

@@ -191,7 +191,7 @@ function PageEquipmentStatus() {
             height: '100%',
             width: 500,
             padding: '10% 5%',
-            backgroundColor: '#130354c9',
+            // backgroundColor: '#130354c9',
           }}
           role="combobox"
         >

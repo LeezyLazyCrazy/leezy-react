@@ -1,4 +1,4 @@
-import { styled, TableRow, TableCell, TableBody, Divider } from '@mui/material';
+import { styled, Table, TableBody, TableRow, TableCell } from '@mui/material';
 import WidgetTitleBox from '../../components/box/textBox/WidgetTitleBox';
 import SimpleTable from '../../components/dataGrid/simpleTable/SimpleTable';
 import { SimpleTableCellText } from '../../components/dataGrid/simpleTable/SimpleTableCellDisplay';
@@ -148,17 +148,19 @@ function WarningTab() {
   return (
     <Root>
       <WidgetTitleBox title="암호 장비 증명서" />
-      <TableBody>
-        <TableRow>
-          <TableCell>장비 증명서 발행 기관</TableCell>
-          <TableCell>A1</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>암호 장비 증명서 번호</TableCell>
-          <TableCell>14-275</TableCell>
-        </TableRow>
-      </TableBody>
-      <Divider sx={{ marginBottom: 1 }} />
+      <Table sx={{ marginBottom: 1 }}>
+        <TableBody>
+          <TableRow>
+            <TableCell>장비 증명서 발행 기관</TableCell>
+            <TableCell>A1</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>암호 장비 증명서 번호</TableCell>
+            <TableCell>14-275</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+      {/* <Divider sx={{ marginBottom: 1 }} /> */}
       {/* <DefaultBox isBackgroundPaper={false}>List</DefaultBox> */}
       <SimpleTable head={['형식승인명', '장비등록번호']}>
         {data.map((d) => (
@@ -175,5 +177,5 @@ function WarningTab() {
 export default WarningTab;
 
 const Root = styled('div')(() => ({
-  padding: 5,
+  padding: 8,
 }));

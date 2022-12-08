@@ -23,5 +23,5 @@ function DataTab() {
 export default DataTab;
 
 const Root = styled('div')(() => ({
-  padding: 10,
+  padding: 8,
 }));

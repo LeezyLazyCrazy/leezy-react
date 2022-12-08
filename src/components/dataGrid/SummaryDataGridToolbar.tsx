@@ -147,9 +147,9 @@ const BtnGroupWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   background: theme.palette.background.paper,
-  marginRight: '.8%',
+  marginRight: '8px',
   borderRadius: 4,
-  padding: 8,
+  padding: '8px 0',
   height: 'fit-content',
   width: 'fit-content',
   '& > *': {

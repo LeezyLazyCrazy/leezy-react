@@ -9,7 +9,7 @@ import CustomActiveShapePieChart from '../components/chart/CustomActiveShapePieC
  */
 function Main() {
   return (
-    <Box sx={{ height: '100vh' }}>
+    <Box>
       <Grid
         container
         rowSpacing={4}
@@ -17,7 +17,7 @@ function Main() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        height="50%"
+        height={400}
       >
         <Grid item xs={3} width="100%" height="100%">
           <CustomActiveShapePieChart />

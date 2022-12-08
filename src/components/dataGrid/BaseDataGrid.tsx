@@ -104,7 +104,7 @@ function BaseDataGrid({
   };
 
   return (
-    <div style={{ width: 'auto' }}>
+    <div style={{ width: '100%' }}>
       {/* <SearchDrawer /> */}
       {showToolbar && (
         <DataGridToolbar

@@ -11,6 +11,7 @@ export type SSOUserInfoType = {
   userGroups: string[];
   modeCode: 'real' | 'exercise';
   theme: {
-    background: string;
+    main: string;
+    sub?: string;
   };
 };

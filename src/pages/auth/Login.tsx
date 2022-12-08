@@ -40,11 +40,11 @@ function Login() {
               <Typography
                 gutterBottom
                 variant="h3"
+                color="text"
                 sx={{
                   // fontFamily: 'BlinkMacSystemFont',
                   // marginBottom: "2.5rem",
                   fontFamily: 'Hahmlet',
-                  color: '#ffff',
                 }}
               >
                 NCE-MS
@@ -52,10 +52,10 @@ function Login() {
               <Typography
                 gutterBottom
                 variant="h1"
+                color="text"
                 sx={{
                   fontFamily: 'Hahmlet',
                   marginBottom: '2rem',
-                  color: '#ffff',
                 }}
               >
                 SYSTEM
@@ -119,12 +119,12 @@ function Login() {
                     size="large"
                     disabled={!isValid}
                     title="로그인"
+                    color="primary"
                     sx={{
                       position: 'relative',
                       marginBottom: '1.5em',
                       width: '100%',
                       height: '2.5em',
-                      backgroundColor: '#fffffffa',
                     }}
                   />
                   <ShortAlert title="" severity="error" />

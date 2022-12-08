@@ -2,6 +2,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { ListItemIcon, Menu, MenuItem, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Settings from '@mui/icons-material/Settings';
+import PersonIcon from '@mui/icons-material/Person';
 import Logout from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
 
@@ -33,7 +34,9 @@ function TopNavProfile({ title }: TapNavProfileProps) {
         onClick={handleOpen}
       >
         <AccountCircleIcon color="primary" />
-        <Typography variant="body1">{title}</Typography>
+        <Typography variant="body1" marginLeft={1}>
+          {title}
+        </Typography>
       </Root>
       <Menu
         id="profile-menu"
@@ -49,10 +52,12 @@ function TopNavProfile({ title }: TapNavProfileProps) {
           세팅
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          <Link to="/mypage">마이페이지</Link>
+          <StyledLink to="/mypage">
+            <ListItemIcon>
+              <PersonIcon fontSize="small" />
+            </ListItemIcon>
+            마이페이지
+          </StyledLink>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
@@ -69,10 +74,18 @@ export default TopNavProfile;
 
 const Root = styled('button')(() => ({
   display: 'flex',
-  width: '110px',
-  flexDirection: 'row',
   background: 'none',
   border: 'none',
   justifyContent: 'space-between',
+  alignItems: 'center',
+  color: 'inherit',
   cursor: 'pointer',
+}));
+
+const StyledLink = styled(Link)(({ theme }) => ({
+  color: theme.palette.primary.main,
+  textDecoration: 'none',
+  '&:focus, &:hover, &:visited, &:link, &:active': {
+    textDecoration: 'none',
+  },
 }));

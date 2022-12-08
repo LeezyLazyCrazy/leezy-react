@@ -70,7 +70,7 @@ function SummaryDataGrid({
 
   // widget bar 가져오기
   const { isBarOpen: isWidgetBarOpen, setIsBarOpen, setSelectedTab } = useRightWidgetBarStore();
-  const { setManegeAgency, setModeApprovalName } = useCellStore();
+  const { setManageAgency, setModeApprovalName } = useCellStore();
   const { innerWidth } = window;
 
   useEffect(() => {

@@ -11,7 +11,9 @@ function RouteStyleHandler({ children, to, ...props }: LinkProps) {
     <div>
       <Link
         style={{
-          color: match ? theme(isDark).palette.primary.main : theme(isDark).palette.text.secondary,
+          color: match
+            ? theme(isDark).palette.secondary.main
+            : theme(isDark).palette.text.secondary,
           fontWeight: match ? 700 : 400,
           textDecoration: 'none',
         }}

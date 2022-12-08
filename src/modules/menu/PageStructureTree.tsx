@@ -80,7 +80,7 @@ const Root = styled('div')(() => ({
 }));
 
 const DirName = styled('div')(({ theme }) => ({
-  fontWeight: 600,
+  // fontWeight: 600,
   paddingLeft: 5,
   '&:hover': {
     color: theme.palette.secondary.main,
@@ -94,6 +94,6 @@ const PageItem = styled('div')(({ theme }) => ({
   paddingLeft: 20,
   '&:hover': {
     color: theme.palette.secondary.main,
-    fontWeight: 600,
+    // fontWeight: 600,
   },
 }));

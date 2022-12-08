@@ -105,7 +105,7 @@ export default class Example extends PureComponent {
           border: '1px solid #524c8a3c',
           borderRadius: '2rem',
           width: '100%',
-          height: '80%',
+          height: '100%',
           transition: 'gray',
           background: '#524c8a3c',
         }}

@@ -1,6 +1,7 @@
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { IconButton, styled, Tooltip } from '@mui/material';
+import { yellow } from '@mui/material/colors';
 import useFavoritePageStore from '../../stores/useFavoritePageStore';
 
 interface AddToFavoritePageProps {
@@ -24,8 +25,11 @@ function AddToFavoritePage({ location, koreanName, isNotMainPage }: AddToFavorit
       {isNotMainPage ? (
         isFavoritePage ? (
           <Tooltip title="즐겨찾기 페이지 제거">
-            <IconButton sx={{ padding: 0 }} onClick={() => removeFavoritePage(location)}>
-              <StarIcon fontSize="small" color="primary" />
+            <IconButton
+              sx={{ padding: 0, color: yellow[500] }}
+              onClick={() => removeFavoritePage(location)}
+            >
+              <StarIcon fontSize="small" />
             </IconButton>
           </Tooltip>
         ) : (

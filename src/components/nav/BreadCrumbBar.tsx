@@ -31,9 +31,7 @@ function BreadCrumbBar() {
 
   return (
     <Root>
-      <Typography variant="body1" sx={{ fontWeight: 600 }}>
-        {finalRouteInKorean}
-      </Typography>
+      <Typography variant="h6">{finalRouteInKorean}</Typography>
       <RightWrapper>
         <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
           <LinkRouter underline="hover" color="inherit" to="/index">
@@ -61,18 +59,18 @@ export default BreadCrumbBar;
 // styles
 
 const Root = styled('div')(() => ({
-  padding: '8px 20px',
+  padding: '8px 0',
   marginBottom: '20px',
   // background: theme.palette.background.paper,
   // background: "#19950e9e",
   display: 'flex',
-  flexDirection: 'row',
+  // flexDirection: 'row',
   justifyContent: 'space-between',
-  borderBottom: `2px solid #18c9089e`,
+  // borderBottom: '2px solid #18c9089e',
 }));
 
 const RightWrapper = styled('div')(() => ({
   display: 'flex',
-  flexDirection: 'row',
+  // flexDirection: 'row',
   alignItems: 'center',
 }));

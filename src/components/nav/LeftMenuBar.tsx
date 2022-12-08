@@ -1,4 +1,5 @@
-import { Divider, IconButton, List, styled, Tab, Tabs } from '@mui/material';
+/* eslint-disable no-unused-vars */
+import { Divider, IconButton, List, styled, Tab, Tabs, alpha } from '@mui/material';
 import IconMenuItem from '../../modules/menu/IconMenuItem';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -8,11 +9,18 @@ import useMenuBarStore from '../../stores/useMenuBarStore';
 import { useLocation } from 'react-router-dom';
 import { theme } from '../../styles/theme';
 import useThemeStore from '../../stores/useThemeStore';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import TabPanel from '../tab/TabPanel';
 import FavoritePagesBar from './FavoritePagesBar';
 import { menuIcons } from '../../data/constants/menuIcons';
 import { menu } from '../../data/constants/menu';
+// import { useAuth } from '../../stores/useAuth';
+
+interface StyledTabsProps {
+  children?: React.ReactNode;
+  value: number;
+  onChange: (e: React.SyntheticEvent, v: number) => void;
+}
 
 interface StyledTabProps {
   label: string;
@@ -28,11 +36,18 @@ function LeftMenuBar() {
   const { isDark } = useThemeStore();
   const location = useLocation();
   const rootRoute = location.pathname.split('/')[1];
+  // const { authUser } = useAuth();
+
   const mainColor = theme(isDark).palette.primary.main;
+  const mainBackColor = alpha(theme(isDark).palette.secondary.main, 0.2);
+  const defaultColor = theme(isDark).palette.text.secondary;
 
   const highlightIcon = (routeName: string): string =>
     // 현재 route의 부모 path가 매칭하는 경우 아이콘 색을 primary색으로 바꿈
-    rootRoute === routeName ? mainColor : '';
+    rootRoute === routeName ? mainColor : defaultColor;
+  const highlightBack = (routeName: string): string =>
+    // 현재 route의 부모 path가 매칭하는 경우 메뉴 배경색을 point color로 바꿈
+    rootRoute === routeName ? mainBackColor : 'none';
 
   // handling tabs
   const [tabValue, setTabValue] = useState(0);
@@ -59,7 +74,7 @@ function LeftMenuBar() {
         </div>
         <div>
           {isBarOpen && (
-            <Tabs
+            <StyledTabs
               sx={{ borderBottom: 1, borderColor: 'divider' }}
               value={tabValue}
               onChange={(e, v) => setTabValue(v)}
@@ -67,7 +82,7 @@ function LeftMenuBar() {
             >
               <StyledTab label="메뉴" />
               <StyledTab label="즐겨찾기" />
-            </Tabs>
+            </StyledTabs>
           )}
 
           <TabPanel value={tabValue} index={0}>
@@ -76,6 +91,7 @@ function LeftMenuBar() {
                 <IconMenuItem
                   key={m.id}
                   color={highlightIcon(m.id)}
+                  background={highlightBack(m.id)}
                   open={isBarOpen}
                   closeOpenedMenu={!isBarOpen}
                   iconComponent={menuIcons.find((icon) => icon.title === m.id)?.icon}
@@ -117,7 +133,7 @@ export default LeftMenuBar;
 
 const Root = styled('div')(({ theme }) => ({
   borderRight: `1px solid ${theme.palette.divider}`,
-  height: '99%',
+  // height: '99%',
   background: theme.palette.background.paper,
   '*::-webkit-scrollbar': {
     display: 'none',
@@ -126,7 +142,7 @@ const Root = styled('div')(({ theme }) => ({
 
 const Paper = styled('div')(({ width }: { width: number }) => ({
   width,
-  height: '97vh',
+  height: '100%',
   overflowY: 'scroll',
   transition: 'width ease-out 0.1s',
   paddingBottom: '80px',
@@ -139,10 +155,27 @@ const ShrinkBtn = styled(IconButton)(({ isshrinked }: { isshrinked: string }) =>
   },
 }));
 
+const StyledTabs = styled((props: StyledTabsProps) => (
+  <Tabs {...props} TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }} />
+))(({ theme }) => ({
+  '& .MuiTabs-indicator': {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  '& .MuiTabs-indicatorSpan': {
+    maxWidth: 20,
+    width: '100%',
+    backgroundColor: theme.palette.secondary.main,
+  },
+}));
+
 const StyledTab = styled((props: StyledTabProps) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
-    color: theme.palette.text.secondary,
-    borderBottom: '1px solid white',
     variant: 'body1',
+    color: theme.palette.text.secondary,
+    '&.Mui-selected': {
+      color: theme.palette.primary.main,
+    },
   }),
 );

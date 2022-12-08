@@ -49,28 +49,28 @@ caption {
 }
 
 .tui-grid-header-area {
-  border: 1px solid green;
+  border: 1px solid #aefbfd;
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
 }
 
 .tui-grid-rside-area {
-  border: 2px solid green;
+  border: 2px solid #aefbfd;
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
 }
 
 .tui-grid-lside-area {
-  border: 2px solid green;
+  border: 2px solid #aefbfd;
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
 }
 
 .tui-grid-cell.green {
-  background-color: green;
+  background-color: #aefbfd;
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
@@ -111,3 +111,12 @@ caption {
 /* .tui-grid-cell-header-13 {
 	font-size: 13px;
 } */
+
+.tui-grid-layer-state {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.tui-grid-floating-row {
+  background: none;
+  border: 1px dotted #ddd;
+}

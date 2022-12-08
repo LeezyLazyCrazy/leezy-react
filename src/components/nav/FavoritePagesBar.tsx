@@ -17,7 +17,7 @@ function FavoritePagesBar() {
   return (
     <>
       <List component="nav" aria-labelledby="afccs-my-favorite-page" sx={{ p: 1 }}>
-        <div style={{ textAlign: 'right' }}>
+        <div style={{ textAlign: 'right', marginBottom: '8px' }}>
           <BaseButton
             title="즐겨찾기 설정"
             variant="text"

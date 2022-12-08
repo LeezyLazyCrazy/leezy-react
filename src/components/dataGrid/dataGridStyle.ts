@@ -6,7 +6,7 @@ import { Palette } from '@mui/material';
  * @returns
  */
 export const gridStyles = (palette: Palette) => {
-  const { background, divider, text, action, primary } = palette;
+  const { background, divider, text, action, primary, secondary } = palette;
   return {
     selection: {
       background: background.paper,
@@ -31,7 +31,11 @@ export const gridStyles = (palette: Palette) => {
       body: {
         background: background.paper,
       },
-      // summary: {},
+      summary: {
+        background: background.default,
+        border: divider,
+        // text: text.primary,
+      },
     },
     cell: {
       normal: {
@@ -44,7 +48,7 @@ export const gridStyles = (palette: Palette) => {
         background: action.disabledBackground,
       },
       header: {
-        background: background.paper,
+        background: 'none',
         border: divider,
         text: text.primary,
         showVerticalBorder: true,
@@ -56,8 +60,13 @@ export const gridStyles = (palette: Palette) => {
       selectedRowHeader: {
         background: background.default,
       },
+      summary: {
+        background: background.default,
+        border: background.default,
+        text: text.primary,
+      },
       rowHeader: {
-        background: background.paper,
+        background: 'none',
         border: divider,
         text: text.primary,
       },
@@ -66,6 +75,7 @@ export const gridStyles = (palette: Palette) => {
       },
       focused: {
         background: primary.main,
+        border: secondary.main,
       },
     },
     frozenBorder: {

@@ -147,17 +147,17 @@ const baseTheme = {
 
 const darkTheme = {
   primary: {
-    main: '#d3d9dc',
+    main: '#fff',
   },
   secondary: {
-    main: lime[500],
+    main: '#19DBCE',
   },
   background: {
-    default: '#1a0548ff',
-    paper: '#1a0548ff',
+    default: '#212125',
+    paper: '#28282D',
   },
   text: {
-    secondary: 'rgba(247, 246, 246, 0.916)',
+    secondary: '#b2b2b2',
   },
   percentageRemarks: {
     verylow: grey[900],
@@ -178,16 +178,17 @@ const darkTheme = {
 
 const lightTheme = {
   primary: {
-    main: lightBlue[800],
+    main: '#333',
   },
   secondary: {
-    main: '#19857b',
+    main: '#19DBCE',
   },
   background: {
-    default: '#eef6fa',
+    default: '#f3f3f3',
+    paper: '#f8f8f8',
   },
   text: {
-    secondary: 'rgba(0, 0, 0, 0.8)',
+    secondary: '#888',
   },
   percentageRemarks: {
     verylow: grey[900],

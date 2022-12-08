@@ -26,5 +26,5 @@ function WarningTab() {
 export default WarningTab;
 
 const Root = styled('div')(() => ({
-  padding: 5,
+  padding: 8,
 }));

@@ -16,6 +16,7 @@ interface IconMenuItemProps {
   // 서브메뉴 중 왼쪽 사이드바에 표출되지 않는 페이지 설정
   subMenu: { id: string; name: string; show: boolean; subMenu?: { id: string; name: string }[] }[];
   color: string;
+  background: string;
 }
 
 /**
@@ -32,6 +33,7 @@ function IconMenuItem({
   subMenu,
   name,
   color,
+  background,
 }: IconMenuItemProps) {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const { setIsBarOpen } = useMenuBarStore();
@@ -42,8 +44,11 @@ function IconMenuItem({
 
   return (
     <>
-      <ListItemButton sx={{ paddingRight: 3 }} onClick={() => open && setSubMenuOpen(!subMenuOpen)}>
-        <ListItemIcon sx={{ alignItems: 'center', justifyContent: 'center' }}>
+      <ListItemButton
+        sx={{ paddingRight: 3, background }}
+        onClick={() => open && setSubMenuOpen(!subMenuOpen)}
+      >
+        <ListItemIcon sx={{ width: '100%', alignItems: 'center', justifyContent: 'center' }}>
           <MenuIconWrapper
             setOpen={() => {
               setIsBarOpen();

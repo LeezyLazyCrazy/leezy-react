@@ -55,4 +55,5 @@ const Root = styled('div')(({ theme }) => ({
 const GrabBox = styled('div')(() => ({
   cursor: 'grab',
   display: 'flex',
+  alignItems: 'center',
 }));

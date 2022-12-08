@@ -54,6 +54,8 @@ function WidgetBar() {
               setSelectedTab(newValue);
               setIsBarOpen(true);
             }}
+            textColor="secondary"
+            indicatorColor="secondary"
             aria-label="vertical-widget-tab"
           >
             <Tab icon={<WarningIcon />} {...a11yProps(0)} />
@@ -82,7 +84,7 @@ export default WidgetBar;
 
 const Root = styled('div')(({ theme }) => ({
   borderLeft: `1px solid ${theme.palette.divider}`,
-  height: '99%',
+  // height: '99%',
   background: theme.palette.background.paper,
   '*::-webkit-scrollbar': {
     display: 'none',
@@ -90,10 +92,10 @@ const Root = styled('div')(({ theme }) => ({
 }));
 
 const Paper = styled('div')(() => ({
-  height: '97vh',
+  height: '100%',
   overflowY: 'scroll',
   transition: 'width ease-out 0.1s',
-  paddingBottom: '80px',
+  // paddingBottom: '80px',
   display: 'flex',
   flexDirection: 'row-reverse',
 }));
