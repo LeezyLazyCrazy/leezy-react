@@ -1,9 +1,11 @@
 import EditDataGrid from '../../components/dataGrid/EditDataGrid';
 import { OptColumn, OptHeader } from 'tui-grid/types/options';
-import { Box, Drawer } from '@mui/material';
+import { Box, Button, Drawer, Typography } from '@mui/material';
 import { useState } from 'react';
 import CertificateInput from '../../components/form/CertificateInput';
 import DrawerDataGrid from '../../components/dataGrid/DrawerDataGrid';
+import axios from 'axios';
+import { API_URL } from '../../query';
 
 const columns: OptColumn[] = [
   {
@@ -306,6 +308,17 @@ function PageEquipmentCertification() {
   function setOpen(set: boolean): void {}
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
+  const handleSubmit = async () => {
+    await axios.post('/api/createUser').then((Response: { data: any }) => {
+      // eslint-disable-next-line no-alert
+      alert(Response.data);
+    });
+    console.log(
+      'text',
+      // `Test ${id} ${outgoing} ${incoming} ${date} ${outgoingDepartment} ${incomingDepartment} ${sender} ${recipient} ${remark}`,
+    );
+  };
+
   return (
     <>
       <Drawer
@@ -314,14 +327,61 @@ function PageEquipmentCertification() {
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
       >
-        <Box sx={{ width: 500, padding: '5% 5%' }} role="combobox">
-          <CertificateInput />
-          <DrawerDataGrid
-            tableName="equipment/information"
-            columns={DrawerColumns}
-            header={header}
-          />
-        </Box>
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const data = await axios({
+              url: `${API_URL}/api/manage/manage-certificate`,
+              method: 'PUT',
+              data: {},
+            });
+            console.log(data);
+          }}
+        >
+          <Box sx={{ width: 500, padding: '5% 5%' }} role="combobox">
+            <Box
+              sx={{
+                display: 'grid',
+                gap: 1,
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                width: '100%',
+                marginTop: 1,
+              }}
+            >
+              <Typography
+                variant="h6"
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'end',
+                  marginBottom: 2,
+                }}
+              >
+                암호자재 증명서
+              </Typography>
+              <Button
+                variant="outlined"
+                size="small"
+                sx={{
+                  width: '45%',
+                  height: '60%',
+                  marginTop: 3,
+                  backgroundColor: '#1E0A4C',
+                  color: '#fff',
+                }}
+                onClick={() => handleSubmit()}
+              >
+                등록
+              </Button>
+            </Box>
+            <CertificateInput />
+            <DrawerDataGrid
+              tableName="equipment/information"
+              columns={DrawerColumns}
+              header={header}
+            />
+          </Box>
+        </form>
       </Drawer>
       <EditDataGrid
         tableName="equipment/certificate"

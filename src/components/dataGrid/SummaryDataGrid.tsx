@@ -146,6 +146,7 @@ function SummaryDataGrid({
           } else if (e.columName === 'mof') {
             e.columName = '해양수산부';
           } else {
+            // eslint-disable-next-line no-alert
             alert('기관별 집계 데이터를 클릭해 주세요.');
           }
           setManageAgency(e.columnName);

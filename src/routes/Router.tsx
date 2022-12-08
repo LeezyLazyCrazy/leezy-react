@@ -34,6 +34,7 @@ function Router() {
           )}
           <Route path="/mypage" element={<MyPage />} />
         </Route>
+        {/* <Route path="/search-result" element={<Login />} /> */}
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

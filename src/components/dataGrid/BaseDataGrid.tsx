@@ -24,6 +24,7 @@ interface BaseDataGridProps {
   header?: OptHeader;
   showToolbar?: boolean;
   onSearchClick?: any;
+  onClick?: () => void;
 }
 
 /**
@@ -110,6 +111,7 @@ function BaseDataGrid({
         <DataGridToolbar
           addNewRow={appendRow}
           refresh={() => ref.current?.getInstance().readData(1)}
+          exportFile={() => ref.current?.getInstance().export('csv')}
           openTableSetting={() => setTableSettingOpen(true)}
           openHeaderSetting={() => setHeaderSettingOpen(true)}
           openDetailSetting={() => {
@@ -123,7 +125,6 @@ function BaseDataGrid({
           }}
           openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
           removeRows={() => ref.current?.getInstance().removeCheckedRows()}
-          exportFile={() => ref.current?.getInstance().export('csv')}
           copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
         />
       )}

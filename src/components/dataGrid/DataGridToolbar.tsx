@@ -5,12 +5,13 @@ import TopicIcon from '@mui/icons-material/Topic';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import FileOpenIcon from '@mui/icons-material/FileOpen';
-
+// import FileOpenIcon from '@mui/icons-material/FileOpen';
 import SearchIcon from '@mui/icons-material/Search';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SaveIcon from '@mui/icons-material/Save';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import ApprovalIcon from '@mui/icons-material/Approval';
 
 interface DataGridToolBarProps {
   addNewRow: () => void;
@@ -25,6 +26,8 @@ interface DataGridToolBarProps {
   openSearchSetting: () => void;
   openSaveSetting: () => void;
   openDeleteSetting: () => void;
+  // openAddSetting: () => void;
+  // openApprovalSetting: () => void;
 }
 
 /**
@@ -44,7 +47,9 @@ function DataGridToolbar({
   openDeleteSetting,
   openSaveSetting,
   openSearchSetting,
-}: DataGridToolBarProps) {
+}: // openAddSetting,
+// openApprovalSetting,
+DataGridToolBarProps) {
   const ToolBarOptions = [
     {
       id: 0,
@@ -101,13 +106,13 @@ function DataGridToolbar({
     {
       id: 1,
       btns: [
-        {
-          id: 0,
-          title: '세부사항 보기',
-          key: 'details-file',
-          icon: <FileOpenIcon fontSize="small" />,
-          onClick: openDetailSetting,
-        },
+        // {
+        //   id: 0,
+        //   title: '세부사항 보기',
+        //   key: 'details-file',
+        //   icon: <FileOpenIcon fontSize="small" />,
+        //   onClick: openDetailSetting,
+        // },
         {
           id: 1,
           title: '상세조회',
@@ -133,6 +138,25 @@ function DataGridToolbar({
           key: 'save',
           icon: <SaveIcon fontSize="small" />,
           onClick: openSaveSetting,
+        },
+      ],
+    },
+    {
+      id: 4,
+      btns: [
+        {
+          id: 0,
+          title: '생성',
+          key: 'delete',
+          icon: <BorderColorIcon fontSize="small" />,
+          onClick: openDetailSetting,
+        },
+        {
+          id: 1,
+          title: '완료',
+          key: 'save',
+          icon: <ApprovalIcon fontSize="small" />,
+          onClick: openDetailSetting,
         },
       ],
     },

@@ -27,7 +27,7 @@ caption {
   line-height: 34px;
 }
 .tui-calendar-header-inner {
-  font-size: 15px;
+  font-size: 12px;
   line-height: 34px;
 }
 .tui-calendar .tui-calendar-header {
@@ -53,6 +53,7 @@ caption {
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
+  border: 0.08px solid #72726fc1;
 }
 
 .tui-grid-rside-area {
@@ -60,6 +61,7 @@ caption {
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
+  border: 0.08px solid #72726fc1;
 }
 
 .tui-grid-lside-area {
@@ -67,6 +69,7 @@ caption {
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
+  border: 0.08px solid #72726fc1;
 }
 
 .tui-grid-cell.green {
@@ -74,10 +77,15 @@ caption {
   /* border: 1px solid #73b9e8df */
   /* border: 1px solid #e27aff91 */
   /* border: 1px solid #93973b */
+  border: 0.08px solid #72726fc1;
+}
+
+.tui-grid-container {
+  font-size: 11px;
 }
 
 .tui-grid-container-13 {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .tui-grid-container-14 {
