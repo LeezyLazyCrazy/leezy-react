@@ -43,13 +43,12 @@ import PageTerminalManagement from '../../pages/system/terminal-management';
 import PageQREquipManagement from '../../pages/system/QR-equip-management';
 import PageQRcodeInOutHistory from '../../pages/system/QRcode-inout-history';
 import PagePersonalManagement from '../../pages/system/personal-management';
-import testBoard from '../../pages/system/testBoard';
 // 포럼
-import notice from '../../pages/forum/notice';
-import reference from '../../pages/forum/reference';
-import Free from '../../pages/forum/free';
-import questions from '../../pages/forum/Questions';
+import PageForumNotice from '../../pages/forum/forum-notice';
+import PageForumReference from '../../pages/forum/forum-reference';
+import PageForumQuestions from '../../pages/forum/forum-questions';
 import Detail from '../../pages/forum/detail';
+import PageForumFreeBoard from '../../pages/forum/forum-free-board';
 
 export interface MenuProps {
   id: string;
@@ -353,14 +352,6 @@ export const menu: MenuProps[] = [
     show: true,
     subMenu: [
       {
-        id: 'Editor',
-        name: '게시판',
-        type: 'page',
-        parentUrl: 'system',
-        show: true,
-        element: testBoard,
-      },
-      {
         id: 'terminal-management',
         name: '단말기정보관리',
         type: 'page',
@@ -402,36 +393,36 @@ export const menu: MenuProps[] = [
     show: true,
     subMenu: [
       {
-        id: 'notice',
+        id: 'forum-notice',
         name: '공지사항',
         type: 'page',
         parentUrl: 'forum',
         show: true,
-        element: notice,
+        element: PageForumNotice,
       },
       {
-        id: 'reference',
+        id: 'forum-reference',
         name: '자료실',
         type: 'page',
         parentUrl: 'forum',
         show: true,
-        element: reference,
+        element: PageForumReference,
       },
       {
-        id: 'questions',
+        id: 'forum-questions',
         name: '자주묻는 질문',
         type: 'page',
         parentUrl: 'forum',
         show: true,
-        element: questions,
+        element: PageForumQuestions,
       },
       {
-        id: 'free',
+        id: 'forum-freeboard',
         name: '자유 게시판',
         type: 'page',
         parentUrl: 'forum',
         show: true,
-        element: Free,
+        element: PageForumFreeBoard,
       },
       {
         id: 'detail',

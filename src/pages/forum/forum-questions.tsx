@@ -1,16 +1,7 @@
 import { OptColumn } from 'tui-grid/types/options';
-import BaseDataGrid from '../../components/Board/TestBaseDataGrid';
+import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 
 const dataGridKeys: OptColumn[] = [
-  {
-    name: 'personalId',
-    header: '사용자개인ID',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
   {
     name: 'name',
     header: '제목',
@@ -21,7 +12,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'personalAgency',
+    name: 'content',
     header: '내용',
     minWidth: 140,
     sortable: true,
@@ -30,7 +21,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'department',
+    name: 'writer',
     header: '작성자',
     minWidth: 140,
     sortable: true,
@@ -39,17 +30,8 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'rank',
+    name: 'date',
     header: '작성일자',
-    minWidth: 140,
-    sortable: true,
-    editor: {
-      type: 'text',
-    },
-  },
-  {
-    name: 'rank',
-    header: '첨부파일',
     minWidth: 140,
     sortable: true,
     editor: {
@@ -58,8 +40,8 @@ const dataGridKeys: OptColumn[] = [
   },
 ];
 
-function reference() {
-  return <BaseDataGrid tableName="equipment-information" columns={dataGridKeys} />;
+function PageForumQuestions() {
+  return <BaseDataGrid tableName="forum" columns={dataGridKeys} />;
 }
 
-export default reference;
+export default PageForumQuestions;

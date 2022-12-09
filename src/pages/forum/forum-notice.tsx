@@ -1,6 +1,5 @@
-// import { DataGridKeyProps } from "../../data/constants/dataGridKeys";
-import BaseDataGrid from '../../components/Board/TestBaseDataGrid';
 import { OptColumn } from 'tui-grid/types/options';
+import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 
 const dataGridKeys: OptColumn[] = [
   {
@@ -44,8 +43,8 @@ const dataGridKeys: OptColumn[] = [
   },
 ];
 
-function notice() {
-  return <BaseDataGrid tableName="forum/notice" columns={dataGridKeys} />;
+function PageForumNotice() {
+  return <BaseDataGrid tableName="forum" columns={dataGridKeys} />;
 }
 
-export default notice;
+export default PageForumNotice;

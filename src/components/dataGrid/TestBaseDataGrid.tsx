@@ -1,58 +1,69 @@
 import Grid from '@toast-ui/react-grid';
 import TuiGrid from 'tui-grid';
 import 'tui-grid/dist/tui-grid.css';
-import 'tui-pagination/dist/tui-pagination.css';
-// import { OptColumn, OptHeader } from 'tui-grid/types/options';
-import { OptColumn } from 'tui-grid/types/options';
+import { OptColumn, OptHeader } from 'tui-grid/types/options';
 import '../../styles/dataGrid/index.css';
 import { createRef, useEffect, useState } from 'react';
 import useThemeStore from '../../stores/useThemeStore';
 import { theme } from '../../styles/theme';
-// import DataGridToolbar from '../dataGrid/DataGridToolbar';
-// import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
-import TableSettingModal from '../dataGrid/TableSettingModal';
-import HeaderSettingModal from '../dataGrid/HeaderSettingModal';
-import { gridStyles } from '../dataGrid/dataGridStyle';
-// import { API_URL } from '../../query';
+import DataGridToolbar from './DataGridToolbar';
+import TableSettingModal from './TableSettingModal';
+import HeaderSettingModal from './HeaderSettingModal';
+import { gridStyles } from './dataGridStyle';
+import { API_URL } from '../../query';
 import useMenuBarStore from '../../stores/useMenuBarStore';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
-// import { DataSource } from 'tui-grid/types/dataSource';
+import { DataSource } from 'tui-grid/types/dataSource';
+import { useNavigate } from 'react-router-dom';
+// import SearchDrawer from '../../modules/widget/SearchDrawer';
 
-interface BoardDataGridProps {
+// import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
+
+interface BaseDataGridProps {
   tableName: string;
   columns: OptColumn[];
   frozenColumn?: number;
-  // header?: OptHeader;
+  header?: OptHeader;
   showToolbar?: boolean;
+  onSearchClick?: any;
 }
 
-// interface data {
-//   title: string;
-//   writer: string;
-//   content: string;
-//   writeDate: string;
-//   editDate: string;
-// }
-
 /**
- * Toast UI Tui Grid의 기본적인 구현체임.
- *
- * 관련 라이브러리에 대해서는 다음을 참고 {@link https://ui.toast.com/tui-grid ToastUI Grid }
- *
- * 해당 컴포넌트는 아직 어떻게 쓸지 잡힌 것이 없으므로 추후 설명을 보충할 예정
- * @param {BoardDataGridProps} BoardDataGridProps
- * @returns {JSX.Element} React Component
+ 테스트용 컴포넌트
  */
 
-// 게시판의 게시글 목록을 표출하는 컴포넌트
-function BoardDataGrid({
-  // tableName,
+function BaseDataGrid({
+  tableName,
   columns,
   frozenColumn = 1,
-}: // header = { height: 60 },
+  header = { height: 60 },
+  showToolbar = true,
+  onSearchClick,
+}: BaseDataGridProps) {
+  const navigate = useNavigate();
 
-// showToolbar = true,
-BoardDataGridProps) {
+  // 행 추가 시 navigate함수 사용을 막고 행 추가가 아닐 시 navigate함수를 사용하여 데이터가 추가적인 수정 제한
+  const Test = () => {
+    const selectKey = ref.current?.getInstance().getFocusedCell().rowKey;
+
+    navigate('/forum/detail', { state: ref.current?.getInstance().getRow(selectKey!) }); // 임시
+  };
+
+  const Test2 = () => {
+    const columnsKey = ref.current?.getInstance().getFocusedCell();
+
+    ref.current
+      ?.getInstance()
+      .getColumns()
+      .map((column, i) => {
+        if (columnsKey!.columnName === column.name) {
+          ref.current
+            ?.getInstance()
+            .startEditing(columnsKey!.rowKey!, ref.current?.getInstance().getColumns()[i + 1].name);
+        }
+      });
+  };
+
   // grid styles
   const { isDark } = useThemeStore();
   const { palette } = theme(isDark);
@@ -62,27 +73,45 @@ BoardDataGridProps) {
   TuiGrid.setLanguage('ko');
 
   const ref = createRef<Grid>();
-
   // width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
   // const [containerWidth, setContainerWidth] = useState(1100 + 10);
   // const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
+  // const [columnsData, setcolumnsData] = useState<any>([]); // 임시
+
   // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
 
+  // const dataGridKeys: OptColumn[] = [
+  //   {
+  //     name: 'name',
+  //     header: '제목',
+  //     minWidth: 140,
+  //     sortable: true,
+  //     editor: {
+  //       type: 'text',
+  //     },
+  //   },
+  // ];
+
   // 행 추가
-  // const appendRow = () => {
-  //   ref.current?.getInstance().appendRow({});
-  // };
+  const appendRow = () => {
+    ref.current?.getInstance().appendRow({});
+    ref.current?.getInstance().setColumnValues('writer', 'user');
+
+    const lastRowKey = Number(ref.current?.getInstance().getRowCount());
+
+    ref.current?.getInstance().startEditing(lastRowKey - 1, 'name');
+  };
   // left Bar 가져오기
   const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
   // widget bar 가져오기
   const {
     isBarOpen: isWidgetBarOpen,
-    // setIsBarOpen,
-    // setSelectedTab,
+    setIsBarOpen,
+    setSelectedTab,
     // selectedTab,
   } = useRightWidgetBarStore();
 
@@ -96,36 +125,21 @@ BoardDataGridProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isWidgetBarOpen, isMenuBarOpen]);
 
-  // const dataSource: DataSource = {
-  //   withCredentials: false,
-  //   initialRequest: true,
-  //   contentType: 'application/json',
-  //   api: {
-  //     readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
-  //     modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
-  //     deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
-  //   },
-  // };
-  const testData: any[] = [
-    {
-      title: '제목입니다',
-      writer: 'JHS',
-      content: '내용입니다',
-      writeDate: '2022-10-10',
-      editDate: '2022-10-12',
+  const dataSource: DataSource = {
+    withCredentials: false,
+    initialRequest: true,
+    contentType: 'application/json',
+    api: {
+      readData: { url: `${API_URL}/api/${tableName}`, method: 'GET' },
+      modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
+      deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
     },
-    {
-      title: '제목입니다',
-      writer: 'JHS',
-      content: '내용입니다',
-      writeDate: '2022-10-10',
-      editDate: '2022-10-12',
-    },
-  ];
+  };
 
   return (
     <div style={{ width: 'auto' }}>
-      {/* {showToolbar && (
+      {/* <SearchDrawer /> */}
+      {showToolbar && (
         <DataGridToolbar
           addNewRow={appendRow}
           refresh={() => ref.current?.getInstance().readData(1)}
@@ -135,18 +149,24 @@ BoardDataGridProps) {
             setIsBarOpen(true);
             setSelectedTab(1);
           }}
+          openSearchSetting={onSearchClick}
           openDeleteSetting={() => {
             ref.current?.getInstance().removeCheckedRows();
             ref.current?.getInstance().request('deleteData');
           }}
-          openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
+          openSaveSetting={() => {
+            ref.current?.getInstance().request('modifyData');
+            // ref.current?.getInstance().disable();
+          }}
+          removeRows={() => ref.current?.getInstance().removeCheckedRows()}
+          exportFile={() => ref.current?.getInstance().export('csv')}
+          copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
         />
-      )} */}
+      )}
       <Grid
         ref={ref}
-        // data={dataSource}
-        // header={header}
-        data={testData}
+        data={dataSource}
+        header={header}
         columns={columns}
         columnOptions={{ resizable: true, frozenCount: frozenColumn, minWidth: 100 }}
         rowHeight={30}
@@ -155,10 +175,12 @@ BoardDataGridProps) {
         width="auto"
         rowHeaders={['rowNum', 'checkbox']}
         draggable
-        scrollX={false}
-        scrollY
+        scrollX
+        scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
-        pageOptions={{ perPage: 1 }}
+        // onClick={onClick}
+        onDblclick={Test}
+        onEditingFinish={Test2}
       />
       {/* <YesNoSelectionModal
         open={checkToSaveOpen}
@@ -198,4 +220,4 @@ BoardDataGridProps) {
   );
 }
 
-export default BoardDataGrid;
+export default BaseDataGrid;
