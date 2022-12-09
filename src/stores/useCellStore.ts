@@ -5,9 +5,11 @@ interface CellState {
   operateDepartment: string;
   modeApprovalName: string;
   manageAgency: string;
+  gridData: string[];
   setOperateDepartment: (status1: string) => void;
   setModeApprovalName: (status2: string) => void;
   setManageAgency: (status3: string) => void;
+  setGridData: (status4: string[]) => void;
 }
 
 /**
@@ -18,9 +20,11 @@ const useCellStore = create<CellState>((set) => ({
   operateDepartment: '',
   modeApprovalName: '',
   manageAgency: '',
+  gridData: [],
   setOperateDepartment: (status1) => set(() => ({ operateDepartment: status1 })),
-  setModeApprovalName: (status1) => set(() => ({ modeApprovalName: status1 })),
+  setModeApprovalName: (status2) => set(() => ({ modeApprovalName: status2 })),
   setManageAgency: (status3) => set(() => ({ manageAgency: status3 })),
+  setGridData: (status4) => set(() => ({ gridData: status4 })),
 }));
 
 export default useCellStore;
