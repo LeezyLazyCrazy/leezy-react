@@ -35,10 +35,7 @@ const dataGridKeys: OptColumn[] = [
     minWidth: 140,
     sortable: true,
     editor: {
-      type: 'datePicker',
-      options: {
-        format: 'yyyy-MM-dd',
-      },
+      type: 'text',
     },
   },
 ];
