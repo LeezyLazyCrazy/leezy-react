@@ -144,6 +144,7 @@ function BaseDataGrid({
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
         onClick={onClick}
+        onBeforeRequest={() => console.log('eee')}
       />
       {/* <YesNoSelectionModal
         open={checkToSaveOpen}

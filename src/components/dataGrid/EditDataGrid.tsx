@@ -14,6 +14,8 @@ import { API_URL } from '../../query';
 import useMenuBarStore from '../../stores/useMenuBarStore';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import { DataSource } from 'tui-grid/types/dataSource';
+import { toastShow } from '../alert/ToastMessage';
+import { gridErrorMessage } from './errorHandling/errorMessage';
 
 interface EditDataGridProps {
   tableName: string;
@@ -120,7 +122,23 @@ function EditDataGrid({
             ref.current?.getInstance().removeCheckedRows();
             ref.current?.getInstance().request('deleteData');
           }}
-          openSaveSetting={() => ref.current?.getInstance().request('modifyData')}
+          openSaveSetting={() => {
+            const validatedResult = ref.current?.getInstance().validate();
+            if (validatedResult!.length > 0) {
+              toastShow({
+                type: 'error',
+                title: '데이터가 잘못 작성되었습니다',
+                message: gridErrorMessage(validatedResult!, columns).join('\r\n'),
+              });
+            } else {
+              ref.current?.getInstance().request('modifyData');
+              toastShow({
+                type: 'success',
+                title: '데이터 저장 완료',
+                message: '데이터를 저장하였습니다.',
+              });
+            }
+          }}
           removeRows={() => ref.current?.getInstance().removeCheckedRows()}
           copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
         />
