@@ -1,81 +1,81 @@
 {
-	"env": {
-		"browser": true,
-		"es2021": true,
-		"node": true
-	},
-	"settings": {
-		"react": {
-			"version": "detect",
-			"import/resolver": {
-				"typescript": {}
-			}
-		},
-		"import/resolver": {
-			"node": {
-				"extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
-			}
-		}
-	},
-	"extends": [
-		"airbnb", //airbnb의 규칙 사용
-		"airbnb/hooks", //React hooks를 위한  airbnb 규칙 사용,
-		"prettier"
-		// "plugin:import/recommended",
-		// "plugin:react/recommended", // eslint-plugin-react의 추천 규칙 사용
-		// "plugin:@typescript-eslint/recommended" // ESLint가 TypeScript를 지원할 수 있도록 하는 모든 도구를 위한 Monorepo
-		// "plugin:prettier/recommended" // prettier 규칙을 적용하여 틀릴 경우 eslint 문제로 처리
-	],
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaFeatures": {
-			"jsx": true
-		},
-		"ecmaVersion": "latest",
-		"sourceType": "module"
-	},
-	"plugins": ["react", "import", "@typescript-eslint", "react-hooks"],
-	"rules": {
-		"default-case": "off",
-		"jsx-a11y/alt-text": "off",
-		"consistent-return": "off", //사용안한 변수 경고 중복
-		"react/destructuring-assignment": "off",
-		"react/react-in-jsx-scope": "off",
-		"react/jsx-props-no-spreading": "off",
-		"react/require-default-props": 0,
-		"react/no-array-index-key": "off",
-		"react/no-unused-prop-types": "off",
-		// "react/jsx-uses-react": "off",
-		// "react/prop-types": 0,
-		// "object-curly-newline": 0,
-		// "react/function-component-definition": "off",
-		// "no-unused-vars": "off",
-		"no-console": ["off"],
-		"no-nested-ternary": "off",
-		"no-use-before-define": "off", // 정의 전에 사용 금지
-		"no-undef": "off",
-		"no-shadow": "off",
-		"array-callback-return": "off", //화살표 함수 안에 return을 사용 할 수 있다.
-		"react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx", ".jsx"] }],
-		"@typescript-eslint/no-use-before-define": "off",
-		// "@typescript-eslint/no-explicit-any": "off",
-		// "@typescript-eslint/no-non-null-assertion": "off",
-		// "@typescript-eslint/ban-types": "off",
-		// "@typescript-eslint/quotes": "off",
-		"import/order": "off",
-		"import/prefer-default-export": "off",
-		"import/no-extraneous-dependencies": "off",
-		"import/extensions": [
-			"off",
-			"ignorePackages",
-			{
-				"js": "never",
-				"jsx": "never",
-				"ts": "never",
-				"tsx": "never",
-				"json": "never",
-				"d.ts": "never"
-			} //import 시 확장자명은 사용하지 않는다.
-		]
-	}
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect",
+      "import/resolver": {
+        "typescript": {}
+      }
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+      }
+    }
+  },
+  "extends": [
+    "airbnb", //airbnb의 규칙 사용
+    "airbnb/hooks", //React hooks를 위한  airbnb 규칙 사용,
+    "prettier"
+    // "plugin:import/recommended",
+    // "plugin:react/recommended", // eslint-plugin-react의 추천 규칙 사용
+    // "plugin:@typescript-eslint/recommended" // ESLint가 TypeScript를 지원할 수 있도록 하는 모든 도구를 위한 Monorepo
+    // "plugin:prettier/recommended" // prettier 규칙을 적용하여 틀릴 경우 eslint 문제로 처리
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "import", "@typescript-eslint", "react-hooks"],
+  "rules": {
+    "default-case": "off",
+    "jsx-a11y/alt-text": "off",
+    "consistent-return": "off", //사용안한 변수 경고 중복
+    "react/destructuring-assignment": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": 0,
+    "react/no-array-index-key": "off",
+    "react/no-unused-prop-types": "off",
+    // "react/jsx-uses-react": "off",
+    // "react/prop-types": 0,
+    // "object-curly-newline": 0,
+    // "react/function-component-definition": "off",
+    "no-unused-vars": "off",
+    "no-console": ["off"],
+    "no-nested-ternary": "off",
+    "no-use-before-define": "off", // 정의 전에 사용 금지
+    "no-undef": "off",
+    "no-shadow": "off",
+    "array-callback-return": "off", //화살표 함수 안에 return을 사용 할 수 있다.
+    "react/jsx-filename-extension": ["error", { "extensions": [".ts", ".tsx", ".jsx"] }],
+    "@typescript-eslint/no-use-before-define": "off",
+    // "@typescript-eslint/no-explicit-any": "off",
+    // "@typescript-eslint/no-non-null-assertion": "off",
+    // "@typescript-eslint/ban-types": "off",
+    // "@typescript-eslint/quotes": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": [
+      "off",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "json": "never",
+        "d.ts": "never"
+      } //import 시 확장자명은 사용하지 않는다.
+    ]
+  }
 }

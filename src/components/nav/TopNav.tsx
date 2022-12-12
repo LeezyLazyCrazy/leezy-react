@@ -19,13 +19,9 @@ function TopNav() {
     <AppBar
       sx={{
         boxShadow: '0 3px 8px rgba(0, 0, 0, 0.08)',
-        borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
-        // borderBottom: '1px solid',
-        // borderBottomColor: alpha(`${authUser?.theme.main}`, 0.9),
-        background: (theme) => theme.palette.background.paper,
-        // background: alpha(`${authUser?.theme.main}`, 1),
+        background: (theme) => theme.palette.primary.main,
         zIndex: 10,
-        color: (theme) => theme.palette.primary.main,
+        color: (theme) => theme.palette.common.white,
       }}
       position="static"
       // color="transparent"
