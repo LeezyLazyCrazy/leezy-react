@@ -3,7 +3,7 @@ import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 
 const dataGridKeys: OptColumn[] = [
   {
-    name: 'name',
+    name: 'TITLE',
     header: '제목',
     minWidth: 140,
     sortable: true,
@@ -12,7 +12,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'content',
+    name: 'CONTENT',
     header: '내용',
     minWidth: 140,
     sortable: true,
@@ -21,7 +21,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'writer',
+    name: 'PERSON_NAME',
     header: '작성자',
     minWidth: 140,
     sortable: true,
@@ -30,7 +30,7 @@ const dataGridKeys: OptColumn[] = [
     },
   },
   {
-    name: 'date',
+    name: 'REG_DATE',
     header: '작성일자',
     minWidth: 140,
     sortable: true,
