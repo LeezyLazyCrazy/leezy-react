@@ -22,8 +22,8 @@ interface DrawerDataGridProps {
   operateDepartment?: string;
   modeApprovalName?: string;
   manageAgency?: string;
-  onClick?: () => void;
   showToolbar?: boolean;
+  onClick?: () => void;
 }
 
 /**
@@ -35,10 +35,10 @@ interface DrawerDataGridProps {
  * @param {DrawerDataGridProps} DrawerDataGridProps
  * @returns {JSX.Element} React Component
  */
-function onClick(e: any) {
-  console.log('test');
-  console.log(e.rowKey, e.columnName);
-}
+// function onClick(e: any) {
+//   console.log('test');
+//   console.log(e.rowKey, e.columnName);
+// }
 
 function DrawerDataGrid({
   tableName,
@@ -66,6 +66,7 @@ DrawerDataGridProps) {
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
   const [frozenCount, setFrozenCount] = useState(frozenColumn);
+  const { setGridData } = useCellStore();
 
   // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
 
@@ -140,7 +141,10 @@ DrawerDataGridProps) {
         scrollX
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
-        onClick={onClick}
+        onClick={(e: any) => {
+          const grid: any = e.instance;
+          setGridData(grid.getModifiedRows());
+        }}
       />
       <TableSettingModal
         open={tableSettingOpen}

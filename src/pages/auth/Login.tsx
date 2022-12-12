@@ -19,7 +19,7 @@ import Container from '../../components/layout/Container';
 import Loading from '../../components/loading/Loading';
 import { InstitutionList } from '../../data/constants/institution';
 import { useAuth } from '../../stores/useAuth';
-import useInstitutionTypesStore from '../../stores/useInstitutionTypeStore';
+import useInstitutionTypeStore from '../../stores/useInstitutionTypeStore';
 import { IInstitutionType } from '../../types/institutionType';
 
 const loginSchema = yup.object({
@@ -43,7 +43,7 @@ function Login() {
   const [invalid, setInvalid] = useState(false);
   const [loading, setLoading] = useState(false);
   const { signIn } = useAuth();
-  const { setInstitutionType } = useInstitutionTypesStore();
+  const { setInstitutionType } = useInstitutionTypeStore();
 
   return (
     <>
