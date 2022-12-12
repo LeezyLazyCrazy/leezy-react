@@ -1,4 +1,12 @@
-import { styled, Typography } from '@mui/material';
+import {
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  MenuItem,
+  Select,
+  styled,
+  Typography,
+} from '@mui/material';
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -9,11 +17,15 @@ import BaseButton from '../../components/button/BaseButton';
 import TextInput from '../../components/form/TextInput';
 import Container from '../../components/layout/Container';
 import Loading from '../../components/loading/Loading';
+import { InstitutionList } from '../../data/constants/institution';
 import { useAuth } from '../../stores/useAuth';
+import useInstitutionTypesStore from '../../stores/useInstitutionTypeStore';
+import { IInstitutionType } from '../../types/institutionType';
 
 const loginSchema = yup.object({
   id: yup.string().defined('아이디를 입력해주세요'),
   password: yup.string().defined('비밀번호를 입력해주세요'),
+  institution: yup.string().defined('기관을 선택해주세요'),
 });
 
 type LoginValues = yup.InferType<typeof loginSchema>;
@@ -23,6 +35,7 @@ type LoginValues = yup.InferType<typeof loginSchema>;
 
 function Login() {
   const initialValues: LoginValues = {
+    institution: '',
     id: '',
     password: '',
   };
@@ -30,6 +43,7 @@ function Login() {
   const [invalid, setInvalid] = useState(false);
   const [loading, setLoading] = useState(false);
   const { signIn } = useAuth();
+  const { setInstitutionType } = useInstitutionTypesStore();
 
   return (
     <>
@@ -71,6 +85,7 @@ function Login() {
                   actions.resetForm();
                   if (values.id === 'testUser' && values.password === '1q2w3e!') {
                     setLoading(false);
+                    setInstitutionType(values.institution as IInstitutionType);
                     signIn();
                     navigate('/index');
                   } else {
@@ -85,6 +100,24 @@ function Login() {
             >
               {({ values, handleChange, isValid, touched, errors }) => (
                 <Form>
+                  <FormControl sx={{ mb: 2 }} fullWidth>
+                    <InputLabel id="institution">기관 종류</InputLabel>
+                    <Select
+                      labelId="institution"
+                      name="institution"
+                      value={values.institution}
+                      label="기관"
+                      onChange={handleChange}
+                      error={touched.institution && Boolean(errors.institution)}
+                    >
+                      {InstitutionList.map((i) => (
+                        <MenuItem key={i.type} value={i.type}>
+                          {i.name}
+                        </MenuItem>
+                      ))}
+                      <FormHelperText>{touched.institution && errors.institution}</FormHelperText>
+                    </Select>
+                  </FormControl>
                   <TextInput
                     label="아이디"
                     name="id"

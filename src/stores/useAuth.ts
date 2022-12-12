@@ -29,28 +29,9 @@ export const useAuth = create<UserActions>()(
           get().setUser({
             id: '12345',
             name: '홍길순',
-            position: '',
-            unit: {
-              code: 'branch',
-              name: '부서',
-            },
+            position: '과장',
+            institution: 'gov',
             userGroups: ['test1', 'test2'],
-            modeCode: 'real',
-            theme: {
-              main: '#19DBCE',
-              // User_MainColors (미확정)
-              // main: '#FFCA08', // 원
-              // main: '#EF5C73', // 국보연
-              // main: '#C5BC73', // 정부부처
-              // main: '#3D9AE7', // 행정기관
-              // main: '#2dc2b9', // 제작업체
-              // User_SubColors (미확정)
-              // sub: '#5A73A4', // 원
-              // sub: '#089BD9', // 국보연
-              // sub: '#307084', // 정부부처
-              // sub: '#C81D3E', // 행정기관
-              // sub: '#19DBCE', // 제작업체
-            },
           });
         } catch (err) {
           console.log(err);

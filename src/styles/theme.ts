@@ -74,7 +74,7 @@ declare module '@mui/material/styles' {
 
 export type PaletteMode = 'light' | 'dark';
 
-const baseTheme = {
+export const baseTheme = {
   typography: {
     fontSize: 11,
     fontFamily: 'Noto Sans KR',

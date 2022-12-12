@@ -4,14 +4,6 @@ export type SSOUserInfoType = {
   id: string;
   name: string;
   position: string;
-  unit: {
-    code: string;
-    name: string;
-  };
+  institution: string;
   userGroups: string[];
-  modeCode: 'real' | 'exercise';
-  theme: {
-    main: string;
-    sub?: string;
-  };
 };
