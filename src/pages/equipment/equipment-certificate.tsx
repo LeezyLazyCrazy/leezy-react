@@ -14,12 +14,21 @@ const columns: OptColumn[] = [
     editor: {
       type: 'text',
     },
+    validation: {
+      dataType: 'number',
+      min: 4,
+      max: 6,
+    },
   },
   {
     name: 'equipmentCertiId',
     header: '장비증명서번호',
     minWidth: 140,
     sortable: true,
+    validation: {
+      dataType: 'string',
+      required: true,
+    },
     editor: {
       type: 'text',
     },
@@ -41,6 +50,10 @@ const columns: OptColumn[] = [
     name: 'date',
     header: '증명서발행일자',
     minWidth: 140,
+    validation: {
+      required: true,
+      unique: true,
+    },
     sortable: true,
     editor: {
       type: 'text',

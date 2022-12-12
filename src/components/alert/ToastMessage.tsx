@@ -22,7 +22,7 @@ export function ToastMessage({ title, message }: ToastMessageProps) {
       <Typography variant="body1" sx={{ fontWeight: 600 }} gutterBottom>
         {title}
       </Typography>
-      <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
+      <Typography variant="body2" sx={{ lineHeight: 1.5, whiteSpace: 'pre-wrap' }}>
         {message}
       </Typography>
     </div>

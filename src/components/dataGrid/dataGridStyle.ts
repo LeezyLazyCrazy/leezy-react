@@ -6,7 +6,7 @@ import { Palette } from '@mui/material';
  * @returns
  */
 export const gridStyles = (palette: Palette) => {
-  const { background, divider, text, action, primary, secondary } = palette;
+  const { background, divider, text, action, primary, secondary, error } = palette;
   return {
     selection: {
       background: background.paper,
@@ -46,6 +46,13 @@ export const gridStyles = (palette: Palette) => {
       },
       disabled: {
         background: action.disabledBackground,
+      },
+      required: {
+        background: 'none',
+      },
+      invalid: {
+        text: error.main,
+        background: 'none',
       },
       header: {
         background: 'none',
