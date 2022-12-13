@@ -14,18 +14,18 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ApprovalIcon from '@mui/icons-material/Approval';
 
 interface DataGridToolBarProps {
-  addNewRow: () => void;
-  refresh: () => void;
+  addNewRow?: () => void;
+  refresh?: () => void;
   onFilter?: () => void;
-  removeRows: () => void;
-  exportFile: () => void;
-  copyToClipboard: () => void;
-  openTableSetting: () => void;
-  openHeaderSetting: () => void;
-  openDetailSetting: () => void;
-  openSearchSetting: () => void;
-  openSaveSetting: () => void;
-  openDeleteSetting: () => void;
+  removeRows?: () => void;
+  exportFile?: () => void;
+  copyToClipboard?: () => void;
+  openTableSetting?: () => void;
+  openHeaderSetting?: () => void;
+  openDetailSetting?: () => void;
+  openSearchSetting?: () => void;
+  openSaveSetting?: () => void;
+  openDeleteSetting?: () => void;
   // openAddSetting: () => void;
   // openApprovalSetting: () => void;
 }
@@ -60,6 +60,7 @@ DataGridToolBarProps) {
           key: 'refresh',
           icon: <RefreshIcon fontSize="small" />,
           onClick: refresh,
+          show: typeof refresh === 'function',
         },
         {
           id: 1,
@@ -67,6 +68,7 @@ DataGridToolBarProps) {
           key: 'table-setting',
           icon: <AspectRatioIcon fontSize="small" />,
           onClick: openTableSetting,
+          show: typeof openTableSetting === 'function',
         },
         {
           id: 2,
@@ -74,6 +76,7 @@ DataGridToolBarProps) {
           key: 'header-setting',
           icon: <TopicIcon fontSize="small" />,
           onClick: openHeaderSetting,
+          show: typeof openHeaderSetting === 'function',
         },
       ],
     },
@@ -86,6 +89,7 @@ DataGridToolBarProps) {
           key: 'new-row',
           icon: <AddBoxIcon fontSize="small" />,
           onClick: addNewRow,
+          show: typeof addNewRow === 'function',
         },
         {
           id: 1,
@@ -93,6 +97,7 @@ DataGridToolBarProps) {
           key: 'copy-row',
           icon: <ContentCopyIcon fontSize="small" />,
           onClick: copyToClipboard,
+          show: typeof copyToClipboard === 'function',
         },
         {
           id: 2,
@@ -100,6 +105,7 @@ DataGridToolBarProps) {
           key: 'export-as-file',
           icon: <FileDownloadIcon fontSize="small" />,
           onClick: exportFile,
+          show: typeof exportFile === 'function',
         },
       ],
     },
@@ -119,6 +125,7 @@ DataGridToolBarProps) {
           key: 'search',
           icon: <SearchIcon fontSize="small" />,
           onClick: openSearchSetting,
+          show: typeof openSearchSetting === 'function',
         },
       ],
     },
@@ -131,6 +138,7 @@ DataGridToolBarProps) {
           key: 'delete',
           icon: <DeleteIcon fontSize="small" />,
           onClick: openDeleteSetting,
+          show: typeof openDeleteSetting === 'function',
         },
         {
           id: 1,
@@ -138,6 +146,7 @@ DataGridToolBarProps) {
           key: 'save',
           icon: <SaveIcon fontSize="small" />,
           onClick: openSaveSetting,
+          show: typeof openSaveSetting === 'function',
         },
       ],
     },
@@ -150,6 +159,7 @@ DataGridToolBarProps) {
           key: 'delete',
           icon: <BorderColorIcon fontSize="small" />,
           onClick: openDetailSetting,
+          show: typeof openDetailSetting === 'function',
         },
         {
           id: 1,
@@ -157,6 +167,7 @@ DataGridToolBarProps) {
           key: 'save',
           icon: <ApprovalIcon fontSize="small" />,
           onClick: openDetailSetting,
+          show: typeof openDetailSetting === 'function',
         },
       ],
     },
@@ -168,13 +179,16 @@ DataGridToolBarProps) {
         {ToolBarOptions.map((group) => (
           <BtnGroupWrapper key={group.id}>
             <ButtonGroup size="small" variant="text" aria-label="datagrid-toolbar">
-              {group.btns.map((btn) => (
-                <Tooltip key={btn.id} title={btn.title}>
-                  <IconButton onClick={btn.onClick} key={btn.key}>
-                    {btn.icon}
-                  </IconButton>
-                </Tooltip>
-              ))}
+              {group.btns.map(
+                (btn) =>
+                  btn.show && (
+                    <Tooltip key={btn.id} title={btn.title}>
+                      <IconButton onClick={btn.onClick} key={btn.key}>
+                        {btn.icon}
+                      </IconButton>
+                    </Tooltip>
+                  ),
+              )}
             </ButtonGroup>
           </BtnGroupWrapper>
         ))}

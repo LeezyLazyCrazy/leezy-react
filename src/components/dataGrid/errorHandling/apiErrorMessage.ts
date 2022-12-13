@@ -1,5 +1,10 @@
 import { toastShow } from '../../alert/ToastMessage';
 
+/**
+ * 토스트 UI 내 api 핸들링 시 에러가 발생하는 경우, 각각의 에러에 해당하는 메시지를 유저에게 보여주는 역할을 수행함
+ * @param error XMLHttpRequest
+ * @returns toast
+ */
 export const gridApiErrorMessage = (error: XMLHttpRequest) => {
   const { status } = error;
   let title: string = '';
