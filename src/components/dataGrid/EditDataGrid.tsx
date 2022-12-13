@@ -135,7 +135,7 @@ function EditDataGrid({
             setIsBarOpen(true);
             setSelectedTab(1);
           }}
-          openSearchSetting={onSearchClick}
+          // openSearchSetting={onSearchClick}
           openDeleteSetting={() => {
             ref.current?.getInstance().removeCheckedRows();
             ref.current?.getInstance().request('deleteData');

@@ -12,6 +12,7 @@ import SaveIcon from '@mui/icons-material/Save';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ApprovalIcon from '@mui/icons-material/Approval';
+import { Fragment } from 'react';
 
 interface DataGridToolBarProps {
   addNewRow?: () => void;
@@ -177,20 +178,26 @@ DataGridToolBarProps) {
     <Root>
       <LeftBar>
         {ToolBarOptions.map((group) => (
-          <BtnGroupWrapper key={group.id}>
-            <ButtonGroup size="small" variant="text" aria-label="datagrid-toolbar">
-              {group.btns.map(
-                (btn) =>
-                  btn.show && (
-                    <Tooltip key={btn.id} title={btn.title}>
-                      <IconButton onClick={btn.onClick} key={btn.key}>
-                        {btn.icon}
-                      </IconButton>
-                    </Tooltip>
-                  ),
-              )}
-            </ButtonGroup>
-          </BtnGroupWrapper>
+          <Fragment key={group.id}>
+            {group.btns.filter((btn) => btn.show).length > 0 ? (
+              <BtnGroupWrapper key={group.id}>
+                <ButtonGroup size="small" variant="text" aria-label="datagrid-toolbar">
+                  {group.btns.map(
+                    (btn) =>
+                      btn.show && (
+                        <Tooltip key={btn.id} title={btn.title}>
+                          <IconButton onClick={btn.onClick} key={btn.key}>
+                            {btn.icon}
+                          </IconButton>
+                        </Tooltip>
+                      ),
+                  )}
+                </ButtonGroup>
+              </BtnGroupWrapper>
+            ) : (
+              ''
+            )}
+          </Fragment>
         ))}
       </LeftBar>
       <BtnGroupWrapper>
