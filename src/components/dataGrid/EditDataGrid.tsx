@@ -16,6 +16,7 @@ import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import { DataSource } from 'tui-grid/types/dataSource';
 import { toastShow } from '../alert/ToastMessage';
 import { gridErrorMessage } from './errorHandling/errorMessage';
+import { gridApiErrorMessage } from './errorHandling/apiErrorMessage';
 
 interface EditDataGridProps {
   tableName: string;
@@ -58,19 +59,10 @@ function EditDataGrid({
 
   const ref = createRef<Grid>();
 
-  // width는 상위 Layout에서 지도 모듈과 나란히 할지 말지 등을 고려하여 재구축
-  // const [containerWidth, setContainerWidth] = useState(1100 + 10);
-  // const [checkToSaveOpen, setCheckToSaveOpen] = useState(false);
+  // 그리드 너비 세팅
   const [tableSettingOpen, setTableSettingOpen] = useState(false);
   const [headerSettingOpen, setHeaderSettingOpen] = useState(false);
-  const [frozenCount, setFrozenCount] = useState(frozenColumn);
 
-  // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
-
-  // 행 추가
-  const appendRow = () => {
-    ref.current?.getInstance().appendRow({});
-  };
   // left Bar 가져오기
   const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
 
@@ -84,6 +76,7 @@ function EditDataGrid({
 
   const { innerWidth } = window;
 
+  // 윈도우의 너비에 맞추어 표의 사이즈를 변화시킴
   useEffect(() => {
     const widgetWidth = isWidgetBarOpen ? 430 : 130;
     const menubarWidth = isMenuBarOpen ? 210 : 100;
@@ -92,6 +85,17 @@ function EditDataGrid({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isWidgetBarOpen, isMenuBarOpen]);
 
+  // 행 고정 관련
+  const [frozenCount, setFrozenCount] = useState(frozenColumn);
+
+  // const [detailSettingOpen, setDetailSettingOpen] = useState(false);
+
+  // 행 추가
+  const appendRow = () => {
+    ref.current?.getInstance().appendRow({});
+  };
+
+  // 데이터 저장/불러오기 관련
   const dataSource: DataSource = {
     withCredentials: false,
     initialRequest: true,
@@ -101,6 +105,20 @@ function EditDataGrid({
       modifyData: { url: `${API_URL}/api/${tableName}`, method: 'PUT' },
       deleteData: { url: `${API_URL}/api/${tableName}`, method: 'DELETE' },
     },
+  };
+
+  // 데이터 저장하기
+  const modifyDataToApi = () => {
+    const validatedResult = ref.current?.getInstance().validate();
+    if (validatedResult!.length > 0) {
+      toastShow({
+        type: 'error',
+        title: '데이터가 잘못 작성되었습니다',
+        message: gridErrorMessage(validatedResult!, columns).join('\r\n'),
+      });
+    } else {
+      ref.current?.getInstance().request('modifyData');
+    }
   };
 
   return (
@@ -123,21 +141,8 @@ function EditDataGrid({
             ref.current?.getInstance().request('deleteData');
           }}
           openSaveSetting={() => {
-            const validatedResult = ref.current?.getInstance().validate();
-            if (validatedResult!.length > 0) {
-              toastShow({
-                type: 'error',
-                title: '데이터가 잘못 작성되었습니다',
-                message: gridErrorMessage(validatedResult!, columns).join('\r\n'),
-              });
-            } else {
-              ref.current?.getInstance().request('modifyData');
-              toastShow({
-                type: 'success',
-                title: '데이터 저장 완료',
-                message: '데이터를 저장하였습니다.',
-              });
-            }
+            console.log(ref.current?.getInstance().getData());
+            modifyDataToApi();
           }}
           removeRows={() => ref.current?.getInstance().removeCheckedRows()}
           copyToClipboard={() => ref.current?.getInstance().copyToClipboard()}
@@ -159,17 +164,19 @@ function EditDataGrid({
         scrollY={false}
         oneTimeBindingProps={['data', 'columns']}
         onClick={onClick}
+        onSuccessResponse={() =>
+          toastShow({
+            type: 'success',
+            title: '데이터 저장 완료',
+            message: '데이터를 저장하였습니다.',
+          })
+        }
+        onBeforeRequest={(data: any) =>
+          // 이 부분에서 데이터 추가 조작을 하든 해야 할 것 같은데 확인이 필요함(pen)
+          console.log('beforeRequest', data)
+        }
+        onErrorResponse={(error: any) => gridApiErrorMessage(error.xhr)}
       />
-      {/* <YesNoSelectionModal
-        open={checkToSaveOpen}
-        setOpen={setCheckToSaveOpen}
-        title="바뀐 내용 저장"
-        onYes={() => {
-          ref.current?.getInstance().request('modifyData');
-        }}
-        onNo={() => ref.current?.getInstance().readData(1)}
-        question="바뀐 내용이 있네요. 저장하실?"
-      /> */}
       <TableSettingModal
         open={tableSettingOpen}
         setOpen={setTableSettingOpen}

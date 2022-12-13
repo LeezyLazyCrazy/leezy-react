@@ -35,10 +35,10 @@ function YesNoSelectionModal({
       </Typography>
       <Typography variant="body1">{question}</Typography>
       <div style={{ marginTop: 20, textAlign: 'right' }}>
-        <BaseButton title="네" onClick={onYes} />
+        <BaseButton color="secondary" title="네" onClick={onYes} />
         <BaseButton
           title="아니요"
-          sx={{ ml: 1 }}
+          sx={{ ml: 1, color: '#000' }}
           color="inherit"
           onClick={() => {
             setOpen(!open);
