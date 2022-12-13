@@ -43,6 +43,7 @@ import PageTerminalManagement from '../../pages/system/terminal-management';
 import PageQREquipManagement from '../../pages/system/QR-equip-management';
 import PageQRcodeInOutHistory from '../../pages/system/QRcode-inout-history';
 import PagePersonalManagement from '../../pages/system/personal-management';
+import PageQREquipDetail from '../../pages/system/QR-equip-detail';
 // 포럼
 import PageForumNotice from '../../pages/forum/forum-notice';
 import PageForumReference from '../../pages/forum/forum-reference';
@@ -366,6 +367,14 @@ export const menu: MenuProps[] = [
         parentUrl: 'system',
         show: true,
         element: PageQREquipManagement,
+      },
+      {
+        id: 'QR-equip-detail',
+        name: 'QR코드 정보 조회',
+        type: 'page',
+        parentUrl: 'system',
+        show: true,
+        element: PageQREquipDetail,
       },
       {
         id: 'QRcode-inout-history',
