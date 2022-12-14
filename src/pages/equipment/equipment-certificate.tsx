@@ -4,6 +4,7 @@ import { Box, Drawer } from '@mui/material';
 import { useState } from 'react';
 import CertificateInput from '../../components/form/CertificateInput';
 import DrawerDataGrid from '../../components/dataGrid/DrawerDataGrid';
+import CertificateInputTest from '../../components/form/CertificateInputTest';
 
 const columns: OptColumn[] = [
   {
@@ -328,12 +329,13 @@ function PageEquipmentCertification() {
         onClose={() => setIsDrawerOpen(false)}
       >
         <Box sx={{ width: 500, padding: '5% 5%' }} role="combobox">
-          <CertificateInput />
-          <DrawerDataGrid
+          {/* <CertificateInput /> */}
+          <CertificateInputTest setIsDrawerOpen={setIsDrawerOpen} />
+          {/* <DrawerDataGrid
             tableName="equipment/information"
             columns={DrawerColumns}
             header={header}
-          />
+          /> */}
         </Box>
       </Drawer>
       <EditDataGrid

@@ -180,7 +180,7 @@ DataGridToolBarProps) {
         {ToolBarOptions.map((group) => (
           <Fragment key={group.id}>
             {group.btns.filter((btn) => btn.show).length > 0 ? (
-              <BtnGroupWrapper key={group.id}>
+              <BtnGroupWrapper>
                 <ButtonGroup size="small" variant="text" aria-label="datagrid-toolbar">
                   {group.btns.map(
                     (btn) =>

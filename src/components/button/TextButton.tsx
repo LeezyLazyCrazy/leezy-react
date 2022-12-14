@@ -15,15 +15,12 @@ function TextButton({ title, type = 'submit', textPosition = 'left', ...rest }: 
     <BaseButton
       title={title}
       variant="text"
-      disableRipple
-      disableFocusRipple
       size="small"
       sx={{
         minWidth: 10,
         padding: '10px 0',
         marginBottom: 0,
         justifyContent: textPosition,
-        '&:hover': { backgroundColor: 'unset', color: (theme) => theme.palette.secondary.light },
       }}
       type={type}
       {...rest}
