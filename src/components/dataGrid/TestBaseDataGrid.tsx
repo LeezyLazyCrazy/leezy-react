@@ -15,6 +15,8 @@ import useMenuBarStore from '../../stores/useMenuBarStore';
 import useRightWidgetBarStore from '../../stores/useRightWidgetBarStore';
 import { DataSource } from 'tui-grid/types/dataSource';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../stores/useAuth';
+import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
 // import SearchDrawer from '../../modules/widget/SearchDrawer';
 
 // import YesNoSelectionModal from '../../modules/modal/YesNoSelectionModal';
@@ -32,7 +34,7 @@ interface BaseDataGridProps {
  테스트용 컴포넌트
  */
 
-function BaseDataGrid({
+function TestBaseDataGrid({
   tableName,
   columns,
   frozenColumn = 1,
@@ -40,29 +42,31 @@ function BaseDataGrid({
   showToolbar = true,
   onSearchClick,
 }: BaseDataGridProps) {
+  const authUser = useAuth();
   const navigate = useNavigate();
 
   // 행 추가 시 navigate함수 사용을 막고 행 추가가 아닐 시 navigate함수를 사용하여 데이터가 추가적인 수정 제한
   const Test = () => {
-    const selectKey = ref.current?.getInstance().getFocusedCell().rowKey;
-
-    navigate('/forum/detail', { state: ref.current?.getInstance().getRow(selectKey!) }); // 임시
+    if (ref.current?.getInstance().getFocusedCell().columnName === 'move_detail') {
+      const selectKey = ref.current?.getInstance().getFocusedCell().rowKey;
+      navigate('/forum/detail', { state: ref.current?.getInstance().getRow(selectKey!) }); // 임시
+    }
   };
 
-  const Test2 = () => {
-    const columnsKey = ref.current?.getInstance().getFocusedCell();
+  // const Test2 = () => {
+  //   const columnsKey = ref.current?.getInstance().getFocusedCell();
 
-    ref.current
-      ?.getInstance()
-      .getColumns()
-      .map((column, i) => {
-        if (columnsKey!.columnName === column.name) {
-          ref.current
-            ?.getInstance()
-            .startEditing(columnsKey!.rowKey!, ref.current?.getInstance().getColumns()[i + 1].name);
-        }
-      });
-  };
+  //   ref.current
+  //     ?.getInstance()
+  //     .getColumns()
+  //     .map((column, i) => {
+  //       if (columnsKey!.columnName === column.name) {
+  //         ref.current
+  //           ?.getInstance()
+  //           .startEditing(columnsKey!.rowKey!, ref.current?.getInstance().getColumns()[i + 1].name);
+  //       }
+  //     });
+  // };
 
   // grid styles
   const { isDark } = useThemeStore();
@@ -98,11 +102,11 @@ function BaseDataGrid({
   // 행 추가
   const appendRow = () => {
     ref.current?.getInstance().appendRow({});
-    ref.current?.getInstance().setColumnValues('writer', 'user');
+    ref.current?.getInstance().setColumnValues('PERSON_NAME', authUser.authUser?.name);
 
     const lastRowKey = Number(ref.current?.getInstance().getRowCount());
 
-    ref.current?.getInstance().startEditing(lastRowKey - 1, 'name');
+    ref.current?.getInstance().startEditing(lastRowKey - 1, 'TITLE');
   };
   // left Bar 가져오기
   const { isBarOpen: isMenuBarOpen } = useMenuBarStore();
@@ -180,7 +184,7 @@ function BaseDataGrid({
         oneTimeBindingProps={['data', 'columns']}
         // onClick={onClick}
         onDblclick={Test}
-        onEditingFinish={Test2}
+        // onEditingFinish={Test2}
       />
       {/* <YesNoSelectionModal
         open={checkToSaveOpen}
@@ -220,4 +224,4 @@ function BaseDataGrid({
   );
 }
 
-export default BaseDataGrid;
+export default TestBaseDataGrid;

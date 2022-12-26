@@ -1,6 +1,6 @@
 import { OptColumn } from 'tui-grid/types/options';
-import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
-// import CustomFileEditor from '../../components/dataGrid/CustomEditor/CustomFileEditor';
+import CustomFileEditor from '../../components/dataGrid/CustomEditor/CustomFileEditor';
+import TestBaseDataGrid from '../../components/dataGrid/BaseDataGrid';
 
 const dataGridKeys: OptColumn[] = [
   {
@@ -39,19 +39,19 @@ const dataGridKeys: OptColumn[] = [
       type: 'text',
     },
   },
-  // {
-  //   name: 'file',
-  //   header: '첨부파일',
-  //   minWidth: 140,
-  //   sortable: true,
-  //   editor: {
-  //     type: CustomFileEditor,
-  //   },
-  // },
+  {
+    name: 'file',
+    header: '첨부파일',
+    minWidth: 140,
+    sortable: true,
+    editor: {
+      type: CustomFileEditor,
+    },
+  },
 ];
 
 function PageForumReference() {
-  return <BaseDataGrid tableName="forum" columns={dataGridKeys} />;
+  return <TestBaseDataGrid tableName="forum-reference" columns={dataGridKeys} />;
 }
 
 export default PageForumReference;

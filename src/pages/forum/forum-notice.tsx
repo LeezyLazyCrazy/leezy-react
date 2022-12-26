@@ -1,5 +1,5 @@
 import { OptColumn } from 'tui-grid/types/options';
-import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
+import TestBaseDataGrid from '../../components/dataGrid/TestBaseDataGrid';
 
 const dataGridKeys: OptColumn[] = [
   {
@@ -25,13 +25,16 @@ const dataGridKeys: OptColumn[] = [
     header: '작성자',
     minWidth: 140,
     sortable: true,
-    editor: {
-      type: 'text',
-    },
   },
   {
     name: 'REG_DATE',
     header: '작성일자',
+    minWidth: 140,
+    sortable: true,
+  },
+  {
+    name: 'move_detail',
+    header: '상세페이지',
     minWidth: 140,
     sortable: true,
     editor: {
@@ -41,7 +44,7 @@ const dataGridKeys: OptColumn[] = [
 ];
 
 function PageForumNotice() {
-  return <BaseDataGrid tableName="forum" columns={dataGridKeys} />;
+  return <TestBaseDataGrid tableName="forum-notice" columns={dataGridKeys} />;
 }
 
 export default PageForumNotice;

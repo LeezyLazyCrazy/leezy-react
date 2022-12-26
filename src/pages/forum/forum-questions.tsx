@@ -1,5 +1,5 @@
 import { OptColumn } from 'tui-grid/types/options';
-import BaseDataGrid from '../../components/dataGrid/BaseDataGrid';
+import TestBaseDataGrid from '../../components/dataGrid/TestBaseDataGrid';
 
 const dataGridKeys: OptColumn[] = [
   {
@@ -41,7 +41,7 @@ const dataGridKeys: OptColumn[] = [
 ];
 
 function PageForumQuestions() {
-  return <BaseDataGrid tableName="forum" columns={dataGridKeys} />;
+  return <TestBaseDataGrid tableName="forum-questions" columns={dataGridKeys} />;
 }
 
 export default PageForumQuestions;
