@@ -2,7 +2,6 @@ import { Button, ButtonProps } from '@mui/material';
 
 export interface BaseButtonProps extends ButtonProps {
   title: string;
-  onClick?: (e: any) => void;
 }
 /**
  * 버튼 모양임. 기본적으로 MUI의 button 모양임.
